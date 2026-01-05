@@ -7,59 +7,12 @@
     <script src="scripts/script.js" defer></script>
     <title>Triple</title>
 </head>
-<body id="home">
+<body>
 
     <header>
       <img src="assets/logo-radiogids.png" alt="logo-radiogids">
     </header>
 
-    <main>
-
-      <!-- Sectie met datum selectie en 5 dagen vooruit  -->
-
-      <section>
-        <form action="submit">
-          <input type="date">
-        </form>
-        <p>
-          Ma
-        </p>
-        <p>
-          Di
-        </p>
-        <p>
-          Wo
-        </p>
-        <p>
-          Do
-        </p>
-        <p>
-          Vr
-        </p>
-      </section>
-
-      <!-- Slider met alle zenders  -->
-
-      <section>
-
-        <!-- Slider met alle zenders -->
-
-        <article>
-          <a href="">Veronica
-            <img src="assets/logo-veronica.png" alt="logo veronica">
-          </a>
-
-          <a href="">100%NL
-            <img src="assets/logo-100nl.png" alt="logo 100%NL">
-          </a>
-
-          <a href="">SlamFM
-            <img src="assets/logo-slam.png" alt="logo slam fm">
-          </a>
-        </article>
-      </section>
-
-    <!-- aside met alle tijden -->
 
     <aside>
       <ul>
@@ -95,6 +48,65 @@
         </li>
       </ul>
     </aside>
+
+    <main id="home">
+
+      <!-- Sectie met datum selectie en 5 dagen vooruit  -->
+
+      <section>
+        <article>
+          <form action="submit">
+          <select name="Day">
+            <option value="1" disabled selected hidden>Vandaag</option>
+            <option value="2">Maandag</option>
+            <option value="3">Dinsdag</option>
+            <option value="4">Woensdag</option>
+            <option value="5">Donderdag</option>
+            <option value="6">Vrijdag</option>
+          </select>
+          </form>
+        </article>
+        <article>
+          <p class="active">
+            Ma
+          </p>
+          <p>
+            Di
+          </p>
+          <p>
+            Wo
+          </p>
+          <p>
+            Do
+          </p>
+          <p>
+            Vr
+          </p>
+        </article>
+      </section>
+
+      <!-- Slider met alle zenders  -->
+
+      <section>
+
+        <!-- Slider met alle zenders -->
+
+        <article>
+          <a href="">
+            <img src="assets/logo-veronica.png" alt="logo veronica">
+          </a>
+
+          <a href="">
+            <img src="assets/logo-100nl.png" alt="logo 100%NL">
+          </a>
+
+          <a href="">
+            <img src="assets/logo-slam.png" alt="logo slam fm">
+          </a>
+        </article>
+      </section>
+
+    <!-- aside met alle tijden -->
 
     <section>
 
@@ -162,20 +174,9 @@
 
     <footer>
       <nav>
-        <ul>
-          <li>
-            svg
-            <p>Vandaag</p>
-          </li>
-          <li>
-            svg
-            <p>Per zender</p>
-          </li>
-          <li>
-            svg
-            <p>Extra's</p>
-          </li>
-        </ul>
+          <a>Vandaag</a>
+          <a>Per zender</a>
+          <a>Extra's</a>
       </nav>
     </footer>
 
