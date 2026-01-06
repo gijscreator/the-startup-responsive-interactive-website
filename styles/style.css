@@ -100,28 +100,30 @@ main {
             display: flex;
             overflow-x: scroll;
             gap: 2vw;
-            padding-bottom: 1rem;
 
             &::-webkit-scrollbar {
                 display: none;
             }
 
             a {
-                display: flex;
-                flex-shrink: 0;
+                display: block; 
+                width: 40vw;
+                min-width: 100px;
+                max-width: 200px;
 
                 img {
                     width: 40vw;
                     min-width: 100px;
                     max-width: 200px;
-                    height: auto;
-                    padding: 1rem;
+                    max-height: 150px;
+                    height: 9vh;
+                    padding: 1.2rem;
                     border-radius: var(--border-radius);
                 }
             }
 
             a:nth-of-type(1) img {
-                padding: .7rem 1.4rem;
+                padding: 1rem 1rem;
                 background-color: var(--veronica-blauw);
             }
 
@@ -146,7 +148,7 @@ main {
             figure {
                 background-color: var(--honderdnl-black);
                 color:white;
-                width: 38.6vw;
+                width: 40vw;
                 max-width: 200px;
                 border-radius: var(--border-radius);
                 
@@ -167,7 +169,7 @@ main {
                 }
 
                 img {
-                    width: 38.6vw;
+                    width: 40vw;
                     min-width: 100px;
                     max-width: 200px; 
                     height: 10vh;
