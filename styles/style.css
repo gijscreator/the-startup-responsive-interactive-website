@@ -1,11 +1,5 @@
 /* ----------------- General styling for all pages ----------------- */
-:root {
-    --text-color-accent: #E11A29;
-    --veronica-blauw: #0091FF;
-    --honderdnl-black: #1E1E1E;
-    --slam-pink: #FF006B;
-    --border-radius: 1rem;
-}
+
 
 * {
     margin: 0rem;
@@ -266,7 +260,6 @@ main {
                 all: unset;
                 display: flex;
                 cursor: pointer;
-
             }
         }
 

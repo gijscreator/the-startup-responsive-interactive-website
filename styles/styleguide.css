@@ -1,0 +1,79 @@
+:root {
+    --veronica-blauw: #0091FF;
+    --honderdnl-black: #1E1E1E;
+    --hondernl-orange: #E17000;
+    --slam-pink: #FF006B;
+    --slam-blue: #0AAAE1;
+    --tekst-donker: #1E1E1E;
+    --tekst-licht: #ffffff;
+    --border-radius: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+h5 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+h6 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+p, a {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* veronica styling */
+
+button.veronica {
+    all: unset;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    background-color: var(--veronica-blauw);
+    color: var(--tekst-licht);
+    display: block;
+    padding: 1rem;
+}
+
+/* veronica slam */
+
+ button.slam {
+    all: unset;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    background-color: var(--slam-pink);
+    color: var(--tekst-licht);
+    display: block;
+    padding: 1rem;
+}
+
+ button.honderdnl {
+    all: unset;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    background-color: var(--hondernl-orange);
+    color: var(--tekst-licht);
+    display: block;
+    padding: 1rem;
+}
