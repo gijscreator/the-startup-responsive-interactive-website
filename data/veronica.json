@@ -1,0 +1,1066 @@
+[
+  {
+    "day": "monday",
+    "shows": [
+      {
+        "from": "00:00:00",
+        "until": "04:00:00",
+        "show": {
+          "id": "0f619694-4d23-4b13-ac60-85036870288e",
+          "name": "Oh Wat Een Nacht",
+          "body": "Je hoort de beste muziek van Radio Veronica non-stop in Oh Wat Een Nacht!",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/70h1m4slkpo0-radio-veronica-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_1920/70h1m4slkpo0-radio-veronica-thumbnail.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/6wfi6r4vop2o-radio-veronica-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "f4f11c7a-b2fb-41cd-817e-66ead55a8c5f",
+            "full_name": "Radio Veronica",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/hukdvibnwkw-veronica-program-headers-default.png"
+          }
+        ]
+      },
+      {
+        "from": "04:00:00",
+        "until": "06:00:00",
+        "show": {
+          "id": "d849de6b-a548-4969-a5f0-268682281bce",
+          "name": "The Warming Up",
+          "body": "Tussen 04:00 en 06:00 uur word je wakker met Lisanne Bronkhorst in The Warming Up.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/wwkx27hhlgw-lisanne-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/6cgf8fwgzjk-lisanne-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/6cgf8fwgzjk-lisanne-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "d1b8fb4d-1508-4296-a5c9-f0881863c6f0",
+            "full_name": "Lisanne Bronkhorst",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/wwkx27hhlgw-lisanne-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "06:00:00",
+        "until": "09:00:00",
+        "show": {
+          "id": "24420922-f432-4481-b3f4-748fd3e54c1a",
+          "name": "Ekdom in de Morgen",
+          "body": "Opstaan met Ekdom in de Morgen betekent opstaan met een lach! Elke werkdag sleurt Gerard Ekdom je mee door de ochtend: van 06:00 tot 09:00 uur.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4igum86oqbt4-gerard-ekdom-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/402nrtwbwxu0-gerard-ekdom-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/402nrtwbwxu0-gerard-ekdom-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "full_name": "Gerard Ekdom"
+          }
+        ]
+      },
+      {
+        "from": "09:00:00",
+        "until": "12:00:00",
+        "show": {
+          "id": "efc91ed2-bf0b-4ecd-ba71-cab91edb2ad8",
+          "name": "Goud van Oud",
+          "body": "Marisa draait elke werkdag van 09:00 tot 12:00 uur de muziek waar jij van houdt in Goud van Oud!",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4nfdiqlfxa0g-marisa-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/umi1woampdc-marisa-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/umi1woampdc-marisa-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "0b3641d3-a2e6-4035-9454-f32739c2f3d2",
+            "full_name": "Marisa Heutink",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/4nfdiqlfxa0g-marisa-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "12:00:00",
+        "until": "14:00:00",
+        "show": {
+          "id": "19bf9f77-8846-41e9-9517-6f42998d71b7",
+          "name": "Sander Hoogendoorn",
+          "body": "De beste playlist tijdens de lunch.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/2sppxkop52b6-sander-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/1n05wimmtj3m-sander-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/1n05wimmtj3m-sander-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "6eb37c1c-d373-41e4-b333-31b6ac4d4bc8",
+            "full_name": "Sander Hoogendoorn",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/2sppxkop52b6-sander-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "14:00:00",
+        "until": "16:00:00",
+        "show": {
+          "id": "b1be8e21-be37-484d-b3fd-3598385e4329",
+          "name": "De Bonanza",
+          "body": "De Bonanza met Rob Stenders is elke werkdag van 14:00 tot 16:00 uur te horen op Radio Veronica. Jij bepaalt welke muziek er wordt gedraaid. Vraag jouw favoriete platen aan via de gratis Radio Veronica app.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/1swhck2qnppu-rob-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/1o5hm5t7hp0y-rob-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/1o5hm5t7hp0y-rob-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "3aca9a8f-baa6-432d-aa0d-c8375d0e53f4",
+            "full_name": "Rob Stenders",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/1swhck2qnppu-rob-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "16:00:00",
+        "until": "19:00:00",
+        "show": {
+          "id": "82bedac4-341a-40a5-86c1-64198946048c",
+          "name": "Wout & Frank",
+          "body": "De middagshow van Radio Veronica met Wouter van der Goes en Frank van 't Hof.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/riqu29liwj-wout-en-frank-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/6kp4gxdzek1e-wout-en-frank-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/6kp4gxdzek1e-wout-en-frank-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "full_name": "Frank van 't Hof"
+          },
+          {
+            "full_name": "Wouter van der Goes"
+          }
+        ]
+      },
+      {
+        "from": "19:00:00",
+        "until": "21:00:00",
+        "show": {
+          "id": "ceb9454a-89e7-48a6-8543-1b0137bbe470",
+          "name": "Martijn Muijs",
+          "body": "",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/6b2u3ltw2pyo-martijn-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/4q5rqrf4b65s-martijn-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/4q5rqrf4b65s-martijn-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "5eaf85ef-efc6-4049-aed5-4a16920b062a",
+            "full_name": "Martijn Muijs",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/6b2u3ltw2pyo-martijn-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "21:00:00",
+        "until": "23:59:00",
+        "show": {
+          "id": "0e8d85b3-6f10-434a-8014-64da0139cd1d",
+          "name": "Frank tot Laat",
+          "body": "Sluit je dag af met Frank van der Lende. Met live muziek, goede gesprekken en de fijnste muziek voor de late avond. &nbsp;",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/6l8fxvqu2cxa-frank-vd-lende-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/5wgmhpyjmium-frank-vd-lende-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/5wgmhpyjmium-frank-vd-lende-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "afaf1a73-9798-4e11-8582-34ec17a86348",
+            "full_name": "Frank van der Lende",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/6l8fxvqu2cxa-frank-vd-lende-thumbnail.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "tuesday",
+    "shows": [
+      {
+        "from": "00:00:00",
+        "until": "04:00:00",
+        "show": {
+          "id": "0f619694-4d23-4b13-ac60-85036870288e",
+          "name": "Oh Wat Een Nacht",
+          "body": "Je hoort de beste muziek van Radio Veronica non-stop in Oh Wat Een Nacht!",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/70h1m4slkpo0-radio-veronica-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_1920/70h1m4slkpo0-radio-veronica-thumbnail.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/6wfi6r4vop2o-radio-veronica-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "f4f11c7a-b2fb-41cd-817e-66ead55a8c5f",
+            "full_name": "Radio Veronica",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/hukdvibnwkw-veronica-program-headers-default.png"
+          }
+        ]
+      },
+      {
+        "from": "04:00:00",
+        "until": "06:00:00",
+        "show": {
+          "id": "d849de6b-a548-4969-a5f0-268682281bce",
+          "name": "The Warming Up",
+          "body": "Tussen 04:00 en 06:00 uur word je wakker met Lisanne Bronkhorst in The Warming Up.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/wwkx27hhlgw-lisanne-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/6cgf8fwgzjk-lisanne-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/6cgf8fwgzjk-lisanne-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "d1b8fb4d-1508-4296-a5c9-f0881863c6f0",
+            "full_name": "Lisanne Bronkhorst",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/wwkx27hhlgw-lisanne-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "06:00:00",
+        "until": "09:00:00",
+        "show": {
+          "id": "24420922-f432-4481-b3f4-748fd3e54c1a",
+          "name": "Ekdom in de Morgen",
+          "body": "Opstaan met Ekdom in de Morgen betekent opstaan met een lach! Elke werkdag sleurt Gerard Ekdom je mee door de ochtend: van 06:00 tot 09:00 uur.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4igum86oqbt4-gerard-ekdom-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/402nrtwbwxu0-gerard-ekdom-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/402nrtwbwxu0-gerard-ekdom-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "full_name": "Gerard Ekdom"
+          }
+        ]
+      },
+      {
+        "from": "09:00:00",
+        "until": "12:00:00",
+        "show": {
+          "id": "efc91ed2-bf0b-4ecd-ba71-cab91edb2ad8",
+          "name": "Goud van Oud",
+          "body": "Marisa draait elke werkdag van 09:00 tot 12:00 uur de muziek waar jij van houdt in Goud van Oud!",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4nfdiqlfxa0g-marisa-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/umi1woampdc-marisa-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/umi1woampdc-marisa-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "0b3641d3-a2e6-4035-9454-f32739c2f3d2",
+            "full_name": "Marisa Heutink",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/4nfdiqlfxa0g-marisa-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "12:00:00",
+        "until": "14:00:00",
+        "show": {
+          "id": "19bf9f77-8846-41e9-9517-6f42998d71b7",
+          "name": "Sander Hoogendoorn",
+          "body": "De beste playlist tijdens de lunch.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/2sppxkop52b6-sander-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/1n05wimmtj3m-sander-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/1n05wimmtj3m-sander-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "6eb37c1c-d373-41e4-b333-31b6ac4d4bc8",
+            "full_name": "Sander Hoogendoorn",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/2sppxkop52b6-sander-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "14:00:00",
+        "until": "16:00:00",
+        "show": {
+          "id": "b1be8e21-be37-484d-b3fd-3598385e4329",
+          "name": "De Bonanza",
+          "body": "De Bonanza met Rob Stenders is elke werkdag van 14:00 tot 16:00 uur te horen op Radio Veronica. Jij bepaalt welke muziek er wordt gedraaid. Vraag jouw favoriete platen aan via de gratis Radio Veronica app.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/1swhck2qnppu-rob-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/1o5hm5t7hp0y-rob-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/1o5hm5t7hp0y-rob-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "3aca9a8f-baa6-432d-aa0d-c8375d0e53f4",
+            "full_name": "Rob Stenders",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/1swhck2qnppu-rob-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "16:00:00",
+        "until": "19:00:00",
+        "show": {
+          "id": "82bedac4-341a-40a5-86c1-64198946048c",
+          "name": "Wout & Frank",
+          "body": "De middagshow van Radio Veronica met Wouter van der Goes en Frank van 't Hof.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/riqu29liwj-wout-en-frank-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/6kp4gxdzek1e-wout-en-frank-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/6kp4gxdzek1e-wout-en-frank-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "full_name": "Frank van 't Hof"
+          },
+          {
+            "full_name": "Wouter van der Goes"
+          }
+        ]
+      },
+      {
+        "from": "19:00:00",
+        "until": "21:00:00",
+        "show": {
+          "id": "ceb9454a-89e7-48a6-8543-1b0137bbe470",
+          "name": "Martijn Muijs",
+          "body": "",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/6b2u3ltw2pyo-martijn-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/4q5rqrf4b65s-martijn-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/4q5rqrf4b65s-martijn-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "5eaf85ef-efc6-4049-aed5-4a16920b062a",
+            "full_name": "Martijn Muijs",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/6b2u3ltw2pyo-martijn-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "21:00:00",
+        "until": "23:59:00",
+        "show": {
+          "id": "0e8d85b3-6f10-434a-8014-64da0139cd1d",
+          "name": "Frank tot Laat",
+          "body": "Sluit je dag af met Frank van der Lende. Met live muziek, goede gesprekken en de fijnste muziek voor de late avond. &nbsp;",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/6l8fxvqu2cxa-frank-vd-lende-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/5wgmhpyjmium-frank-vd-lende-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/5wgmhpyjmium-frank-vd-lende-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "afaf1a73-9798-4e11-8582-34ec17a86348",
+            "full_name": "Frank van der Lende",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/6l8fxvqu2cxa-frank-vd-lende-thumbnail.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "wednesday",
+    "shows": [
+      {
+        "from": "00:00:00",
+        "until": "04:00:00",
+        "show": {
+          "id": "0f619694-4d23-4b13-ac60-85036870288e",
+          "name": "Oh Wat Een Nacht",
+          "body": "Je hoort de beste muziek van Radio Veronica non-stop in Oh Wat Een Nacht!",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/70h1m4slkpo0-radio-veronica-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_1920/70h1m4slkpo0-radio-veronica-thumbnail.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/6wfi6r4vop2o-radio-veronica-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "f4f11c7a-b2fb-41cd-817e-66ead55a8c5f",
+            "full_name": "Radio Veronica",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/hukdvibnwkw-veronica-program-headers-default.png"
+          }
+        ]
+      },
+      {
+        "from": "04:00:00",
+        "until": "06:00:00",
+        "show": {
+          "id": "d849de6b-a548-4969-a5f0-268682281bce",
+          "name": "The Warming Up",
+          "body": "Tussen 04:00 en 06:00 uur word je wakker met Lisanne Bronkhorst in The Warming Up.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/wwkx27hhlgw-lisanne-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/6cgf8fwgzjk-lisanne-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/6cgf8fwgzjk-lisanne-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "d1b8fb4d-1508-4296-a5c9-f0881863c6f0",
+            "full_name": "Lisanne Bronkhorst",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/wwkx27hhlgw-lisanne-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "06:00:00",
+        "until": "09:00:00",
+        "show": {
+          "id": "24420922-f432-4481-b3f4-748fd3e54c1a",
+          "name": "Ekdom in de Morgen",
+          "body": "Opstaan met Ekdom in de Morgen betekent opstaan met een lach! Elke werkdag sleurt Gerard Ekdom je mee door de ochtend: van 06:00 tot 09:00 uur.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4igum86oqbt4-gerard-ekdom-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/402nrtwbwxu0-gerard-ekdom-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/402nrtwbwxu0-gerard-ekdom-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "full_name": "Gerard Ekdom"
+          }
+        ]
+      },
+      {
+        "from": "09:00:00",
+        "until": "12:00:00",
+        "show": {
+          "id": "efc91ed2-bf0b-4ecd-ba71-cab91edb2ad8",
+          "name": "Goud van Oud",
+          "body": "Marisa draait elke werkdag van 09:00 tot 12:00 uur de muziek waar jij van houdt in Goud van Oud!",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4nfdiqlfxa0g-marisa-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/umi1woampdc-marisa-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/umi1woampdc-marisa-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "0b3641d3-a2e6-4035-9454-f32739c2f3d2",
+            "full_name": "Marisa Heutink",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/4nfdiqlfxa0g-marisa-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "12:00:00",
+        "until": "14:00:00",
+        "show": {
+          "id": "19bf9f77-8846-41e9-9517-6f42998d71b7",
+          "name": "Sander Hoogendoorn",
+          "body": "De beste playlist tijdens de lunch.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/2sppxkop52b6-sander-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/1n05wimmtj3m-sander-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/1n05wimmtj3m-sander-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "6eb37c1c-d373-41e4-b333-31b6ac4d4bc8",
+            "full_name": "Sander Hoogendoorn",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/2sppxkop52b6-sander-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "14:00:00",
+        "until": "16:00:00",
+        "show": {
+          "id": "b1be8e21-be37-484d-b3fd-3598385e4329",
+          "name": "De Bonanza",
+          "body": "De Bonanza met Rob Stenders is elke werkdag van 14:00 tot 16:00 uur te horen op Radio Veronica. Jij bepaalt welke muziek er wordt gedraaid. Vraag jouw favoriete platen aan via de gratis Radio Veronica app.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/1swhck2qnppu-rob-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/1o5hm5t7hp0y-rob-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/1o5hm5t7hp0y-rob-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "3aca9a8f-baa6-432d-aa0d-c8375d0e53f4",
+            "full_name": "Rob Stenders",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/1swhck2qnppu-rob-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "16:00:00",
+        "until": "19:00:00",
+        "show": {
+          "id": "82bedac4-341a-40a5-86c1-64198946048c",
+          "name": "Wout & Frank",
+          "body": "De middagshow van Radio Veronica met Wouter van der Goes en Frank van 't Hof.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/riqu29liwj-wout-en-frank-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/6kp4gxdzek1e-wout-en-frank-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/6kp4gxdzek1e-wout-en-frank-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "full_name": "Frank van 't Hof"
+          },
+          {
+            "full_name": "Wouter van der Goes"
+          }
+        ]
+      },
+      {
+        "from": "19:00:00",
+        "until": "21:00:00",
+        "show": {
+          "id": "ceb9454a-89e7-48a6-8543-1b0137bbe470",
+          "name": "Martijn Muijs",
+          "body": "",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/6b2u3ltw2pyo-martijn-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/4q5rqrf4b65s-martijn-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/4q5rqrf4b65s-martijn-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "5eaf85ef-efc6-4049-aed5-4a16920b062a",
+            "full_name": "Martijn Muijs",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/6b2u3ltw2pyo-martijn-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "21:00:00",
+        "until": "23:59:00",
+        "show": {
+          "id": "0e8d85b3-6f10-434a-8014-64da0139cd1d",
+          "name": "Frank tot Laat",
+          "body": "Sluit je dag af met Frank van der Lende. Met live muziek, goede gesprekken en de fijnste muziek voor de late avond. &nbsp;",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/6l8fxvqu2cxa-frank-vd-lende-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/5wgmhpyjmium-frank-vd-lende-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/5wgmhpyjmium-frank-vd-lende-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "afaf1a73-9798-4e11-8582-34ec17a86348",
+            "full_name": "Frank van der Lende",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/6l8fxvqu2cxa-frank-vd-lende-thumbnail.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "thursday",
+    "shows": [
+      {
+        "from": "00:00:00",
+        "until": "04:00:00",
+        "show": {
+          "id": "0f619694-4d23-4b13-ac60-85036870288e",
+          "name": "Oh Wat Een Nacht",
+          "body": "Je hoort de beste muziek van Radio Veronica non-stop in Oh Wat Een Nacht!",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/70h1m4slkpo0-radio-veronica-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_1920/70h1m4slkpo0-radio-veronica-thumbnail.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/6wfi6r4vop2o-radio-veronica-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "f4f11c7a-b2fb-41cd-817e-66ead55a8c5f",
+            "full_name": "Radio Veronica",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/hukdvibnwkw-veronica-program-headers-default.png"
+          }
+        ]
+      },
+      {
+        "from": "04:00:00",
+        "until": "06:00:00",
+        "show": {
+          "id": "d849de6b-a548-4969-a5f0-268682281bce",
+          "name": "The Warming Up",
+          "body": "Tussen 04:00 en 06:00 uur word je wakker met Lisanne Bronkhorst in The Warming Up.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/wwkx27hhlgw-lisanne-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/6cgf8fwgzjk-lisanne-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/6cgf8fwgzjk-lisanne-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "d1b8fb4d-1508-4296-a5c9-f0881863c6f0",
+            "full_name": "Lisanne Bronkhorst",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/wwkx27hhlgw-lisanne-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "06:00:00",
+        "until": "09:00:00",
+        "show": {
+          "id": "24420922-f432-4481-b3f4-748fd3e54c1a",
+          "name": "Ekdom in de Morgen",
+          "body": "Opstaan met Ekdom in de Morgen betekent opstaan met een lach! Elke werkdag sleurt Gerard Ekdom je mee door de ochtend: van 06:00 tot 09:00 uur.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4igum86oqbt4-gerard-ekdom-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/402nrtwbwxu0-gerard-ekdom-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/402nrtwbwxu0-gerard-ekdom-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "full_name": "Gerard Ekdom"
+          }
+        ]
+      },
+      {
+        "from": "09:00:00",
+        "until": "12:00:00",
+        "show": {
+          "id": "efc91ed2-bf0b-4ecd-ba71-cab91edb2ad8",
+          "name": "Goud van Oud",
+          "body": "Marisa draait elke werkdag van 09:00 tot 12:00 uur de muziek waar jij van houdt in Goud van Oud!",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4nfdiqlfxa0g-marisa-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/umi1woampdc-marisa-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/umi1woampdc-marisa-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "0b3641d3-a2e6-4035-9454-f32739c2f3d2",
+            "full_name": "Marisa Heutink",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/4nfdiqlfxa0g-marisa-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "12:00:00",
+        "until": "14:00:00",
+        "show": {
+          "id": "19bf9f77-8846-41e9-9517-6f42998d71b7",
+          "name": "Sander Hoogendoorn",
+          "body": "De beste playlist tijdens de lunch.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/2sppxkop52b6-sander-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/1n05wimmtj3m-sander-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/1n05wimmtj3m-sander-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "6eb37c1c-d373-41e4-b333-31b6ac4d4bc8",
+            "full_name": "Sander Hoogendoorn",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/2sppxkop52b6-sander-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "14:00:00",
+        "until": "16:00:00",
+        "show": {
+          "id": "b1be8e21-be37-484d-b3fd-3598385e4329",
+          "name": "De Bonanza",
+          "body": "De Bonanza met Rob Stenders is elke werkdag van 14:00 tot 16:00 uur te horen op Radio Veronica. Jij bepaalt welke muziek er wordt gedraaid. Vraag jouw favoriete platen aan via de gratis Radio Veronica app.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/1swhck2qnppu-rob-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/1o5hm5t7hp0y-rob-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/1o5hm5t7hp0y-rob-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "3aca9a8f-baa6-432d-aa0d-c8375d0e53f4",
+            "full_name": "Rob Stenders",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/1swhck2qnppu-rob-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "16:00:00",
+        "until": "19:00:00",
+        "show": {
+          "id": "82bedac4-341a-40a5-86c1-64198946048c",
+          "name": "Wout & Frank",
+          "body": "De middagshow van Radio Veronica met Wouter van der Goes en Frank van 't Hof.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/riqu29liwj-wout-en-frank-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/6kp4gxdzek1e-wout-en-frank-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/6kp4gxdzek1e-wout-en-frank-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "full_name": "Frank van 't Hof"
+          },
+          {
+            "full_name": "Wouter van der Goes"
+          }
+        ]
+      },
+      {
+        "from": "19:00:00",
+        "until": "21:00:00",
+        "show": {
+          "id": "ceb9454a-89e7-48a6-8543-1b0137bbe470",
+          "name": "Martijn Muijs",
+          "body": "",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/6b2u3ltw2pyo-martijn-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/4q5rqrf4b65s-martijn-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/4q5rqrf4b65s-martijn-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "5eaf85ef-efc6-4049-aed5-4a16920b062a",
+            "full_name": "Martijn Muijs",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/6b2u3ltw2pyo-martijn-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "21:00:00",
+        "until": "23:59:00",
+        "show": {
+          "id": "0e8d85b3-6f10-434a-8014-64da0139cd1d",
+          "name": "Frank tot Laat",
+          "body": "Sluit je dag af met Frank van der Lende. Met live muziek, goede gesprekken en de fijnste muziek voor de late avond. &nbsp;",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/6l8fxvqu2cxa-frank-vd-lende-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/5wgmhpyjmium-frank-vd-lende-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/5wgmhpyjmium-frank-vd-lende-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "afaf1a73-9798-4e11-8582-34ec17a86348",
+            "full_name": "Frank van der Lende",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/6l8fxvqu2cxa-frank-vd-lende-thumbnail.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "friday",
+    "shows": [
+      {
+        "from": "00:00:00",
+        "until": "04:00:00",
+        "show": {
+          "id": "0f619694-4d23-4b13-ac60-85036870288e",
+          "name": "Oh Wat Een Nacht",
+          "body": "Je hoort de beste muziek van Radio Veronica non-stop in Oh Wat Een Nacht!",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/70h1m4slkpo0-radio-veronica-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_1920/70h1m4slkpo0-radio-veronica-thumbnail.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/6wfi6r4vop2o-radio-veronica-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "f4f11c7a-b2fb-41cd-817e-66ead55a8c5f",
+            "full_name": "Radio Veronica",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/hukdvibnwkw-veronica-program-headers-default.png"
+          }
+        ]
+      },
+      {
+        "from": "04:00:00",
+        "until": "06:00:00",
+        "show": {
+          "id": "d849de6b-a548-4969-a5f0-268682281bce",
+          "name": "The Warming Up",
+          "body": "Tussen 04:00 en 06:00 uur word je wakker met Lisanne Bronkhorst in The Warming Up.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/wwkx27hhlgw-lisanne-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/6cgf8fwgzjk-lisanne-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/6cgf8fwgzjk-lisanne-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "d1b8fb4d-1508-4296-a5c9-f0881863c6f0",
+            "full_name": "Lisanne Bronkhorst",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/wwkx27hhlgw-lisanne-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "06:00:00",
+        "until": "09:00:00",
+        "show": {
+          "id": "24420922-f432-4481-b3f4-748fd3e54c1a",
+          "name": "Ekdom in de Morgen",
+          "body": "Opstaan met Ekdom in de Morgen betekent opstaan met een lach! Elke werkdag sleurt Gerard Ekdom je mee door de ochtend: van 06:00 tot 09:00 uur.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4igum86oqbt4-gerard-ekdom-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/402nrtwbwxu0-gerard-ekdom-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/402nrtwbwxu0-gerard-ekdom-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "full_name": "Gerard Ekdom"
+          }
+        ]
+      },
+      {
+        "from": "09:00:00",
+        "until": "12:00:00",
+        "show": {
+          "id": "efc91ed2-bf0b-4ecd-ba71-cab91edb2ad8",
+          "name": "Goud van Oud",
+          "body": "Marisa draait elke werkdag van 09:00 tot 12:00 uur de muziek waar jij van houdt in Goud van Oud!",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4nfdiqlfxa0g-marisa-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/umi1woampdc-marisa-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/umi1woampdc-marisa-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "0b3641d3-a2e6-4035-9454-f32739c2f3d2",
+            "full_name": "Marisa Heutink",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/4nfdiqlfxa0g-marisa-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "12:00:00",
+        "until": "14:00:00",
+        "show": {
+          "id": "19bf9f77-8846-41e9-9517-6f42998d71b7",
+          "name": "Sander Hoogendoorn",
+          "body": "De beste playlist tijdens de lunch.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/2sppxkop52b6-sander-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/1n05wimmtj3m-sander-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/1n05wimmtj3m-sander-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "6eb37c1c-d373-41e4-b333-31b6ac4d4bc8",
+            "full_name": "Sander Hoogendoorn",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/2sppxkop52b6-sander-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "14:00:00",
+        "until": "16:00:00",
+        "show": {
+          "id": "5626c79f-4841-4b13-92b0-e94a8a1ec3eb",
+          "name": "Stenders & Ekdom",
+          "body": "Je hoort Stenders &amp; Ekdom elke vrijdag van 14:00 tot 16:00 uur.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/3bujz27rryob-stenders-ekdom-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/26yq39m16pfg-stenders-ekdom-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/26yq39m16pfg-stenders-ekdom-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "3aca9a8f-baa6-432d-aa0d-c8375d0e53f4",
+            "full_name": "Rob Stenders",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/1swhck2qnppu-rob-thumbnail.jpg"
+          },
+          {
+            "full_name": "Gerard Ekdom"
+          }
+        ]
+      },
+      {
+        "from": "16:00:00",
+        "until": "19:00:00",
+        "show": {
+          "id": "82bedac4-341a-40a5-86c1-64198946048c",
+          "name": "Wout & Frank",
+          "body": "De middagshow van Radio Veronica met Wouter van der Goes en Frank van 't Hof.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/riqu29liwj-wout-en-frank-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/6kp4gxdzek1e-wout-en-frank-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/6kp4gxdzek1e-wout-en-frank-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "full_name": "Frank van 't Hof"
+          },
+          {
+            "full_name": "Wouter van der Goes"
+          }
+        ]
+      },
+      {
+        "from": "19:00:00",
+        "until": "22:00:00",
+        "show": {
+          "id": "cfdfe995-203f-4636-b55f-a1e9458c85f6",
+          "name": "PUP 40",
+          "body": "Je hoort de PUP 40 met Rob Stenders elke vrijdag van 19:00 tot 22:00 uur.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/1swhck2qnppu-rob-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/1o5hm5t7hp0y-rob-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/1o5hm5t7hp0y-rob-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "3aca9a8f-baa6-432d-aa0d-c8375d0e53f4",
+            "full_name": "Rob Stenders",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/1swhck2qnppu-rob-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "22:00:00",
+        "until": "23:59:00",
+        "show": {
+          "id": "1f9915bc-8e78-4feb-8b88-ffa95934585a",
+          "name": "Jannes Drop",
+          "body": "",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/6ed7wbs3exgu-jannes-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/59dgxoi0vo4u-jannes-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/59dgxoi0vo4u-jannes-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "f0dc849b-5b7a-4726-ac79-4bd6db2ab103",
+            "full_name": "Jannes Drop",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/6ed7wbs3exgu-jannes-thumbnail.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "sunday",
+    "shows": [
+      {
+        "from": "00:00:00",
+        "until": "07:00:00",
+        "show": {
+          "id": "0f619694-4d23-4b13-ac60-85036870288e",
+          "name": "Oh Wat Een Nacht",
+          "body": "Je hoort de beste muziek van Radio Veronica non-stop in Oh Wat Een Nacht!",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/70h1m4slkpo0-radio-veronica-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_1920/70h1m4slkpo0-radio-veronica-thumbnail.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/6wfi6r4vop2o-radio-veronica-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "f4f11c7a-b2fb-41cd-817e-66ead55a8c5f",
+            "full_name": "Radio Veronica",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/hukdvibnwkw-veronica-program-headers-default.png"
+          }
+        ]
+      },
+      {
+        "from": "07:00:00",
+        "until": "10:00:00",
+        "show": {
+          "id": "04cc724f-f4a6-4394-bb01-6cbe0aef962f",
+          "name": "Ferry Oomen",
+          "body": "Je hoort Ferry Oomen elke zaterdag en zondag van 07:00 tot 10:00 uur.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/19qjlugntxf9-ferry-oomen-thumbnail.png",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/5w779i8c0nz0-ferry-oomen-header.png",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/5w779i8c0nz0-ferry-oomen-header.png",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "e0f2a718-f0c4-44c8-acb0-9e0065081ad3",
+            "full_name": "Ferry Oomen",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/19qjlugntxf9-ferry-oomen-thumbnail.png"
+          }
+        ]
+      },
+      {
+        "from": "10:00:00",
+        "until": "13:00:00",
+        "show": {
+          "id": "5a02e26d-ecf1-4733-b35a-2343e422a22b",
+          "name": "Verschuurens Goud van Oud",
+          "body": "Je hoort Maurice Verschuuren elke zaterdag en zondag van 10:00 tot 13:00 uur met Verschuurens Goud van Oud.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/71y83xxvvyls-maurice-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/68v8wyw4y8kw-maurice-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/68v8wyw4y8kw-maurice-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "cdae9219-a7d8-480f-9ac2-a6f54e7508ad",
+            "full_name": "Maurice Verschuuren",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/71y83xxvvyls-maurice-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "13:00:00",
+        "until": "16:00:00",
+        "show": {
+          "id": "74637e3b-4a9c-4d44-958a-c1020f4975ec",
+          "name": "WeekendRick",
+          "body": "Je hoort Rick van Velthuysen elke zaterdag en zondag van 13:00 tot 16:00 uur met WeekendRick.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/47u7wamrxsz5-rick-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/3o9p6n0c0hdd-rick-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/3o9p6n0c0hdd-rick-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "569f7620-ae1d-458f-baa3-33a1bae1e16e",
+            "full_name": "Rick van Velthuysen",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/47u7wamrxsz5-rick-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "16:00:00",
+        "until": "19:00:00",
+        "show": {
+          "id": "fd3fd71b-481b-4b46-99a0-b58cd74bad2b",
+          "name": "Niek van der Bruggen",
+          "body": "Je hoort Niek van der Bruggen elke zaterdag en zondag van 16:00 tot 19:00 uur.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/75fqwcaka50w-niek-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/74aptix5178w-niek-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/74aptix5178w-niek-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "id": "73b23b37-7e42-4da4-9bf5-bb4f5edc7c4e",
+            "full_name": "Niek van der Bruggen",
+            "cover": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/75fqwcaka50w-niek-thumbnail.jpg"
+          }
+        ]
+      },
+      {
+        "from": "19:00:00",
+        "until": "21:00:00",
+        "show": {
+          "id": "d3cc78df-d9af-4d74-88f4-f7f725cad7b8",
+          "name": "De Platenzaak",
+          "body": "De leukste platenwinkel van Nederland. Sluit samen met Wout je weekend af met de tijdloze vinyl sound. &nbsp;&nbsp;",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/o9ujh5cwi5v-wouter-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/6xkfd76ey1v6-wouter-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/6xkfd76ey1v6-wouter-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "full_name": "Wouter van der Goes"
+          }
+        ]
+      },
+      {
+        "from": "21:00:00",
+        "until": "23:59:00",
+        "show": {
+          "id": "8a362b22-329a-4304-8ab3-de4adf7d75b8",
+          "name": "Thijs Meeuwsen",
+          "body": "Het gevoel van een oneindig lange bar waar iedereen kan aanschuiven met een onbeperkt arrangement aan sterke verhalen en heerlijke muzikale versnaperingen.&nbsp;Je hoort Thijs Meeuwsen elke zaterdag en zondag van 21:00 tot 00:00 uur.",
+          "thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/3zk9mejhzi7m-thijs-thumbnail.jpg",
+          "headerMobile": "https://cmde4gpbhib.b-cdn.net/w_2400/3covdza9oliq-thijs-header.jpg",
+          "headerDesktop": "https://cmde4gpbhib.b-cdn.net/w_2400/3covdza9oliq-thijs-header.jpg",
+          "videoStream": true
+        },
+        "users": [
+          {
+            "full_name": "Thijs Meeuwsen"
+          }
+        ]
+      }
+    ]
+  }
+]
