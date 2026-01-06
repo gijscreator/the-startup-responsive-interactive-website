@@ -46,7 +46,7 @@ p, a {
 
 /* veronica styling */
 
-button.veronica {
+button,a.veronica {
     all: unset;
     cursor: pointer;
     border-radius: var(--border-radius);
@@ -58,7 +58,7 @@ button.veronica {
 
 /* veronica slam */
 
- button.slam {
+ button,a.slam {
     all: unset;
     cursor: pointer;
     border-radius: var(--border-radius);
@@ -68,7 +68,7 @@ button.veronica {
     padding: 1rem;
 }
 
- button.honderdnl {
+ button,a.honderdnl {
     all: unset;
     cursor: pointer;
     border-radius: var(--border-radius);
