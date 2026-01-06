@@ -1,5 +1,5 @@
-const overlay = document.querySelector('.overlay')
-const details = document.querySelector('.onscreen')
+const overlay = document.querySelector('.je')
+const details = document.querySelector('.mij')
 const closeBtn = document.querySelector('.closebtn')
 const stationCard = document.querySelector('.veronica')
 

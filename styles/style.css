@@ -273,6 +273,7 @@ main {
              border-radius: 1rem;
              width: 90vw;
              height: auto;
+             opacity: .7;
         }
 
         a {
