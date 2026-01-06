@@ -4,6 +4,7 @@
     --veronica-blauw: #0091FF;
     --honderdnl-black: #1E1E1E;
     --slam-pink: #FF006B;
+    --border-radius: 1rem;
 }
 
 * {
@@ -92,6 +93,7 @@ main {
     }
 
     section:nth-of-type(2) {
+        margin-left: 1rem;
         margin-top: 1rem;
 
         article {
@@ -109,12 +111,12 @@ main {
                 flex-shrink: 0;
 
                 img {
-                    width: 35vw;
+                    width: 40vw;
                     min-width: 100px;
                     max-width: 200px;
                     height: auto;
                     padding: 1rem;
-                    border-radius: 1rem;
+                    border-radius: var(--border-radius);
                 }
             }
 
@@ -134,16 +136,71 @@ main {
     }
 
     section:nth-of-type(2) {
+        overflow-x: scroll;
         
         article {
+            display: flex;
+            gap: 2vw;
+            width: max-content;
 
             figure {
-                img {
-                    width: 50vw;
+                background-color: var(--honderdnl-black);
+                color:white;
+                margin-top: -.2rem;
+                width: 38.6vw;
+                border-radius: var(--border-radius);
+                
+
+                &.veronica {
+                    background-color: var(--veronica-blauw);
+                    color:white;
                 }
 
-                figcaption {}
+                &.honderdnl {
+                    background-color: var(--honderdnl-black);
+                    color: white;
+                }
+
+                &.slam {
+                    background-color: var(--slam-pink);
+                    color: white;
+                }
+
+                img {
+                    width: 38.6vw;
+                    min-width: 100px;
+                    max-width: 400px; 
+                    height: 10vh;
+                    min-height: 1rem;
+                    max-height: 10rem;
+                    object-fit:cover; 
+                    border-radius: var(--border-radius) var(--border-radius) 0px  0px;
+                    
+                }
+
+                figcaption {
+                    padding: .5rem;
+                    font-size: 1rem;
+                    font-weight: 900;
+
+                    h3 {
+                        margin-bottom: .3rem;
+                    }
+
+                    p:nth-of-type(1) {
+                        margin-bottom: .3rem;
+                    }
+                }
             }
+        }
+
+        article:nth-of-type(2) > a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40vw;
+            min-width: 100px;
+            max-width: 240px;
         }
     }
 }
@@ -154,99 +211,6 @@ footer {
     padding: 2rem;
 }
 
-
-
-
-
-.schedule-scroll {
-    margin-top: 1rem;
-
-    /* ONE scroll container */
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    /* smooth native scrolling */
-    scroll-behavior: smooth;
-
-    /* optional snapping */
-    scroll-snap-type: x mandatory;
-}
-
-/* both rows scroll together */
-.schedule-scroll > article {
-    display: flex;
-    gap: 2vw;
-
-    /* critical: makes content wider than container */
-    width: max-content;
-}
-
-/* -------------------------------
-   STATIONS (logos row)
-   ------------------------------- */
-
-.stations a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    /* SAME WIDTH AS CARDS */
-    width: 35vw;
-    min-width: 200px;
-    max-width: 240px;
-
-    flex-shrink: 0;
-    scroll-snap-align: start;
-}
-
-.stations img {
-    width: 100%;
-    height: auto;
-    padding: 1rem;
-    border-radius: 1rem;
-}
-
-/* your brand colors preserved */
-.stations a:nth-of-type(1) img {
-    padding: .7rem 1.4rem;
-    background-color: var(--veronica-blauw);
-}
-
-.stations a:nth-of-type(2) img {
-    background-color: var(--honderdnl-black);
-}
-
-.stations a:nth-of-type(3) img {
-    background-color: var(--slam-pink);
-}
-
-/* -------------------------------
-   CARDS (shows row)
-   ------------------------------- */
-
-.cards figure {
-    width: 35vw;
-    min-width: 200px;
-    max-width: 240px;
-
-    flex-shrink: 0;
-    scroll-snap-align: start;
-}
-
-.cards img {
-    width: 100%;
-    height: auto;
-    border-radius: 0.75rem;
-}
-
-.cards figcaption {
-    padding: 0.5rem 0;
-}
-
-/* -------------------------------
-   CLEAN SCROLLBAR (optional)
-   ------------------------------- */
-
-.schedule-scroll::-webkit-scrollbar {
+*::-webkit-scrollbar {
     display: none;
 }
