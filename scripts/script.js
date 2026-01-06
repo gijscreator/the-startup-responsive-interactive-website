@@ -119,30 +119,8 @@ function convertTimeToNumber(timeString) {
     return parseInt(parts[0]) + (parseInt(parts[1]) / 60);
 }
 
-const viewport = document.getElementById('viewport');
 
-let touchStartLeft, touchStartTop;
 
-viewport.addEventListener('touchstart', (e) => {
-    touchStartLeft = viewport.scrollLeft;
-    touchStartTop = viewport.scrollTop;
-}, { passive: true });
-
-viewport.addEventListener('scroll', () => {
-    const dx = Math.abs(viewport.scrollLeft - touchStartLeft);
-    const dy = Math.abs(viewport.scrollTop - touchStartTop);
-
-    // If we have moved more than 5px
-    if (dx > 5 || dy > 5) {
-        if (dx > dy) {
-            // User is scrolling horizontally, lock vertical
-            viewport.scrollTop = touchStartTop;
-        } else {
-            // User is scrolling vertically, lock horizontal
-            viewport.scrollLeft = touchStartLeft;
-        }
-    }
-});
 
 startApp();
 
