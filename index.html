@@ -11,7 +11,7 @@
 
   <!----------- Header met alleen logo  ------------->
 
-    <header>
+    <header class="header">
       <img src="assets/logo-radiogids.png" alt="logo-radiogids">
     </header>
 
@@ -94,6 +94,10 @@
 
     <main>
 
+		<!----------- Overlay voor een popover dingetje ------------->
+
+		<div class="overlay"></div>
+
       <!----------- Date picker ------------->
 
       <section>
@@ -120,7 +124,6 @@
 		</article>
 
       </section>
-
 
 	  <!----------- Zender kaartjes met header van het logo ------------->
 
@@ -250,10 +253,29 @@
               <p>06:00 - 07:00</p>
             </figcaption>
           </figure>
-
         </article>
-
       </section>
+
+	  <section class="onscreen">
+
+		<header>
+			<p class="live">Live</p>
+			<button class="closebtn">
+				<p>Sluiten</p>
+				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1.925 19.25L0 17.325L7.7 9.625L0 1.925L1.925 0L9.625 7.7L17.325 0L19.25 1.925L11.55 9.625L19.25 17.325L17.325 19.25L9.625 11.55L1.925 19.25Z" fill="#1E1E1E"/>
+				</svg>
+			</button>
+		</header>
+
+		<article>
+			<video src="assets/videoplayback.mp4" type="video/mp4" autoplay controls></video>
+			<p>Kijk nu live</p>
+			<h2>De ochtendshow</h2>
+			<p>Elke vrijdag 14:00 - 16:00 uur</p>
+			<a href="">Alle programma's van</a>
+		</article>
+	  </section>
 
     </main>
 
