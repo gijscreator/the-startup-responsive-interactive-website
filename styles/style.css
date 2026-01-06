@@ -57,6 +57,7 @@ main {
     background: var(--bg-white);
     border-bottom: 2px solid var(--veronica-blue);
     z-index: 10;
+    overflow-x: scroll;
 
     article {
       display: flex;
@@ -64,12 +65,17 @@ main {
       justify-content: center;
       border-right: 1px solid var(--border-grey);
       padding: 8px;
+      max-width: 40vw;
 
       &:first-child {
         font-size: 0.7rem;
         font-weight: bold;
         text-transform: uppercase;
         color: #888;
+        position: sticky;
+        left: 0;
+        top: 0;
+        background-color: white;
       }
 
       &:nth-child(2) {
@@ -89,9 +95,11 @@ main {
       }
 
       img {
-        max-width: 100%;
+        width: 40vw;
+        max-width: 200px;
         max-height: 45px;
         object-fit: contain;
+        padding: .3rem;
       }
     }
   }
@@ -132,6 +140,10 @@ main {
     aside {
       background: var(--bg-white);
       border-right: 1px solid var(--border-grey);
+      position: sticky;
+      left: 0;
+      top: 0;
+      z-index: 100;
 
       div {
         height: var(--hour-height);
@@ -147,6 +159,7 @@ main {
     > section {
       position: relative;
       border-right: 1px solid var(--border-grey);
+      width: 40vw;
 
       &:last-child { 
         border-right: none; 
@@ -162,6 +175,7 @@ main {
         overflow: hidden;
         border: 1px solid rgba(255,255,255,0.1);
         background-color: var(--veronica-blue);
+        overflow-x: scroll;
 
         strong { 
           display: block; 
@@ -182,4 +196,8 @@ main {
 footer {
   height: env(safe-area-inset-bottom, 20px);
   background: var(--bg-white);
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
