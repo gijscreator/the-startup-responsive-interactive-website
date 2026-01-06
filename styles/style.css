@@ -31,11 +31,13 @@ body {
     grid-template-columns: 15vw 85vw;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
+    position: relative:
 }
 
 /* ----------------- Styling for Home page ----------------- */
 
 /* ----------------- aside area (20vw) ----------------- */
+
 aside {
     grid-column: 1;
     grid-row: 2;
@@ -49,13 +51,21 @@ aside {
 
         li {
             & + li {
-                margin-bottom: 10rem;
+                margin-bottom: 9.5rem;
             }
 
             &:first-child {
-                margin-bottom: 2rem; 
+                margin-bottom: .8rem; 
             }
         }
+    }
+    
+    p.current {
+        position: absolute;
+        --x: 50%;
+        --y: 0;
+        top: var(--x);
+        left: var(--y);
     }
 }
 
@@ -110,11 +120,16 @@ main {
         margin-top: 1rem;
         display: flex;
         overflow-x: scroll;
+        overflow-y: scroll;
+        height: 70vh;
 
         header {
             display: flex;
             gap: 2vw;
-            width: max-content;
+            position: sticky;
+            top: 0;
+            left: 0;
+            background-color: white;
         }
 
         a {
