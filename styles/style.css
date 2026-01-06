@@ -9,7 +9,6 @@
   --grey-branding: #1E1E1E;
   --hour-height: 120px;
   --sidebar-width: 60px;
-  --track-width: 40vw;
 }
 
 * { 
@@ -51,145 +50,137 @@ main {
   flex-direction: column;
   overflow: hidden;
 
-  /* The top row containing only the 'Tijd' label */
   > section:first-child {
     display: grid;
-    grid-template-columns: var(--sidebar-width) repeat(3, var(--track-width));
-    height: 40px;
+    grid-template-columns: var(--sidebar-width) 1fr 1fr 1fr;
+    height: 70px;
     background: var(--bg-white);
-    border-bottom: 1px solid var(--border-grey);
-    z-index: 110;
+    border-bottom: 2px solid var(--veronica-blue);
+    z-index: 10;
 
-    .corner-label {
+    article {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.7rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      color: #888;
       border-right: 1px solid var(--border-grey);
+      padding: 8px;
+
+      &:first-child {
+        font-size: 0.7rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #888;
+      }
+
+      &:nth-child(2) {
+        background-color: var(--veronica-blue);
+      }
+
+      &:nth-child(3) {
+        background-color: var(--grey-branding);
+      }
+
+      &:nth-child(4) {
+        background-color: var(--slam-pink);
+      }
+
+      &:last-child { 
+        border-right: none; 
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 45px;
+        object-fit: contain;
+      }
     }
   }
 
-  /* The main scrolling grid area */
-  .matrix-grid {
+  > section:last-child {
     flex: 1;
     display: grid;
-    grid-template-columns: var(--sidebar-width) repeat(3, var(--track-width));
-    overflow: auto;
+    grid-template-columns: var(--sidebar-width) 1fr 1fr 1fr;
+    overflow-y: auto;
     position: relative;
     background-color: var(--bg-grid);
     background-image: linear-gradient(var(--border-grey) 1px, transparent 1px);
     background-size: 100% var(--hour-height);
     -webkit-overflow-scrolling: touch;
-  }
-}
+    scroll-behavior: smooth;
 
-/* Sticky Station Logos inside the tracks */
-.station-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  border-bottom: 2px solid rgba(0,0,0,0.1);
+    > div:first-child {
+      position: absolute;
+      left: 0; 
+      right: 0;
+      height: 2px;
+      background: var(--now-red);
+      z-index: 100;
+      pointer-events: none;
 
-  img {
-    width: 100%;
-    max-height: 40px;
-    object-fit: contain;
-  }
-
-  /* Color coding per station */
-  &.veronica { background-color: var(--veronica-blue); }
-  &.honderdnl { background-color: var(--grey-branding); }
-  &.slam { background-color: var(--slam-pink); }
-}
-
-/* Time Sidebar */
-aside.time-column {
-  background: var(--bg-white);
-  border-right: 1px solid var(--border-grey);
-  position: sticky;
-  left: 0;
-  z-index: 60; /* Higher than station-header */
-
-  div {
-    height: var(--hour-height);
-    display: flex;
-    justify-content: center;
-    padding-top: 8px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: #999;
-    border-bottom: 1px solid transparent; 
-  }
-}
-
-/* Individual Station Columns */
-.station-track {
-  position: relative;
-  border-right: 1px solid var(--border-grey);
-
-  article {
-    position: absolute; /* Needed for JS placement */
-    left: 0;
-    right: 0;
-    border-radius: .5rem;
-    padding: .5rem;
-    margin: .3rem;
-    color: var(--bg-white);
-    font-size: 0.75rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-    background-color: var(--veronica-blue);
-    overflow: hidden;
-
-    strong { 
-      display: block; 
-      margin-bottom: 2px; 
-      line-height: 1.1; 
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0; 
+        top: -4px;
+        width: 10px; 
+        height: 10px;
+        background: var(--now-red);
+        border-radius: 50%;
+      }
     }
 
-    span { 
-      font-size: 0.65rem; 
-      opacity: 0.85; 
-      font-weight: bold; 
+    aside {
+      background: var(--bg-white);
+      border-right: 1px solid var(--border-grey);
+
+      div {
+        height: var(--hour-height);
+        display: flex;
+        justify-content: center;
+        padding-top: 8px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: #999;
+      }
     }
-  }
-}
 
-/* Current Time Indicator */
-#nowLine {
-  position: absolute;
-  left: 0; 
-  right: 0;
-  height: 2px;
-  background: var(--now-red);
-  z-index: 45; /* Below sticky header, above tracks */
-  pointer-events: none;
+    > section {
+      position: relative;
+      border-right: 1px solid var(--border-grey);
 
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0; 
-    top: -4px;
-    width: 10px; 
-    height: 10px;
-    background: var(--now-red);
-    border-radius: 50%;
+      &:last-child { 
+        border-right: none; 
+      }
+
+      article {
+        border-radius: .5rem;
+        padding: .5rem;
+        margin: .3rem;
+        width: 27vw;
+        color: var(--bg-white);
+        font-size: 0.75rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.1);
+        background-color: var(--veronica-blue);
+
+        strong { 
+          display: block; 
+          margin-bottom: 2px; 
+          line-height: 1.1; 
+        }
+
+        span { 
+          font-size: 0.65rem; 
+          opacity: 0.85; 
+          font-weight: bold; 
+        }
+      }
+    }
   }
 }
 
 footer {
   height: env(safe-area-inset-bottom, 20px);
   background: var(--bg-white);
-}
-
-/* Hide scrollbars but keep functionality */
-*::-webkit-scrollbar {
-  display: none;
 }

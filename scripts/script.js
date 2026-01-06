@@ -90,10 +90,14 @@ function drawProgramsOnGrid(trackId, shows, colorVar) {
         showBox.style.top = (start * pixelsPerHour + headerOffset) + 'px';
         showBox.style.height = ((end - start) * pixelsPerHour) + 'px';
         showBox.style.backgroundColor = `var(${colorVar})`;
-        showBox.style.position = 'absolute'; // Ensure they are layered correctly
+        showBox.style.position = 'absolute'; 
         
+        const presenterNames = item.users.map(u => u.full_name).join(' & ');
+        const isSameName = item.show.name.trim() === presenterNames.trim();
+
         showBox.innerHTML = `
             <strong>${item.show.name}</strong>
+            ${isSameName ? '' : `<strong>${presenterNames}</strong>`}
             <span>${item.from.substring(0,5)} - ${item.until.substring(0,5)}</span>
         `;
         
