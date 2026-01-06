@@ -119,8 +119,7 @@ main {
         margin-left: 1rem;
         margin-top: 1rem;
         display: flex;
-        overflow-x: scroll;
-        overflow-y: scroll;
+        overflow: auto;
         height: 70vh;
 
         header {
