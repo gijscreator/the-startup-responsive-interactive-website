@@ -8,7 +8,6 @@
     <script src="scripts/script.js" defer></script>
 </head>
 <body>
-
     <header>
         <section class="brand">
             <h1>Radiogids</h1>
@@ -16,44 +15,36 @@
         </section>
     </header>
 
-	<main>
-		<section>
-			<article class="corner-label">Tijd</article>
-			
-			<article class="veronica-logo">
-				<img src="assets/logo-veronica.png" alt="Veronica">
-			</article>
-			<article class="honderdnl-logo">
-				<img src="assets/logo-100nl.png" alt="100%NL">
-			</article>
-			<article class="slam-logo">
-				<img src="assets/logo-slam.png" alt="SLAM!">
-			</article>
-		</section>
+    <main>
+        <section class="header-row">
+            <article class="corner-label">Tijd</article>
+        </section>
 
-		<section class="matrix-grid" id="viewport">
-			<div id="nowLine" class="now-indicator"></div>
+        <section class="matrix-grid" id="viewport">
+            <div id="nowLine" class="now-indicator"></div>
 
-			<aside class="time-column" id="timeColumn">
-				<!-- hier komt de tijd teller -->
-			</aside>
+            <aside class="time-column" id="timeColumn">
+                </aside>
 
-			<section class="station-track" id="track-r1">
-				<!-- hier komt de uit de json gerenderde data in een lijstje te staan per radio station -->
-			</section>
+            <section class="station-track" id="track-r1">
+                <div class="station-header veronica">
+                    <img src="assets/logo-veronica.png" alt="Veronica">
+                </div>
+                </section>
 
-			<section class="station-track" id="track-r2">
-				<!-- hier komt de uit de json gerenderde data in een lijstje te staan per radio station -->
-			</section>
+            <section class="station-track" id="track-r2">
+                <div class="station-header honderdnl">
+                    <img src="assets/logo-100nl.png" alt="100%NL">
+                </div>
+            </section>
 
-			<section class="station-track" id="track-r3">
-				<!-- hier komt de uit de json gerenderde data in een lijstje te staan per radio station -->
-			</section>
-		</section>
-	</main>
-
-	<footer>
-
-	</footer>
+            <section class="station-track" id="track-r3">
+                <div class="station-header slam">
+                    <img src="assets/logo-slam.png" alt="SLAM!">
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer></footer>
 </body>
 </html>

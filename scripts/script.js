@@ -1,4 +1,5 @@
 const pixelsPerHour = 120;
+const headerOffset = 60; // Height of the sticky station-header
 
 async function startApp() {
     try {
@@ -23,7 +24,7 @@ async function startApp() {
         
         buildApp(veronicaToday.shows, slamToday.shows, honderdToday.shows); 
     } catch (error) {
-        console.error(error);
+        console.error("Error loading radio data:", error);
     }
 }
 
@@ -36,7 +37,7 @@ function buildApp(veronicaShows, slamShows, honderdShows) {
     // Set the red line position FIRST
     moveRedLineAndClock();
     
-    // Then scroll to it immediately after the next paint
+    // Then scroll to it immediately
     requestAnimationFrame(() => {
         requestAnimationFrame(() => {
             autoScrollToNow();
@@ -51,9 +52,17 @@ function createTimeLabels() {
     const timeColumn = document.getElementById('timeColumn');
     if (!timeColumn) return;
     
+    timeColumn.innerHTML = ''; // Clear existing
+
+    // 1. Create a spacer for the top logo area so 00:00 starts at the right height
+    const spacer = document.createElement('div');
+    spacer.style.height = `${headerOffset}px`;
+    timeColumn.appendChild(spacer);
+    
+    // 2. Create the hour labels
     for (let hour = 0; hour < 24; hour++) {
         const timeLabel = document.createElement('div');
-        timeLabel.innerText = `${hour}:00`;
+        timeLabel.innerText = `${hour.toString().padStart(2, '0')}:00`;
         timeLabel.style.height = `${pixelsPerHour}px`;
         timeColumn.appendChild(timeLabel);
     }
@@ -63,7 +72,10 @@ function drawProgramsOnGrid(trackId, shows, colorVar) {
     const track = document.getElementById(trackId);
     if (!track) return;
     
+    // We clear everything EXCEPT the sticky header (the first child)
+    const header = track.querySelector('.station-header');
     track.innerHTML = '';
+    if (header) track.appendChild(header);
     
     shows.forEach(item => {
         const showBox = document.createElement('article');
@@ -71,11 +83,14 @@ function drawProgramsOnGrid(trackId, shows, colorVar) {
         const start = convertTimeToNumber(item.from);
         let end = convertTimeToNumber(item.until);
         
-        if (item.until === "23:59:00" || item.until === "00:00:00") end = 24;
+        // Handle midnight wrap-around
+        if (item.until === "23:59:00" || item.until === "00:00:00" || end < start) end = 24;
         
-        showBox.style.top = (start * pixelsPerHour) + 'px';
+        // Add headerOffset to the top position
+        showBox.style.top = (start * pixelsPerHour + headerOffset) + 'px';
         showBox.style.height = ((end - start) * pixelsPerHour) + 'px';
         showBox.style.backgroundColor = `var(${colorVar})`;
+        showBox.style.position = 'absolute'; // Ensure they are layered correctly
         
         showBox.innerHTML = `
             <strong>${item.show.name}</strong>
@@ -94,7 +109,8 @@ function moveRedLineAndClock() {
     const timeAsDecimal = now.getHours() + (now.getMinutes() / 60) + (now.getSeconds() / 3600);
     const redLine = document.getElementById('nowLine');
     if (redLine) {
-        redLine.style.top = (timeAsDecimal * pixelsPerHour) + 'px';
+        // Add headerOffset to the red line top position
+        redLine.style.top = (timeAsDecimal * pixelsPerHour + headerOffset) + 'px';
     }
 }
 
@@ -105,9 +121,8 @@ function autoScrollToNow() {
     if (scrollingWindow && redLine) {
         const linePosition = parseFloat(redLine.style.top);
         
-        // Check if linePosition is valid (not NaN)
         if (!isNaN(linePosition) && linePosition > 0) {
-            // Center the line in the viewport
+            // Scroll so the red line is centered, but respect the sticky header
             const targetScroll = linePosition - (scrollingWindow.offsetHeight / 2);
             scrollingWindow.scrollTop = Math.max(0, targetScroll);
         }
@@ -115,12 +130,10 @@ function autoScrollToNow() {
 }
 
 function convertTimeToNumber(timeString) {
+    if (!timeString) return 0;
     const parts = timeString.split(':');
     return parseInt(parts[0]) + (parseInt(parts[1]) / 60);
 }
 
-
-
-
+// Kick off the app
 startApp();
-
