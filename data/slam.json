@@ -1,0 +1,1159 @@
+[
+  {
+    "day": "monday",
+    "shows": [
+      {
+        "from": "00:00:00",
+        "until": "06:00:00",
+        "show": {
+          "id": "1797f74e-90ab-4ce3-b7e9-f77502834cc1",
+          "name": "SLAM! Non-Stop",
+          "body": "Tijdens SLAM! non-stop hoor je de beste tracks van dit moment non-stop achter elkaar.<br><br> Of je nu op zoek bent naar de nieuwste dance hits, popnummers of de laatste releases, dit programma zorgt ervoor dat je avond compleet is met geweldige muziek.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/47ak0phuvszh-slam-default-header.png",
+          "videoStream": true
+        },
+        "users": []
+      },
+      {
+        "from": "06:00:00",
+        "until": "07:00:00",
+        "show": {
+          "id": "7d9b4710-2c86-42a5-b2da-4d81afc35040",
+          "name": "Marijn Oosterveen",
+          "body": "",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1qmzr25uu10i-marijn-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/1qmzr25uu10i-marijn-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/1odthwugltwi-marijn-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "702bae27-931b-4f07-affa-ffe2e001cba6",
+            "full_name": "Marijn Oosterveen",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/1qmzr25uu10i-marijn-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "07:00:00",
+        "until": "10:00:00",
+        "show": {
+          "id": "d37f011b-f222-4c82-b481-c5c0f96e6404",
+          "name": "Early Birds",
+          "body": "In Early Birds neemt Anoûl Hendriks je van maandag tot en met donderdag tussen 07.00 uur en 10.00 uur mee tijdens de start van je werkdag met een frisse kijk op de wereld, actuele onderwerpen en vooral veel muziek.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/6d1km5vavo9x-anoul-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/6d1km5vavo9x-anoul-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/745v2dui3qg5-anoul-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "d514e50a-820e-4fd9-89b3-e555e310bab6",
+            "full_name": "Anoûl Hendriks",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6d1km5vavo9x-anoul-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "10:00:00",
+        "until": "12:00:00",
+        "show": {
+          "id": "93214491-84c0-4128-a074-073e51eb407d",
+          "name": "Patrick Wolda",
+          "body": "Programma van SLAM.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4rb700jez5wk-patrick-1920x1080.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/7km2c20i1hur-patrick-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/2l96glg9bjxg-patrick-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "c78d62d3-3396-4996-bc97-65b6ed205112",
+            "full_name": "Patrick Wolda",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/7km2c20i1hur-patrick-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "12:00:00",
+        "until": "14:00:00",
+        "show": {
+          "id": "19f4d1d9-9f3a-450b-96a7-cc3ba33bd5bb",
+          "name": "Housuh in de Pauzuh",
+          "body": "Het is 12:00 uur. Even geen mail op kantoor of les op school. Gewoon even geen gedoe. <br><br><em>Get ready for the lunch</em> en wees voorbereid op een trip down memory lane, want de playlist gaat alle kanten op. Van clubknallers uit de 00's, naar hiphopbangers uit de 90's, dikke hits van nu, maar ook typische guilty pleasures. <br><br>Je hoort het allemaal voorbij komen in één mix!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1pthejd9aieq-slam-banner-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_2400/23vpshi8ywfm-slam-banner-2400x800.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/23vpshi8ywfm-slam-banner-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "0f598a87-91d2-406f-b4d0-8e832198ae93",
+            "full_name": "Raoul Schram",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/4n359no7lns4-raoul-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "14:00:00",
+        "until": "16:00:00",
+        "show": {
+          "id": "6bf9d5a1-ae80-42da-b384-835c9a152920",
+          "name": "Thomas van Empelen",
+          "body": "",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4vmy0hf6bi5h-thomas-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/4vmy0hf6bi5h-thomas-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/6koh2pennt7p-thomas-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "0f598a87-91d2-406f-b4d0-8e832198ae93",
+            "full_name": "Raoul Schram",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/4n359no7lns4-raoul-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "16:00:00",
+        "until": "20:00:00",
+        "show": {
+          "id": "6fca7387-009a-4349-9f42-3b92e5132ac8",
+          "name": "SLAM! Middagshow",
+          "body": "De SLAM! Middagshow staat voor gezellige chaos. Spannend, onvoorspelbaar, tikkie vreemd, maar wel lachen!<br><br>Jarno van der Wielen, Erik-Jan Rosendahl en Julia Maan houden je op de hoogte van het laatste nieuws en er komen verschillende toffe gasten langs!&nbsp;",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/5swrc7x511pf-middagshow-1920x1080.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/3905hc67ywfs-middagshow-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/21hir9fgz07q-middagshow-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "fdab70c6-4262-48cb-b606-d2aa740ef520",
+            "full_name": "Jarno van der Wielen",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6r4aq5ovk2fa-jarno-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "20:00:00",
+        "until": "23:59:00",
+        "show": {
+          "id": "1797f74e-90ab-4ce3-b7e9-f77502834cc1",
+          "name": "SLAM! Non-Stop",
+          "body": "Tijdens SLAM! non-stop hoor je de beste tracks van dit moment non-stop achter elkaar.<br><br> Of je nu op zoek bent naar de nieuwste dance hits, popnummers of de laatste releases, dit programma zorgt ervoor dat je avond compleet is met geweldige muziek.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/47ak0phuvszh-slam-default-header.png",
+          "videoStream": true
+        },
+        "users": []
+      }
+    ]
+  },
+  {
+    "day": "tuesday",
+    "shows": [
+      {
+        "from": "00:00:00",
+        "until": "06:00:00",
+        "show": {
+          "id": "1797f74e-90ab-4ce3-b7e9-f77502834cc1",
+          "name": "SLAM! Non-Stop",
+          "body": "Tijdens SLAM! non-stop hoor je de beste tracks van dit moment non-stop achter elkaar.<br><br> Of je nu op zoek bent naar de nieuwste dance hits, popnummers of de laatste releases, dit programma zorgt ervoor dat je avond compleet is met geweldige muziek.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/47ak0phuvszh-slam-default-header.png",
+          "videoStream": true
+        },
+        "users": []
+      },
+      {
+        "from": "06:00:00",
+        "until": "07:00:00",
+        "show": {
+          "id": "7d9b4710-2c86-42a5-b2da-4d81afc35040",
+          "name": "Marijn Oosterveen",
+          "body": "",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1qmzr25uu10i-marijn-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/1qmzr25uu10i-marijn-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/1odthwugltwi-marijn-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "702bae27-931b-4f07-affa-ffe2e001cba6",
+            "full_name": "Marijn Oosterveen",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/1qmzr25uu10i-marijn-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "07:00:00",
+        "until": "10:00:00",
+        "show": {
+          "id": "d37f011b-f222-4c82-b481-c5c0f96e6404",
+          "name": "Early Birds",
+          "body": "In Early Birds neemt Anoûl Hendriks je van maandag tot en met donderdag tussen 07.00 uur en 10.00 uur mee tijdens de start van je werkdag met een frisse kijk op de wereld, actuele onderwerpen en vooral veel muziek.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/6d1km5vavo9x-anoul-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/6d1km5vavo9x-anoul-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/745v2dui3qg5-anoul-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "d514e50a-820e-4fd9-89b3-e555e310bab6",
+            "full_name": "Anoûl Hendriks",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6d1km5vavo9x-anoul-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "10:00:00",
+        "until": "12:00:00",
+        "show": {
+          "id": "93214491-84c0-4128-a074-073e51eb407d",
+          "name": "Patrick Wolda",
+          "body": "Programma van SLAM.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4rb700jez5wk-patrick-1920x1080.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/7km2c20i1hur-patrick-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/2l96glg9bjxg-patrick-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "c78d62d3-3396-4996-bc97-65b6ed205112",
+            "full_name": "Patrick Wolda",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/7km2c20i1hur-patrick-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "12:00:00",
+        "until": "14:00:00",
+        "show": {
+          "id": "19f4d1d9-9f3a-450b-96a7-cc3ba33bd5bb",
+          "name": "Housuh in de Pauzuh",
+          "body": "Het is 12:00 uur. Even geen mail op kantoor of les op school. Gewoon even geen gedoe. <br><br><em>Get ready for the lunch</em> en wees voorbereid op een trip down memory lane, want de playlist gaat alle kanten op. Van clubknallers uit de 00's, naar hiphopbangers uit de 90's, dikke hits van nu, maar ook typische guilty pleasures. <br><br>Je hoort het allemaal voorbij komen in één mix!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1pthejd9aieq-slam-banner-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_2400/23vpshi8ywfm-slam-banner-2400x800.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/23vpshi8ywfm-slam-banner-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "0f598a87-91d2-406f-b4d0-8e832198ae93",
+            "full_name": "Raoul Schram",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/4n359no7lns4-raoul-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "14:00:00",
+        "until": "16:00:00",
+        "show": {
+          "id": "6bf9d5a1-ae80-42da-b384-835c9a152920",
+          "name": "Thomas van Empelen",
+          "body": "",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4vmy0hf6bi5h-thomas-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/4vmy0hf6bi5h-thomas-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/6koh2pennt7p-thomas-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "0f598a87-91d2-406f-b4d0-8e832198ae93",
+            "full_name": "Raoul Schram",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/4n359no7lns4-raoul-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "16:00:00",
+        "until": "20:00:00",
+        "show": {
+          "id": "6fca7387-009a-4349-9f42-3b92e5132ac8",
+          "name": "SLAM! Middagshow",
+          "body": "De SLAM! Middagshow staat voor gezellige chaos. Spannend, onvoorspelbaar, tikkie vreemd, maar wel lachen!<br><br>Jarno van der Wielen, Erik-Jan Rosendahl en Julia Maan houden je op de hoogte van het laatste nieuws en er komen verschillende toffe gasten langs!&nbsp;",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/5swrc7x511pf-middagshow-1920x1080.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/3905hc67ywfs-middagshow-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/21hir9fgz07q-middagshow-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "fdab70c6-4262-48cb-b606-d2aa740ef520",
+            "full_name": "Jarno van der Wielen",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6r4aq5ovk2fa-jarno-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "20:00:00",
+        "until": "23:59:00",
+        "show": {
+          "id": "1797f74e-90ab-4ce3-b7e9-f77502834cc1",
+          "name": "SLAM! Non-Stop",
+          "body": "Tijdens SLAM! non-stop hoor je de beste tracks van dit moment non-stop achter elkaar.<br><br> Of je nu op zoek bent naar de nieuwste dance hits, popnummers of de laatste releases, dit programma zorgt ervoor dat je avond compleet is met geweldige muziek.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/47ak0phuvszh-slam-default-header.png",
+          "videoStream": true
+        },
+        "users": []
+      }
+    ]
+  },
+  {
+    "day": "wednesday",
+    "shows": [
+      {
+        "from": "00:00:00",
+        "until": "06:00:00",
+        "show": {
+          "id": "1797f74e-90ab-4ce3-b7e9-f77502834cc1",
+          "name": "SLAM! Non-Stop",
+          "body": "Tijdens SLAM! non-stop hoor je de beste tracks van dit moment non-stop achter elkaar.<br><br> Of je nu op zoek bent naar de nieuwste dance hits, popnummers of de laatste releases, dit programma zorgt ervoor dat je avond compleet is met geweldige muziek.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/47ak0phuvszh-slam-default-header.png",
+          "videoStream": true
+        },
+        "users": []
+      },
+      {
+        "from": "06:00:00",
+        "until": "07:00:00",
+        "show": {
+          "id": "7d9b4710-2c86-42a5-b2da-4d81afc35040",
+          "name": "Marijn Oosterveen",
+          "body": "",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1qmzr25uu10i-marijn-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/1qmzr25uu10i-marijn-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/1odthwugltwi-marijn-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "702bae27-931b-4f07-affa-ffe2e001cba6",
+            "full_name": "Marijn Oosterveen",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/1qmzr25uu10i-marijn-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "07:00:00",
+        "until": "10:00:00",
+        "show": {
+          "id": "d37f011b-f222-4c82-b481-c5c0f96e6404",
+          "name": "Early Birds",
+          "body": "In Early Birds neemt Anoûl Hendriks je van maandag tot en met donderdag tussen 07.00 uur en 10.00 uur mee tijdens de start van je werkdag met een frisse kijk op de wereld, actuele onderwerpen en vooral veel muziek.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/6d1km5vavo9x-anoul-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/6d1km5vavo9x-anoul-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/745v2dui3qg5-anoul-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "d514e50a-820e-4fd9-89b3-e555e310bab6",
+            "full_name": "Anoûl Hendriks",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6d1km5vavo9x-anoul-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "10:00:00",
+        "until": "12:00:00",
+        "show": {
+          "id": "93214491-84c0-4128-a074-073e51eb407d",
+          "name": "Patrick Wolda",
+          "body": "Programma van SLAM.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4rb700jez5wk-patrick-1920x1080.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/7km2c20i1hur-patrick-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/2l96glg9bjxg-patrick-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "c78d62d3-3396-4996-bc97-65b6ed205112",
+            "full_name": "Patrick Wolda",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/7km2c20i1hur-patrick-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "12:00:00",
+        "until": "14:00:00",
+        "show": {
+          "id": "19f4d1d9-9f3a-450b-96a7-cc3ba33bd5bb",
+          "name": "Housuh in de Pauzuh",
+          "body": "Het is 12:00 uur. Even geen mail op kantoor of les op school. Gewoon even geen gedoe. <br><br><em>Get ready for the lunch</em> en wees voorbereid op een trip down memory lane, want de playlist gaat alle kanten op. Van clubknallers uit de 00's, naar hiphopbangers uit de 90's, dikke hits van nu, maar ook typische guilty pleasures. <br><br>Je hoort het allemaal voorbij komen in één mix!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1pthejd9aieq-slam-banner-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_2400/23vpshi8ywfm-slam-banner-2400x800.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/23vpshi8ywfm-slam-banner-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "0f598a87-91d2-406f-b4d0-8e832198ae93",
+            "full_name": "Raoul Schram",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/4n359no7lns4-raoul-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "14:00:00",
+        "until": "16:00:00",
+        "show": {
+          "id": "6bf9d5a1-ae80-42da-b384-835c9a152920",
+          "name": "Thomas van Empelen",
+          "body": "",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4vmy0hf6bi5h-thomas-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/4vmy0hf6bi5h-thomas-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/6koh2pennt7p-thomas-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "0f598a87-91d2-406f-b4d0-8e832198ae93",
+            "full_name": "Raoul Schram",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/4n359no7lns4-raoul-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "16:00:00",
+        "until": "20:00:00",
+        "show": {
+          "id": "6fca7387-009a-4349-9f42-3b92e5132ac8",
+          "name": "SLAM! Middagshow",
+          "body": "De SLAM! Middagshow staat voor gezellige chaos. Spannend, onvoorspelbaar, tikkie vreemd, maar wel lachen!<br><br>Jarno van der Wielen, Erik-Jan Rosendahl en Julia Maan houden je op de hoogte van het laatste nieuws en er komen verschillende toffe gasten langs!&nbsp;",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/5swrc7x511pf-middagshow-1920x1080.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/3905hc67ywfs-middagshow-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/21hir9fgz07q-middagshow-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "fdab70c6-4262-48cb-b606-d2aa740ef520",
+            "full_name": "Jarno van der Wielen",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6r4aq5ovk2fa-jarno-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "20:00:00",
+        "until": "23:59:00",
+        "show": {
+          "id": "1797f74e-90ab-4ce3-b7e9-f77502834cc1",
+          "name": "SLAM! Non-Stop",
+          "body": "Tijdens SLAM! non-stop hoor je de beste tracks van dit moment non-stop achter elkaar.<br><br> Of je nu op zoek bent naar de nieuwste dance hits, popnummers of de laatste releases, dit programma zorgt ervoor dat je avond compleet is met geweldige muziek.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/47ak0phuvszh-slam-default-header.png",
+          "videoStream": true
+        },
+        "users": []
+      }
+    ]
+  },
+  {
+    "day": "thursday",
+    "shows": [
+      {
+        "from": "00:00:00",
+        "until": "06:00:00",
+        "show": {
+          "id": "1797f74e-90ab-4ce3-b7e9-f77502834cc1",
+          "name": "SLAM! Non-Stop",
+          "body": "Tijdens SLAM! non-stop hoor je de beste tracks van dit moment non-stop achter elkaar.<br><br> Of je nu op zoek bent naar de nieuwste dance hits, popnummers of de laatste releases, dit programma zorgt ervoor dat je avond compleet is met geweldige muziek.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/47ak0phuvszh-slam-default-header.png",
+          "videoStream": true
+        },
+        "users": []
+      },
+      {
+        "from": "06:00:00",
+        "until": "07:00:00",
+        "show": {
+          "id": "7d9b4710-2c86-42a5-b2da-4d81afc35040",
+          "name": "Marijn Oosterveen",
+          "body": "",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1qmzr25uu10i-marijn-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/1qmzr25uu10i-marijn-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/1odthwugltwi-marijn-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "702bae27-931b-4f07-affa-ffe2e001cba6",
+            "full_name": "Marijn Oosterveen",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/1qmzr25uu10i-marijn-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "07:00:00",
+        "until": "10:00:00",
+        "show": {
+          "id": "d37f011b-f222-4c82-b481-c5c0f96e6404",
+          "name": "Early Birds",
+          "body": "In Early Birds neemt Anoûl Hendriks je van maandag tot en met donderdag tussen 07.00 uur en 10.00 uur mee tijdens de start van je werkdag met een frisse kijk op de wereld, actuele onderwerpen en vooral veel muziek.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/6d1km5vavo9x-anoul-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/6d1km5vavo9x-anoul-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/745v2dui3qg5-anoul-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "d514e50a-820e-4fd9-89b3-e555e310bab6",
+            "full_name": "Anoûl Hendriks",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6d1km5vavo9x-anoul-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "10:00:00",
+        "until": "12:00:00",
+        "show": {
+          "id": "93214491-84c0-4128-a074-073e51eb407d",
+          "name": "Patrick Wolda",
+          "body": "Programma van SLAM.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4rb700jez5wk-patrick-1920x1080.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/7km2c20i1hur-patrick-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/2l96glg9bjxg-patrick-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "c78d62d3-3396-4996-bc97-65b6ed205112",
+            "full_name": "Patrick Wolda",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/7km2c20i1hur-patrick-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "12:00:00",
+        "until": "14:00:00",
+        "show": {
+          "id": "19f4d1d9-9f3a-450b-96a7-cc3ba33bd5bb",
+          "name": "Housuh in de Pauzuh",
+          "body": "Het is 12:00 uur. Even geen mail op kantoor of les op school. Gewoon even geen gedoe. <br><br><em>Get ready for the lunch</em> en wees voorbereid op een trip down memory lane, want de playlist gaat alle kanten op. Van clubknallers uit de 00's, naar hiphopbangers uit de 90's, dikke hits van nu, maar ook typische guilty pleasures. <br><br>Je hoort het allemaal voorbij komen in één mix!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1pthejd9aieq-slam-banner-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_2400/23vpshi8ywfm-slam-banner-2400x800.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/23vpshi8ywfm-slam-banner-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "0f598a87-91d2-406f-b4d0-8e832198ae93",
+            "full_name": "Raoul Schram",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/4n359no7lns4-raoul-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "14:00:00",
+        "until": "16:00:00",
+        "show": {
+          "id": "6bf9d5a1-ae80-42da-b384-835c9a152920",
+          "name": "Thomas van Empelen",
+          "body": "",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4vmy0hf6bi5h-thomas-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/4vmy0hf6bi5h-thomas-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/6koh2pennt7p-thomas-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "0f598a87-91d2-406f-b4d0-8e832198ae93",
+            "full_name": "Raoul Schram",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/4n359no7lns4-raoul-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "16:00:00",
+        "until": "20:00:00",
+        "show": {
+          "id": "6fca7387-009a-4349-9f42-3b92e5132ac8",
+          "name": "SLAM! Middagshow",
+          "body": "De SLAM! Middagshow staat voor gezellige chaos. Spannend, onvoorspelbaar, tikkie vreemd, maar wel lachen!<br><br>Jarno van der Wielen, Erik-Jan Rosendahl en Julia Maan houden je op de hoogte van het laatste nieuws en er komen verschillende toffe gasten langs!&nbsp;",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/5swrc7x511pf-middagshow-1920x1080.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/3905hc67ywfs-middagshow-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/21hir9fgz07q-middagshow-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "fdab70c6-4262-48cb-b606-d2aa740ef520",
+            "full_name": "Jarno van der Wielen",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6r4aq5ovk2fa-jarno-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "20:00:00",
+        "until": "23:59:00",
+        "show": {
+          "id": "1797f74e-90ab-4ce3-b7e9-f77502834cc1",
+          "name": "SLAM! Non-Stop",
+          "body": "Tijdens SLAM! non-stop hoor je de beste tracks van dit moment non-stop achter elkaar.<br><br> Of je nu op zoek bent naar de nieuwste dance hits, popnummers of de laatste releases, dit programma zorgt ervoor dat je avond compleet is met geweldige muziek.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/47ak0phuvszh-slam-default-header.png",
+          "videoStream": true
+        },
+        "users": []
+      }
+    ]
+  },
+  {
+    "day": "friday",
+    "shows": [
+      {
+        "from": "00:00:00",
+        "until": "06:00:00",
+        "show": {
+          "id": "1797f74e-90ab-4ce3-b7e9-f77502834cc1",
+          "name": "SLAM! Non-Stop",
+          "body": "Tijdens SLAM! non-stop hoor je de beste tracks van dit moment non-stop achter elkaar.<br><br> Of je nu op zoek bent naar de nieuwste dance hits, popnummers of de laatste releases, dit programma zorgt ervoor dat je avond compleet is met geweldige muziek.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/47ak0phuvszh-slam-default-header.png",
+          "videoStream": true
+        },
+        "users": []
+      },
+      {
+        "from": "06:00:00",
+        "until": "10:00:00",
+        "show": {
+          "id": "931c142a-6be1-4062-ae7b-a8400a318980",
+          "name": "SLAM! MixMarathon",
+          "body": "IT’S FRIDAY! Wij verzorgen de pré-party van je weekend met de SLAM! MixMarathon.<br><br>Kom helemaal in de stemming met iedere week de lekkerste DJ-sets, in de mix! Kortom, gooi die volumeknop omhoog en LET’S GO!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_375/2xhq6chv4ieg-scaleslam.jpg",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_1200/75ckrbj89uye-1683879340cafef31a28307efb160161079ed6b8eb.jpg"
+        },
+        "users": [
+          {
+            "id": "0f598a87-91d2-406f-b4d0-8e832198ae93",
+            "full_name": "Raoul Schram",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/4n359no7lns4-raoul-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "10:00:00",
+        "until": "14:00:00",
+        "show": {
+          "id": "931c142a-6be1-4062-ae7b-a8400a318980",
+          "name": "SLAM! MixMarathon",
+          "body": "IT’S FRIDAY! Wij verzorgen de pré-party van je weekend met de SLAM! MixMarathon.<br><br>Kom helemaal in de stemming met iedere week de lekkerste DJ-sets, in de mix! Kortom, gooi die volumeknop omhoog en LET’S GO!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_375/2xhq6chv4ieg-scaleslam.jpg",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_1200/75ckrbj89uye-1683879340cafef31a28307efb160161079ed6b8eb.jpg"
+        },
+        "users": [
+          {
+            "id": "fdab70c6-4262-48cb-b606-d2aa740ef520",
+            "full_name": "Jarno van der Wielen",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6r4aq5ovk2fa-jarno-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "14:00:00",
+        "until": "18:00:00",
+        "show": {
+          "id": "931c142a-6be1-4062-ae7b-a8400a318980",
+          "name": "SLAM! MixMarathon",
+          "body": "IT’S FRIDAY! Wij verzorgen de pré-party van je weekend met de SLAM! MixMarathon.<br><br>Kom helemaal in de stemming met iedere week de lekkerste DJ-sets, in de mix! Kortom, gooi die volumeknop omhoog en LET’S GO!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_375/2xhq6chv4ieg-scaleslam.jpg",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_1200/75ckrbj89uye-1683879340cafef31a28307efb160161079ed6b8eb.jpg"
+        },
+        "users": [
+          {
+            "id": "38121f10-89e9-42c3-a123-c5d3b5ec3a69",
+            "full_name": "Hielke Boersma",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/x6gga1ozezk-hielke-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "18:00:00",
+        "until": "19:00:00",
+        "show": {
+          "id": "931c142a-6be1-4062-ae7b-a8400a318980",
+          "name": "SLAM! MixMarathon",
+          "body": "IT’S FRIDAY! Wij verzorgen de pré-party van je weekend met de SLAM! MixMarathon.<br><br>Kom helemaal in de stemming met iedere week de lekkerste DJ-sets, in de mix! Kortom, gooi die volumeknop omhoog en LET’S GO!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_375/2xhq6chv4ieg-scaleslam.jpg",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_1200/75ckrbj89uye-1683879340cafef31a28307efb160161079ed6b8eb.jpg"
+        },
+        "users": [
+          {
+            "id": "1fbd73af-9b8f-42a7-a4c5-db6dc36a9077",
+            "full_name": "Oliver Heldens"
+          }
+        ]
+      },
+      {
+        "from": "19:00:00",
+        "until": "20:00:00",
+        "show": {
+          "id": "931c142a-6be1-4062-ae7b-a8400a318980",
+          "name": "SLAM! MixMarathon",
+          "body": "IT’S FRIDAY! Wij verzorgen de pré-party van je weekend met de SLAM! MixMarathon.<br><br>Kom helemaal in de stemming met iedere week de lekkerste DJ-sets, in de mix! Kortom, gooi die volumeknop omhoog en LET’S GO!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_375/2xhq6chv4ieg-scaleslam.jpg",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_1200/75ckrbj89uye-1683879340cafef31a28307efb160161079ed6b8eb.jpg"
+        },
+        "users": [
+          {
+            "id": "6fdd4710-1195-4fa7-9712-801a25bcb62b",
+            "full_name": "Nicky Romero"
+          }
+        ]
+      },
+      {
+        "from": "20:00:00",
+        "until": "21:00:00",
+        "show": {
+          "id": "931c142a-6be1-4062-ae7b-a8400a318980",
+          "name": "SLAM! MixMarathon",
+          "body": "IT’S FRIDAY! Wij verzorgen de pré-party van je weekend met de SLAM! MixMarathon.<br><br>Kom helemaal in de stemming met iedere week de lekkerste DJ-sets, in de mix! Kortom, gooi die volumeknop omhoog en LET’S GO!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_375/2xhq6chv4ieg-scaleslam.jpg",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_1200/75ckrbj89uye-1683879340cafef31a28307efb160161079ed6b8eb.jpg"
+        },
+        "users": [
+          {
+            "id": "b9662a98-56da-4682-b110-28264d670db4",
+            "full_name": "R3HAB"
+          }
+        ]
+      },
+      {
+        "from": "21:00:00",
+        "until": "22:00:00",
+        "show": {
+          "id": "931c142a-6be1-4062-ae7b-a8400a318980",
+          "name": "SLAM! MixMarathon",
+          "body": "IT’S FRIDAY! Wij verzorgen de pré-party van je weekend met de SLAM! MixMarathon.<br><br>Kom helemaal in de stemming met iedere week de lekkerste DJ-sets, in de mix! Kortom, gooi die volumeknop omhoog en LET’S GO!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_375/2xhq6chv4ieg-scaleslam.jpg",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_1200/75ckrbj89uye-1683879340cafef31a28307efb160161079ed6b8eb.jpg"
+        },
+        "users": [
+          {
+            "id": "378c7e4d-593d-47e0-9ee5-c7e5f2b2ebc4",
+            "full_name": "Alok"
+          }
+        ]
+      },
+      {
+        "from": "22:00:00",
+        "until": "23:00:00",
+        "show": {
+          "id": "931c142a-6be1-4062-ae7b-a8400a318980",
+          "name": "SLAM! MixMarathon",
+          "body": "IT’S FRIDAY! Wij verzorgen de pré-party van je weekend met de SLAM! MixMarathon.<br><br>Kom helemaal in de stemming met iedere week de lekkerste DJ-sets, in de mix! Kortom, gooi die volumeknop omhoog en LET’S GO!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_375/2xhq6chv4ieg-scaleslam.jpg",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_1200/75ckrbj89uye-1683879340cafef31a28307efb160161079ed6b8eb.jpg"
+        },
+        "users": []
+      },
+      {
+        "from": "23:00:00",
+        "until": "23:59:00",
+        "show": {
+          "id": "931c142a-6be1-4062-ae7b-a8400a318980",
+          "name": "SLAM! MixMarathon",
+          "body": "IT’S FRIDAY! Wij verzorgen de pré-party van je weekend met de SLAM! MixMarathon.<br><br>Kom helemaal in de stemming met iedere week de lekkerste DJ-sets, in de mix! Kortom, gooi die volumeknop omhoog en LET’S GO!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_375/2xhq6chv4ieg-scaleslam.jpg",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_1200/75ckrbj89uye-1683879340cafef31a28307efb160161079ed6b8eb.jpg"
+        },
+        "users": []
+      }
+    ]
+  },
+  {
+    "day": "saturday",
+    "shows": [
+      {
+        "from": "00:00:00",
+        "until": "01:00:00",
+        "show": {
+          "id": "931c142a-6be1-4062-ae7b-a8400a318980",
+          "name": "SLAM! MixMarathon",
+          "body": "IT’S FRIDAY! Wij verzorgen de pré-party van je weekend met de SLAM! MixMarathon.<br><br>Kom helemaal in de stemming met iedere week de lekkerste DJ-sets, in de mix! Kortom, gooi die volumeknop omhoog en LET’S GO!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_375/2xhq6chv4ieg-scaleslam.jpg",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_1200/75ckrbj89uye-1683879340cafef31a28307efb160161079ed6b8eb.jpg"
+        },
+        "users": [
+          {
+            "id": "154457eb-87ce-450e-8292-a905acc8d93c",
+            "full_name": "Mau P"
+          }
+        ]
+      },
+      {
+        "from": "01:00:00",
+        "until": "02:00:00",
+        "show": {
+          "id": "931c142a-6be1-4062-ae7b-a8400a318980",
+          "name": "SLAM! MixMarathon",
+          "body": "IT’S FRIDAY! Wij verzorgen de pré-party van je weekend met de SLAM! MixMarathon.<br><br>Kom helemaal in de stemming met iedere week de lekkerste DJ-sets, in de mix! Kortom, gooi die volumeknop omhoog en LET’S GO!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_375/2xhq6chv4ieg-scaleslam.jpg",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_1200/75ckrbj89uye-1683879340cafef31a28307efb160161079ed6b8eb.jpg"
+        },
+        "users": [
+          {
+            "id": "5b6ccee7-3566-4605-9d08-0c8f959894bf",
+            "full_name": "Mike Williams"
+          }
+        ]
+      },
+      {
+        "from": "02:00:00",
+        "until": "03:00:00",
+        "show": {
+          "id": "931c142a-6be1-4062-ae7b-a8400a318980",
+          "name": "SLAM! MixMarathon",
+          "body": "IT’S FRIDAY! Wij verzorgen de pré-party van je weekend met de SLAM! MixMarathon.<br><br>Kom helemaal in de stemming met iedere week de lekkerste DJ-sets, in de mix! Kortom, gooi die volumeknop omhoog en LET’S GO!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_375/2xhq6chv4ieg-scaleslam.jpg",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_1200/75ckrbj89uye-1683879340cafef31a28307efb160161079ed6b8eb.jpg"
+        },
+        "users": [
+          {
+            "id": "2b4f523d-c686-43c4-beb3-26c68df082b9",
+            "full_name": "Dimitri Vegas and Like Mike"
+          }
+        ]
+      },
+      {
+        "from": "03:00:00",
+        "until": "04:00:00",
+        "show": {
+          "id": "931c142a-6be1-4062-ae7b-a8400a318980",
+          "name": "SLAM! MixMarathon",
+          "body": "IT’S FRIDAY! Wij verzorgen de pré-party van je weekend met de SLAM! MixMarathon.<br><br>Kom helemaal in de stemming met iedere week de lekkerste DJ-sets, in de mix! Kortom, gooi die volumeknop omhoog en LET’S GO!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_375/2xhq6chv4ieg-scaleslam.jpg",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_1200/75ckrbj89uye-1683879340cafef31a28307efb160161079ed6b8eb.jpg"
+        },
+        "users": [
+          {
+            "id": "da4937b8-86cd-4bfb-bfba-a78dd820e845",
+            "full_name": "Solardo"
+          }
+        ]
+      },
+      {
+        "from": "04:00:00",
+        "until": "05:00:00",
+        "show": {
+          "id": "931c142a-6be1-4062-ae7b-a8400a318980",
+          "name": "SLAM! MixMarathon",
+          "body": "IT’S FRIDAY! Wij verzorgen de pré-party van je weekend met de SLAM! MixMarathon.<br><br>Kom helemaal in de stemming met iedere week de lekkerste DJ-sets, in de mix! Kortom, gooi die volumeknop omhoog en LET’S GO!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_375/2xhq6chv4ieg-scaleslam.jpg",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_1200/75ckrbj89uye-1683879340cafef31a28307efb160161079ed6b8eb.jpg"
+        },
+        "users": [
+          {
+            "id": "27778170-2a41-4b4d-9ff6-4b2f06bf5491",
+            "full_name": "Vintage Culture"
+          }
+        ]
+      },
+      {
+        "from": "05:00:00",
+        "until": "06:00:00",
+        "show": {
+          "id": "931c142a-6be1-4062-ae7b-a8400a318980",
+          "name": "SLAM! MixMarathon",
+          "body": "IT’S FRIDAY! Wij verzorgen de pré-party van je weekend met de SLAM! MixMarathon.<br><br>Kom helemaal in de stemming met iedere week de lekkerste DJ-sets, in de mix! Kortom, gooi die volumeknop omhoog en LET’S GO!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_375/2xhq6chv4ieg-scaleslam.jpg",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_1200/75ckrbj89uye-1683879340cafef31a28307efb160161079ed6b8eb.jpg"
+        },
+        "users": [
+          {
+            "id": "e2e62f45-942d-4625-be1a-e95cccc54d5e",
+            "full_name": "Claptone"
+          }
+        ]
+      },
+      {
+        "from": "06:00:00",
+        "until": "12:00:00",
+        "show": {
+          "id": "1797f74e-90ab-4ce3-b7e9-f77502834cc1",
+          "name": "SLAM! Non-Stop",
+          "body": "Tijdens SLAM! non-stop hoor je de beste tracks van dit moment non-stop achter elkaar.<br><br> Of je nu op zoek bent naar de nieuwste dance hits, popnummers of de laatste releases, dit programma zorgt ervoor dat je avond compleet is met geweldige muziek.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/47ak0phuvszh-slam-default-header.png",
+          "videoStream": true
+        },
+        "users": []
+      },
+      {
+        "from": "12:00:00",
+        "until": "14:00:00",
+        "show": {
+          "id": "19f4d1d9-9f3a-450b-96a7-cc3ba33bd5bb",
+          "name": "Housuh in de Pauzuh",
+          "body": "Het is 12:00 uur. Even geen mail op kantoor of les op school. Gewoon even geen gedoe. <br><br><em>Get ready for the lunch</em> en wees voorbereid op een trip down memory lane, want de playlist gaat alle kanten op. Van clubknallers uit de 00's, naar hiphopbangers uit de 90's, dikke hits van nu, maar ook typische guilty pleasures. <br><br>Je hoort het allemaal voorbij komen in één mix!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1pthejd9aieq-slam-banner-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_2400/23vpshi8ywfm-slam-banner-2400x800.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/23vpshi8ywfm-slam-banner-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "38121f10-89e9-42c3-a123-c5d3b5ec3a69",
+            "full_name": "Hielke Boersma",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/x6gga1ozezk-hielke-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "14:00:00",
+        "until": "17:00:00",
+        "show": {
+          "id": "125fa132-d34d-4a3f-8d7b-41d059ae6aa1",
+          "name": "SLAM!40",
+          "body": "Anoûl Hendriks brengt je de 40 beste (dance)tracks van dit moment.<br>Met antwoord op de vragen: wie zijn de nieuwe binnenkomers, welke tracks staan er al weken in de lijst en dé belangrijkste vraag… welke track staat er op nummer één?",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/47ak0phuvszh-slam-default-header.png"
+        },
+        "users": [
+          {
+            "id": "d514e50a-820e-4fd9-89b3-e555e310bab6",
+            "full_name": "Anoûl Hendriks",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6d1km5vavo9x-anoul-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "17:00:00",
+        "until": "20:00:00",
+        "show": {
+          "id": "4db45dc3-72eb-42d6-afec-c10b598f4ead",
+          "name": "SLAM! WKNDMX",
+          "body": "De SLAM! WKNDMX op SLAM! met Martin Pieters die de lekkerste beats aan elkaar draait, gepresenteerd door Hielke Boersma, belooft een avond vol energie en goede muziek.<br><br>Met de dikste hits kun je jezelf helemaal laten meeslepen in de muziek en je zaterdagavond onvergetelijk maken.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4wbce2wk9m4f-1563267989e9753129cf2891fcbeab795554d7d7b2.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1200/4wbce2wk9m4f-1563267989e9753129cf2891fcbeab795554d7d7b2.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_1200/4wbce2wk9m4f-1563267989e9753129cf2891fcbeab795554d7d7b2.png"
+        },
+        "users": [
+          {
+            "id": "38121f10-89e9-42c3-a123-c5d3b5ec3a69",
+            "full_name": "Hielke Boersma",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/x6gga1ozezk-hielke-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "20:00:00",
+        "until": "23:59:00",
+        "show": {
+          "id": "aee10d81-ab2b-4ac0-9566-7a131642ef66",
+          "name": "The Boom Room",
+          "body": "The Boom Room is vier uur lang Deephouse, Techno, Techhouse op de zaterdagavond van SLAM!.<br><br>Gijs Alkemade ontvangt elke zaterdagavond de grootste techno artiesten uit binnen en buitenland. Van Reinier Zonneveld tot Sasha en van Lee Burridge tot Charlotte de Witte. In The Boom Room ontdek je de muziek van dit moment!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/xo3nvhcwxpc-gijs-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/xo3nvhcwxpc-gijs-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/17dte0175eao-gijs-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "6168dca1-b175-4a10-98c5-ac1b3cdadc5a",
+            "full_name": "Gijs Alkemade",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/xo3nvhcwxpc-gijs-1207x765.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "sunday",
+    "shows": [
+      {
+        "from": "00:00:00",
+        "until": "01:00:00",
+        "show": {
+          "id": "d4a86963-d2f8-45ec-8527-d769fd5b30f5",
+          "name": "Joris Voorn",
+          "body": "",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/47ak0phuvszh-slam-default-header.png"
+        },
+        "users": [
+          {
+            "id": "0bed808f-2fd5-4ce7-b7ed-d8540ecc4675",
+            "full_name": "Joris Voorn"
+          }
+        ]
+      },
+      {
+        "from": "01:00:00",
+        "until": "02:00:00",
+        "show": {
+          "id": "c6f1078f-cf5e-46a4-8d82-b1b447172705",
+          "name": "Eelke Kleijn",
+          "body": "",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/47ak0phuvszh-slam-default-header.png"
+        },
+        "users": [
+          {
+            "id": "39ad1ab7-4762-4753-81c6-291bba145195",
+            "full_name": "Eelke Kleijn"
+          }
+        ]
+      },
+      {
+        "from": "02:00:00",
+        "until": "03:00:00",
+        "show": {
+          "id": "33b551f7-7de4-47b9-ab34-bbb666598eaf",
+          "name": "Secret Cinema",
+          "body": "",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/47ak0phuvszh-slam-default-header.png"
+        },
+        "users": [
+          {
+            "id": "76682c27-8142-4fe2-92bb-0fe818f703aa",
+            "full_name": "Secret Cinema"
+          }
+        ]
+      },
+      {
+        "from": "03:00:00",
+        "until": "04:00:00",
+        "show": {
+          "id": "e66045dd-3365-456a-9ae1-5a7ec5aa7e37",
+          "name": "Jochem Hamerling",
+          "body": "",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/47ak0phuvszh-slam-default-header.png"
+        },
+        "users": [
+          {
+            "id": "f15b8a3c-baed-45b2-a7ec-5766e5d3d39d",
+            "full_name": "Jochem Hamerling"
+          }
+        ]
+      },
+      {
+        "from": "04:00:00",
+        "until": "05:00:00",
+        "show": {
+          "id": "f303c389-bdaa-4098-873c-2f351a68a6ca",
+          "name": "Franky Rizardo",
+          "body": "",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/47ak0phuvszh-slam-default-header.png"
+        },
+        "users": [
+          {
+            "id": "c3c7d695-3ad9-4467-86c6-26988d704a32",
+            "full_name": "Franky Rizardo"
+          }
+        ]
+      },
+      {
+        "from": "05:00:00",
+        "until": "06:00:00",
+        "show": {
+          "id": "dc555123-0200-429d-aad5-48fd8946548e",
+          "name": "Olivier Weiter",
+          "body": "",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/47ak0phuvszh-slam-default-header.png"
+        },
+        "users": [
+          {
+            "id": "3a63216f-5772-4620-949e-c9791dc98763",
+            "full_name": "Olivier Weiter"
+          }
+        ]
+      },
+      {
+        "from": "06:00:00",
+        "until": "12:00:00",
+        "show": {
+          "id": "1797f74e-90ab-4ce3-b7e9-f77502834cc1",
+          "name": "SLAM! Non-Stop",
+          "body": "Tijdens SLAM! non-stop hoor je de beste tracks van dit moment non-stop achter elkaar.<br><br> Of je nu op zoek bent naar de nieuwste dance hits, popnummers of de laatste releases, dit programma zorgt ervoor dat je avond compleet is met geweldige muziek.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/47ak0phuvszh-slam-default-header.png",
+          "videoStream": true
+        },
+        "users": []
+      },
+      {
+        "from": "12:00:00",
+        "until": "14:00:00",
+        "show": {
+          "id": "19f4d1d9-9f3a-450b-96a7-cc3ba33bd5bb",
+          "name": "Housuh in de Pauzuh",
+          "body": "Het is 12:00 uur. Even geen mail op kantoor of les op school. Gewoon even geen gedoe. <br><br><em>Get ready for the lunch</em> en wees voorbereid op een trip down memory lane, want de playlist gaat alle kanten op. Van clubknallers uit de 00's, naar hiphopbangers uit de 90's, dikke hits van nu, maar ook typische guilty pleasures. <br><br>Je hoort het allemaal voorbij komen in één mix!",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1pthejd9aieq-slam-banner-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_2400/23vpshi8ywfm-slam-banner-2400x800.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/23vpshi8ywfm-slam-banner-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "38121f10-89e9-42c3-a123-c5d3b5ec3a69",
+            "full_name": "Hielke Boersma",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/x6gga1ozezk-hielke-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "14:00:00",
+        "until": "16:00:00",
+        "show": {
+          "id": "65aad338-5ac8-4308-92db-bb4fee91ace6",
+          "name": "Hielke Boersma",
+          "body": "",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/x6gga1ozezk-hielke-1207x765.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/x6gga1ozezk-hielke-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/1q9vlht61z8g-hielke-2400x800.png"
+        },
+        "users": [
+          {
+            "id": "38121f10-89e9-42c3-a123-c5d3b5ec3a69",
+            "full_name": "Hielke Boersma",
+            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/x6gga1ozezk-hielke-1207x765.png"
+          }
+        ]
+      },
+      {
+        "from": "16:00:00",
+        "until": "20:00:00",
+        "show": {
+          "id": "520e48b1-7738-4150-90cc-8a81a540d128",
+          "name": "Danny Blom",
+          "body": "Programma van SLAM",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1nthikxvjcfm-slam-banner-1920x1080.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/1pthejd9aieq-slam-banner-1207x765.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/23vpshi8ywfm-slam-banner-2400x800.png"
+        },
+        "users": []
+      },
+      {
+        "from": "20:00:00",
+        "until": "23:59:00",
+        "show": {
+          "id": "1797f74e-90ab-4ce3-b7e9-f77502834cc1",
+          "name": "SLAM! Non-Stop",
+          "body": "Tijdens SLAM! non-stop hoor je de beste tracks van dit moment non-stop achter elkaar.<br><br> Of je nu op zoek bent naar de nieuwste dance hits, popnummers of de laatste releases, dit programma zorgt ervoor dat je avond compleet is met geweldige muziek.",
+          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/44u2e6owci2l-slam-default-header-mobile.png",
+          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/47ak0phuvszh-slam-default-header.png",
+          "videoStream": true
+        },
+        "users": []
+      }
+    ]
+  }
+]

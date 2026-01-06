@@ -1,96 +1,122 @@
-const HOUR_HEIGHT = 120;
+const pixelsPerHour = 120;
 
-// Data Structure
-const schedule = {
-    'r1': [
-        { start: 0, end: 7, name: "Night Beats", color: "#1e3a8a" },
-        { start: 7, end: 11, name: "Breakfast Show", color: "#2563eb" },
-        { start: 11, end: 15, name: "The Mix", color: "#3b82f6" },
-        { start: 15, end: 19, name: "Drive Time", color: "#60a5fa" },
-        { start: 19, end: 24, name: "Late Night Indie", color: "#1d4ed8" }
-    ],
-    'r2': [
-        { start: 0, end: 8, name: "Classical Sleep", color: "#701a75" },
-        { start: 8, end: 13, name: "Morning Hall", color: "#a21caf" },
-        { start: 13, end: 18, name: "Afternoon Symphony", color: "#d946ef" },
-        { start: 18, end: 24, name: "Choral Works", color: "#4a044e" }
-    ],
-    'r3': [
-        { start: 0, end: 6, name: "Ambient Flow", color: "#064e3b" },
-        { start: 6, end: 12, name: "Morning Show", color: "#059669" },
-        { start: 12, end: 18, name: "Variety Mix", color: "#10b981" },
-        { start: 18, end: 24, name: "Underground", color: "#047857" }
-    ]
-};
-
-function init() {
-    setupTimeColumn();
-    renderPrograms();
-    updateRealTime();
-    
-    // Auto-scroll to current time on load
-    setTimeout(() => {
-        const now = new Date();
-        const scrollTarget = (now.getHours() * HOUR_HEIGHT) - 100;
-        document.getElementById('viewport').scrollTop = scrollTarget;
-    }, 500);
-
-    // Update time every second
-    setInterval(updateRealTime, 1000);
-    
-    // Set default date picker
-    document.getElementById('datePicker').valueAsDate = new Date();
-}
-
-function setupTimeColumn() {
-    const col = document.getElementById('timeColumn');
-    for (let i = 0; i < 24; i++) {
-        const div = document.createElement('div');
-        div.className = 'time-marker';
-        div.innerText = `${i}:00`;
-        col.appendChild(div);
+async function startApp() {
+    try {
+        // Fetch all three station data files
+        const [veronicaRes, slamRes, honderdRes] = await Promise.all([
+            fetch('./data/veronica.json'),
+            fetch('./data/slam.json'),
+            fetch('./data/100nl.json')
+        ]);
+        
+        const [veronicaDays, slamDays, honderdDays] = await Promise.all([
+            veronicaRes.json(),
+            slamRes.json(),
+            honderdRes.json()
+        ]);
+        
+        const nameOfToday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(new Date()).toLowerCase();
+        
+        const veronicaToday = veronicaDays.find(item => item.day === nameOfToday) || veronicaDays[0];
+        const slamToday = slamDays.find(item => item.day === nameOfToday) || slamDays[0];
+        const honderdToday = honderdDays.find(item => item.day === nameOfToday) || honderdDays[0];
+        
+        buildApp(veronicaToday.shows, slamToday.shows, honderdToday.shows); 
+    } catch (error) {
+        console.error(error);
     }
 }
 
-function renderPrograms() {
-    Object.keys(schedule).forEach(stationId => {
-        const track = document.getElementById(`track-${stationId}`);
-        schedule[stationId].forEach(prog => {
-            const el = document.createElement('article');
-            el.className = 'program';
-            
-            // Positioning Logic
-            const top = prog.start * HOUR_HEIGHT;
-            const height = (prog.end - prog.start) * HOUR_HEIGHT;
-            
-            el.style.top = `${top + 4}px`;
-            el.style.height = `${height - 8}px`;
-            el.style.backgroundColor = prog.color;
-            
-            el.innerHTML = `
-                <strong>${prog.name}</strong>
-                <span class="time-meta">${prog.start}:00 - ${prog.end}:00</span>
-            `;
-            
-            track.appendChild(el);
+function buildApp(veronicaShows, slamShows, honderdShows) {
+    createTimeLabels();
+    drawProgramsOnGrid('track-r1', veronicaShows, '--veronica-blue');
+    drawProgramsOnGrid('track-r2', honderdShows, '--honderdnl-orange');
+    drawProgramsOnGrid('track-r3', slamShows, '--slam-pink');
+    
+    // Set the red line position FIRST
+    moveRedLineAndClock();
+    
+    // Then scroll to it immediately after the next paint
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            autoScrollToNow();
         });
+    });
+    
+    // Start the interval for continuous updates
+    setInterval(moveRedLineAndClock, 1000);
+}
+
+function createTimeLabels() {
+    const timeColumn = document.getElementById('timeColumn');
+    if (!timeColumn) return;
+    
+    for (let hour = 0; hour < 24; hour++) {
+        const timeLabel = document.createElement('div');
+        timeLabel.innerText = `${hour}:00`;
+        timeLabel.style.height = `${pixelsPerHour}px`;
+        timeColumn.appendChild(timeLabel);
+    }
+}
+
+function drawProgramsOnGrid(trackId, shows, colorVar) {
+    const track = document.getElementById(trackId);
+    if (!track) return;
+    
+    track.innerHTML = '';
+    
+    shows.forEach(item => {
+        const showBox = document.createElement('article');
+        
+        const start = convertTimeToNumber(item.from);
+        let end = convertTimeToNumber(item.until);
+        
+        if (item.until === "23:59:00" || item.until === "00:00:00") end = 24;
+        
+        showBox.style.top = (start * pixelsPerHour) + 'px';
+        showBox.style.height = ((end - start) * pixelsPerHour) + 'px';
+        showBox.style.backgroundColor = `var(${colorVar})`;
+        
+        showBox.innerHTML = `
+            <strong>${item.show.name}</strong>
+            <span>${item.from.substring(0,5)} - ${item.until.substring(0,5)}</span>
+        `;
+        
+        track.appendChild(showBox);
     });
 }
 
-function updateRealTime() {
+function moveRedLineAndClock() {
     const now = new Date();
-    const h = now.getHours();
-    const m = now.getMinutes();
-    const s = now.getSeconds();
-
-    // Update Header Clock
-    document.getElementById('liveClock').innerText = now.toLocaleTimeString();
-
-    // Update Line Position
-    const decimalHours = h + (m / 60) + (s / 3600);
-    const linePosition = decimalHours * HOUR_HEIGHT;
-    document.getElementById('nowLine').style.top = `${linePosition}px`;
+    const clockEl = document.getElementById('liveClock');
+    if (clockEl) clockEl.innerText = now.toLocaleTimeString('nl-NL');
+    
+    const timeAsDecimal = now.getHours() + (now.getMinutes() / 60) + (now.getSeconds() / 3600);
+    const redLine = document.getElementById('nowLine');
+    if (redLine) {
+        redLine.style.top = (timeAsDecimal * pixelsPerHour) + 'px';
+    }
 }
 
-// Kick off the app
-document.addEventListener('DOMContentLoaded', init);
+function autoScrollToNow() {
+    const scrollingWindow = document.getElementById('viewport');
+    const redLine = document.getElementById('nowLine');
+    
+    if (scrollingWindow && redLine) {
+        const linePosition = parseFloat(redLine.style.top);
+        
+        // Check if linePosition is valid (not NaN)
+        if (!isNaN(linePosition) && linePosition > 0) {
+            // Center the line in the viewport
+            const targetScroll = linePosition - (scrollingWindow.offsetHeight / 2);
+            scrollingWindow.scrollTop = Math.max(0, targetScroll);
+        }
+    }
+}
+
+function convertTimeToNumber(timeString) {
+    const parts = timeString.split(':');
+    return parseInt(parts[0]) + (parseInt(parts[1]) / 60);
+}
+
+startApp();

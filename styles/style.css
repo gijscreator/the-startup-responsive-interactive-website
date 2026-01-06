@@ -26,15 +26,21 @@ body {
   background: var(--bg-white);
 }
 
-
 header {
   padding: 12px 16px;
   background: var(--bg-white);
   border-bottom: 1px solid var(--border-grey);
-  
-  .brand {
-    h1 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
-    time { font-size: 0.75rem; color: #666; font-family: monospace; }
+
+  h1 { 
+    font-size: 1.1rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+  }
+
+  time { 
+    font-size: 0.75rem; 
+    color: #666; 
+    font-family: monospace; 
   }
 }
 
@@ -44,8 +50,7 @@ main {
   flex-direction: column;
   overflow: hidden;
 
-
-  > section:nth-of-type(1) {
+  > section:first-child {
     display: grid;
     grid-template-columns: var(--sidebar-width) 1fr 1fr 1fr;
     height: 70px;
@@ -60,37 +65,38 @@ main {
       border-right: 1px solid var(--border-grey);
       padding: 8px;
 
-      &.veronica-logo {
+      &:first-child {
+        font-size: 0.7rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #888;
+      }
+
+      &:nth-child(2) {
         background-color: var(--veronica-blue);
       }
 
-      &.honderdnl-logo {
+      &:nth-child(3) {
         background-color: var(--grey-branding);
       }
 
-      &.slam-logo {
+      &:nth-child(4) {
         background-color: var(--slam-pink);
       }
 
-      &:last-of-type { border-right: none; }
+      &:last-child { 
+        border-right: none; 
+      }
 
       img {
         max-width: 100%;
         max-height: 45px;
         object-fit: contain;
       }
-
-      &.corner-label {
-        font-size: 0.7rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #888;
-      }
     }
   }
 
-
-  .matrix-grid {
+  > section:last-child {
     flex: 1;
     display: grid;
     grid-template-columns: var(--sidebar-width) 1fr 1fr 1fr;
@@ -100,10 +106,12 @@ main {
     background-image: linear-gradient(var(--border-grey) 1px, transparent 1px);
     background-size: 100% var(--hour-height);
     -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
 
-    .now-indicator {
+    > div:first-child {
       position: absolute;
-      left: 0; right: 0;
+      left: 0; 
+      right: 0;
       height: 2px;
       background: var(--now-red);
       z-index: 100;
@@ -112,17 +120,18 @@ main {
       &::after {
         content: '';
         position: absolute;
-        left: 0; top: -4px;
-        width: 10px; height: 10px;
+        left: 0; 
+        top: -4px;
+        width: 10px; 
+        height: 10px;
         background: var(--now-red);
         border-radius: 50%;
       }
     }
 
-    aside.time-column {
+    aside {
       background: var(--bg-white);
       border-right: 1px solid var(--border-grey);
-      
 
       div {
         height: var(--hour-height);
@@ -135,25 +144,36 @@ main {
       }
     }
 
-    .station-track {
+    > section {
       position: relative;
       border-right: 1px solid var(--border-grey);
 
-      &:last-of-type { border-right: none; }
+      &:last-child { 
+        border-right: none; 
+      }
 
-      .program {
-        position: absolute;
-        left: 4px; right: 4px;
-        border-radius: 8px;
-        padding: 8px;
-        color: white;
+      article {
+        border-radius: .5rem;
+        padding: .5rem;
+        margin: .5rem;
+        color: var(--bg-white);
         font-size: 0.75rem;
         box-shadow: 0 2px 4px rgba(0,0,0,0.15);
         overflow: hidden;
         border: 1px solid rgba(255,255,255,0.1);
+        background-color: var(--veronica-blue);
 
-        strong { display: block; margin-bottom: 2px; line-height: 1.1; }
-        span { font-size: 0.65rem; opacity: 0.85; font-weight: bold; }
+        strong { 
+          display: block; 
+          margin-bottom: 2px; 
+          line-height: 1.1; 
+        }
+
+        span { 
+          font-size: 0.65rem; 
+          opacity: 0.85; 
+          font-weight: bold; 
+        }
       }
     }
   }
