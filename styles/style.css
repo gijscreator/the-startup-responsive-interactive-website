@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  list-style: none;
+}
+
+img, video {
+  width: 100%;
+  height: auto;
+}
+
+/* Header styling */
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+
+  img {
+    width: 70%;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+
+  /* Section met date picker */
+  section:nth-of-type(1) {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    
+    form {
+      input {
+
+      }
+    }
+
+    ul {
+      display: flex;
+      gap: .7rem;
+
+      li {
+        border-right: solid 1px var(--tekst-donker);
+        padding-right: .7rem;
+      }
+
+      button {
+        all: unset;
+        font-family: Arial, Helvetica, sans-serif;
+
+        &.active {
+          text-decoration: underline;
+          color: var(--radiogids-rood)
+        }
+      }
+    }
+  }
+
+  /* Section met timeline  */
+  section:nth-of-type(2) {
+    display: flex;
+
+    ul {
+      display: flex;
+      gap: 4rem;
+
+      li {
+
+      }
+    }
+  }
+}
+
+
+
+/* Global voor alle radio stations  */
+
+.sync-scroll {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+
+.sync-scroll::-webkit-scrollbar {
+    display: none; /
+}
+
+.sync-scroll > * {
+    flex-shrink: 0;
+}
