@@ -86,12 +86,12 @@ main {
   }
 
   /* Section met timeline  */
-  section:nth-of-type(1) {
+  section:nth-of-type(1).sync-scroll {
     display: flex;
 
     ul {
       display: flex;
-      gap: 4rem;
+      gap: 7.2rem;
       padding-left: 0;
       margin-left: -1rem;
       padding: 0rem 1rem;
@@ -103,7 +103,7 @@ main {
   }
 
   /* Section met timer  */
-  section:nth-of-type(1) {
+  section:nth-of-type(1).sync-scroll {
     background-color: var(--honderdnl-black);
     color: white;
     width: max-content;
@@ -115,7 +115,7 @@ main {
         transparent 1px
       );
 
-      background-size: 6.5rem 40%;
+      background-size: 10rem 40%;
 
       background-repeat: repeat-x;
       background-position: bottom;
@@ -141,12 +141,12 @@ main {
 
       img {
         width: 20vw;
-        background-color: var(--veronica-blauw)
+        background-color: var(--veronica-blauw);
       }
     }
 
     article {
-      width: 40vw;
+      width: 50vw;
       /* fix voor het kleiner worden van de article die uit het scherm zijn */
       flex-shrink: 0;
       background-color: var(--veronica-blauw);
@@ -155,9 +155,15 @@ main {
 
        img {
         width: 100%;
-        height: auto;
+        height: 10vh;
         background-color: var(--veronica-blauw);
         border-radius: var(--border-radius)  var(--border-radius) 0rem 0rem;
+        object-fit: cover;
+
+       }
+
+      section {
+        padding: .5rem;
        }
     }
   }
@@ -187,7 +193,7 @@ main {
     }
 
     article {
-      width: 40vw;
+      width: 50vw;
       /* fix voor het kleiner worden van de article die uit het scherm zijn */
       flex-shrink: 0;
       background-color: var(--honderdnl-black);
@@ -196,9 +202,14 @@ main {
 
        img {
         width: 100%;
-        height: auto;
+        height: 10vh;
         background-color: var(--honderdnl-black);
         border-radius: var(--border-radius)  var(--border-radius) 0rem 0rem;
+        object-fit: cover;
+       }
+
+      section {
+        padding: .5rem;
        }
     }
   }
@@ -224,21 +235,28 @@ main {
         width: 20vw;
         background-color: var(--slam-pink);
       }
+      
     }
 
     article {
-      width: 40vw;
+      width: 50vw;
       /* fix voor het kleiner worden van de article die uit het scherm zijn */
       flex-shrink: 0;
       background-color: var(--slam-pink);
       color: white;
       border-radius: var(--border-radius);
+      
 
        img {
         width: 100%;
-        height: auto;
+        height: 10vh;
         background-color: var(--sllam-pink);
         border-radius: var(--border-radius)  var(--border-radius) 0rem 0rem;
+        object-fit: cover;
+       }
+
+       section {
+        padding: .5rem;
        }
     }
   }
@@ -254,6 +272,7 @@ footer {
   bottom: 0;
 
   svg {
+
     path {
       fill: white;
     }
