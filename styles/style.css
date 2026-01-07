@@ -7,15 +7,7 @@
     display: none;
   } 
 
-.visually-hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
+
 
 img, video {
   width: 100%;
@@ -112,9 +104,18 @@ main {
     display: flex;
     margin: 1rem 0rem 2.2rem 0rem;
     gap: 2rem;
+    width: max-content;
 
     figure {
       width: 20vw;
+      background-color: var(--veronica-blauw);
+      position: sticky;
+      left: 0;
+
+      img {
+        width: 20vw;
+        background-color: var(--veronica-blauw)
+      }
     }
 
     article {
@@ -135,10 +136,18 @@ main {
     display: flex;
     margin: 2.2rem 0rem;
     gap: 2rem;
+    width: max-content;
 
     figure {
       width: 20vw;
-      
+      background-color: var(--honderdnl-black);
+      position: sticky;
+      left: 0;
+
+      img {
+        width: 20vw;
+        background-color: var(--honderdnl-black)
+      }
 
     }
 
@@ -161,10 +170,19 @@ main {
     display: flex;
     margin: 2.2rem 0rem;
     gap: 2rem;
+    width: max-content;
 
     figure {
       width: 20vw;
       min-width: 20vw;
+      position: sticky;
+      left: 0;
+      background-color: var(--slam-pink);
+
+      img {
+        width: 20vw;
+        background-color: var(--slam-pink);
+      }
     }
 
     article {
