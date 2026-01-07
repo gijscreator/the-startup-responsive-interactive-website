@@ -330,7 +330,7 @@ main {
       max-width: 400px;
       display: grid;
       grid-template-columns: 1fr auto;
-      grid-template-rows: 1fr auto auto;
+      grid-template-rows: 60% auto auto;
       grid-template-areas:
         "poster details"
         "time   empty"
@@ -401,7 +401,6 @@ main {
         & figcaption p {
           padding: 0;
           margin: 0;
-          font-size: 0.9rem;
           grid-column: auto;
           grid-row: auto;
         }
