@@ -1,34 +1,39 @@
-const containers = document.querySelectorAll('.sync-scroll');
-let leader = null;
+// Zoek alle elementen met de klas 'sync-scroll'
+let containers = document.querySelectorAll('.sync-scroll');
+let leider = null;
 
-// Function to sync the scroll
-const sync = (e) => {
-    if (leader && leader !== e.target) return; // Ignore if this isn't the leader
+function scrollAlleVakken(gebeurtenis) {
+    let hetGekozenVak = gebeurtenis.target;
+
+    if (leider !== null && leider !== hetGekozenVak) {
+        return;
+    }
     
-    leader = e.target;
-    const scrollLeft = leader.scrollLeft;
+    // Dit vak is nu de main
+    leider = hetGekozenVak;
+    let afstandLinks = leider.scrollLeft;
 
-    containers.forEach((container) => {
-        if (container !== leader) {
-            container.scrollLeft = scrollLeft;
+    // Loop door alle vakken heen
+    containers.forEach(function(vak) {
+        // Als het vak niet de scroller is, zet hem op dezelfde afstand
+        if (vak !== leider) {
+            vak.scrollLeft = afstandLinks;
         }
     });
-};
+}
 
-// Clean up leader when scrolling stops or finger lifts
-const stopSync = () => {
-    leader = null;
-};
+// reset als je stopt met scroller
+function stopMetScrollen() {
+    leider = null;
+}
 
-containers.forEach((container) => {
-    // 1. Detect the "Leader" via touch or mouse click
-    container.addEventListener('pointerdown', () => {
-        leader = container;
+containers.forEach(function(vak) {
+
+    vak.addEventListener('pointerdown', function() {
+        leider = vak;
     });
 
-    // 2. Listen for scroll events
-    container.addEventListener('scroll', sync, { passive: true });
-
-    // 3. Reset when interaction ends
-    window.addEventListener('pointerup', stopSync);
+    vak.addEventListener('scroll', scrollAlleVakken);
 });
+
+window.addEventListener('pointerup', stopMetScrollen);
