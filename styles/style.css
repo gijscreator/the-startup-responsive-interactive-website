@@ -7,7 +7,9 @@
     display: none;
   } 
 
-
+.hidden {
+  display: none;
+}
 
 img, video {
   width: 100%;
@@ -19,8 +21,7 @@ a {
 }
 
 /* Header styling */
-
-header {
+header.header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,18 +72,9 @@ main {
   flex-direction: column;
   overflow-x: auto;
 
-  svg:nth-of-type(1) {
-    margin: .5rem 0rem;
-    position: absolute;
-    top: 37vh;
-    z-index: -1;
-  }
-
-  svg:nth-of-type(2) {
-    margin: .5rem 0rem;
-    position: absolute;
-    bottom: 27vh;
-    z-index: -1;
+  section.syncscroll {
+    container-type: inline-size;
+    container-name: schedule-row;
   }
 
   /* Section met timeline  */
@@ -146,7 +138,6 @@ main {
     }
 
     article {
-      width: 45vw;
       /* fix voor het kleiner worden van de article die uit het scherm zijn */
       flex-shrink: 0;
       background-color: var(--veronica-blauw);
@@ -207,7 +198,6 @@ main {
     }
 
     article {
-      width: 45vw;
       /* fix voor het kleiner worden van de article die uit het scherm zijn */
       flex-shrink: 0;
       background-color: var(--honderdnl-black);
@@ -267,7 +257,6 @@ main {
     }
 
     article {
-      width: 45vw;
       /* fix voor het kleiner worden van de article die uit het scherm zijn */
       flex-shrink: 0;
       background-color: var(--slam-pink);
@@ -302,7 +291,101 @@ main {
       }
     }
   }
+
+  section:nth-of-type(5) {
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+
+      }
+
+      button {
+        all: unset;
+        display: flex;
+        align-items: center;
+        
+      }
+    }
+
+    video {
+      width: 90vw;
+      height: auto;
+    }
+
+    h4 {
+
+    }
+
+    p {
+
+    }
+
+    svg {
+
+      path {
+        fill: var(--honderdnl-black);
+      }
+    }
+  }
+
+  section {
+
+    article.block {
+      width: 90vw;
+      max-width: 400px;
+      display: grid;
+      grid-template-columns: 1fr 1fr; 
+      grid-template-rows: 1fr auto;
+      grid-template-areas: 
+        "poster details"
+        "title  title"; 
+      gap: 0;
+
+      img {
+        grid-area: poster;
+        width: 100%;
+        height: auto;
+        object-fit: fill;
+      }
+
+      section {
+        display: contents; 
+      }
+
+      h3 {
+        grid-area: title;
+        padding: 0.5rem 1rem;
+        font-size: 1.8rem;
+        margin: 0;
+      }
+
+      p {
+        grid-column: 2;
+        grid-row: 1;
+        margin: 0;
+        padding-left: 1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      p:first-of-type {
+        align-self: start;
+        padding-top: 1rem;
+      }
+
+      p:last-of-type {
+        align-self: center;
+        padding-bottom: 1rem;
+      }
+    }
+  }
 }
+
+
 
 footer {
   display: flex;
@@ -320,3 +403,4 @@ footer {
     }
   }
 }
+
