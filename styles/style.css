@@ -2,7 +2,10 @@
   box-sizing: border-box;
   margin: 0;
   list-style: none;
-}
+
+  &::-webkit-scrollbar {
+    display: none;
+  } 
 
 .visually-hidden {
   clip: rect(0 0 0 0);
@@ -107,16 +110,16 @@ main {
   /* Section met radio veronica  */
   section:nth-of-type(2) {
     display: flex;
-    margin: 2.2rem 0rem;
+    margin: 1rem 0rem 2.2rem 0rem;
     gap: 2rem;
 
-    figure:nth-of-type(1) {
+    figure {
       width: 20vw;
     }
 
-    figure {
+    article {
       width: 40vw;
-      /* fix voor het kleiner worden van de figures die uit het scherm zijn */
+      /* fix voor het kleiner worden van de article die uit het scherm zijn */
       flex-shrink: 0;
 
        img {
@@ -133,16 +136,16 @@ main {
     margin: 2.2rem 0rem;
     gap: 2rem;
 
-    figure:nth-of-type(1) {
+    figure {
       width: 20vw;
       
 
     }
 
-    figure {
+    article {
       width: 40vw;
 
-      /* fix voor het kleiner worden van de figures die uit het scherm zijn */
+      /* fix voor het kleiner worden van de article die uit het scherm zijn */
       flex-shrink: 0;
 
        img {
@@ -159,13 +162,14 @@ main {
     margin: 2.2rem 0rem;
     gap: 2rem;
 
-    figure:nth-of-type(1) {
+    figure {
       width: 20vw;
+      min-width: 20vw;
     }
 
-    figure {
+    article {
       width: 40vw;
-      /* fix voor het kleiner worden van de figures die uit het scherm zijn */
+      /* fix voor het kleiner worden van de article die uit het scherm zijn */
       flex-shrink: 0;
 
        img {
