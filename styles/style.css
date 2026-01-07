@@ -4,29 +4,35 @@
   list-style: none;
 }
 
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 img, video {
   width: 100%;
   height: auto;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* Header styling */
 
 header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 1rem;
 
   img {
     width: 70%;
-  }
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-
-  svg {
-    margin: .5rem 0rem;
   }
 
   /* Section met date picker */
@@ -61,9 +67,29 @@ main {
       }
     }
   }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+
+  svg:nth-of-type(1) {
+    margin: .5rem 0rem;
+    position: fixed;
+    top: 35vh;
+    z-index: -1;
+  }
+
+  svg:nth-of-type(2) {
+    margin: .5rem 0rem;
+    position: fixed;
+    bottom: 35vh;
+    z-index: -1;
+  }
 
   /* Section met timeline  */
-  section:nth-of-type(2) {
+  section:nth-of-type(1) {
     display: flex;
 
     ul {
@@ -77,14 +103,19 @@ main {
   }
 
   /* Section met radio veronica  */
-  section:nth-of-type(3) {
+  section:nth-of-type(2) {
     display: flex;
+    margin: 2rem 0rem;
+    gap: 2rem;
 
     figure:nth-of-type(1) {
       width: 20vw;
     }
 
     figure {
+      width: 40vw;
+      /* fix voor het kleiner worden van de figures die uit het scherm zijn */
+      flex-shrink: 0;
 
        img {
         width: 5rem;
@@ -95,16 +126,23 @@ main {
   }
 
   /* Section met radio 100%nl  */
-  section:nth-of-type(4) {
+  section:nth-of-type(3) {
     display: flex;
+    margin: 2rem 0rem;
+    gap: 2rem;
 
     figure:nth-of-type(1) {
       width: 20vw;
+      
 
     }
 
     figure {
-      
+      width: 40vw;
+
+      /* fix voor het kleiner worden van de figures die uit het scherm zijn */
+      flex-shrink: 0;
+
        img {
         width: 5rem;
         height: auto;
@@ -114,15 +152,20 @@ main {
   }
 
   /* Section met radio slam!  */
-  section:nth-of-type(5) {
+  section:nth-of-type(4) {
     display: flex;
+    margin: 2rem 0rem;
+    gap: 2rem;
 
     figure:nth-of-type(1) {
       width: 20vw;
     }
 
     figure {
-      
+      width: 40vw;
+      /* fix voor het kleiner worden van de figures die uit het scherm zijn */
+      flex-shrink: 0;
+
        img {
         width: 5rem;
         height: auto;
@@ -132,23 +175,18 @@ main {
   }
 }
 
+footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--tekst-donker);
+  padding: 1rem;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
 
-
-/* Global voor alle radio stations  */
-
-.sync-scroll {
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch; 
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
-}
-
-.sync-scroll::-webkit-scrollbar {
-    display: none; /
-}
-
-.sync-scroll > * {
-    flex-shrink: 0;
+  svg {
+    path {
+      fill: white;
+    }
+  }
 }
