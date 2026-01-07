@@ -7,7 +7,7 @@
     --tekst-donker: #1E1E1E;
     --tekst-licht: #ffffff;
     --radiogids-rood: #EF0105;
-    --border-radius: 1rem;
+    --border-radius: 10px;
 }
 
 .visually-hidden {

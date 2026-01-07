@@ -74,14 +74,14 @@ main {
   svg:nth-of-type(1) {
     margin: .5rem 0rem;
     position: absolute;
-    top: 43vh;
+    top: 37vh;
     z-index: -1;
   }
 
   svg:nth-of-type(2) {
     margin: .5rem 0rem;
     position: absolute;
-    bottom: 22vh;
+    bottom: 27vh;
     z-index: -1;
   }
 
@@ -107,7 +107,7 @@ main {
     background-color: var(--honderdnl-black);
     color: white;
     width: max-content;
-    padding:  1.5rem 0rem;
+    padding:  1rem 0rem;
     padding-left: 1rem;
     background-image: linear-gradient(
         90deg, 
@@ -124,7 +124,7 @@ main {
   /* Section met radio veronica  */
   section:nth-of-type(2) {
     display: flex;
-    margin: 1rem 0rem 2.2rem 0rem;
+    
     gap: 2rem;
     width: max-content;
 
@@ -133,6 +133,11 @@ main {
       background-color: var(--veronica-blauw);
       position: sticky;
       left: 0;
+      height: 23vh;
+      display: flex;
+      align-items: center;
+      border-radius: 0rem 0rem var(--border-radius) 0rem;
+
 
       img {
         width: 20vw;
@@ -144,11 +149,15 @@ main {
       width: 40vw;
       /* fix voor het kleiner worden van de article die uit het scherm zijn */
       flex-shrink: 0;
+      background-color: var(--veronica-blauw);
+      color: white;
+      border-radius: var(--border-radius);
 
        img {
-        width: 5rem;
+        width: 100%;
         height: auto;
         background-color: var(--veronica-blauw);
+        border-radius: var(--border-radius)  var(--border-radius) 0rem 0rem;
        }
     }
   }
@@ -156,7 +165,7 @@ main {
   /* Section met radio 100%nl  */
   section:nth-of-type(3) {
     display: flex;
-    margin: 2.2rem 0rem;
+    margin: 1rem 0rem;
     gap: 2rem;
     width: max-content;
 
@@ -165,6 +174,10 @@ main {
       background-color: var(--honderdnl-black);
       position: sticky;
       left: 0;
+      height: 23vh;
+      display: flex;
+      align-items: center;
+      border-radius: 0rem var(--border-radius) var(--border-radius) 0rem;
 
       img {
         width: 20vw;
@@ -175,14 +188,17 @@ main {
 
     article {
       width: 40vw;
-
       /* fix voor het kleiner worden van de article die uit het scherm zijn */
       flex-shrink: 0;
+      background-color: var(--honderdnl-black);
+      color: white;
+      border-radius: var(--border-radius);
 
        img {
-        width: 5rem;
+        width: 100%;
         height: auto;
-        background-color: var(--veronica-blauw);
+        background-color: var(--honderdnl-black);
+        border-radius: var(--border-radius)  var(--border-radius) 0rem 0rem;
        }
     }
   }
@@ -190,16 +206,19 @@ main {
   /* Section met radio slam!  */
   section:nth-of-type(4) {
     display: flex;
-    margin: 2.2rem 0rem;
+    margin: 1 0rem;
     gap: 2rem;
     width: max-content;
 
     figure {
       width: 20vw;
-      min-width: 20vw;
+      background-color: var(--slam-pink);
       position: sticky;
       left: 0;
-      background-color: var(--slam-pink);
+      height: 23vh;
+      display: flex;
+      align-items: center;
+      border-radius: 0rem var(--border-radius) var(--border-radius) 0rem;
 
       img {
         width: 20vw;
@@ -211,11 +230,15 @@ main {
       width: 40vw;
       /* fix voor het kleiner worden van de article die uit het scherm zijn */
       flex-shrink: 0;
+      background-color: var(--slam-pink);
+      color: white;
+      border-radius: var(--border-radius);
 
        img {
-        width: 5rem;
+        width: 100%;
         height: auto;
-        background-color: var(--veronica-blauw);
+        background-color: var(--sllam-pink);
+        border-radius: var(--border-radius)  var(--border-radius) 0rem 0rem;
        }
     }
   }
