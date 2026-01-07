@@ -8,6 +8,12 @@
     --tekst-licht: #ffffff;
     --radiogids-rood: #EF0105;
     --border-radius: 10px;
+    
+    overscroll-behavior: none;
+}
+
+body {
+    overscroll-behavior: none;
 }
 
 .visually-hidden {
