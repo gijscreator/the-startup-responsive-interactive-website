@@ -124,8 +124,8 @@ main {
   /* Section met radio veronica  */
   section:nth-of-type(2) {
     display: flex;
-    
-    gap: 1rem;
+    margin-top: .5rem;
+    gap: .5rem;
     width: max-content;
 
     figure {
@@ -185,8 +185,8 @@ main {
   /* Section met radio 100%nl  */
   section:nth-of-type(3) {
     display: flex;
-    margin: 1rem 0rem;
-    gap: 1rem;
+    margin: .5rem 0rem;
+    gap: .5rem;
     width: max-content;
 
     figure {
@@ -245,8 +245,8 @@ main {
   /* Section met radio slam!  */
   section:nth-of-type(4) {
     display: flex;
-    margin: 1 0rem;
-    gap: 1rem;
+    margin: .5 0rem;
+    gap: .5rem;
     width: max-content;
 
     figure {
