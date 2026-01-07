@@ -1,0 +1,33 @@
+{
+  "name": "Radiogids",
+  "short_name": "Radiogids",
+  "scope": "/",
+  "start_url": ".",
+  "display": "standalone",
+  "display_override": ["standalone", "fullscreen", "minimal-ui"],
+  "theme_color": "#224455",
+  "background_color": "#224455",
+  "icons": [
+    {
+      "src": "assets/logo-radiogids.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logo-radiogids.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logo-radiogids.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logo-radiogids.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
