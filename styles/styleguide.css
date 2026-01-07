@@ -6,6 +6,7 @@
     --slam-blue: #0AAAE1;
     --tekst-donker: #1E1E1E;
     --tekst-licht: #ffffff;
+    --radiogids-rood: #EF0105;
     --border-radius: 1rem;
 }
 
@@ -46,7 +47,7 @@ p, a {
 
 /* veronica styling */
 
-button,a.veronica {
+button.veronica {
     all: unset;
     cursor: pointer;
     border-radius: var(--border-radius);
@@ -58,7 +59,7 @@ button,a.veronica {
 
 /* veronica slam */
 
- button,a.slam {
+ button.slam {
     all: unset;
     cursor: pointer;
     border-radius: var(--border-radius);
@@ -68,11 +69,21 @@ button,a.veronica {
     padding: 1rem;
 }
 
- button,a.honderdnl {
+ button.honderdnl {
     all: unset;
     cursor: pointer;
     border-radius: var(--border-radius);
     background-color: var(--hondernl-orange);
+    color: var(--tekst-licht);
+    display: block;
+    padding: 1rem;
+}
+
+button.radiogids {
+    all: unset;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    background-color: var(--radiogids-rood);
     color: var(--tekst-licht);
     display: block;
     padding: 1rem;
