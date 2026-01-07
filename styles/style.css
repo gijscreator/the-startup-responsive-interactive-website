@@ -93,7 +93,8 @@ main {
       display: flex;
       gap: 4rem;
       padding-left: 0;
-      margin-left: -.5rem;
+      margin-left: -1rem;
+      padding: 0rem 1rem;
 
       li {
 
