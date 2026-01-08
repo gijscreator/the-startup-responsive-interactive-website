@@ -4,7 +4,7 @@
   list-style: none;
 }
 
-&::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
 } 
 
@@ -22,6 +22,7 @@ a {
 }
 
 /* Header styling */
+
 header.header {
   display: flex;
   flex-direction: column;
@@ -35,6 +36,7 @@ header.header {
   }
 
   /* Section met date picker */
+
   section:nth-of-type(1) {
     display: flex;
     justify-content: space-between;
@@ -68,30 +70,17 @@ header.header {
   }
 }
 
+/* Radiogids "home" styling */
+
 main {
   display: flex;
   flex-direction: column;
   overflow-x: auto;
 
   /* Section met timeline  */
+
   section:nth-of-type(1).sync-scroll {
     display: flex;
-
-    ul {
-      display: flex;
-      gap: 7.2rem;
-      padding-left: 0;
-      margin-left: -1rem;
-      padding: 0rem 1rem;
-
-      li {
-
-      }
-    }
-  }
-
-  /* Section met timer  */
-  section:nth-of-type(1).sync-scroll {
     background-color: var(--honderdnl-black);
     color: white;
     width: max-content;
@@ -103,79 +92,29 @@ main {
         transparent 1px
       );
 
-      background-size: 10rem 40%;
+    background-size: 10rem 40%;
+    background-repeat: repeat-x;
+    background-position: bottom;
 
-      background-repeat: repeat-x;
-      background-position: bottom;
-      }
-
-  /* Section met radio veronica  */
-  section:nth-of-type(2) {
-    display: flex;
-    margin-top: .5rem;
-    gap: .5rem;
-    width: max-content;
-
-    figure {
-      width: 20vw;
-      background-color: var(--veronica-blauw);
-      position: sticky;
-      left: 0;
-      height: 23vh;
+    ul {
       display: flex;
-      align-items: center;
-      border-radius: 0rem 0rem var(--border-radius) 0rem;
+      gap: 7.2rem;
+      padding-left: 0;
+      margin-left: -1rem;
+      padding: 0rem 1rem;
 
-
-      img {
-        width: 20vw;
-        background-color: var(--veronica-blauw);
-      }
-    }
-
-    article {
-      /* fix voor het kleiner worden van de article die uit het scherm zijn */
-      flex-shrink: 0;
-      background-color: var(--veronica-blauw);
-      color: white;
-      border-radius: var(--border-radius);
-
-       img {
-        width: 100%;
-        height: 10vh;
-        background-color: var(--veronica-blauw);
-        border-radius: var(--border-radius)  var(--border-radius) 0rem 0rem;
-        object-fit: cover;
-
-       }
-
-      section {
-        padding: .5rem;
-
-        p {
-          display: flex;
-          align-items: center;
-          gap: .5rem;
-        }
-
-
-        .time::before {
-          content: url("data:image/svg+xml;utf8,<svg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(%23clip0_53_2962)'><path d='M9.5 4.74992V9.49992L12.6667 11.0833M17.4167 9.49992C17.4167 13.8722 13.8723 17.4166 9.5 17.4166C5.12775 17.4166 1.58334 13.8722 1.58334 9.49992C1.58334 5.12766 5.12775 1.58325 9.5 1.58325C13.8723 1.58325 17.4167 5.12766 17.4167 9.49992Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g><defs><clipPath id='clip0_53_2962'><rect width='19' height='19' rx='9.5' fill='white'/></clipPath></defs></svg>");
-        }
-       }
     }
   }
 
-  /* Section met radio 100%nl  */
-  section:nth-of-type(3) {
+  /* styling van alle programma kaartjes zonder de kleuren */
+
+  section.kaartje {
     display: flex;
-    margin: .5rem 0rem;
     gap: .5rem;
     width: max-content;
 
     figure {
       width: 20vw;
-      background-color: var(--honderdnl-black);
       position: sticky;
       left: 0;
       height: 23vh;
@@ -184,106 +123,120 @@ main {
       border-radius: 0rem var(--border-radius) var(--border-radius) 0rem;
 
       img {
-        width: 20vw;
+        width: 100%;
+      }
+    }
+
+    article {
+      flex-shrink: 0;
+      color: white;
+      border-radius: var(--border-radius);
+      width: 45vw;
+      max-width: 200px;
+
+      img {
+        border-radius: var(--border-radius)  var(--border-radius) 0rem 0rem;
+        object-fit: cover;
+        width: 100%;
+        height: 10vh;
+      }
+
+      section {
+        padding: .5rem;
+      }
+
+      p {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        
+        &:nth-of-type(1)::before {
+          content: url("data:image/svg+xml;utf8,<svg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(%23clip0_53_2961)'><path d='M13.4583 16.625V15.0417C13.4583 14.2018 13.1247 13.3964 12.5308 12.8025C11.937 12.2086 11.1315 11.875 10.2917 11.875H3.95833C3.11848 11.875 2.31302 12.2086 1.71916 12.8025C1.12529 13.3964 0.791664 14.2018 0.791664 15.0417V16.625M18.2083 16.625V15.0417C18.2078 14.34 17.9743 13.6584 17.5444 13.1039C17.1145 12.5494 16.5127 12.1533 15.8333 11.9779M12.6667 2.47792C13.3478 2.65232 13.9516 3.04847 14.3827 3.60391C14.8139 4.15935 15.0479 4.84249 15.0479 5.54563C15.0479 6.24876 14.8139 6.9319 14.3827 7.48734C13.9516 8.04278 13.3478 8.43893 12.6667 8.61333M10.2917 5.54167C10.2917 7.29057 8.8739 8.70833 7.125 8.70833C5.3761 8.70833 3.95833 7.29057 3.95833 5.54167C3.95833 3.79276 5.3761 2.375 7.125 2.375C8.8739 2.375 10.2917 3.79276 10.2917 5.54167Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g><defs><clipPath id='clip0_53_2961'><rect width='19' height='19' rx='9.5' fill='white'/></clipPath></defs></svg>");
+        }
+
+        &:nth-of-type(2)::before {
+          content: url("data:image/svg+xml;utf8,<svg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(%23clip0_53_2962)'><path d='M9.5 4.74992V9.49992L12.6667 11.0833M17.4167 9.49992C17.4167 13.8722 13.8723 17.4166 9.5 17.4166C5.12775 17.4166 1.58334 13.8722 1.58334 9.49992C1.58334 5.12766 5.12775 1.58325 9.5 1.58325C13.8723 1.58325 17.4167 5.12766 17.4167 9.49992Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g><defs><clipPath id='clip0_53_2962'><rect width='19' height='19' rx='9.5' fill='white'/></clipPath></defs></svg>");
+        }
+      }
+
+      .normal-hidden {
+        display: none;
+      }
+    }
+  }
+  
+
+  /* Alle kleuren van veronica  */
+
+  section:nth-of-type(2) {
+    margin-top: .5rem;
+
+    figure {
+      background-color: var(--veronica-blauw);
+
+
+      img {
+        background-color: var(--veronica-blauw);
+      }
+    }
+
+    article {
+      background-color: var(--veronica-blauw);
+
+       img {
+        background-color: var(--veronica-blauw);
+       }
+    }
+  }
+
+  /* Alle kleuren van 100%nl  */
+
+  section:nth-of-type(3) {
+    margin: .5rem 0;
+
+    figure {
+      background-color: var(--honderdnl-black);
+
+      img {
         background-color: var(--honderdnl-black)
       }
 
     }
 
     article {
-      /* fix voor het kleiner worden van de article die uit het scherm zijn */
-      flex-shrink: 0;
       background-color: var(--honderdnl-black);
-      color: white;
-      border-radius: var(--border-radius);
 
        img {
-        width: 100%;
-        height: 10vh;
         background-color: var(--honderdnl-black);
-        border-radius: var(--border-radius)  var(--border-radius) 0rem 0rem;
-        object-fit: cover;
        }
-
-      section {
-        padding: .5rem;
-
-        p {
-          display: flex;
-          align-items: center;
-          gap: .5rem;
-        }
-
-        p:nth-of-type(1)::before {
-          content: url("data:image/svg+xml;utf8,<svg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(%23clip0_53_2961)'><path d='M13.4583 16.625V15.0417C13.4583 14.2018 13.1247 13.3964 12.5308 12.8025C11.937 12.2086 11.1315 11.875 10.2917 11.875H3.95833C3.11848 11.875 2.31302 12.2086 1.71916 12.8025C1.12529 13.3964 0.791664 14.2018 0.791664 15.0417V16.625M18.2083 16.625V15.0417C18.2078 14.34 17.9743 13.6584 17.5444 13.1039C17.1145 12.5494 16.5127 12.1533 15.8333 11.9779M12.6667 2.47792C13.3478 2.65232 13.9516 3.04847 14.3827 3.60391C14.8139 4.15935 15.0479 4.84249 15.0479 5.54563C15.0479 6.24876 14.8139 6.9319 14.3827 7.48734C13.9516 8.04278 13.3478 8.43893 12.6667 8.61333M10.2917 5.54167C10.2917 7.29057 8.8739 8.70833 7.125 8.70833C5.3761 8.70833 3.95833 7.29057 3.95833 5.54167C3.95833 3.79276 5.3761 2.375 7.125 2.375C8.8739 2.375 10.2917 3.79276 10.2917 5.54167Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g><defs><clipPath id='clip0_53_2961'><rect width='19' height='19' rx='9.5' fill='white'/></clipPath></defs></svg>");
-        }
-
-        p:nth-of-type(2)::before {
-          content: url("data:image/svg+xml;utf8,<svg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(%23clip0_53_2962)'><path d='M9.5 4.74992V9.49992L12.6667 11.0833M17.4167 9.49992C17.4167 13.8722 13.8723 17.4166 9.5 17.4166C5.12775 17.4166 1.58334 13.8722 1.58334 9.49992C1.58334 5.12766 5.12775 1.58325 9.5 1.58325C13.8723 1.58325 17.4167 5.12766 17.4167 9.49992Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g><defs><clipPath id='clip0_53_2962'><rect width='19' height='19' rx='9.5' fill='white'/></clipPath></defs></svg>");
-        }
-      }
     }
   }
 
   /* Section met radio slam!  */
   section:nth-of-type(4) {
-    display: flex;
     margin: .5 0rem;
-    gap: .5rem;
-    width: max-content;
 
     figure {
-      width: 20vw;
       background-color: var(--slam-pink);
-      position: sticky;
-      left: 0;
-      height: 23vh;
-      display: flex;
-      align-items: center;
-      border-radius: 0rem var(--border-radius) var(--border-radius) 0rem;
 
       img {
-        width: 20vw;
         background-color: var(--slam-pink);
       }
       
     }
 
+    /* article met alle programma's radio slam!  */
     article {
-      /* fix voor het kleiner worden van de article die uit het scherm zijn */
-      flex-shrink: 0;
       background-color: var(--slam-pink);
-      color: white;
-      border-radius: var(--border-radius);
       
 
        img {
-        width: 100%;
-        height: 10vh;
-        background-color: var(--sllam-pink);
-        border-radius: var(--border-radius)  var(--border-radius) 0rem 0rem;
-        object-fit: cover;
+          background-color: var(--slam-pink);
        }
-
-       section {
-        padding: .5rem;
-
-        p {
-          display: flex;
-          align-items: center;
-          gap: .5rem;
-        }
-
-        p:nth-of-type(1)::before {
-          content: url("data:image/svg+xml;utf8,<svg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(%23clip0_53_2961)'><path d='M13.4583 16.625V15.0417C13.4583 14.2018 13.1247 13.3964 12.5308 12.8025C11.937 12.2086 11.1315 11.875 10.2917 11.875H3.95833C3.11848 11.875 2.31302 12.2086 1.71916 12.8025C1.12529 13.3964 0.791664 14.2018 0.791664 15.0417V16.625M18.2083 16.625V15.0417C18.2078 14.34 17.9743 13.6584 17.5444 13.1039C17.1145 12.5494 16.5127 12.1533 15.8333 11.9779M12.6667 2.47792C13.3478 2.65232 13.9516 3.04847 14.3827 3.60391C14.8139 4.15935 15.0479 4.84249 15.0479 5.54563C15.0479 6.24876 14.8139 6.9319 14.3827 7.48734C13.9516 8.04278 13.3478 8.43893 12.6667 8.61333M10.2917 5.54167C10.2917 7.29057 8.8739 8.70833 7.125 8.70833C5.3761 8.70833 3.95833 7.29057 3.95833 5.54167C3.95833 3.79276 5.3761 2.375 7.125 2.375C8.8739 2.375 10.2917 3.79276 10.2917 5.54167Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g><defs><clipPath id='clip0_53_2961'><rect width='19' height='19' rx='9.5' fill='white'/></clipPath></defs></svg>");
-        }
-
-        p:nth-of-type(2)::before {
-          content: url("data:image/svg+xml;utf8,<svg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(%23clip0_53_2962)'><path d='M9.5 4.74992V9.49992L12.6667 11.0833M17.4167 9.49992C17.4167 13.8722 13.8723 17.4166 9.5 17.4166C5.12775 17.4166 1.58334 13.8722 1.58334 9.49992C1.58334 5.12766 5.12775 1.58325 9.5 1.58325C13.8723 1.58325 17.4167 5.12766 17.4167 9.49992Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g><defs><clipPath id='clip0_53_2962'><rect width='19' height='19' rx='9.5' fill='white'/></clipPath></defs></svg>");
-        }
-      }
     }
   }
+
+  /* styling voor de popover */
 
   section:nth-of-type(5) {
 
@@ -325,7 +278,10 @@ main {
     }
   }
 
+  /* styling voor de zenders die 2 uur duren */
+
   section {
+
     article.block {
       width: 90vw;
       max-width: 400px;
@@ -337,6 +293,10 @@ main {
         "time   empty"
         "title  title";
       gap: 0;
+      border-radius: var(--border-radius);
+
+      /* gebruikt omdat de border radius van de block kaartjes anders niet werken */
+      overflow: hidden;
 
      img {
         grid-area: poster;
@@ -368,6 +328,14 @@ main {
         padding-bottom: 0;
         display: flex;
         align-items: center;
+
+        &::before {
+          content: url("data:image/svg+xml;utf8,<svg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(%23clip0_53_2962)'><path d='M9.5 4.74992V9.49992L12.6667 11.0833M17.4167 9.49992C17.4167 13.8722 13.8723 17.4166 9.5 17.4166C5.12775 17.4166 1.58334 13.8722 1.58334 9.49992C1.58334 5.12766 5.12775 1.58325 9.5 1.58325C13.8723 1.58325 17.4167 5.12766 17.4167 9.49992Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g><defs><clipPath id='clip0_53_2962'><rect width='19' height='19' rx='9.5' fill='white'/></clipPath></defs></svg>");
+        }
+      }
+
+      .block-hidden {
+        display: none;
       }
 
       figure {
@@ -405,6 +373,10 @@ main {
           margin: 0;
           grid-column: auto;
           grid-row: auto;
+
+          &:nth-of-type(1)::before {
+            content: "";
+          }
         }
       }
     }
