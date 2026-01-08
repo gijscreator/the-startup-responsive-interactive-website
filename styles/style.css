@@ -17,6 +17,12 @@ img, video {
   height: auto;
 }
 
+p, h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 a {
   text-decoration: none;
 }
@@ -40,7 +46,7 @@ header.header {
   section:nth-of-type(1) {
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
+    position: relative;
     
     form {
       input {
@@ -84,8 +90,6 @@ main {
     background-color: var(--honderdnl-black);
     color: white;
     width: max-content;
-    padding:  1rem 0rem;
-    padding-left: 1rem;
     background-image: linear-gradient(
         90deg, 
         rgba(255, 255, 255, 1) 1px, 
@@ -95,6 +99,9 @@ main {
     background-size: 10rem 40%;
     background-repeat: repeat-x;
     background-position: bottom;
+    position: relative;
+    height: 3rem;
+    align-items: center;
 
     ul {
       display: flex;
@@ -103,6 +110,24 @@ main {
       margin-left: -1rem;
       padding: 0rem 1rem;
 
+    }
+
+    svg:nth-of-type(1) {
+      display: flex;
+      position: sticky;
+      top: 0vh;
+      left: 50vw;
+      flex-shrink: 0;
+      align-self: flex-start;
+    }
+
+    svg:nth-of-type(2) {
+      display: flex;
+      position: sticky;
+      bottom: 0vh;
+      left: 50vw;
+      flex-shrink: 0;
+      align-self: flex-end;
     }
   }
 
