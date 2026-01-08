@@ -32,12 +32,11 @@ Promise.all(
   });
 
 /**
- * 2. RENDER LOGIC
+ * 2. RENDER LOGIC (Updated)
  */
 function renderShows(shows) {
   if (!shows || shows.length === 0) return;
 
-  // Map station IDs to their respective HTML containers
   const stationMap = {
     1: '#veronica-shows',
     2: '#slam-shows',
@@ -47,21 +46,18 @@ function renderShows(shows) {
   const days = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
   const today = days[new Date().getDay()];
 
-  // Process shows station by station to manage the "addedShows" set per station
   Object.keys(stationMap).forEach(stationId => {
-    const containerId = stationMap[stationId];
-    const container = document.querySelector(containerId);
+    const container = document.querySelector(stationMap[stationId]);
     if (!container) return;
 
     const addedShows = new Set();
 
-    // Filter, Sort and Deduplicate shows for THIS specific station
     const todayShows = shows
       .filter(item => {
         return (
           item.radiostation == stationId && 
           item.day === today && 
-          !addedShows.has(`${item.from}-${item.show_name}`) // Deduplicate based on time + name
+          !addedShows.has(`${item.from}-${item.show_name}`)
         );
       })
       .map(item => {
@@ -69,18 +65,16 @@ function renderShows(shows) {
         return item;
       })
       .sort((a, b) => {
-        if (!a.from || !b.from) return 0; 
-        const [ah, am] = a.from.split(':').map(Number);
-        const [bh, bm] = b.from.split(':').map(Number);
+        const [ah, am] = (a.from || "00:00").split(':').map(Number);
+        const [bh, bm] = (b.from || "00:00").split(':').map(Number);
         return (ah * 60 + am) - (bh * 60 + bm);
       });
 
-    // Build the HTML
     todayShows.forEach(item => {
       const startTime = item.from || '00:00';
       const endTime = item.until || '23:59'; 
 
-      // Calculate Duration for layout logic
+      // Duration Logic
       const fromDate = new Date(`2026-01-01T${startTime}`);
       const untilDate = new Date(`2026-01-01T${endTime}`);
       let durationHours = (untilDate - fromDate) / 1000 / 60 / 60;
@@ -88,25 +82,23 @@ function renderShows(shows) {
 
       const timeText = `${startTime.substring(0, 5)} - ${endTime.substring(0, 5)}`;
       const djNames = item.dj_names ? item.dj_names.split(',').map(n => n.trim()) : [];
-      const djImages = item.dj_images ? item.dj_images.split(',').map(i => i.trim()) : [];
+      
+      // FIX: Use show_thumbnail as the source for DJ images
+      const displayImg = item.show_thumbnail || 'assets/default-dj.webp';
 
-      const figures = djNames.map((dj, i) => {
-        // Use dj_images[i] if it exists and isn't empty, otherwise fallback
-        const imgSrc = (djImages[i] && djImages[i] !== "") ? djImages[i] : 'assets/default-dj.webp';
-        return `
+      const figures = djNames.map((dj) => `
           <figure class="${durationHours > 1 ? '' : 'normal-hidden'}">
-            <img src="${imgSrc}" alt="DJ ${dj}">
+            <img src="${displayImg}" alt="DJ ${dj}">
             <figcaption>
               <p class="${durationHours > 1 ? 'block-hidden' : ''}">${dj}</p>
             </figcaption>
           </figure>
-        `;
-      }).join('');
+        `).join('');
 
       const html = `
         <article class="${durationHours > 1 ? 'block' : ''}">
           <img 
-            src="${item.show_thumbnail || 'assets/default-show.webp'}" 
+            src="${displayImg}" 
             alt="Show van ${item.show_name}" 
             class="show-header"
           >
