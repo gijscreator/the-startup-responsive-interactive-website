@@ -1,738 +1,398 @@
 [
   {
     "day": "monday",
-    "shows": [
-      {
-        "from": "00:00:00",
-        "until": "06:00:00",
-        "show": {
-          "id": "3c426d29-ea98-495f-9b34-de660ec2c1ed",
-          "name": "100% NL Non-Stop",
-          "body": ""
-        },
-        "users": []
-      },
-      {
-        "from": "06:00:00",
-        "until": "10:00:00",
-        "show": {
-          "id": "ba6ef38d-3e07-4730-b274-c507b7f81732",
-          "name": "Goedemorgen 100% NL",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/57e30wh8gt9o-1920x1080.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/16qzq5j62zvw-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/4wtjt1s0fqjw-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "c301f412-01d8-4943-b620-7892c3a7471d",
-            "full_name": "Giorgio Hokstam",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5pkpzntwmwx2-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "10:00:00",
-        "until": "13:00:00",
-        "show": {
-          "id": "5ecf73ba-4f6d-4262-9f7f-0a94bfcfdb6d",
-          "name": "Erik van Roekel",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/59l89ap9gget-1920x1080.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/331wk5ka0kyd-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/4vlyke1y6u51-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "0c4113ef-08cd-4b56-96e6-af66e92acceb",
-            "full_name": "Erik van Roekel",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/331wk5ka0kyd-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "13:00:00",
-        "until": "16:00:00",
-        "show": {
-          "id": "1101273c-3b71-4aad-bdd4-414ea905757f",
-          "name": "Colin Banks",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1cxrmb1lw6xb-1920x1080.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/6jj74v6vu9se-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/11of4wbqc3rj-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "1a98de7a-ba0e-4044-ad91-a164cfb93b36",
-            "full_name": "Colin Banks",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6jj74v6vu9se-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "16:00:00",
-        "until": "19:00:00",
-        "show": {
-          "id": "5eeb32b7-a0cd-4901-afb2-afad1849e074",
-          "name": "De Barry Paf Show",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/5ubswwmzfi11-1207x765.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/5ubswwmzfi11-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/tjl6oxqdq86-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "ce9e6bb1-0e84-4a37-8132-c0a11fed8bd4",
-            "full_name": "Barry Paf",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5ubswwmzfi11-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "19:00:00",
-        "until": "22:00:00",
-        "show": {
-          "id": "d53bd909-ef21-4646-b44c-e12efe3e5f85",
-          "name": "Koen Hansen",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4ydsw9qv5cav-1920x1080.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/32570btxiirr-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/4orkar5mq1l3-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "57350879-9529-4395-b1f4-f0d1f9358e60",
-            "full_name": "Koen Hansen",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/32570btxiirr-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "22:00:00",
-        "until": "23:59:00",
-        "show": {
-          "id": "3c426d29-ea98-495f-9b34-de660ec2c1ed",
-          "name": "100% NL Non-Stop",
-          "body": ""
-        },
-        "users": []
-      }
-    ]
+    "from": "00:00:00",
+    "until": "06:00:00",
+    "show_name": "100% NL Non-Stop",
+    "show_thumbnail": "",
+    "dj_names": "",
+    "dj_images": ""
+  },
+  {
+    "day": "monday",
+    "from": "06:00:00",
+    "until": "10:00:00",
+    "show_name": "Goedemorgen 100% NL",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/57e30wh8gt9o-1920x1080.png",
+    "dj_names": "Giorgio Hokstam",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5pkpzntwmwx2-1207x765.png"
+  },
+  {
+    "day": "monday",
+    "from": "10:00:00",
+    "until": "13:00:00",
+    "show_name": "Erik van Roekel",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/59l89ap9gget-1920x1080.png",
+    "dj_names": "Erik van Roekel",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/331wk5ka0kyd-1207x765.png"
+  },
+  {
+    "day": "monday",
+    "from": "13:00:00",
+    "until": "16:00:00",
+    "show_name": "Colin Banks",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1cxrmb1lw6xb-1920x1080.png",
+    "dj_names": "Colin Banks",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6jj74v6vu9se-1207x765.png"
+  },
+  {
+    "day": "monday",
+    "from": "16:00:00",
+    "until": "19:00:00",
+    "show_name": "De Barry Paf Show",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/5ubswwmzfi11-1207x765.png",
+    "dj_names": "Barry Paf",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5ubswwmzfi11-1207x765.png"
+  },
+  {
+    "day": "monday",
+    "from": "19:00:00",
+    "until": "22:00:00",
+    "show_name": "Koen Hansen",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4ydsw9qv5cav-1920x1080.png",
+    "dj_names": "Koen Hansen",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/32570btxiirr-1207x765.png"
+  },
+  {
+    "day": "monday",
+    "from": "22:00:00",
+    "until": "23:59:00",
+    "show_name": "100% NL Non-Stop",
+    "show_thumbnail": "",
+    "dj_names": "",
+    "dj_images": ""
   },
   {
     "day": "tuesday",
-    "shows": [
-      {
-        "from": "00:00:00",
-        "until": "06:00:00",
-        "show": {
-          "id": "3c426d29-ea98-495f-9b34-de660ec2c1ed",
-          "name": "100% NL Non-Stop",
-          "body": ""
-        },
-        "users": []
-      },
-      {
-        "from": "06:00:00",
-        "until": "10:00:00",
-        "show": {
-          "id": "ba6ef38d-3e07-4730-b274-c507b7f81732",
-          "name": "Goedemorgen 100% NL",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/57e30wh8gt9o-1920x1080.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/16qzq5j62zvw-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/4wtjt1s0fqjw-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "c301f412-01d8-4943-b620-7892c3a7471d",
-            "full_name": "Giorgio Hokstam",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5pkpzntwmwx2-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "10:00:00",
-        "until": "13:00:00",
-        "show": {
-          "id": "5ecf73ba-4f6d-4262-9f7f-0a94bfcfdb6d",
-          "name": "Erik van Roekel",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/59l89ap9gget-1920x1080.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/331wk5ka0kyd-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/4vlyke1y6u51-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "0c4113ef-08cd-4b56-96e6-af66e92acceb",
-            "full_name": "Erik van Roekel",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/331wk5ka0kyd-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "13:00:00",
-        "until": "16:00:00",
-        "show": {
-          "id": "1101273c-3b71-4aad-bdd4-414ea905757f",
-          "name": "Colin Banks",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1cxrmb1lw6xb-1920x1080.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/6jj74v6vu9se-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/11of4wbqc3rj-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "1a98de7a-ba0e-4044-ad91-a164cfb93b36",
-            "full_name": "Colin Banks",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6jj74v6vu9se-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "16:00:00",
-        "until": "19:00:00",
-        "show": {
-          "id": "5eeb32b7-a0cd-4901-afb2-afad1849e074",
-          "name": "De Barry Paf Show",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/5ubswwmzfi11-1207x765.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/5ubswwmzfi11-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/tjl6oxqdq86-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "ce9e6bb1-0e84-4a37-8132-c0a11fed8bd4",
-            "full_name": "Barry Paf",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5ubswwmzfi11-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "19:00:00",
-        "until": "22:00:00",
-        "show": {
-          "id": "d53bd909-ef21-4646-b44c-e12efe3e5f85",
-          "name": "Koen Hansen",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4ydsw9qv5cav-1920x1080.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/32570btxiirr-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/4orkar5mq1l3-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "57350879-9529-4395-b1f4-f0d1f9358e60",
-            "full_name": "Koen Hansen",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/32570btxiirr-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "22:00:00",
-        "until": "23:59:00",
-        "show": {
-          "id": "3c426d29-ea98-495f-9b34-de660ec2c1ed",
-          "name": "100% NL Non-Stop",
-          "body": ""
-        },
-        "users": []
-      }
-    ]
+    "from": "00:00:00",
+    "until": "06:00:00",
+    "show_name": "100% NL Non-Stop",
+    "show_thumbnail": "",
+    "dj_names": "",
+    "dj_images": ""
+  },
+  {
+    "day": "tuesday",
+    "from": "06:00:00",
+    "until": "10:00:00",
+    "show_name": "Goedemorgen 100% NL",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/57e30wh8gt9o-1920x1080.png",
+    "dj_names": "Giorgio Hokstam",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5pkpzntwmwx2-1207x765.png"
+  },
+  {
+    "day": "tuesday",
+    "from": "10:00:00",
+    "until": "13:00:00",
+    "show_name": "Erik van Roekel",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/59l89ap9gget-1920x1080.png",
+    "dj_names": "Erik van Roekel",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/331wk5ka0kyd-1207x765.png"
+  },
+  {
+    "day": "tuesday",
+    "from": "13:00:00",
+    "until": "16:00:00",
+    "show_name": "Colin Banks",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1cxrmb1lw6xb-1920x1080.png",
+    "dj_names": "Colin Banks",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6jj74v6vu9se-1207x765.png"
+  },
+  {
+    "day": "tuesday",
+    "from": "16:00:00",
+    "until": "19:00:00",
+    "show_name": "De Barry Paf Show",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/5ubswwmzfi11-1207x765.png",
+    "dj_names": "Barry Paf",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5ubswwmzfi11-1207x765.png"
+  },
+  {
+    "day": "tuesday",
+    "from": "19:00:00",
+    "until": "22:00:00",
+    "show_name": "Koen Hansen",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4ydsw9qv5cav-1920x1080.png",
+    "dj_names": "Koen Hansen",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/32570btxiirr-1207x765.png"
+  },
+  {
+    "day": "tuesday",
+    "from": "22:00:00",
+    "until": "23:59:00",
+    "show_name": "100% NL Non-Stop",
+    "show_thumbnail": "",
+    "dj_names": "",
+    "dj_images": ""
   },
   {
     "day": "wednesday",
-    "shows": [
-      {
-        "from": "00:00:00",
-        "until": "06:00:00",
-        "show": {
-          "id": "3c426d29-ea98-495f-9b34-de660ec2c1ed",
-          "name": "100% NL Non-Stop",
-          "body": ""
-        },
-        "users": []
-      },
-      {
-        "from": "06:00:00",
-        "until": "10:00:00",
-        "show": {
-          "id": "ba6ef38d-3e07-4730-b274-c507b7f81732",
-          "name": "Goedemorgen 100% NL",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/57e30wh8gt9o-1920x1080.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/16qzq5j62zvw-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/4wtjt1s0fqjw-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "c301f412-01d8-4943-b620-7892c3a7471d",
-            "full_name": "Giorgio Hokstam",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5pkpzntwmwx2-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "10:00:00",
-        "until": "13:00:00",
-        "show": {
-          "id": "5ecf73ba-4f6d-4262-9f7f-0a94bfcfdb6d",
-          "name": "Erik van Roekel",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/59l89ap9gget-1920x1080.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/331wk5ka0kyd-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/4vlyke1y6u51-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "0c4113ef-08cd-4b56-96e6-af66e92acceb",
-            "full_name": "Erik van Roekel",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/331wk5ka0kyd-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "13:00:00",
-        "until": "16:00:00",
-        "show": {
-          "id": "1101273c-3b71-4aad-bdd4-414ea905757f",
-          "name": "Colin Banks",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1cxrmb1lw6xb-1920x1080.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/6jj74v6vu9se-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/11of4wbqc3rj-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "1a98de7a-ba0e-4044-ad91-a164cfb93b36",
-            "full_name": "Colin Banks",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6jj74v6vu9se-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "16:00:00",
-        "until": "19:00:00",
-        "show": {
-          "id": "5eeb32b7-a0cd-4901-afb2-afad1849e074",
-          "name": "De Barry Paf Show",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/5ubswwmzfi11-1207x765.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/5ubswwmzfi11-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/tjl6oxqdq86-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "ce9e6bb1-0e84-4a37-8132-c0a11fed8bd4",
-            "full_name": "Barry Paf",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5ubswwmzfi11-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "19:00:00",
-        "until": "22:00:00",
-        "show": {
-          "id": "d53bd909-ef21-4646-b44c-e12efe3e5f85",
-          "name": "Koen Hansen",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4ydsw9qv5cav-1920x1080.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/32570btxiirr-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/4orkar5mq1l3-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "57350879-9529-4395-b1f4-f0d1f9358e60",
-            "full_name": "Koen Hansen",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/32570btxiirr-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "22:00:00",
-        "until": "23:59:00",
-        "show": {
-          "id": "3c426d29-ea98-495f-9b34-de660ec2c1ed",
-          "name": "100% NL Non-Stop",
-          "body": ""
-        },
-        "users": []
-      }
-    ]
+    "from": "00:00:00",
+    "until": "06:00:00",
+    "show_name": "100% NL Non-Stop",
+    "show_thumbnail": "",
+    "dj_names": "",
+    "dj_images": ""
+  },
+  {
+    "day": "wednesday",
+    "from": "06:00:00",
+    "until": "10:00:00",
+    "show_name": "Goedemorgen 100% NL",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/57e30wh8gt9o-1920x1080.png",
+    "dj_names": "Giorgio Hokstam",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5pkpzntwmwx2-1207x765.png"
+  },
+  {
+    "day": "wednesday",
+    "from": "10:00:00",
+    "until": "13:00:00",
+    "show_name": "Erik van Roekel",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/59l89ap9gget-1920x1080.png",
+    "dj_names": "Erik van Roekel",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/331wk5ka0kyd-1207x765.png"
+  },
+  {
+    "day": "wednesday",
+    "from": "13:00:00",
+    "until": "16:00:00",
+    "show_name": "Colin Banks",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1cxrmb1lw6xb-1920x1080.png",
+    "dj_names": "Colin Banks",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6jj74v6vu9se-1207x765.png"
+  },
+  {
+    "day": "wednesday",
+    "from": "16:00:00",
+    "until": "19:00:00",
+    "show_name": "De Barry Paf Show",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/5ubswwmzfi11-1207x765.png",
+    "dj_names": "Barry Paf",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5ubswwmzfi11-1207x765.png"
+  },
+  {
+    "day": "wednesday",
+    "from": "19:00:00",
+    "until": "22:00:00",
+    "show_name": "Koen Hansen",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4ydsw9qv5cav-1920x1080.png",
+    "dj_names": "Koen Hansen",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/32570btxiirr-1207x765.png"
+  },
+  {
+    "day": "wednesday",
+    "from": "22:00:00",
+    "until": "23:59:00",
+    "show_name": "100% NL Non-Stop",
+    "show_thumbnail": "",
+    "dj_names": "",
+    "dj_images": ""
   },
   {
     "day": "thursday",
-    "shows": [
-      {
-        "from": "00:00:00",
-        "until": "06:00:00",
-        "show": {
-          "id": "3c426d29-ea98-495f-9b34-de660ec2c1ed",
-          "name": "100% NL Non-Stop",
-          "body": ""
-        },
-        "users": []
-      },
-      {
-        "from": "06:00:00",
-        "until": "10:00:00",
-        "show": {
-          "id": "ba6ef38d-3e07-4730-b274-c507b7f81732",
-          "name": "Goedemorgen 100% NL",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/57e30wh8gt9o-1920x1080.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/16qzq5j62zvw-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/4wtjt1s0fqjw-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "c301f412-01d8-4943-b620-7892c3a7471d",
-            "full_name": "Giorgio Hokstam",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5pkpzntwmwx2-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "10:00:00",
-        "until": "13:00:00",
-        "show": {
-          "id": "5ecf73ba-4f6d-4262-9f7f-0a94bfcfdb6d",
-          "name": "Erik van Roekel",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/59l89ap9gget-1920x1080.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/331wk5ka0kyd-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/4vlyke1y6u51-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "0c4113ef-08cd-4b56-96e6-af66e92acceb",
-            "full_name": "Erik van Roekel",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/331wk5ka0kyd-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "13:00:00",
-        "until": "16:00:00",
-        "show": {
-          "id": "1101273c-3b71-4aad-bdd4-414ea905757f",
-          "name": "Colin Banks",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1cxrmb1lw6xb-1920x1080.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/6jj74v6vu9se-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/11of4wbqc3rj-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "1a98de7a-ba0e-4044-ad91-a164cfb93b36",
-            "full_name": "Colin Banks",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6jj74v6vu9se-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "16:00:00",
-        "until": "19:00:00",
-        "show": {
-          "id": "5eeb32b7-a0cd-4901-afb2-afad1849e074",
-          "name": "De Barry Paf Show",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/5ubswwmzfi11-1207x765.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/5ubswwmzfi11-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/tjl6oxqdq86-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "ce9e6bb1-0e84-4a37-8132-c0a11fed8bd4",
-            "full_name": "Barry Paf",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5ubswwmzfi11-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "19:00:00",
-        "until": "22:00:00",
-        "show": {
-          "id": "d53bd909-ef21-4646-b44c-e12efe3e5f85",
-          "name": "Koen Hansen",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4ydsw9qv5cav-1920x1080.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/32570btxiirr-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/4orkar5mq1l3-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "57350879-9529-4395-b1f4-f0d1f9358e60",
-            "full_name": "Koen Hansen",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/32570btxiirr-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "22:00:00",
-        "until": "23:59:00",
-        "show": {
-          "id": "3c426d29-ea98-495f-9b34-de660ec2c1ed",
-          "name": "100% NL Non-Stop",
-          "body": ""
-        },
-        "users": []
-      }
-    ]
+    "from": "00:00:00",
+    "until": "06:00:00",
+    "show_name": "100% NL Non-Stop",
+    "show_thumbnail": "",
+    "dj_names": "",
+    "dj_images": ""
+  },
+  {
+    "day": "thursday",
+    "from": "06:00:00",
+    "until": "10:00:00",
+    "show_name": "Goedemorgen 100% NL",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/57e30wh8gt9o-1920x1080.png",
+    "dj_names": "Giorgio Hokstam",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5pkpzntwmwx2-1207x765.png"
+  },
+  {
+    "day": "thursday",
+    "from": "10:00:00",
+    "until": "13:00:00",
+    "show_name": "Erik van Roekel",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/59l89ap9gget-1920x1080.png",
+    "dj_names": "Erik van Roekel",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/331wk5ka0kyd-1207x765.png"
+  },
+  {
+    "day": "thursday",
+    "from": "13:00:00",
+    "until": "16:00:00",
+    "show_name": "Colin Banks",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1cxrmb1lw6xb-1920x1080.png",
+    "dj_names": "Colin Banks",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6jj74v6vu9se-1207x765.png"
+  },
+  {
+    "day": "thursday",
+    "from": "16:00:00",
+    "until": "19:00:00",
+    "show_name": "De Barry Paf Show",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/5ubswwmzfi11-1207x765.png",
+    "dj_names": "Barry Paf",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5ubswwmzfi11-1207x765.png"
+  },
+  {
+    "day": "thursday",
+    "from": "19:00:00",
+    "until": "22:00:00",
+    "show_name": "Koen Hansen",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4ydsw9qv5cav-1920x1080.png",
+    "dj_names": "Koen Hansen",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/32570btxiirr-1207x765.png"
+  },
+  {
+    "day": "thursday",
+    "from": "22:00:00",
+    "until": "23:59:00",
+    "show_name": "100% NL Non-Stop",
+    "show_thumbnail": "",
+    "dj_names": "",
+    "dj_images": ""
   },
   {
     "day": "friday",
-    "shows": [
-      {
-        "from": "00:00:00",
-        "until": "06:00:00",
-        "show": {
-          "id": "3c426d29-ea98-495f-9b34-de660ec2c1ed",
-          "name": "100% NL Non-Stop",
-          "body": ""
-        },
-        "users": []
-      },
-      {
-        "from": "06:00:00",
-        "until": "10:00:00",
-        "show": {
-          "id": "dbbc096c-419d-4544-a678-52dcd6ffb1e1",
-          "name": "Meezingvrijdag",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/7gk53001ba3a-tekengebied-2.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/7gk53001ba3a-tekengebied-2.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/596zozh0c1xz-tekengebied-3.png"
-        },
-        "users": [
-          {
-            "id": "c301f412-01d8-4943-b620-7892c3a7471d",
-            "full_name": "Giorgio Hokstam",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5pkpzntwmwx2-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "10:00:00",
-        "until": "13:00:00",
-        "show": {
-          "id": "dbbc096c-419d-4544-a678-52dcd6ffb1e1",
-          "name": "Meezingvrijdag",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/7gk53001ba3a-tekengebied-2.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/7gk53001ba3a-tekengebied-2.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/596zozh0c1xz-tekengebied-3.png"
-        },
-        "users": [
-          {
-            "id": "0c4113ef-08cd-4b56-96e6-af66e92acceb",
-            "full_name": "Erik van Roekel",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/331wk5ka0kyd-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "13:00:00",
-        "until": "16:00:00",
-        "show": {
-          "id": "dbbc096c-419d-4544-a678-52dcd6ffb1e1",
-          "name": "Meezingvrijdag",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/7gk53001ba3a-tekengebied-2.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/7gk53001ba3a-tekengebied-2.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/596zozh0c1xz-tekengebied-3.png"
-        },
-        "users": [
-          {
-            "id": "1a98de7a-ba0e-4044-ad91-a164cfb93b36",
-            "full_name": "Colin Banks",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6jj74v6vu9se-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "16:00:00",
-        "until": "19:00:00",
-        "show": {
-          "id": "dbbc096c-419d-4544-a678-52dcd6ffb1e1",
-          "name": "Meezingvrijdag",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/7gk53001ba3a-tekengebied-2.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/7gk53001ba3a-tekengebied-2.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/596zozh0c1xz-tekengebied-3.png"
-        },
-        "users": [
-          {
-            "id": "918bf0d8-7c1a-4403-b7c3-6b3e9491c475",
-            "full_name": "Stephan Jacobs",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/42679q1cmbo3-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "19:00:00",
-        "until": "22:00:00",
-        "show": {
-          "id": "dbbc096c-419d-4544-a678-52dcd6ffb1e1",
-          "name": "Meezingvrijdag",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/7gk53001ba3a-tekengebied-2.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/7gk53001ba3a-tekengebied-2.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/596zozh0c1xz-tekengebied-3.png"
-        },
-        "users": [
-          {
-            "id": "57350879-9529-4395-b1f4-f0d1f9358e60",
-            "full_name": "Koen Hansen",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/32570btxiirr-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "22:00:00",
-        "until": "23:59:00",
-        "show": {
-          "id": "3c426d29-ea98-495f-9b34-de660ec2c1ed",
-          "name": "100% NL Non-Stop",
-          "body": ""
-        },
-        "users": []
-      }
-    ]
+    "from": "00:00:00",
+    "until": "06:00:00",
+    "show_name": "100% NL Non-Stop",
+    "show_thumbnail": "",
+    "dj_names": "",
+    "dj_images": ""
+  },
+  {
+    "day": "friday",
+    "from": "06:00:00",
+    "until": "10:00:00",
+    "show_name": "Meezingvrijdag",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/7gk53001ba3a-tekengebied-2.png",
+    "dj_names": "Giorgio Hokstam",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5pkpzntwmwx2-1207x765.png"
+  },
+  {
+    "day": "friday",
+    "from": "10:00:00",
+    "until": "13:00:00",
+    "show_name": "Meezingvrijdag",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/7gk53001ba3a-tekengebied-2.png",
+    "dj_names": "Erik van Roekel",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/331wk5ka0kyd-1207x765.png"
+  },
+  {
+    "day": "friday",
+    "from": "13:00:00",
+    "until": "16:00:00",
+    "show_name": "Meezingvrijdag",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/7gk53001ba3a-tekengebied-2.png",
+    "dj_names": "Colin Banks",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6jj74v6vu9se-1207x765.png"
+  },
+  {
+    "day": "friday",
+    "from": "16:00:00",
+    "until": "19:00:00",
+    "show_name": "Meezingvrijdag",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/7gk53001ba3a-tekengebied-2.png",
+    "dj_names": "Stephan Jacobs",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/42679q1cmbo3-1207x765.png"
+  },
+  {
+    "day": "friday",
+    "from": "19:00:00",
+    "until": "22:00:00",
+    "show_name": "Meezingvrijdag",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/7gk53001ba3a-tekengebied-2.png",
+    "dj_names": "Koen Hansen",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/32570btxiirr-1207x765.png"
+  },
+  {
+    "day": "friday",
+    "from": "22:00:00",
+    "until": "23:59:00",
+    "show_name": "100% NL Non-Stop",
+    "show_thumbnail": "",
+    "dj_names": "",
+    "dj_images": ""
   },
   {
     "day": "saturday",
-    "shows": [
-      {
-        "from": "00:00:00",
-        "until": "09:00:00",
-        "show": {
-          "id": "3c426d29-ea98-495f-9b34-de660ec2c1ed",
-          "name": "100% NL Non-Stop",
-          "body": ""
-        },
-        "users": []
-      },
-      {
-        "from": "09:00:00",
-        "until": "12:00:00",
-        "show": {
-          "id": "1d26b858-aef7-4aae-af80-b5b100308294",
-          "name": "Timo Kamst",
-          "body": ""
-        },
-        "users": [
-          {
-            "id": "37dc2dca-1e0f-4038-bd61-f2da9112b0fe",
-            "full_name": "Timo Kamst",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/16troqjl24kc-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "12:00:00",
-        "until": "15:00:00",
-        "show": {
-          "id": "ce12c29e-d392-4f2a-9cc5-da52a2c65157",
-          "name": "Stephan Jacobs",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1o1lllbc8238-1920x1080.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/42679q1cmbo3-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/5gu01wc8u9oz-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "918bf0d8-7c1a-4403-b7c3-6b3e9491c475",
-            "full_name": "Stephan Jacobs",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/42679q1cmbo3-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "15:00:00",
-        "until": "17:00:00",
-        "show": {
-          "id": "64680993-db91-486b-975c-25b069f3d89f",
-          "name": "100% NL Top 20",
-          "body": ""
-        },
-        "users": [
-          {
-            "id": "1a98de7a-ba0e-4044-ad91-a164cfb93b36",
-            "full_name": "Colin Banks",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6jj74v6vu9se-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "17:00:00",
-        "until": "23:59:00",
-        "show": {
-          "id": "3c426d29-ea98-495f-9b34-de660ec2c1ed",
-          "name": "100% NL Non-Stop",
-          "body": ""
-        },
-        "users": []
-      }
-    ]
+    "from": "00:00:00",
+    "until": "09:00:00",
+    "show_name": "100% NL Non-Stop",
+    "show_thumbnail": "",
+    "dj_names": "",
+    "dj_images": ""
+  },
+  {
+    "day": "saturday",
+    "from": "09:00:00",
+    "until": "12:00:00",
+    "show_name": "Timo Kamst",
+    "show_thumbnail": "",
+    "dj_names": "Timo Kamst",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/16troqjl24kc-1207x765.png"
+  },
+  {
+    "day": "saturday",
+    "from": "12:00:00",
+    "until": "15:00:00",
+    "show_name": "Stephan Jacobs",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1o1lllbc8238-1920x1080.png",
+    "dj_names": "Stephan Jacobs",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/42679q1cmbo3-1207x765.png"
+  },
+  {
+    "day": "saturday",
+    "from": "15:00:00",
+    "until": "17:00:00",
+    "show_name": "100% NL Top 20",
+    "show_thumbnail": "",
+    "dj_names": "Colin Banks",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6jj74v6vu9se-1207x765.png"
+  },
+  {
+    "day": "saturday",
+    "from": "17:00:00",
+    "until": "23:59:00",
+    "show_name": "100% NL Non-Stop",
+    "show_thumbnail": "",
+    "dj_names": "",
+    "dj_images": ""
   },
   {
     "day": "sunday",
-    "shows": [
-      {
-        "from": "00:00:00",
-        "until": "09:00:00",
-        "show": {
-          "id": "3c426d29-ea98-495f-9b34-de660ec2c1ed",
-          "name": "100% NL Non-Stop",
-          "body": ""
-        },
-        "users": []
-      },
-      {
-        "from": "09:00:00",
-        "until": "12:00:00",
-        "show": {
-          "id": "1d26b858-aef7-4aae-af80-b5b100308294",
-          "name": "Timo Kamst",
-          "body": ""
-        },
-        "users": [
-          {
-            "id": "37dc2dca-1e0f-4038-bd61-f2da9112b0fe",
-            "full_name": "Timo Kamst",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/16troqjl24kc-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "12:00:00",
-        "until": "17:00:00",
-        "show": {
-          "id": "ce12c29e-d392-4f2a-9cc5-da52a2c65157",
-          "name": "Stephan Jacobs",
-          "body": "",
-          "thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1o1lllbc8238-1920x1080.png",
-          "headerMobile": "https://2ptqdc73ga5k.b-cdn.net/w_1207/42679q1cmbo3-1207x765.png",
-          "headerDesktop": "https://2ptqdc73ga5k.b-cdn.net/w_2400/5gu01wc8u9oz-2400x800.png"
-        },
-        "users": [
-          {
-            "id": "918bf0d8-7c1a-4403-b7c3-6b3e9491c475",
-            "full_name": "Stephan Jacobs",
-            "cover": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/42679q1cmbo3-1207x765.png"
-          }
-        ]
-      },
-      {
-        "from": "17:00:00",
-        "until": "23:59:00",
-        "show": {
-          "id": "3c426d29-ea98-495f-9b34-de660ec2c1ed",
-          "name": "100% NL Non-Stop",
-          "body": ""
-        },
-        "users": []
-      }
-    ]
+    "from": "00:00:00",
+    "until": "09:00:00",
+    "show_name": "100% NL Non-Stop",
+    "show_thumbnail": "",
+    "dj_names": "",
+    "dj_images": ""
+  },
+  {
+    "day": "sunday",
+    "from": "09:00:00",
+    "until": "12:00:00",
+    "show_name": "Timo Kamst",
+    "show_thumbnail": "",
+    "dj_names": "Timo Kamst",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/16troqjl24kc-1207x765.png"
+  },
+  {
+    "day": "sunday",
+    "from": "12:00:00",
+    "until": "17:00:00",
+    "show_name": "Stephan Jacobs",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1o1lllbc8238-1920x1080.png",
+    "dj_names": "Stephan Jacobs",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/42679q1cmbo3-1207x765.png"
+  },
+  {
+    "day": "sunday",
+    "from": "17:00:00",
+    "until": "23:59:00",
+    "show_name": "100% NL Non-Stop",
+    "show_thumbnail": "",
+    "dj_names": "",
+    "dj_images": ""
   }
 ]
