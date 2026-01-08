@@ -96,19 +96,18 @@ main {
         transparent 1px
       );
 
-    background-size: 10rem 40%;
+    background-size: 10rem 35%;
     background-repeat: repeat-x;
-    background-position: bottom;
+    background-position: 5.4rem bottom;
     position: relative;
     height: 3rem;
     align-items: center;
 
     ul {
       display: flex;
-      gap: 7.2rem;
+      gap: 7.5rem;
       padding-left: 0;
-      margin-left: -1rem;
-      padding: 0rem 1rem;
+      margin-left: 2.8rem;
 
     }
 
