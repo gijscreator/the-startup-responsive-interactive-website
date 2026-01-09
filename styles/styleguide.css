@@ -1,16 +1,44 @@
 :root {
-    --veronica-blauw: #0091FF;
-    --honderdnl-black: #1E1E1E;
-    --hondernl-orange: #E17000;
-    --slam-pink: #FF006B;
-    --slam-blue: #0AAAE1;
-    --tekst-donker: #1E1E1E;
-    --tekst-licht: #ffffff;
-    --radiogids-rood: #EF0105;
+
+    color-scheme: light dark;
+
+    /* radio Veronica */
+    --veronica-primary: #0091FF;
+    --veronica-secondary: #FF006B;
+
+    /* radio 100%NL */
+
+    --honderdnl-primary: #E17000;
+    --honderdnl-secondary: #1e1e1e;
+
+    /* radio Slam! */
+    --slam-primary: #FF006B;
+    --slam-secondary: #0AAAE1;
+
+    /* General app styling */
+
+    --radiogids-primary: #EF0105;
+    --radiogids-light-background: #ffffff;
+    --radiogids-dark-background: #1e1e1e;
+    --text-dark: #1E1E1E;
+    --text-light: #ffffff;
+
+    /* Font sizes */
+
+    /* headings */
+
+    --large-heading: clamp(2rem, 2rem, 5rem);
+    --medium-heading: clamp(1.5rem, 1.5rem, 5rem);
+    --small-heading: clamp(1.3rem, 1.3rem, 5rem);
+
+    /* paragraph */
+    --large-paragraph: clamp(1.2rem, 1.2rem, 5rem);
+    --medium-paragraph: clamp(1.1rem, 1.1rem, 3rem);
+    --small-paragraph: clamp(1rem, 1rem, 2rem);
+
+    /* Border radius */
 
     --border-radius: .7rem;
-
-    overscroll-behavior: none;
 }
 
 body {
@@ -32,32 +60,17 @@ body {
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: var(--large-heading);
     font-weight: 700;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: var(--medium-heading);
     font-weight: 700;
 }
 
-h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
-}
-
-h4 {
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-h5 {
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-h6 {
-    font-size: 1.5rem;
+h3, h4, h5, h6 {
+    font-size: var(--small-heading);
     font-weight: 700;
 }
 

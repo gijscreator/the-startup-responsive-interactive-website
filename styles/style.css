@@ -7,6 +7,10 @@ Five hours = 800px / 50rem
 Six hours = 960px / 60rem
 */
 
+html, body {
+  background-color: light-dark(#333b3c, #efefec);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -210,19 +214,19 @@ main {
     margin-top: .5rem;
 
     figure {
-      background-color: var(--veronica-blauw);
+      background-color: var(--veronica-primary);
 
 
       img {
-        background-color: var(--veronica-blauw);
+        background-color: var(--veronica-primary);
       }
     }
 
     article {
-      background-color: var(--veronica-blauw);
+      background-color: var(--veronica-primary);
 
        img {
-        background-color: var(--veronica-blauw);
+        background-color: var(--veronica-primary);
        }
     }
   }
@@ -233,19 +237,19 @@ main {
     margin: .5rem 0;
 
     figure {
-      background-color: var(--hondernl-orange);
+      background-color: light-dark(var(--honderdnl-secondary), var(--honderdnl-primary));
 
       img {
-        background-color: var(--honderdnl-black)
+        background-color: light-dark(var(--honderdnl-secondary), var(--honderdnl-primary));
       }
 
     }
 
     article {
-      background-color: var(--honderdnl-black);
+      background-color: light-dark(var(--honderdnl-secondary), var(--honderdnl-primary));
 
        img {
-        background-color: var(--honderdnl-black)
+        background-color: light-dark(var(--honderdnl-secondary), var(--honderdnl-primary));
        }
     }
   }
@@ -300,14 +304,6 @@ main {
       height: auto;
     }
 
-    h4 {
-
-    }
-
-    p {
-
-    }
-
     svg {
 
       path {
@@ -355,7 +351,6 @@ main {
         grid-area: title;
         padding: 0.2rem 1rem;
         padding-top: 0;
-        font-size: 1.3rem;
         margin: 0;
       }
 
@@ -433,13 +428,6 @@ footer {
   width: 100vw;
   position: fixed;
   bottom: 0;
-
-  svg {
-
-    path {
-      fill: white;
-    }
-  }
 }
 
 .test-line {
@@ -451,3 +439,4 @@ footer {
   top: 10vh;
   left: 50.5vw;
 }
+
