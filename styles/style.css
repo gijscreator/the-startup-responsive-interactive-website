@@ -8,7 +8,7 @@ Six hours = 960px / 60rem
 */
 
 html, body {
-  background-color: light-dark(#333b3c, #efefec);
+  background-color: light-dark(var(--radiogids-light-background), var(--radiogids-dark-background));
 }
 
 * {
