@@ -7,7 +7,8 @@
     --tekst-donker: #1E1E1E;
     --tekst-licht: #ffffff;
     --radiogids-rood: #EF0105;
-    --border-radius: 10px;
+
+    --border-radius: .7rem;
 
     overscroll-behavior: none;
 }
