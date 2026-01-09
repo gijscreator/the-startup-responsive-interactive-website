@@ -26,7 +26,18 @@
 	<!-- Header met logo -->
 	<header class="header">
 		<h1 class="visually-hidden">Radiohuis</h1>
-		<img src="assets/logo-radiogids.webp" width="180" height="100" alt="Logo radiogids">
+
+		<!-- Nieuwe techniek die ik nog niet kende src="https://stackoverflow.com/questions/74638826/alternate-images-based-on-users-color-preference-without-using-javascript"-->
+		<picture>
+			<!-- gebruiker wilt light mode: -->
+			<source srcset="assets/logo-radiogids.webp" media="(prefers-color-scheme: light)"/>
+
+			<!-- gebruiker wilt dark mode: -->
+			<source srcset="assets/radiogids-darkmode.webp"  media="(prefers-color-scheme: dark)"/>
+
+			<!-- gebruiker wilt niks: -->
+			<img src="assets/logo-radiogids.webp" alt="Description of what the image shows"/>
+		</picture>
 
 		<!-- date picker -->
 		<!-- <section>
