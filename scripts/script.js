@@ -1,6 +1,3 @@
-/**
- * 1. FETCH ALL STATIONS simultaneously
- */
 const stations = [
   { id: 1, file: 'data/veronica.json', container: '#veronica-shows' },
   { id: 2, file: 'data/slam.json', container: '#slam-shows' },
