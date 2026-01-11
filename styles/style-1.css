@@ -171,6 +171,7 @@ main {
       position: sticky;
       left: 0;
       height: 23dvh;
+      max-height: 10.625rem;
       display: flex;
       align-items: center;
       border-radius: 0rem var(--border-radius) var(--border-radius) 0rem;
