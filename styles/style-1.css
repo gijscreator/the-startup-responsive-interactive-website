@@ -47,6 +47,7 @@ header.header {
   flex-direction: column;
   justify-content: center;
   padding: .5rem;
+  height: 10vh;
 
   picture {
     display: flex;
@@ -117,7 +118,7 @@ main {
         transparent 1px
       );
 
-    background-size: 10.2rem 35%;
+    background-size: 10.15rem 35%;
     background-repeat: repeat-x;
     background-position: 5.4rem bottom;
     position: relative;
@@ -126,7 +127,7 @@ main {
 
     ul {
       display: flex;
-      gap: 7.7rem;
+      gap: 7.65rem;
       padding-left: 0;
       margin-left: 2.8rem;
 
@@ -164,6 +165,7 @@ main {
   section.kaartje {
     display: flex;
     gap: .5rem;
+    height: 10.625rem;
     width: max-content;
 
     figure {
@@ -172,6 +174,7 @@ main {
       position: sticky;
       left: 0;
       height: 23vh;
+      height: 10.625rem;
       display: flex;
       align-items: center;
       border-radius: 0rem var(--border-radius) var(--border-radius) 0rem;
@@ -187,6 +190,7 @@ main {
       border-radius: var(--border-radius);
       width: 40vw;
       max-width: 9.74rem;
+      height: 10.625rem;
 
       img {
         border-radius: var(--border-radius)  var(--border-radius) 0rem 0rem;
@@ -202,11 +206,11 @@ main {
       p {
         display: flex;
         align-items: center;
-        gap: 2vw;
+        gap: .5rem;
         
         &:nth-of-type(1) {
         
-            margin-top: auto;
+            margin-top: .5rem;
             margin-bottom: .3rem;
 
             &::before {
@@ -347,7 +351,7 @@ main {
         "title  title";
       gap: 0;
       border-radius: var(--border-radius);
-      height: 23vh;
+      height: 10.625rem;
 
       /* gebruikt omdat de border radius van de block kaartjes anders niet werken */
       overflow: hidden;
@@ -454,8 +458,7 @@ footer {
   --current-time: 50.7vw;
 
   display: flex;
-  width: 1vw;
-  max-width: 1rem;
+  width: .3rem;
   background-color: light-dark(var(--radiogids-primary), var(--radiogids-light-background));
   position: absolute;
   top: 10vh;
