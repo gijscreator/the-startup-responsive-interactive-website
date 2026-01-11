@@ -514,42 +514,6 @@
   },
   {
     "day": "sunday",
-    "from": "00:00:00",
-    "until": "01:00:00",
-    "show_name": "Joris Voorn",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
-    "dj_names": "Joris Voorn",
-    "dj_images": ""
-  },
-  {
-    "day": "sunday",
-    "from": "01:00:00",
-    "until": "02:00:00",
-    "show_name": "Eelke Kleijn",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
-    "dj_names": "Eelke Kleijn",
-    "dj_images": ""
-  },
-  {
-    "day": "sunday",
-    "from": "02:00:00",
-    "until": "03:00:00",
-    "show_name": "Secret Cinema",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
-    "dj_names": "Secret Cinema",
-    "dj_images": ""
-  },
-  {
-    "day": "sunday",
-    "from": "03:00:00",
-    "until": "04:00:00",
-    "show_name": "Jochem Hamerling",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
-    "dj_names": "Jochem Hamerling",
-    "dj_images": ""
-  },
-  {
-    "day": "sunday",
     "from": "04:00:00",
     "until": "05:00:00",
     "show_name": "Franky Rizardo",
