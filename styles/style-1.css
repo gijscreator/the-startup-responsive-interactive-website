@@ -446,16 +446,20 @@ footer {
   width: 100vw;
   position: fixed;
   bottom: 0;
+  height: 10vh;
 }
 
 .test-line {
+
+  --current-time: 50.7vw;
+
   display: flex;
   width: 1vw;
   max-width: 1rem;
-  height: 90dvh;
   background-color: light-dark(var(--radiogids-primary), var(--radiogids-light-background));
   position: absolute;
-  top: 20dvh;
+  top: 10vh;
+  bottom: 10vh;
   left: 50.7vw;
 }
 
