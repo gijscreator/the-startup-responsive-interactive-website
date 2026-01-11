@@ -101,7 +101,7 @@ main {
   flex-direction: column;
   overflow-x: auto;
   overflow-y: hidden;
-  height: 82dvh;
+  height: 86dvh;
 
   /* Section met timeline  */
 
@@ -442,7 +442,7 @@ footer {
   width: 100vw;
   position: fixed;
   bottom: 0;
-  height: 10dvh;
+  height: 7dvh;
   background-color: var(--radiogids-dark-background);
 }
 
