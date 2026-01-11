@@ -451,6 +451,7 @@ footer {
   position: fixed;
   bottom: 0;
   height: 10vh;
+  background-color: purple;
 }
 
 .test-line {
@@ -462,6 +463,8 @@ footer {
   background-color: light-dark(var(--radiogids-primary), var(--radiogids-light-background));
   position: absolute;
   top: 10vh;
+  height: 80vh;
+  max-height: 600px;
   bottom: 10vh;
   left: 50.7vw;
 }
