@@ -49,7 +49,7 @@ header.header {
   flex-direction: column;
   justify-content: center;
   padding: .5rem;
-  height: 10vh;
+  height: 10dvh;
 
   picture {
     display: flex;
@@ -100,7 +100,7 @@ main {
   display: flex;
   flex-direction: column;
   overflow-x: auto;
-  height: 80dvh;
+  height: 80ddvh;
 
   /* Section met timeline  */
 
@@ -133,7 +133,7 @@ main {
     svg:nth-of-type(1) {
       display: flex;
       position: sticky;
-      top: 0vh;
+      top: 0dvh;
       left: 50vw;
       flex-shrink: 0;
       align-self: flex-start;
@@ -146,7 +146,7 @@ main {
     svg:nth-of-type(2) {
       display: flex;
       position: sticky;
-      bottom: 0vh;
+      bottom: 0dvh;
       left: 50vw;
       flex-shrink: 0;
       align-self: flex-end;
@@ -169,7 +169,7 @@ main {
       max-width: 80px;
       position: sticky;
       left: 0;
-      height: 23vh;
+      height: 23dvh;
       display: flex;
       align-items: center;
       border-radius: 0rem var(--border-radius) var(--border-radius) 0rem;
@@ -191,7 +191,7 @@ main {
         border-radius: var(--border-radius)  var(--border-radius) 0rem 0rem;
         object-fit: cover;
         width: 100%;
-        height: 9vh
+        height: 9dvh
       }
 
       section {
@@ -441,7 +441,7 @@ footer {
   width: 100vw;
   position: fixed;
   bottom: 0;
-  height: 10vh;
+  height: 10dvh;
   background-color: var(--radiogids-dark-background);
 }
 
@@ -453,10 +453,10 @@ footer {
   width: .3rem;
   background-color: light-dark(var(--radiogids-primary), var(--radiogids-light-background));
   position: absolute;
-  top: 10vh;
-  height: 80vh;
+  top: 10dvh;
+  height: 80dvh;
   max-height: 600px;
-  bottom: 10vh;
+  bottom: 10dvh;
   left: 50.7vw;
 }
 
