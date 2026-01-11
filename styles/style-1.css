@@ -9,6 +9,7 @@ Six hours = 960px / 60rem
 
 html, body {
   background-color: light-dark(var(--radiogids-light-background), var(--radiogids-dark-background));
+  height: 100dvh;
 }
 
 * {
@@ -52,15 +53,15 @@ header.header {
   picture {
     display: flex;
     justify-content: center;
+  }
 
-    img {
-      width: 50%;
-      max-width: 400px;
-      height: auto;
-      max-height: 100px;
-      object-fit: cover;
-      margin: 0 auto;
-    }
+  img {
+    width: 50%;
+    max-width: 400px;
+    height: auto;
+    max-height: 100px;
+    object-fit: cover;
+    margin: 0 auto;
   }
 
   /* Section met date picker */
@@ -69,12 +70,6 @@ header.header {
     display: flex;
     justify-content: space-between;
     position: relative;
-    
-    form {
-      input {
-
-      }
-    }
 
     ul {
       display: flex;
@@ -104,6 +99,7 @@ main {
   display: flex;
   flex-direction: column;
   overflow-x: auto;
+  height: 80dvh;
 
   /* Section met timeline  */
 
@@ -165,7 +161,6 @@ main {
   section.kaartje {
     display: flex;
     gap: .5rem;
-    height: 10.625rem;
     width: max-content;
 
     figure {
@@ -309,10 +304,6 @@ main {
       justify-content: space-between;
       align-items: center;
 
-      p {
-
-      }
-
       button {
         all: unset;
         display: flex;
@@ -439,7 +430,7 @@ main {
     }
   }
 }
-
+ 
 
 
 footer {
@@ -451,7 +442,7 @@ footer {
   position: fixed;
   bottom: 0;
   height: 10vh;
-  background-color: purple;
+  background-color: var(--radiogids-dark-background);
 }
 
 .test-line {
