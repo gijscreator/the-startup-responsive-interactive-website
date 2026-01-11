@@ -28,9 +28,6 @@ Promise.all(
     console.error("Error loading show data:", err);
   });
 
-/**
- * 2. RENDER LOGIC (Updated)
- */
 function renderShows(shows) {
   if (!shows || shows.length === 0) return;
 
@@ -47,6 +44,10 @@ function renderShows(shows) {
     const container = document.querySelector(stationMap[stationId]);
     if (!container) return;
 
+    // Remove only previous articles to keep your logo/static content
+    const existingShows = container.querySelectorAll('article');
+    existingShows.forEach(el => el.remove());
+
     const addedShows = new Set();
 
     const todayShows = shows
@@ -57,10 +58,6 @@ function renderShows(shows) {
           !addedShows.has(`${item.from}-${item.show_name}`)
         );
       })
-      .map(item => {
-        addedShows.add(`${item.from}-${item.show_name}`);
-        return item;
-      })
       .sort((a, b) => {
         const [ah, am] = (a.from || "00:00").split(':').map(Number);
         const [bh, bm] = (b.from || "00:00").split(':').map(Number);
@@ -69,31 +66,37 @@ function renderShows(shows) {
 
     todayShows.forEach(item => {
       const startTime = item.from || '00:00';
-      const endTime = item.until || '23:59'; 
+      let endTime = item.until || '23:59'; 
 
-      // Duration Logic
+      // 1. Math Calculation (Handling 23:59 as 24:00 for duration logic)
+      const calcEndTime = endTime === '23:59' ? '24:00' : endTime;
+      
       const fromDate = new Date(`2026-01-01T${startTime}`);
-      const untilDate = new Date(`2026-01-01T${endTime}`);
+      const untilDate = new Date(`2026-01-01T${calcEndTime}`);
+      
       let durationHours = (untilDate - fromDate) / 1000 / 60 / 60;
       if (durationHours < 0) durationHours += 24; 
 
-      const timeText = `${startTime.substring(0, 5)} - ${endTime.substring(0, 5)}`;
-      const djNames = item.dj_names ? item.dj_names.split(',').map(n => n.trim()) : [];
+      // 2. Generate Duration Class (Rounding DOWN)
+      const numberWords = [
+        'zero', 'one', 'two', 'three', 'four', 'five', 
+        'six', 'seven', 'eight', 'nine', 'ten'
+      ];
       
-      // FIX: Use show_thumbnail as the source for DJ images
+      // Use Math.floor to ensure 23:59 doesn't push a 2-hour show into a 3-hour class
+      const finalHours = Math.floor(durationHours);
+      const hourWord = numberWords[finalHours] || 'long';
+      const durationClass = hourWord + (finalHours === 1 ? 'hour' : 'hours');
+
+      // 3. Keep 'block' class for shows >= 2 hours
+      const blockClass = finalHours >= 2 ? 'block' : '';
+
+      const timeText = `${startTime.substring(0, 5)} - ${endTime.substring(0, 5)}`;
+      const djNames = item.dj_names ? item.dj_names.split(',').map(n => n.trim()).join(' & ') : '';
       const displayImg = item.show_thumbnail || 'assets/default-dj.webp';
 
-      const figures = djNames.map((dj) => `
-          <figure class="${durationHours > 1 ? '' : 'normal-hidden'}">
-            <img src="${displayImg}" alt="DJ ${dj}">
-            <figcaption>
-              <p class="${durationHours > 1 ? 'block-hidden' : ''}">${dj}</p>
-            </figcaption>
-          </figure>
-        `).join('');
-
       const html = `
-        <article class="${durationHours > 1 ? 'block' : ''}">
+        <article class="${blockClass} ${durationClass}">
           <img 
             src="${displayImg}" 
             alt="Show van ${item.show_name}" 
@@ -101,11 +104,8 @@ function renderShows(shows) {
           >
           <section>
             <h3 class="title">${item.show_name || 'Onbekende Show'}</h3>
-            <p class="${durationHours > 1 ? 'block-hidden' : ''} dj-names">
-              ${djNames.join(' & ')}
-            </p>
+            <p class="dj-names">${djNames}</p>
             <p class="time">${timeText}</p>
-            <div class="dj-figures">${figures}</div>
           </section>
         </article>
       `;

@@ -5,6 +5,7 @@ Three hours = 480px / 30rem
 Four hours = 640px / 40rem
 Five hours = 800px / 50rem
 Six hours = 960px / 60rem
+Seven hours = 1120px / 70rem
 */
 
 html, body {
@@ -330,9 +331,6 @@ main {
   section {
 
     article.block {
-
-      width: 90vw;
-      max-width: 320px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr auto auto;
@@ -346,6 +344,36 @@ main {
 
       /* gebruikt omdat de border radius van de block kaartjes anders niet werken */
       overflow: hidden;
+
+      &.twohours {
+          width: 20rem;
+          max-width: 320px;
+      }
+
+      &.threehours {
+        width: 30rem;
+        max-width: 480px;
+      }
+
+      &.fourhours {
+        width: 40rem;
+        max-width: 640px;
+      }
+
+      &.fivehours {
+        width: 50rem;
+        max-width: 800px;
+      }
+
+      &.sixhours {
+          width: 60rem;
+          max-width: 960px;
+      }
+
+      &.sevenhours {
+          width: 70rem;
+          max-width: 1120px;
+      }
 
      img {
         grid-area: poster;
