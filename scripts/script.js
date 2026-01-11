@@ -96,7 +96,7 @@ function renderShows(shows) {
       const displayImg = item.show_thumbnail || 'assets/default-dj.webp';
 
       const html = `
-        <article class="${blockClass} ${durationClass}">
+        <article class="${blockClass} ${durationClass}" style="--duration: ${finalHours};">
           <img 
             src="${displayImg}" 
             alt="Show van ${item.show_name}" 

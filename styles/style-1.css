@@ -170,7 +170,6 @@ main {
       position: sticky;
       left: 0;
       height: 23vh;
-      height: 10.625rem;
       display: flex;
       align-items: center;
       border-radius: 0rem var(--border-radius) var(--border-radius) 0rem;
@@ -180,7 +179,7 @@ main {
       }
     }
 
-    article {
+    article:not(.block) {
       flex-shrink: 0;
       color: white;
       border-radius: var(--border-radius);
@@ -331,6 +330,7 @@ main {
   section {
 
     article.block {
+      width: calc(var(--duration) * 10.16rem);
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr auto auto;
@@ -345,35 +345,6 @@ main {
       /* gebruikt omdat de border radius van de block kaartjes anders niet werken */
       overflow: hidden;
 
-      &.twohours {
-          width: 20rem;
-          max-width: 320px;
-      }
-
-      &.threehours {
-        width: 30rem;
-        max-width: 480px;
-      }
-
-      &.fourhours {
-        width: 40rem;
-        max-width: 640px;
-      }
-
-      &.fivehours {
-        width: 50rem;
-        max-width: 800px;
-      }
-
-      &.sixhours {
-          width: 60rem;
-          max-width: 960px;
-      }
-
-      &.sevenhours {
-          width: 70rem;
-          max-width: 1120px;
-      }
 
      img {
         grid-area: poster;
@@ -382,6 +353,7 @@ main {
         max-height: 116px;
         object-fit: cover;
         border-radius: var(--border-radius) 0 var(--border-radius) 0;
+        max-width: 13rem;
       }
 
       section {
