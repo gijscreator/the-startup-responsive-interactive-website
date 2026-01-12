@@ -32,6 +32,10 @@ img, video {
   height: auto;
 }
 
+a, button {
+  color: inherit;
+}
+
 p, h3 {
   white-space: nowrap;
   overflow: hidden;
@@ -187,6 +191,7 @@ main {
       border: none;
       color: white;
       padding: 0px;
+      
 
       &:focus-visible {
         border: red 5px solid;
