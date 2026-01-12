@@ -581,6 +581,7 @@ footer {
   height: 100%;
   left: 50.7vw;
   z-index: 100;
+  bottom: 7vh;
 }
 
 /* keyframes */
