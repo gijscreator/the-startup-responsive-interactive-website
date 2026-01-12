@@ -137,3 +137,18 @@ function renderShows(shows) {
 
 // Run
 loadRadiogids();
+
+
+// super coole audio player
+const button = document.querySelector('.play-button');
+const audio = new Audio('/assets/liedje.mp3');
+
+button.addEventListener('click', () => {
+  if (audio.paused) {
+    audio.play();
+    button.classList.add('is-playing');
+  } else {
+    audio.pause();
+    button.classList.remove('is-playing');
+  }
+});

@@ -189,7 +189,7 @@ header.header {
     align-items: center;
     justify-content: flex-start;
     width: 90vw;
-    height: 10vw;
+    height: 15vw;
     border-radius: var(--border-radius);
 
     img {
@@ -294,12 +294,28 @@ main.home {
       max-width: 80px;
       height: 10.625rem;
       display: flex;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
       border-radius: 0rem var(--border-radius) var(--border-radius) 0rem;
 
       @media (min-width: 789px) {
         position: sticky;
         left: 0;
+      }
+      
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--radiogids-light-background);
+        border: 2px var(--veronica-secondary) solid;
+        color: var(--text-dark);
+        width: 3rem;
+        height: 3rem;
+        border-radius: 100%;
+        cursor: pointer;
+
       }
 
       img {
@@ -716,5 +732,49 @@ body.zenders {
   100% {
     scale: .8;
     opacity: .5;
+  }
+}
+
+.play-button {
+  --color: #181D27;
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.play-button svg {
+  position: absolute;
+  fill: none;
+  stroke: var(--color);
+  stroke-width: 2;
+  animation: keyframes-fill .5s;
+}
+
+.play-button .pause {
+  display: none;
+}
+
+/* When playing */
+.play-button.is-playing .play {
+  display: none;
+}
+
+.play-button.is-playing .pause {
+  display: block;
+}
+
+/* Animation */
+@keyframes keyframes-fill {
+  0% {
+    transform: rotate(-180deg) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(-10deg) scale(1.2);
   }
 }
