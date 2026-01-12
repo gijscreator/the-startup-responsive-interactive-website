@@ -113,6 +113,7 @@ function renderShows(shows) {
 
       // Final html die in de dom wordt geladen (liveClass toegevoegd)
       const html = `
+      <button>
         <article class="${blockClass} ${durationClass} ${liveClass}" style="--duration: ${finalHours};">
           <img 
             src="${show_thumbnail}" 
@@ -125,6 +126,7 @@ function renderShows(shows) {
             <p class="time">${from.slice(0, 5)} - ${until.slice(0, 5)}</p>
           </section>
         </article>
+      </button>
       `;
 
       container.insertAdjacentHTML('beforeend', html);

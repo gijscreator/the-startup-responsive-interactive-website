@@ -180,6 +180,17 @@ main {
         width: 100%;
       }
     }
+    
+    button:has(article) {
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0px;
+
+      &.focus {
+        border: red 5px solid;
+      }
+    }
 
     article:not(.block) {
       flex-shrink: 0;
