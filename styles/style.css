@@ -99,7 +99,7 @@ header.header {
 
         &.active {
           text-decoration: underline;
-          color: var(----radiogids-primary)
+          color: var(--radiogids-primary)
         }
       }
     }
@@ -111,10 +111,13 @@ header.header {
 
 #more-info {
   background-color: light-dark(var(--radiogids-light-background),var(--radiogids-dark-background));
+  border: none;
+  border-radius: var(--border-radius) var(--border-radius) 0px 0px;
 
   header {
     display: flex;
     justify-content: space-between;
+    padding: .5rem;
 
     p {
       display: flex;
@@ -149,6 +152,12 @@ header.header {
           fill: var(--text-light)
         }
       }
+    }
+  }
+
+  a {
+    img {
+      width: 20vw;
     }
   }
 
@@ -574,6 +583,7 @@ footer {
   max-height: 600px;
   bottom: 10dvh;
   left: 50.7vw;
+  z-index: 100;
 }
 
 /* keyframes */

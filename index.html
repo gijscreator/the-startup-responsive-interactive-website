@@ -79,7 +79,18 @@
 		<video src="assets/videoplayback.mp4#t=0.0001" controls></video>
 		<h3>De Ochtendshow</h3>
 		<p>Elke ochtend van 06:00 - 07:00</p>
-		<a href="pages/veronica.html">Alle programma's van <img src="assets/logo-veronica.webp" alt="logo veronica"></a>
+		<a href="pages/veronica.html">Alle programma's van 
+			<picture>
+				<!-- gebruiker wilt light mode: -->
+				<source srcset="assets/logo-radiogids.webp" media="(prefers-color-scheme: light)"/>
+
+				<!-- gebruiker wilt dark mode: -->
+				<source srcset="assets/radiogids-darkmode.webp"  media="(prefers-color-scheme: dark)"/>
+
+				<!-- gebruiker wilt niks: -->
+				<img src="assets/logo-radiogids.webp" alt="Logo van radiogids"/>
+			</picture>
+		</a>
 	</section>
 
 	<!-- Main section -->
