@@ -653,6 +653,7 @@ body.zenders {
   aside {
     grid-column: 1;
     width: 20vw;
+    max-width: 7rem;
     background-color: light-dark(var(--radiogids-dark-background), var(--radiogids-primary));
 
     ul {
