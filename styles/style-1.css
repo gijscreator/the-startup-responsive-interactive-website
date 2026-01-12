@@ -116,7 +116,7 @@ main {
         transparent 1px
       );
 
-    background-size: 10.45rem 35%;
+    background-size: 10.47rem 35%;
     background-repeat: repeat-x;
     background-position: 5.4rem bottom;
     position: relative;
@@ -125,7 +125,7 @@ main {
 
     ul {
       display: flex;
-      gap: 7.95rem;
+      gap: 7.97rem;
       padding-left: 0;
       margin-left: 2.8rem;
 

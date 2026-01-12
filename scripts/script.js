@@ -100,8 +100,8 @@ function renderShows(shows) {
       const html = `
         <article class="${blockClass} ${durationClass}" style="--duration: ${finalHours};">
           <img 
-            src="${show_thumbnail || 'assets/default-dj.webp'}" 
-            alt="${show_name}" 
+            src="${show_thumbnail}" 
+            alt="${show_name}"
             class="show-header"
           >
           <section>
