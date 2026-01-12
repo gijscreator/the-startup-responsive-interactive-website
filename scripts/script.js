@@ -173,13 +173,3 @@ function updateLiveTime() {
 updateLiveTime();
 // Update every minute to keep the line moving
 setInterval(updateLiveTime, 60000);
-
-// Keep your sync-scroll logic here
-const sections = document.querySelectorAll('.sync-scroll');
-sections.forEach(section => {
-    section.addEventListener('scroll', () => {
-        sections.forEach(s => {
-            if (s !== section) s.scrollLeft = section.scrollLeft;
-        });
-    });
-});

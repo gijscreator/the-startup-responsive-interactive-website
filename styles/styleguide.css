@@ -42,7 +42,7 @@
 
     /* width and gap per card */
     --hour-width: 10rem; /* base 160px */
-    --gap-width: 0.5rem;  /* gap tussen de kaartjes */
+    --gap-width: 1rem;  /* gap tussen de kaartjes */
 
     /* timeline position */
 

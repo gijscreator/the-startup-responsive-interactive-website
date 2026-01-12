@@ -244,7 +244,7 @@ main.home {
         var(--text-light) 1px, 
         transparent 1px
       );
-    background-size: 10.47rem 35%;
+    background-size: 10.97rem 35%;
     background-repeat: repeat-x;
     background-position: 5.4rem bottom;
     position: relative;
@@ -254,7 +254,7 @@ main.home {
 
     ul {
       display: flex;
-      gap: 7.97rem;
+      gap: 8.47rem;
       padding-left: 0;
       margin-left: 2.8rem;
 
