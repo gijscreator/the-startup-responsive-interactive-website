@@ -125,6 +125,7 @@ header.header {
   border: none;
   border-radius: var(--border-radius) var(--border-radius) 0px 0px;
   padding: 1rem;
+  height: 55vh;
 
   header {
     display: flex;
@@ -159,6 +160,8 @@ header.header {
       }
 
       svg {
+        margin-left: .5rem;
+        
         path {
           fill: var(--text-light)
         }
@@ -175,11 +178,11 @@ header.header {
 
   h3 {
     font-size: 1.8rem;
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
   }
 
   p:not(.button-text) {
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
   }
   
 
@@ -206,7 +209,7 @@ header.header {
     bottom: 0;
     top: auto;
     width: 100vw;
-    height: auto;
+    height: 55vh;
     animation: slide-up 0.3s ease-out;
 
     &::backdrop {
