@@ -578,10 +578,10 @@ footer {
   width: .3rem;
   background-color: var(--radiogids-light-background);
   position: fixed;
-  height: 100%;
   left: 50.7vw;
-  z-index: 100;
+  top: 10vh;
   bottom: 7vh;
+  z-index: 100;
 }
 
 /* keyframes */
