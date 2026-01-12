@@ -13,9 +13,8 @@ html, body {
   height: 100dvh;
 }
 
-body {
-    max-height: 100vh;
-    overflow-y: hidden;
+body.home {
+    height: 100vh;
 }
 
 * {
@@ -219,7 +218,7 @@ header.header {
 
 /* Radiogids "home" styling */
 
-main {
+main.home {
   display: flex;
   flex-direction: column;
   overflow-x: auto;
@@ -637,12 +636,35 @@ footer {
 /* Radiogids "zenders" styling */
 
 body.zenders {
-  aside {
-    width: 10vw;
+
+    display: grid;
+    grid-template-columns: 20vw 80vw;
+    justify-content: center;
+
+  header {
+    grid-column: 1 / span 2;
   }
 
   main {
-    width: 90vw;
+    grid-column: 2;
+    width: 50vw;
+  }
+  
+  aside {
+    grid-column: 1;
+    width: 10vw;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 7.97rem;
+      padding-top: 0;
+      margin-top: 2.8rem;
+    }
+  }
+
+  footer {
+    grid-column: 1 / span 2;
   }
 }
 
