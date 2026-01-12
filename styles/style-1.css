@@ -476,3 +476,30 @@ footer {
   bottom: 10dvh;
   left: 50.7vw;
 }
+
+#more-info:popover-open {
+  bottom: 0;
+  top: auto;
+  width: 100vw;
+  height: auto;
+  
+  /* Smooth entry */
+  animation: slide-up 0.3s ease-out;
+}
+
+#more-info::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+/* keyframes */
+
+@keyframes slide-up {
+  from { 
+    transform: translateY(100%); 
+  }
+
+  to { 
+    transform: translateY(0); 
+  }
+}

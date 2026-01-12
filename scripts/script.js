@@ -113,7 +113,7 @@ function renderShows(shows) {
 
       // Final html die in de dom wordt geladen (liveClass toegevoegd)
       const html = `
-      <button>
+      <button popovertarget="more-info">
         <article class="${blockClass} ${durationClass} ${liveClass}" style="--duration: ${finalHours};">
           <img 
             src="${show_thumbnail}" 
