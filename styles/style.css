@@ -654,7 +654,7 @@ body.zenders {
     grid-column: 1;
     width: 20vw;
     max-width: 7rem;
-    background-color: light-dark(var(--radiogids-dark-background), var(--radiogids-primary));
+    background-color: light-dark(var(--radiogids-dark-background), var(--veronica-primary));
 
     ul {
       display: flex;
