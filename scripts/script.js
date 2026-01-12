@@ -125,6 +125,7 @@ function renderShows(shows) {
             <p class="dj-names">${dj_names ? dj_names.replace(/,/g, ' & ') : ''}</p>
             <p class="time">${from.slice(0, 5)} - ${until.slice(0, 5)}</p>
           </section>
+          <p class="more"> > </p>
         </article>
       </button>
       `;
