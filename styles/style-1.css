@@ -32,9 +32,11 @@ img, video {
   height: auto;
 }
 
-a, button {
+button, a {
+  -webkit-appearance: none;
+  appearance: none;
   color: inherit;
-  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 p, h3 {
@@ -509,13 +511,4 @@ footer {
   to { 
     transform: translateY(0); 
   }
-}
-
-
-button, 
-a {
-  -webkit-appearance: none;
-  appearance: none;
-  color: inherit;
-  -webkit-tap-highlight-color: transparent; /* Removes the blue box when you tap on mobile */
 }
