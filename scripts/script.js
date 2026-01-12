@@ -121,7 +121,7 @@ function renderShows(shows) {
             class="show-header"
           >
           <section>
-            <h3 class="title">${show_name || 'Radio Show'}</h3>
+            <h3 class="fly-in-text || title">${show_name || 'Radio Show'}</h3>
             <p class="dj-names">${dj_names ? dj_names.replace(/,/g, ' & ') : ''}</p>
             <p class="time">${from.slice(0, 5)} - ${until.slice(0, 5)}</p>
           </section>
