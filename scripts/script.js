@@ -1,9 +1,9 @@
 // Hier komt later de api endpoint ipv de json files
 
 const STATIONS = [
-  { id: 1, file: 'data/veronica.json', container: '#veronica-shows' },
-  { id: 2, file: 'data/slam.json', container: '#slam-shows' },
-  { id: 3, file: 'data/100nl.json', container: '#hondernl-shows' }
+  { id: 1, file: '/data/veronica.json', container: '#veronica-shows' },
+  { id: 2, file: '/data/slam.json', container: '#slam-shows' },
+  { id: 3, file: '/data/100nl.json', container: '#hondernl-shows' }
 ];
 
 // Welke radio welke id heeft in de json
