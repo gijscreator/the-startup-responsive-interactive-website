@@ -111,7 +111,6 @@ function renderShow(show, container, huidigeMinuten) {
         <img src="${showThumbnail}" alt="${showName}" class="show-header normal-hidden">
         <section>
           <h3 class="fly-in-text || title">${showName}</h3>
-          <p class="dj-names">${djNames}</p>
           <p class="time">${from} - ${show.until}</p>
         </section>
       </article>
