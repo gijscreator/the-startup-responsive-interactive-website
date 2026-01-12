@@ -99,7 +99,7 @@ header.header {
 
         &.active {
           text-decoration: underline;
-          color: var(--radiogids-rood)
+          color: var(----radiogids-primary)
         }
       }
     }
@@ -531,7 +531,7 @@ main {
 footer {
   display: flex;
   justify-content: space-around;
-  background-color: var(--radiogids-rood);
+  background-color: var(----radiogids-primary);
   width: 100vw;
   position: sticky;
   bottom: 0;

@@ -121,7 +121,7 @@ button.radiogids {
     all: unset;
     cursor: pointer;
     border-radius: var(--border-radius);
-    background-color: var(--radiogids-rood);
+    background-color: var(----radiogids-primary);
     color: var(--tekst-licht);
     display: block;
     padding: 1rem;
