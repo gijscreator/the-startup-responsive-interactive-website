@@ -46,7 +46,11 @@ async function loadRadiogids() {
 function renderShows(shows) {
   if (!shows.length) return;
 
-  const today = DAYS[new Date().getDay()];
+  const now = new Date();
+  const today = DAYS[now.getDay()];
+  
+  // Huidige tijd omrekenen naar minuten voor de vergelijking
+  const currentMinutes = (now.getHours() * 60) + now.getMinutes();
 
   Object.entries(STATION_MAP).forEach(function([stationId, selector]) {
     const container = document.querySelector(selector);
@@ -84,11 +88,22 @@ function renderShows(shows) {
       const startParts = from.split(':').map(Number);
       const endParts = endTime.split(':').map(Number);
       
-      const startHours = startParts[0] + (startParts[1] / 60);
-      const endHours = endParts[0] + (endParts[1] / 60);
+      const startMinutes = (startParts[0] * 60) + startParts[1];
+      let endMinutes = (endParts[0] * 60) + endParts[1];
+
+      // Als een programma na middernacht eindigt (bijv. van 22:00 tot 02:00)
+      if (endMinutes <= startMinutes) {
+        endMinutes += 1440; // 24 uur in minuten erbij
+      }
+
+      // Check of de huidige tijd binnen het programma valt
+      const isLive = currentMinutes >= startMinutes && currentMinutes < endMinutes;
+      const liveClass = isLive ? 'live' : '';
+
+      const startHours = startMinutes / 60;
+      const endHours = endMinutes / 60;
       
       let duration = endHours - startHours;
-      if (duration <= 0) duration += 24;
 
       // Alle variablen voor in de layout, Dj, hoelang het duurt etc
       const finalHours = Math.round(duration);
@@ -96,9 +111,9 @@ function renderShows(shows) {
       const durationClass = hourWord + (finalHours === 1 ? 'hour' : 'hours');
       const blockClass = finalHours >= 2 ? 'block' : '';
 
-      // Final html die in de dom wordt geladen
+      // Final html die in de dom wordt geladen (liveClass toegevoegd)
       const html = `
-        <article class="${blockClass} ${durationClass}" style="--duration: ${finalHours};">
+        <article class="${blockClass} ${durationClass} ${liveClass}" style="--duration: ${finalHours};">
           <img 
             src="${show_thumbnail}" 
             alt="${show_name}"
