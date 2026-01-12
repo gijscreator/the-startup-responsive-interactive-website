@@ -141,7 +141,7 @@ loadRadiogids();
 
 // super coole audio player
 const button = document.querySelector('.play-button');
-const audio = new Audio('/assets/liedje.mp3');
+const audio = new Audio('assets/liedje.mp3');
 
 button.addEventListener('click', () => {
   if (audio.paused) {
