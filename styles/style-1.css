@@ -467,9 +467,9 @@ main {
 footer {
   display: flex;
   justify-content: space-around;
-  background-color: var(--tekst-donker);
+  background-color: var(--radiogids-rood);
   width: 100vw;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   height: 7dvh;
   background-color: var(--radiogids-dark-background);
