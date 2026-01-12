@@ -173,3 +173,20 @@ function updateLiveTime() {
 updateLiveTime();
 // Update every minute to keep the line moving
 setInterval(updateLiveTime, 60000);
+
+// --------------------------------------------------
+// AUDIO PLAYER
+// --------------------------------------------------
+const playButton = document.querySelector('.play-button');
+const audioPlayer = new Audio('assets/liedje.mp3');
+if (playButton) {
+  playButton.addEventListener('click', () => {
+    if (audioPlayer.paused) {
+      audioPlayer.play();
+      playButton.classList.add('is-playing');
+    } else {
+      audioPlayer.pause();
+      playButton.classList.remove('is-playing');
+    }
+  });
+}
