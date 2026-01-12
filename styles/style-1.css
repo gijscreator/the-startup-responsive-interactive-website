@@ -116,7 +116,7 @@ main {
         transparent 1px
       );
 
-    background-size: 10.15rem 35%;
+    background-size: 10.45rem 35%;
     background-repeat: repeat-x;
     background-position: 5.4rem bottom;
     position: relative;
@@ -125,7 +125,7 @@ main {
 
     ul {
       display: flex;
-      gap: 7.65rem;
+      gap: 7.95rem;
       padding-left: 0;
       margin-left: 2.8rem;
 
@@ -162,7 +162,7 @@ main {
 
   section.kaartje {
     display: flex;
-    gap: .5rem;
+    gap: var(--gap-width);
     width: max-content;
 
     figure {
@@ -185,8 +185,7 @@ main {
       flex-shrink: 0;
       color: white;
       border-radius: var(--border-radius);
-      width: 40vw;
-      max-width: 9.74rem;
+      width: var(--hour-width);
       height: 10.625rem;
 
       img {
@@ -332,7 +331,11 @@ main {
   section {
 
     article.block {
-      width: calc(var(--duration) * 10.16rem);
+      width: calc(
+        (var(--duration) * var(--hour-width)) + 
+        ((var(--duration) - 1) * var(--gap-width))
+      );
+
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr auto auto;

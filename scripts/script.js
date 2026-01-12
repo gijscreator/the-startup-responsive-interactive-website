@@ -1,111 +1,113 @@
-const stations = [
+// Hier komt later de api endpoint ipv de json files
+
+const STATIONS = [
   { id: 1, file: 'data/veronica.json', container: '#veronica-shows' },
   { id: 2, file: 'data/slam.json', container: '#slam-shows' },
   { id: 3, file: 'data/100nl.json', container: '#hondernl-shows' }
 ];
 
-Promise.all(
-  stations.map(station =>
-    fetch(station.file)
-      .then(res => {
-        if (!res.ok) throw new Error(`Could not load ${station.file}`);
-        return res.json();
-      })
-      .then(json => {
-        // Handle both Directus {"data": []} format and raw [] arrays
-        const rawShows = Array.isArray(json) ? json : json.data;
-        // Inject the station ID so the renderer knows where to put it
-        return rawShows.map(show => ({ ...show, radiostation: station.id }));
-      })
-  )
-)
-  .then(allStationsData => {
-    // Flatten the array of arrays into one single list for the renderer
-    const flattenedShows = allStationsData.flat();
-    renderShows(flattenedShows);
-  })
-  .catch(err => {
-    console.error("Error loading show data:", err);
-  });
+// Welke radio welke id heeft in de json
+
+const STATION_MAP = {
+  1: '#veronica-shows',
+  2: '#slam-shows',
+  3: '#hondernl-shows'
+};
+
+// Dagen van de week
+const DAYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+const NUMBER_WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+
+
+// async function kende ik nog niet src="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function"
+
+async function loadRadiogids() {
+  try {
+    const allData = await Promise.all(STATIONS.map(async function(station) {
+      const response = await fetch(station.file);
+      if (!response.ok) throw new Error('Failed to load: ' + station.file);
+      
+      const json = await response.json();
+      const rawShows = Array.isArray(json) ? json : json.data;
+      
+      return rawShows.map(function(show) {
+        return { ...show, radiostation: station.id };
+      });
+    }));
+
+    renderShows(allData.flat());
+  } catch (error) {
+    console.error('Initialization Error:', error);
+  }
+}
+
+// Render de radio programmas per station van de huidige dag
 
 function renderShows(shows) {
-  if (!shows || shows.length === 0) return;
+  if (!shows.length) return;
 
-  const stationMap = {
-    1: '#veronica-shows',
-    2: '#slam-shows',
-    3: '#hondernl-shows'
-  };
+  const today = DAYS[new Date().getDay()];
 
-  const days = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
-  const today = days[new Date().getDay()];
-
-  Object.keys(stationMap).forEach(stationId => {
-    const container = document.querySelector(stationMap[stationId]);
+  Object.entries(STATION_MAP).forEach(function([stationId, selector]) {
+    const container = document.querySelector(selector);
     if (!container) return;
 
-    // Remove only previous articles to keep your logo/static content
-    const existingShows = container.querySelectorAll('article');
-    existingShows.forEach(el => el.remove());
+    // Oude programma's weghalen die er nog stonden van de vorige dag
+    container.querySelectorAll('article').forEach(function(article) {
+      article.remove();
+    });
 
-    const addedShows = new Set();
-
-    const todayShows = shows
-      .filter(item => {
-        return (
-          item.radiostation == stationId && 
-          item.day === today && 
-          !addedShows.has(`${item.from}-${item.show_name}`)
-        );
+    // Filteren op dag, tijd en radiostation
+    const addedKeys = new Set();
+    const filteredShows = shows
+      .filter(function(item) {
+        const isMatch = item.radiostation == stationId && item.day === today;
+        const key = item.from + item.show_name;
+        if (isMatch && !addedKeys.has(key)) {
+          addedKeys.add(key);
+          return true;
+        }
+        return false;
       })
-      .sort((a, b) => {
-        const [ah, am] = (a.from || "00:00").split(':').map(Number);
-        const [bh, bm] = (b.from || "00:00").split(':').map(Number);
-        return (ah * 60 + am) - (bh * 60 + bm);
+      .sort(function(a, b) {
+        return a.from.localeCompare(b.from);
       });
 
-    todayShows.forEach(item => {
-      const startTime = item.from || '00:00';
-      let endTime = item.until || '23:59'; 
+    // Html maken zodat deze correct geinjecteerd kan worden
+    filteredShows.forEach(function(show) {
+      const { from, until, show_name, dj_names, show_thumbnail } = show;
+      
+      // 23:59 = 24:00 voor de uren calc
+      const endTime = (until === '23:59') ? '24:00' : until;
+      
+      // Hoelang ieder programma duurt berekenen
+      const startParts = from.split(':').map(Number);
+      const endParts = endTime.split(':').map(Number);
+      
+      const startHours = startParts[0] + (startParts[1] / 60);
+      const endHours = endParts[0] + (endParts[1] / 60);
+      
+      let duration = endHours - startHours;
+      if (duration <= 0) duration += 24;
 
-      // 1. Math Calculation (Handling 23:59 as 24:00 for duration logic)
-      const calcEndTime = endTime === '23:59' ? '24:00' : endTime;
-      
-      const fromDate = new Date(`2026-01-01T${startTime}`);
-      const untilDate = new Date(`2026-01-01T${calcEndTime}`);
-      
-      let durationHours = (untilDate - fromDate) / 1000 / 60 / 60;
-      if (durationHours < 0) durationHours += 24; 
-
-      // 2. Generate Duration Class (Rounding DOWN)
-      const numberWords = [
-        'zero', 'one', 'two', 'three', 'four', 'five', 
-        'six', 'seven', 'eight', 'nine', 'ten'
-      ];
-      
-      // Use Math.floor to ensure 23:59 doesn't push a 2-hour show into a 3-hour class
-      const finalHours = Math.floor(durationHours);
-      const hourWord = numberWords[finalHours] || 'long';
+      // Alle variablen voor in de layout, Dj, hoelang het duurt etc
+      const finalHours = Math.round(duration);
+      const hourWord = NUMBER_WORDS[finalHours] || 'long';
       const durationClass = hourWord + (finalHours === 1 ? 'hour' : 'hours');
-
-      // 3. Keep 'block' class for shows >= 2 hours
       const blockClass = finalHours >= 2 ? 'block' : '';
 
-      const timeText = `${startTime.substring(0, 5)} - ${endTime.substring(0, 5)}`;
-      const djNames = item.dj_names ? item.dj_names.split(',').map(n => n.trim()).join(' & ') : '';
-      const displayImg = item.show_thumbnail || 'assets/default-dj.webp';
-
+      // Final html die in de dom wordt geladen
       const html = `
         <article class="${blockClass} ${durationClass}" style="--duration: ${finalHours};">
           <img 
-            src="${displayImg}" 
-            alt="Show van ${item.show_name}" 
+            src="${show_thumbnail || 'assets/default-dj.webp'}" 
+            alt="${show_name}" 
             class="show-header"
           >
           <section>
-            <h3 class="title">${item.show_name || 'Onbekende Show'}</h3>
-            <p class="dj-names">${djNames}</p>
-            <p class="time">${timeText}</p>
+            <h3 class="title">${show_name || 'Radio Show'}</h3>
+            <p class="dj-names">${dj_names ? dj_names.replace(/,/g, ' & ') : ''}</p>
+            <p class="time">${from.slice(0, 5)} - ${until.slice(0, 5)}</p>
           </section>
         </article>
       `;
@@ -114,3 +116,6 @@ function renderShows(shows) {
     });
   });
 }
+
+// Run
+loadRadiogids();

@@ -39,6 +39,10 @@
     /* Border radius */
 
     --border-radius: .7rem;
+
+    /* width and gap per card */
+    --hour-width: 10rem; /* base 160px */
+    --gap-width: 0.5rem;  /* gap tussen de kaartjes */
 }
 
 body {
