@@ -230,6 +230,8 @@ main.home {
   height: 86dvh;
   position: relative;
 
+
+
   /* Section met timeline  */
 
   section:nth-of-type(1).sync-scroll {
@@ -626,17 +628,18 @@ main.home {
     }
   }
   .test-line {
-
-    --current-time: 50.7vw;
-
+    /* The position is: Offset + (Current Hour Decimal * 160px) */
+    --position: calc(var(--offset-width) + (var(--time) * var(--hour-width-px) + 160px));
+    
     display: flex;
     width: .3rem;
     background-color: var(--radiogids-light-background);
-    position: fixed;
-    left: 50.7vw;
-    top: 10vh;
-    bottom: 7vh;
+    position: absolute; /* Changed to absolute to scroll with the content */
+    top: 3rem; /* Starts below the timeline numbers */
+    bottom: 0;
+    left: var(--position);
     z-index: 100;
+    pointer-events: none;
   }
 }
 

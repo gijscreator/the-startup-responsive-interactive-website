@@ -124,3 +124,62 @@ function renderShow(show, container, huidigeMinuten) {
 // INITIAL LOAD
 // --------------------------------------------------
 laadAlleStations();
+
+
+
+function updateLiveTime() {
+    const now = new Date();
+    
+    // 1. Get exact Dutch Time
+    const nlTime = now.toLocaleString("nl-NL", {
+        timeZone: "Europe/Amsterdam", 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        hour12: false
+    });
+    
+    const [hours, minutes] = nlTime.split(':').map(Number);
+    const timeDecimal = hours + (minutes / 60);
+
+    // 2. Log to console for debugging
+    console.log(`System Time: ${now.getHours()}:${now.getMinutes()}`);
+    console.log(`Calculated NL Time: ${nlTime}`);
+    console.log(`CSS --time value: ${timeDecimal}`);
+
+    const mainContainer = document.querySelector('main.home');
+    const timeLine = document.querySelector('.test-line');
+
+    if (mainContainer && timeLine) {
+        // Set the CSS variable
+        mainContainer.style.setProperty('--time', timeDecimal);
+
+        // 3. Auto-Scroll logic
+        // We calculate the pixel position: (Time * 160px) + 80px offset
+        const hourWidth = 160; 
+        const offset = 80;
+        const scrollPosition = (timeDecimal * hourWidth) + offset;
+
+        // Only auto-scroll on the first load
+        if (!mainContainer.dataset.hasScrolled) {
+            // Subtract half the window width to center the red line on screen
+            mainContainer.scrollLeft = scrollPosition - (window.innerWidth / 2);
+            mainContainer.dataset.hasScrolled = "true";
+            console.log(`Auto-scrolled to: ${scrollPosition}px`);
+        }
+    }
+}
+
+// Initialize
+updateLiveTime();
+// Update every minute to keep the line moving
+setInterval(updateLiveTime, 60000);
+
+// Keep your sync-scroll logic here
+const sections = document.querySelectorAll('.sync-scroll');
+sections.forEach(section => {
+    section.addEventListener('scroll', () => {
+        sections.forEach(s => {
+            if (s !== section) s.scrollLeft = section.scrollLeft;
+        });
+    });
+});
