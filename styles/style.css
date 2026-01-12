@@ -647,19 +647,38 @@ body.zenders {
 
   main {
     grid-column: 2;
-    width: 50vw;
+    width: 80vw;
   }
   
   aside {
     grid-column: 1;
-    width: 10vw;
+    width: 20vw;
+    background-color: light-dark(var(--radiogids-dark-background), var(--radiogids-primary));
 
     ul {
       display: flex;
       flex-direction: column;
-      gap: 7.97rem;
-      padding-top: 0;
-      margin-top: 2.8rem;
+      gap: 5rem;
+      margin-left: .5rem;
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      background-image: linear-gradient(
+        90deg, 
+        var(--text-light) 100%, 
+        transparent 100%
+      );
+  
+      background-size: 1rem 2px; 
+      background-repeat: no-repeat;
+      
+      background-position: right center;
+      
+      padding-right: 2rem; 
+      
+      text-align: right; 
     }
   }
 
