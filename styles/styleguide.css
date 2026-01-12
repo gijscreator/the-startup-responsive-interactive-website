@@ -85,11 +85,10 @@ p, a {
 
 /* veronica styling */
 
-button.veronica {
-    all: unset;
+a.veronica {
     cursor: pointer;
     border-radius: var(--border-radius);
-    background-color: var(--veronica-blauw);
+    background-color: var(--veronica-primary);
     color: var(--tekst-licht);
     display: block;
     padding: 1rem;
@@ -97,8 +96,7 @@ button.veronica {
 
 /* veronica slam */
 
- button.slam {
-    all: unset;
+ a.slam {
     cursor: pointer;
     border-radius: var(--border-radius);
     background-color: var(--slam-pink);
@@ -107,8 +105,7 @@ button.veronica {
     padding: 1rem;
 }
 
- button.honderdnl {
-    all: unset;
+ a.honderdnl {
     cursor: pointer;
     border-radius: var(--border-radius);
     background-color: var(--hondernl-orange);
@@ -117,8 +114,7 @@ button.veronica {
     padding: 1rem;
 }
 
-button.radiogids {
-    all: unset;
+a.radiogids {
     cursor: pointer;
     border-radius: var(--border-radius);
     background-color: var(----radiogids-primary);

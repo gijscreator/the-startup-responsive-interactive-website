@@ -113,11 +113,11 @@ header.header {
   background-color: light-dark(var(--radiogids-light-background),var(--radiogids-dark-background));
   border: none;
   border-radius: var(--border-radius) var(--border-radius) 0px 0px;
+  padding: 1rem;
 
   header {
     display: flex;
     justify-content: space-between;
-    padding: .5rem;
 
     p {
       display: flex;
@@ -155,11 +155,40 @@ header.header {
     }
   }
 
+  picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: .5rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: .5rem;
+  }
+
+  p:not(.button-text) {
+    margin-bottom: .5rem;
+  }
+  
+
   a {
+    background-color: var(--veronica-primary);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90vw;
+    height: 10vw;
+
     img {
       width: 20vw;
     }
+
+    p.button-text {
+      margin-left: 2rem;
+    }
   }
+  
 
   &:popover-open {
     bottom: 0;
