@@ -536,6 +536,12 @@ footer {
   bottom: 0;
   height: 7dvh;
   background-color: var(--radiogids-dark-background);
+  
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .test-line {
