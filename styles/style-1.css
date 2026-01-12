@@ -152,17 +152,11 @@ header.header {
     }
   }
 
-  section {
-
-  }
-
   &:popover-open {
     bottom: 0;
     top: auto;
     width: 100vw;
     height: auto;
-    
-    /* animatie voor flow in */
     animation: slide-up 0.3s ease-out;
 
     &::backdrop {
