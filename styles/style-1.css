@@ -187,7 +187,7 @@ main {
       border-radius: 0rem var(--border-radius) var(--border-radius) 0rem;
 
       @media (min-width: 789px) {
-        position: fixed;
+        position: sticky;
         left: 0;
       }
 
