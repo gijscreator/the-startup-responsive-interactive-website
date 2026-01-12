@@ -190,6 +190,7 @@ header.header {
     justify-content: flex-start;
     width: 90vw;
     height: 10vw;
+    border-radius: var(--border-radius);
 
     img {
       width: 20vw;
