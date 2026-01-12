@@ -185,9 +185,10 @@ main {
       cursor: pointer;
       background: none;
       border: none;
+      color: white;
       padding: 0px;
 
-      &.focus {
+      &:focus-visible {
         border: red 5px solid;
       }
     }
