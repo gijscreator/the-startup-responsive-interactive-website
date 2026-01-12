@@ -463,7 +463,6 @@ footer {
   display: flex;
   justify-content: space-around;
   background-color: var(--tekst-donker);
-  padding: 1rem;
   width: 100vw;
   position: fixed;
   bottom: 0;
@@ -480,7 +479,7 @@ footer {
   background-color: light-dark(var(--radiogids-primary), var(--radiogids-light-background));
   position: absolute;
   top: 10dvh;
-  height: 80dvh;
+  height: 70vh;
   max-height: 600px;
   bottom: 10dvh;
   left: 50.7vw;
