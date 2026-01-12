@@ -161,7 +161,7 @@ header.header {
 
       svg {
         margin-left: .5rem;
-        
+
         path {
           fill: var(--text-light)
         }
@@ -332,6 +332,7 @@ main.home {
       border: none;
       color: var(--text-light);
       padding: 0px;
+      border-radius: var(--border-radius);
       
 
       &:focus-visible {
@@ -399,7 +400,12 @@ main.home {
     }
 
     article {
-      background-color: var(--veronica-primary);
+      background-color: transparent;
+      border: .3rem solid var(--veronica-primary);
+
+      &.live {
+        background-color: var(--veronica-primary);
+      }
 
        img {
         background-color: var(--veronica-primary);
@@ -422,8 +428,12 @@ main.home {
     }
 
     article {
-      background-color: light-dark(var(--honderdnl-secondary), var(--honderdnl-primary));
+      background-color: transparent;
+      border: .3rem solid var(--honderdnl-primary);
 
+      &.live {
+        background-color: var(--honderdnl-primary);
+      }
        img {
         background-color: light-dark(var(--honderdnl-secondary), var(--honderdnl-primary));
        }
@@ -445,8 +455,13 @@ main.home {
 
     /* article met alle programma's radio slam!  */
     article {
-      background-color: var(--slam-primary);
-      
+      background-color: transparent;
+      border: .3rem solid var(--slam-primary);
+
+      &.live {
+        background-color: var(--slam-primary);
+        border: none;
+      }
 
        img {
           background-color: var(--slam-primary);
@@ -487,6 +502,7 @@ main.home {
   /* styling voor de zenders die 2 uur duren */
 
   section {
+    position: relative;
 
     article.block {
       width: calc(
@@ -504,11 +520,7 @@ main.home {
       gap: 0;
       border-radius: var(--border-radius);
       height: 10.625rem;
-
-      /* gebruikt omdat de border radius van de block kaartjes anders niet werken */
-      overflow: hidden;
       position: relative;
-
 
      img {
         grid-area: poster;
@@ -516,20 +528,25 @@ main.home {
         height: 100%;
         max-height: 7rem;
         object-fit: cover;
-        border-radius: var(--border-radius) 0 var(--border-radius) 0;
+        border-radius: 0 0 var(--border-radius) 0;
         max-width: 13rem;
+        position: sticky;
+        left: 0;
       }
 
       section {
         display: contents;
       }
 
-      h3 {
+      h3.fly-in-text {
         grid-area: title;
+        width: max-content;
         padding: 0.2rem 1rem;
         padding-top: 0;
         margin: 0;
         text-align: left;
+        position: sticky;
+        left: 0;
       }
 
       p.time {
@@ -541,6 +558,8 @@ main.home {
         padding-bottom: 0;
         display: flex;
         align-items: center;
+        position: sticky;
+        left: 0;
 
         &::before {
           content: url("data:image/svg+xml;utf8,<svg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(%23clip0_53_2962)'><path d='M9.5 4.74992V9.49992L12.6667 11.0833M17.4167 9.49992C17.4167 13.8722 13.8723 17.4166 9.5 17.4166C5.12775 17.4166 1.58334 13.8722 1.58334 9.49992C1.58334 5.12766 5.12775 1.58325 9.5 1.58325C13.8723 1.58325 17.4167 5.12766 17.4167 9.49992Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g><defs><clipPath id='clip0_53_2962'><rect width='19' height='19' rx='9.5' fill='white'/></clipPath></defs></svg>");
@@ -781,3 +800,4 @@ body.zenders {
     transform: rotate(-10deg) scale(1.2);
   }
 }
+

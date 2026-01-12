@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- production versie -->
-	<base href="/the-startup-responsive-interactive-website/">
+	<!-- <base href="/the-startup-responsive-interactive-website/"> -->
 
 	<!-- Test live server versie  -->
-	<!-- <base href="/"> -->
+	<base href="/">
     <title>Kies jouw favoriete zender</title>
     <link rel="stylesheet" href="styles/styleguide.css">
     <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/script.js" defer></script>
+    <script src="scripts/zenders.js" defer></script>
 </head>
 <body class="zenders">
     <!-- Header met logo -->
@@ -139,7 +139,16 @@
     </aside>
 
     <main class="zenders">
+        <select id="station-selector">
+            <option value="all">All Stations</option>
+            <option value="1">Veronica</option>
+            <option value="2">Slam</option>
+            <option value="3">100NL</option>
+        </select>
 
+        <div id="veronica-shows"></div>
+        <div id="slam-shows"></div>
+        <div id="hondernl-shows"></div>
     </main>
     	<!-- Sticky footer -->
 	<footer class="veronica">

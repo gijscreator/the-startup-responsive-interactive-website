@@ -11,18 +11,20 @@ const DAYS_OF_WEEK = ['sunday','monday','tuesday','wednesday','thursday','friday
 const NUMBER_WORDS = ['zero','one','two','three','four','five','six','seven','eight','nine','ten'];
 
 // --------------------------------------------------
-// FUNCTIE: Alles laden en weergeven
+// FUNCTIE: Laad alleen de gekozen station
 // --------------------------------------------------
-function laadAlleStations() {
-  const fetchPromises = RADIO_STATIONS.map(station => fetchStationData(station));
+function laadGekozenStation(stationId) {
+  RADIO_STATIONS.forEach(station => {
+    const container = document.querySelector(station.containerSelector);
+    if (!container) return;
 
-  Promise.all(fetchPromises)
-    .then(results => {
-      let alleShows = [];
-      results.forEach(shows => alleShows = alleShows.concat(shows));
-      renderShows(alleShows);
-    })
-    .catch(error => console.error('Fout bij laden shows:', error));
+    if (station.id == stationId) {
+      container.style.display = 'block';
+      fetchStationData(station).then(shows => renderShowsPerStation(shows, container));
+    } else {
+      container.style.display = 'none';
+    }
+  });
 }
 
 // --------------------------------------------------
@@ -36,50 +38,33 @@ function fetchStationData(station) {
     })
     .then(jsonData => {
       const shows = Array.isArray(jsonData) ? jsonData : jsonData.data;
-      shows.forEach(show => {
-        show.radiostation = station.id;
-        show.containerSelector = station.containerSelector;
-      });
+      shows.forEach(show => show.radiostation = station.id);
       return shows;
     });
 }
 
 // --------------------------------------------------
-// FUNCTIE: Shows renderen
+// FUNCTIE: Render shows voor één container
 // --------------------------------------------------
-function renderShows(shows) {
+function renderShowsPerStation(shows, container) {
   const vandaag = new Date();
   const vandaagNaam = DAYS_OF_WEEK[vandaag.getDay()];
   const huidigeMinuten = vandaag.getHours() * 60 + vandaag.getMinutes();
 
-  RADIO_STATIONS.forEach(station => {
-    const container = document.querySelector(station.containerSelector);
-    if (!container) return;
+  // Alleen oude show buttons verwijderen
+  const oudeButtons = container.querySelectorAll('button[popovertarget]');
+  oudeButtons.forEach(btn => btn.remove());
 
-    // We **wissen de container niet volledig**, zodat <figure> blijft
-    // Alleen verwijderen van oude <button popovertarget> shows
-    const oudeButtons = container.querySelectorAll('button[popovertarget]');
-    oudeButtons.forEach(btn => btn.remove());
+  const reedsToegevoegd = {};
 
-    const showsVoorDezeStation = [];
-    const reedsToegevoegd = {};
+  shows.forEach(show => {
+    if (show.day != vandaagNaam) return;
 
-    shows.forEach(show => {
-      if (show.radiostation != station.id) return;
-      if (show.day != vandaagNaam) return;
+    const key = show.from + show.show_name;
+    if (reedsToegevoegd[key]) return;
 
-      const key = show.from + show.show_name;
-      if (!reedsToegevoegd[key]) {
-        showsVoorDezeStation.push(show);
-        reedsToegevoegd[key] = true;
-      }
-    });
-
-    // Sorteer op starttijd
-    showsVoorDezeStation.sort((a,b) => a.from.localeCompare(b.from));
-
-    // Render elke show
-    showsVoorDezeStation.forEach(show => renderShow(show, container, huidigeMinuten));
+    renderShow(show, container, huidigeMinuten);
+    reedsToegevoegd[key] = true;
   });
 }
 
@@ -108,12 +93,13 @@ function renderShow(show, container, huidigeMinuten) {
   const html = `
     <button popovertarget="more-info">
       <article class="${blockClass} ${durationClass} ${liveClass}" style="--duration:${durationHours};">
-        <img src="${showThumbnail}" alt="${showName}" class="show-header normal-hidden">
+        <img src="${showThumbnail}" alt="${showName}" class="show-header">
         <section>
           <h3 class="fly-in-text || title">${showName}</h3>
           <p class="dj-names">${djNames}</p>
           <p class="time">${from} - ${show.until}</p>
         </section>
+        <p class="more"> > </p>
       </article>
     </button>
   `;
@@ -122,6 +108,16 @@ function renderShow(show, container, huidigeMinuten) {
 }
 
 // --------------------------------------------------
-// INITIAL LOAD
+// STATION SELECTOR EVENT
 // --------------------------------------------------
-laadAlleStations();
+const stationSelector = document.querySelector('#station-selector');
+if (stationSelector) {
+  stationSelector.addEventListener('change', e => {
+    const gekozenStation = parseInt(e.target.value, 10);
+    laadGekozenStation(gekozenStation);
+  });
+
+  // Initial load: toon eerste station automatisch
+  const eersteStation = parseInt(stationSelector.value, 10);
+  laadGekozenStation(eersteStation);
+}
