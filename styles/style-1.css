@@ -106,6 +106,72 @@ header.header {
   }
 }
 
+/* popover styling */
+
+
+#more-info {
+  background-color: light-dark(var(--radiogids-light-background),var(--radiogids-dark-background));
+
+  header {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      display: flex;
+      align-items: center;
+      margin-left: 1rem;
+
+      &::before {
+        content: "";
+        margin-right: .4rem;
+        display: block;
+        background-color: red;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 100%;
+        animation: live 2s ease infinite;
+      }
+    }
+
+    button {
+      all: unset;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &:focus-visible {
+        border: 2px red solid;
+      }
+
+      svg {
+        path {
+          fill: var(--text-light)
+        }
+      }
+    }
+  }
+
+  section {
+
+  }
+
+  &:popover-open {
+    bottom: 0;
+    top: auto;
+    width: 100vw;
+    height: auto;
+    
+    /* animatie voor flow in */
+    animation: slide-up 0.3s ease-out;
+
+    &::backdrop {
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+    }
+  }
+}
+
 /* Radiogids "home" styling */
 
 main {
@@ -484,28 +550,13 @@ footer {
 
   display: flex;
   width: .3rem;
-  background-color: light-dark(var(--radiogids-primary), var(--radiogids-light-background));
+  background-color: var(--radiogids-light-background);
   position: absolute;
   top: 10dvh;
   height: 70vh;
   max-height: 600px;
   bottom: 10dvh;
   left: 50.7vw;
-}
-
-#more-info:popover-open {
-  bottom: 0;
-  top: auto;
-  width: 100vw;
-  height: auto;
-  
-  /* Smooth entry */
-  animation: slide-up 0.3s ease-out;
-}
-
-#more-info::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
 }
 
 /* keyframes */
@@ -517,5 +568,22 @@ footer {
 
   to { 
     transform: translateY(0); 
+  }
+}
+
+@keyframes live {
+  0% {
+    scale: .8;
+    opacity: .5;
+  }
+
+  50% {
+    scale: 1;
+    opacity: 1;
+  }
+
+  100% {
+    scale: .8;
+    opacity: .5;
   }
 }
