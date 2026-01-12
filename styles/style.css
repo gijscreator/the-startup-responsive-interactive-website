@@ -291,7 +291,7 @@ main.home {
 
   section.kaartje {
     display: flex;
-    gap: var(--gap-width);
+    gap: var(--gap-width-px);
     width: max-content;
 
     figure {
@@ -505,7 +505,7 @@ main.home {
     article.block {
       width: calc(
         (var(--duration) * var(--hour-width)) + 
-        ((var(--duration) - 1) * var(--gap-width))
+        ((var(--duration) - 1) * var(--gap-width-px))
       );
 
       display: grid;
@@ -629,7 +629,10 @@ main.home {
   }
   .test-line {
     /* The position is: Offset + (Current Hour Decimal * 160px) */
-    --position: calc(var(--offset-width) + (var(--time) * var(--hour-width-px) + 160px));
+    --position: calc(
+    var(--offset-width) + 
+    (var(--time) * (var(--hour-width-px) + var(--gap-width-px)))
+  );
     
     display: flex;
     width: .3rem;
