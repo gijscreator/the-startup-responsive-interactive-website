@@ -21,6 +21,7 @@ body {
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -62,6 +63,18 @@ header.header {
   justify-content: center;
   padding: .5rem;
   height: 7dvh;
+
+  &.veronica {
+    background-color: var(--veronica-primary);
+  }
+
+  &.honderdnl {
+    background-color: var(--honderdnl-primary);
+  }
+
+  &.slam {
+    background-color: var(--slam-primary);
+  }
 
   picture {
     display: flex;
@@ -107,7 +120,6 @@ header.header {
 }
 
 /* popover styling */
-
 
 #more-info {
   background-color: light-dark(var(--radiogids-light-background),var(--radiogids-dark-background));
@@ -578,17 +590,41 @@ main {
       }
     }
   }
+  .test-line {
+
+    --current-time: 50.7vw;
+
+    display: flex;
+    width: .3rem;
+    background-color: var(--radiogids-light-background);
+    position: fixed;
+    left: 50.7vw;
+    top: 10vh;
+    bottom: 7vh;
+    z-index: 100;
+  }
 }
 
 footer {
   display: flex;
   justify-content: space-around;
-  background-color: var(----radiogids-primary);
   width: 100vw;
   position: sticky;
   bottom: 0;
   height: 7dvh;
-  background-color: var(--radiogids-dark-background);
+  
+  &.veronica {
+    background-color: var(--veronica-primary);
+  }
+
+  &.honderdnl {
+    background-color: var(--honderdnl-primary);
+  }
+
+  &.slam {
+    background-color: var(--slam-primary);
+  }
+
   
   a {
     display: flex;
@@ -597,19 +633,19 @@ footer {
   }
 }
 
-.test-line {
 
-  --current-time: 50.7vw;
+/* Radiogids "zenders" styling */
 
-  display: flex;
-  width: .3rem;
-  background-color: var(--radiogids-light-background);
-  position: fixed;
-  left: 50.7vw;
-  top: 10vh;
-  bottom: 7vh;
-  z-index: 100;
+body.zenders {
+  aside {
+    width: 10vw;
+  }
+
+  main {
+    width: 90vw;
+  }
 }
+
 
 /* keyframes */
 
