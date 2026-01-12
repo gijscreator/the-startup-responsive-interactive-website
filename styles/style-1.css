@@ -180,8 +180,6 @@ main {
     figure {
       width: 20vw;
       max-width: 80px;
-      position: sticky;
-      left: 0;
       height: 23dvh;
       max-height: 10.625rem;
       display: flex;
