@@ -184,6 +184,7 @@ main {
   overflow-x: auto;
   overflow-y: hidden;
   height: 86dvh;
+  position: relative;
 
   /* Section met timeline  */
 
@@ -197,13 +198,13 @@ main {
         var(--text-light) 1px, 
         transparent 1px
       );
-
     background-size: 10.47rem 35%;
     background-repeat: repeat-x;
     background-position: 5.4rem bottom;
     position: relative;
     height: 3rem;
     align-items: center;
+    z-index: 200;
 
     ul {
       display: flex;
@@ -576,11 +577,8 @@ footer {
   display: flex;
   width: .3rem;
   background-color: var(--radiogids-light-background);
-  position: absolute;
-  top: 10dvh;
-  height: 70vh;
-  max-height: 600px;
-  bottom: 10dvh;
+  position: fixed;
+  height: 100%;
   left: 50.7vw;
   z-index: 100;
 }
