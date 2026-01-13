@@ -47,7 +47,7 @@
     /* timeline position */
 
     --time: 0; 
-    --offset-width: 84px; 
+    --offset-width: 80px; 
     --hour-width-px: 160px;
 }
 

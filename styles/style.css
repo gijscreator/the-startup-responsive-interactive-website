@@ -209,7 +209,7 @@ header.header {
     bottom: 0;
     top: auto;
     width: 100vw;
-    height: 55vh;
+    height: 65vh;
     animation: slide-up 0.3s ease-out;
 
     &::backdrop {
@@ -223,6 +223,7 @@ header.header {
 /* Radiogids "home" styling */
 
 main.home {
+
   display: flex;
   flex-direction: column;
   overflow-x: auto;
@@ -230,10 +231,25 @@ main.home {
   height: 86dvh;
   position: relative;
 
-
+  /* Timeline zelf  */
+  div.test-line {
+    --position: calc(
+    var(--offset-width) + 
+    (var(--time) * (var(--hour-width-px) + var(--gap-width-px)))
+    );
+    
+    display: flex;
+    width: .3rem;
+    background-color: var(--radiogids-light-background);
+    position: absolute; 
+    top: 3rem; 
+    bottom: 0;
+    left: var(--position);
+    z-index: 100;
+    pointer-events: none;
+  }
 
   /* Section met timeline  */
-
   section:nth-of-type(1).sync-scroll {
     display: flex;
     background-color: light-dark(var(--radiogids-dark-background), var(--radiogids-primary));
@@ -251,6 +267,7 @@ main.home {
     height: 3rem;
     align-items: center;
     z-index: 200;
+    position: relative;
 
     ul {
       display: flex;
@@ -284,6 +301,25 @@ main.home {
       path {
         fill: var(--radiogids-light-background);
       }
+    }
+
+    p.nu {
+
+--position: calc(
+    var(--offset-width) + 
+    (var(--time) * (var(--hour-width-px) + var(--gap-width-px)))
+  );
+
+  display: flex;
+  position: fixed;
+  /* Sticky to the left edge of the container */
+  left: 0;
+  /* Use margin to push it to the exact 'test-line' spot */
+  margin-left: var(--position);
+  /* Center the text over the line */
+  transform: translateX(-50%);
+  width: max-content;
+  z-index: 201;
     }
   }
 
@@ -627,23 +663,6 @@ main.home {
       }
     }
   }
-  .test-line {
-    /* The position is: Offset + (Current Hour Decimal * 160px) */
-    --position: calc(
-    var(--offset-width) + 
-    (var(--time) * (var(--hour-width-px) + var(--gap-width-px)))
-  );
-    
-    display: flex;
-    width: .3rem;
-    background-color: var(--radiogids-light-background);
-    position: absolute; /* Changed to absolute to scroll with the content */
-    top: 3rem; /* Starts below the timeline numbers */
-    bottom: 0;
-    left: var(--position);
-    z-index: 100;
-    pointer-events: none;
-  }
 }
 
 footer {
@@ -803,4 +822,3 @@ body.zenders {
     transform: rotate(-10deg) scale(1.2);
   }
 }
-
