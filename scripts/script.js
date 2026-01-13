@@ -112,6 +112,7 @@ function renderShow(show, container, huidigeMinuten) {
         <section>
           <h3 class="fly-in-text || title">${showName}</h3>
           <p class="time">${from} - ${show.until}</p>
+          <p>Live</p>
         </section>
       </article>
     </button>
