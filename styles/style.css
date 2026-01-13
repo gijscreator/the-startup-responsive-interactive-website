@@ -57,7 +57,6 @@ header.header {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: .5rem;
   height: fit-content;
   max-height: 12dvh;
   flex-direction: column;
@@ -87,6 +86,7 @@ header.header {
     height: auto;
     max-height: 100px;
     object-fit: cover;
+    padding: .5rem
 
   }
 
@@ -101,6 +101,11 @@ header.header {
     justify-content: flex-end;
     overflow-x: auto;
     width: 100vw;
+    padding: .5rem 0rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
     
 
     ul {
@@ -169,7 +174,6 @@ header.header {
   border: none;
   border-radius: var(--border-radius) var(--border-radius) 0px 0px;
   padding: 1rem;
-  height: 55vh;
 
   header {
     display: flex;
@@ -253,7 +257,7 @@ header.header {
     bottom: 0;
     top: auto;
     width: 100vw;
-    height: 65vh;
+    height: 100dvh;
     animation: slide-up 0.3s ease-out;
 
     &::backdrop {

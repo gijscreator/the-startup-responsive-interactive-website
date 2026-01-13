@@ -1,5 +1,6 @@
 [
   {
+    "id": "show1",
     "day": "monday",
     "from": "00:00",
     "until": "06:00",
@@ -9,6 +10,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/59l89ap9gget-1920x1080.png"
   },
   {
+    "id": "show2",
     "day": "monday",
     "from": "06:00",
     "until": "10:00",
@@ -18,6 +20,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1cxrmb1lw6xb-1920x1080.png"
   },
   {
+    "id": "show3",
     "day": "monday",
     "from": "10:00",
     "until": "13:00",
@@ -27,6 +30,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/59l89ap9gget-1920x1080.png"
   },
   {
+    "id": "show4",
     "day": "monday",
     "from": "13:00",
     "until": "16:00",
@@ -36,6 +40,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6jj74v6vu9se-1207x765.png"
   },
   {
+    "id": "show5",
     "day": "monday",
     "from": "16:00",
     "until": "19:00",
@@ -45,6 +50,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5ubswwmzfi11-1207x765.png"
   },
   {
+    "id": "show6",
     "day": "monday",
     "from": "19:00",
     "until": "22:00",
@@ -54,6 +60,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/32570btxiirr-1207x765.png"
   },
   {
+    "id": "show7",
     "day": "monday",
     "from": "22:00",
     "until": "23:59",
@@ -63,6 +70,7 @@
     "dj_images": ""
   },
   {
+    "id": "show8",
     "day": "tuesday",
     "from": "00:00",
     "until": "06:00",
@@ -72,6 +80,7 @@
     "dj_images": ""
   },
   {
+    "id": "show9",
     "day": "tuesday",
     "from": "06:00",
     "until": "10:00",
@@ -81,6 +90,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5pkpzntwmwx2-1207x765.png"
   },
   {
+    "id": "show10",
     "day": "tuesday",
     "from": "10:00",
     "until": "13:00",
@@ -90,6 +100,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/331wk5ka0kyd-1207x765.png"
   },
   {
+    "id": "show11",
     "day": "tuesday",
     "from": "13:00",
     "until": "16:00",
@@ -99,6 +110,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6jj74v6vu9se-1207x765.png"
   },
   {
+    "id": "show12",
     "day": "tuesday",
     "from": "16:00",
     "until": "19:00",
@@ -108,6 +120,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5ubswwmzfi11-1207x765.png"
   },
   {
+    "id": "show13",
     "day": "tuesday",
     "from": "19:00",
     "until": "22:00",
@@ -117,6 +130,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/32570btxiirr-1207x765.png"
   },
   {
+    "id": "show14",
     "day": "tuesday",
     "from": "22:00",
     "until": "23:59",
@@ -126,6 +140,7 @@
     "dj_images": ""
   },
   {
+    "id": "show15",
     "day": "wednesday",
     "from": "00:00",
     "until": "06:00",
@@ -135,6 +150,7 @@
     "dj_images": ""
   },
   {
+    "id": "show16",
     "day": "wednesday",
     "from": "06:00",
     "until": "10:00",
@@ -144,6 +160,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5pkpzntwmwx2-1207x765.png"
   },
   {
+    "id": "show17",
     "day": "wednesday",
     "from": "10:00",
     "until": "13:00",
@@ -153,6 +170,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/331wk5ka0kyd-1207x765.png"
   },
   {
+    "id": "show18",
     "day": "wednesday",
     "from": "13:00",
     "until": "16:00",
@@ -162,6 +180,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6jj74v6vu9se-1207x765.png"
   },
   {
+    "id": "show19",
     "day": "wednesday",
     "from": "16:00",
     "until": "19:00",
@@ -171,6 +190,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5ubswwmzfi11-1207x765.png"
   },
   {
+    "id": "show20",
     "day": "wednesday",
     "from": "19:00",
     "until": "22:00",
@@ -180,6 +200,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/32570btxiirr-1207x765.png"
   },
   {
+    "id": "show21",
     "day": "wednesday",
     "from": "22:00",
     "until": "23:59",
@@ -189,6 +210,7 @@
     "dj_images": ""
   },
   {
+    "id": "show22",
     "day": "thursday",
     "from": "00:00",
     "until": "06:00",
@@ -198,6 +220,7 @@
     "dj_images": ""
   },
   {
+    "id": "show23",
     "day": "thursday",
     "from": "06:00",
     "until": "10:00",
@@ -207,6 +230,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5pkpzntwmwx2-1207x765.png"
   },
   {
+    "id": "show24",
     "day": "thursday",
     "from": "10:00",
     "until": "13:00",
@@ -216,6 +240,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/331wk5ka0kyd-1207x765.png"
   },
   {
+    "id": "show25",
     "day": "thursday",
     "from": "13:00",
     "until": "16:00",
@@ -225,6 +250,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6jj74v6vu9se-1207x765.png"
   },
   {
+    "id": "show26",
     "day": "thursday",
     "from": "16:00",
     "until": "19:00",
@@ -234,6 +260,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5ubswwmzfi11-1207x765.png"
   },
   {
+    "id": "show27",
     "day": "thursday",
     "from": "19:00",
     "until": "22:00",
@@ -243,6 +270,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/32570btxiirr-1207x765.png"
   },
   {
+    "id": "show28",
     "day": "thursday",
     "from": "22:00",
     "until": "23:59",
@@ -252,6 +280,7 @@
     "dj_images": ""
   },
   {
+    "id": "show29",
     "day": "friday",
     "from": "00:00",
     "until": "06:00",
@@ -261,6 +290,7 @@
     "dj_images": ""
   },
   {
+    "id": "show30",
     "day": "friday",
     "from": "06:00",
     "until": "10:00",
@@ -270,6 +300,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/5pkpzntwmwx2-1207x765.png"
   },
   {
+    "id": "show31",
     "day": "friday",
     "from": "10:00",
     "until": "13:00",
@@ -279,6 +310,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/331wk5ka0kyd-1207x765.png"
   },
   {
+    "id": "show32",
     "day": "friday",
     "from": "13:00",
     "until": "16:00",
@@ -288,6 +320,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6jj74v6vu9se-1207x765.png"
   },
   {
+    "id": "show33",
     "day": "friday",
     "from": "16:00",
     "until": "19:00",
@@ -297,6 +330,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/42679q1cmbo3-1207x765.png"
   },
   {
+    "id": "show34",
     "day": "friday",
     "from": "19:00",
     "until": "22:00",
@@ -306,6 +340,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/32570btxiirr-1207x765.png"
   },
   {
+    "id": "show35",
     "day": "friday",
     "from": "22:00",
     "until": "23:59",
@@ -315,6 +350,7 @@
     "dj_images": ""
   },
   {
+    "id": "show36",
     "day": "saturday",
     "from": "00:00",
     "until": "09:00",
@@ -324,6 +360,7 @@
     "dj_images": ""
   },
   {
+    "id": "show37",
     "day": "saturday",
     "from": "09:00",
     "until": "12:00",
@@ -333,6 +370,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/16troqjl24kc-1207x765.png"
   },
   {
+    "id": "show38",
     "day": "saturday",
     "from": "12:00",
     "until": "15:00",
@@ -342,6 +380,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/42679q1cmbo3-1207x765.png"
   },
   {
+    "id": "show39",
     "day": "saturday",
     "from": "15:00",
     "until": "17:00",
@@ -351,6 +390,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6jj74v6vu9se-1207x765.png"
   },
   {
+    "id": "show40",
     "day": "saturday",
     "from": "17:00",
     "until": "23:59",
@@ -360,6 +400,7 @@
     "dj_images": ""
   },
   {
+    "id": "show41",
     "day": "sunday",
     "from": "00:00",
     "until": "09:00",
@@ -369,6 +410,7 @@
     "dj_images": ""
   },
   {
+    "id": "show42",
     "day": "sunday",
     "from": "09:00",
     "until": "12:00",
@@ -378,6 +420,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/16troqjl24kc-1207x765.png"
   },
   {
+    "id": "show43",
     "day": "sunday",
     "from": "12:00",
     "until": "17:00",
@@ -387,6 +430,7 @@
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/42679q1cmbo3-1207x765.png"
   },
   {
+    "id": "show44",
     "day": "sunday",
     "from": "17:00",
     "until": "23:59",

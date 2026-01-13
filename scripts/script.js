@@ -1,227 +1,167 @@
-// --------------------------------------------------
-// RADIO STATIONS EN CONTAINERS
-// --------------------------------------------------
-const RADIO_STATIONS = [
-  { id: 1, file: 'data/veronica.json', containerSelector: '#veronica-shows' },
-  { id: 2, file: 'data/slam.json', containerSelector: '#slam-shows' },
-  { id: 3, file: 'data/100nl.json', containerSelector: '#hondernl-shows' }
-];
+/**
+ * RADIOGIDS MASTER SCRIPT - OPTIMIZED
+ */
 
-const DAYS_OF_WEEK = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
-const NUMBER_WORDS = ['zero','one','two','three','four','five','six','seven','eight','nine','ten'];
+const RADIOGIDS_CONFIGURATIE = {
+    radioStations: [
+        { id: 1, machineNaam: "veronica", dataBestand: 'data/veronica.json', htmlContainer: '#veronica-shows' },
+        { id: 2, machineNaam: "slam", dataBestand: 'data/slam.json', htmlContainer: '#slam-shows' },
+        { id: 3, machineNaam: "hondernl", dataBestand: 'data/100nl.json', htmlContainer: '#hondernl-shows' }
+    ],
+    dagenVanDeWeek: ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'],
+    getallenInWoorden: ['zero','one','two','three','four','five','six','seven','eight','nine','ten']
+};
 
-// --------------------------------------------------
-// FUNCTIE: Alles laden en weergeven
-// --------------------------------------------------
-function laadAlleStations() {
-  const fetchPromises = RADIO_STATIONS.map(station => fetchStationData(station));
+const TijdHulpmiddelen = {
+    zetTijdOmNaarMinuten: (tijdTekst) => {
+        if (!tijdTekst) return 0;
+        const [uren, minuten] = tijdTekst.split(':').map(Number);
+        return (uren * 60) + (minuten || 0);
+    },
 
-  Promise.all(fetchPromises)
-    .then(results => {
-      let alleShows = [];
-      results.forEach(shows => alleShows = alleShows.concat(shows));
-      renderShows(alleShows);
-    })
-    .catch(error => console.error('Fout bij laden shows:', error));
-}
-
-// --------------------------------------------------
-// FUNCTIE: Haal data van een station
-// --------------------------------------------------
-function fetchStationData(station) {
-  return fetch(station.file)
-    .then(response => {
-      if (!response.ok) throw new Error('Kon bestand niet laden: ' + station.file);
-      return response.json();
-    })
-    .then(jsonData => {
-      const shows = Array.isArray(jsonData) ? jsonData : jsonData.data;
-      shows.forEach(show => {
-        show.radiostation = station.id;
-        show.containerSelector = station.containerSelector;
-      });
-      return shows;
-    });
-}
-
-// --------------------------------------------------
-// FUNCTIE: Shows renderen
-// --------------------------------------------------
-function renderShows(shows) {
-  const vandaag = new Date();
-  const vandaagNaam = DAYS_OF_WEEK[vandaag.getDay()];
-  const huidigeMinuten = vandaag.getHours() * 60 + vandaag.getMinutes();
-
-  RADIO_STATIONS.forEach(station => {
-    const container = document.querySelector(station.containerSelector);
-    if (!container) return;
-
-    // We **wissen de container niet volledig**, zodat <figure> blijft
-    // Alleen verwijderen van oude <button popovertarget> shows
-    const oudeButtons = container.querySelectorAll('button[popovertarget]');
-    oudeButtons.forEach(btn => btn.remove());
-
-    const showsVoorDezeStation = [];
-    const reedsToegevoegd = {};
-
-    shows.forEach(show => {
-      if (show.radiostation != station.id) return;
-      if (show.day != vandaagNaam) return;
-
-      const key = show.from + show.show_name;
-      if (!reedsToegevoegd[key]) {
-        showsVoorDezeStation.push(show);
-        reedsToegevoegd[key] = true;
-      }
-    });
-
-    // Sorteer op starttijd
-    showsVoorDezeStation.sort((a,b) => a.from.localeCompare(b.from));
-
-    // Render elke show
-    showsVoorDezeStation.forEach(show => renderShow(show, container, huidigeMinuten));
-  });
-}
-
-// --------------------------------------------------
-// FUNCTIE: Render een enkele show
-// --------------------------------------------------
-function renderShow(show, container, huidigeMinuten) {
-  const from = show.from;
-  const until = show.until === '23:59' ? '24:00' : show.until;
-  const showName = show.show_name || 'Radio Show';
-  const djNames = show.dj_names ? show.dj_names.replace(/,/g,' & ') : '';
-  const showThumbnail = show.show_thumbnail || '';
-
-  const startMinutes = parseInt(from.split(':')[0])*60 + parseInt(from.split(':')[1]);
-  let endMinutes = parseInt(until.split(':')[0])*60 + parseInt(until.split(':')[1]);
-  if (endMinutes <= startMinutes) endMinutes += 1440;
-
-  const isLive = huidigeMinuten >= startMinutes && huidigeMinuten < endMinutes;
-  const liveClass = isLive ? 'live' : '';
-
-  const durationHours = Math.round((endMinutes - startMinutes)/60);
-  const hourWord = NUMBER_WORDS[durationHours] || 'long';
-  const durationClass = hourWord + (durationHours===1?'hour':'hours');
-  const blockClass = durationHours>=2 ? 'block' : '';
-
-  const html = `
-    <button popovertarget="more-info">
-      <article class="${blockClass} ${durationClass} ${liveClass}" style="--duration:${durationHours};">
-        <img src="${showThumbnail}" alt="${showName}" class="show-header normal-hidden">
-        <section>
-          <h3 class="fly-in-text || title">${showName}</h3>
-          <p class="time">${from} - ${show.until}</p>
-          <p>Live</p>
-        </section>
-      </article>
-    </button>
-  `;
-
-  container.insertAdjacentHTML('beforeend', html);
-}
-
-// --------------------------------------------------
-// INITIAL LOAD
-// --------------------------------------------------
-laadAlleStations();
-
-
-
-function updateLiveTime() {
-    const now = new Date();
-    
-    // 1. Get exact Dutch Time
-    const nlTime = now.toLocaleString("nl-NL", {
-        timeZone: "Europe/Amsterdam", 
-        hour: '2-digit', 
-        minute: '2-digit', 
-        hour12: false
-    });
-    
-    const [hours, minutes] = nlTime.split(':').map(Number);
-    const timeDecimal = hours + (minutes / 60);
-
-    // 2. Log to console for debugging
-    console.log(`System Time: ${now.getHours()}:${now.getMinutes()}`);
-    console.log(`Calculated NL Time: ${nlTime}`);
-    console.log(`CSS --time value: ${timeDecimal}`);
-
-    const mainContainer = document.querySelector('main.home');
-    const timeLine = document.querySelector('.test-line');
-
-    if (mainContainer && timeLine) {
-        // Set the CSS variable
-        mainContainer.style.setProperty('--time', timeDecimal);
-
-        // 3. Auto-Scroll logic
-        // We calculate the pixel position: (Time * 160px) + 80px offset
-        const hourWidth = 160; 
-        const offset = 80;
-        const scrollPosition = (timeDecimal * hourWidth) + offset;
-
-        if (!mainContainer.dataset.hasScrolled) {
-          // Get the actual position of the time line element
-          const lineRect = timeLine.getBoundingClientRect();
-          const lineLeftRelativeToDocument = lineRect.left + mainContainer.scrollLeft;
-          
-          // Center it: line position minus half viewport width
-          mainContainer.scrollLeft = lineLeftRelativeToDocument - (window.innerWidth / 2);
-          mainContainer.dataset.hasScrolled = "true";
-          console.log(`Line position: ${lineLeftRelativeToDocument}px, Scrolled to: ${mainContainer.scrollLeft}px`);
-      }
+    berekenProgrammaDuurInUren: (startTijd, eindTijd) => {
+        const startMinuten = TijdHulpmiddelen.zetTijdOmNaarMinuten(startTijd);
+        let eindMinuten = TijdHulpmiddelen.zetTijdOmNaarMinuten(eindTijd === '23:59' ? '24:00' : eindTijd);
+        if (eindMinuten <= startMinuten) eindMinuten += 1440;
+        return Math.round((eindMinuten - startMinuten) / 60);
     }
-}
+};
 
-// Initialize
-updateLiveTime();
-// Update every minute to keep the line moving
-setInterval(updateLiveTime, 600);
-
-
-
-
-// Audio player veronica 
-const playButton = document.querySelector('.play-button');
-const audioPlayer = new Audio('assets/liedje.mp3');
-if (playButton) {
-  playButton.addEventListener('click', () => {
-    if (audioPlayer.paused) {
-      audioPlayer.play();
-      playButton.classList.add('is-playing');
-    } else {
-      audioPlayer.pause();
-      playButton.classList.remove('is-playing');
+const DataOphaler = {
+    haalProgrammaDataOp: async (bestandsPad) => {
+        try {
+            const response = await fetch(bestandsPad);
+            const data = await response.json();
+            return Array.isArray(data) ? data : (data.data || []);
+        } catch (fout) {
+            console.error("Data fetch error:", fout);
+            return [];
+        }
     }
-  });
-}
+};
 
-const slider = document.querySelector('.sync-scroll');
-let isDown = false;
-let startX;
-let scrollLeft;
+const HTMLBouwer = {
+    maakProgrammaKaartje: (programma, huidigeMinuten, zenderNaam) => {
+        const duurInUren = TijdHulpmiddelen.berekenProgrammaDuurInUren(programma.from, programma.until);
+        const startTijdMin = TijdHulpmiddelen.zetTijdOmNaarMinuten(programma.from);
+        const isNuBezig = huidigeMinuten >= startTijdMin && huidigeMinuten < (startTijdMin + (duurInUren * 60));
+        
+        const duurKlasse = `${RADIOGIDS_CONFIGURATIE.getallenInWoorden[duurInUren] || 'long'}hours`;
+        // Direct link as requested
+        const uniekeLink = `pages/details.html?id=${programma.id}-${zenderNaam}`;
 
-slider.addEventListener('mousedown', (e) => {
-  isDown = true;
-  slider.classList.add('active'); // for cursor change
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
+        return `
+            <a href="${uniekeLink}" class="show-card-link">
+                <article class="block ${duurKlasse} ${isNuBezig ? 'live' : ''}" style="--duration:${duurInUren};">
+                    <img src="${programma.show_thumbnail}" alt="${programma.show_name}" class="show-header normal-hidden">
+                    <section>
+                        <h3 class="fly-in-text title">${programma.show_name}</h3>
+                        <p class="time">${programma.from} - ${programma.until}</p>
+                        ${isNuBezig ? '<p class="live-status">NU LIVE</p>' : ''}
+                    </section>
+                </article>
+            </a>`;
+    }
+};
 
-slider.addEventListener('mouseleave', () => {
-  isDown = false;
-  slider.classList.remove('active');
-});
+const PaginaBeheer = {
+    initialiseerApp: async () => {
+        const path = window.location.pathname;
+        const nu = new Date();
+        const dag = RADIOGIDS_CONFIGURATIE.dagenVanDeWeek[nu.getDay()];
+        const minuten = (nu.getHours() * 60) + nu.getMinutes();
 
-slider.addEventListener('mouseup', () => {
-  isDown = false;
-  slider.classList.remove('active');
-});
+        if (path.includes('details.html')) {
+            await PaginaBeheer.laadDetailPagina();
+        } else if (path.includes('zenders.html')) {
+            await PaginaBeheer.laadZenderPagina(dag, minuten);
+        } else {
+            await PaginaBeheer.laadHomePagina(dag, minuten);
+        }
+        
+        PaginaBeheer.activeerAlgemeneFuncties();
+    },
 
-slider.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  const walk = (x - startX) * 2; // scroll-fast multiplier
-  slider.scrollLeft = scrollLeft - walk;
-});
+    laadHomePagina: async (vandaag, nuMinuten) => {
+        for (const station of RADIOGIDS_CONFIGURATIE.radioStations) {
+            const container = document.querySelector(station.htmlContainer);
+            if (!container) continue;
+
+            const data = await DataOphaler.haalProgrammaDataOp(station.dataBestand);
+            data.filter(p => p.day === vandaag)
+                .sort((a, b) => a.from.localeCompare(b.from))
+                .forEach(p => container.insertAdjacentHTML('beforeend', HTMLBouwer.maakProgrammaKaartje(p, nuMinuten, station.machineNaam)));
+        }
+    },
+
+    laadZenderPagina: async (vandaag, nuMinuten) => {
+        const stationNaam = new URLSearchParams(window.location.search).get('station') || "veronica";
+        const station = RADIOGIDS_CONFIGURATIE.radioStations.find(s => s.machineNaam === stationNaam);
+        const container = document.querySelector(station?.htmlContainer);
+        
+        if (container && station) {
+            container.classList.add('is-active');
+            const data = await DataOphaler.haalProgrammaDataOp(station.dataBestand);
+            container.innerHTML = ''; 
+            data.filter(p => p.day === vandaag)
+                .sort((a, b) => a.from.localeCompare(b.from))
+                .forEach(p => container.insertAdjacentHTML('beforeend', HTMLBouwer.maakProgrammaKaartje(p, nuMinuten, station.machineNaam)));
+        }
+    },
+
+    laadDetailPagina: async () => {
+        const idParam = new URLSearchParams(window.location.search).get('id');
+        if (!idParam) return;
+
+        const parts = idParam.split('-');
+        const stationNaam = parts.pop();
+        const progId = parts.join('-');
+
+        const station = RADIOGIDS_CONFIGURATIE.radioStations.find(s => s.machineNaam === stationNaam);
+        if (!station) return;
+
+        const data = await DataOphaler.haalProgrammaDataOp(station.dataBestand);
+        const prog = data.find(p => String(p.id) === String(progId));
+
+        if (prog) {
+            document.getElementById('detail-name').textContent = prog.show_name;
+            document.getElementById('detail-img').src = prog.show_thumbnail;
+            document.getElementById('detail-djs').textContent = `Presentatie: ${prog.dj_names || "Onbekend"}`;
+            document.getElementById('detail-description').innerHTML = prog.body || "Geen beschrijving.";
+            document.title = `${prog.show_name} - Radiogids`;
+        }
+    },
+
+    activeerAlgemeneFuncties: () => {
+        // Tijdlijn update
+        const line = document.querySelector('.test-line');
+        const main = document.querySelector('main.home');
+
+        if (line && main) {
+            const update = () => {
+                const d = new Date();
+                main.style.setProperty('--time', d.getHours() + (d.getMinutes() / 60));
+
+                if (!main.dataset.scrolled) {
+                    main.scrollLeft = (line.getBoundingClientRect().left + main.scrollLeft) - (window.innerWidth / 2);
+                    main.dataset.scrolled = "true";
+                }
+            };
+            update();
+            setInterval(update, 60000);
+        }
+
+        // Audio Player
+        const btn = document.querySelector('.play-button');
+        const audio = new Audio('assets/liedje.mp3'); 
+
+        if (btn) {
+            btn.addEventListener('click', () => {
+                audio.paused ? audio.play() : audio.pause();
+                btn.classList.toggle('is-playing', !audio.paused);
+            });
+        }
+    }
+};
+
+document.addEventListener('DOMContentLoaded', PaginaBeheer.initialiseerApp);
