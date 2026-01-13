@@ -614,7 +614,7 @@ footer {
   width: 100vw;
   position: sticky;
   bottom: 0;
-  height: 7dvh;
+  height: 10dvh;
   z-index: 1000;
   
   &.veronica {
