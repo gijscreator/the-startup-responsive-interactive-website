@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- production versie -->
-	<!-- <base href="/the-startup-responsive-interactive-website/"> -->
-
+	<base href="/the-startup-responsive-interactive-website/">
+	<!-- <base href="/"> -->
     <title>Kies jouw favoriete zender</title>
     <link rel="stylesheet" href="styles/styleguide.css">
     <link rel="stylesheet" href="styles/style.css">
@@ -14,7 +14,7 @@
 </head>
 <body class="zenders">
     <!-- Header met logo -->
-	<header class="header veronica">
+	<header class="veronica">
 		<h1 class="visually-hidden">Radiohuis</h1>
 
 		<!-- Nieuwe techniek die ik nog niet kende src="https://stackoverflow.com/questions/74638826/alternate-images-based-on-users-color-preference-without-using-javascript"-->
@@ -29,6 +29,15 @@
 			<img src="assets/logo-veronica.webp" alt="Logo van radiogids"/>
 		</picture>
 	</header>
+
+	<article class="buttons">
+		<button popovertarget="station-selector" class="select-station veronica">
+			<p>Kies radio</p> 
+			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M5 7.5L10 12.5L15 7.5" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</button>
+	</article>
 
     <aside>
         <section>
@@ -116,16 +125,59 @@
 
 		<section>
 			<h2 class="visually-hidden">Radiozender</h2>
-			<button popovertarget="station-selector" class="select-station veronica">
-				<p>Veronica</p> 
-				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M5 7.5L10 12.5L15 7.5" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-				</svg>
-
-			</button>
 		</section>
+
         <section popover="station-selector" id="station-selector">
-			<a href=""></a>
+			<ul>
+				<li>
+					<a href="pages/zenders.html?station=veronica">
+					<picture>
+						<!-- gebruiker wilt light mode: -->
+						<source srcset="assets/logo-veronica.webp" media="(prefers-color-scheme: light)"/>
+
+						<!-- gebruiker wilt dark mode: -->
+						<source srcset="assets/logo-veronica.webp"  media="(prefers-color-scheme: dark)"/>
+
+						<!-- gebruiker wilt niks: -->
+						<img src="assets/logo-veronica.webpp" alt="Logo van radiogids"/>
+					</picture>
+					<p>Veronica maakt je dag iedere dag</p>
+					<p> Nederpop </p>
+					</a>
+				</li>
+				<li>
+					<a href="pages/zenders.html?station=hondernl">
+					<picture>
+						<!-- gebruiker wilt light mode: -->
+						<source srcset="assets/logo-100nl.webp" media="(prefers-color-scheme: light)"/>
+
+						<!-- gebruiker wilt dark mode: -->
+						<source srcset="assets/logo-100nl.webp"  media="(prefers-color-scheme: dark)"/>
+
+						<!-- gebruiker wilt niks: -->
+						<img src="assets/logo-100nl.webp" alt="Logo van radiogids"/>
+					</picture>
+					<p>100%NL maakt je dag iedere dag</p>
+					<p> Nederpop </p>
+					</a>
+				</li>
+				<li>
+					<a href="pages/zenders.html?station=slam">
+					<picture>
+						<!-- gebruiker wilt light mode: -->
+						<source srcset="assets/logo-slam.webp" media="(prefers-color-scheme: light)"/>
+
+						<!-- gebruiker wilt dark mode: -->
+						<source srcset="assets/logo-slam.webp"  media="(prefers-color-scheme: dark)"/>
+
+						<!-- gebruiker wilt niks: -->
+						<img src="assets/logo-slam.webp" alt="Logo van radiogids"/>
+					</picture>
+					<p>slam%NL maakt je dag iedere dag</p>
+					<p> Nederpop </p>
+					</a>
+				</li>
+			</ul>
         </section>
 
         <section id="veronica-shows"></section>

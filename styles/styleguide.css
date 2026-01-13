@@ -50,18 +50,61 @@
     --time: 0; 
     --offset-width: 80px; 
     --hour-width-px: 160px;
+
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+html, body {
+  background-color: light-dark(var(--radiogids-light-background), var(--radiogids-dark-background));
+  height: 100dvh;
 }
 
 body {
+
     overscroll-behavior: none;
+
+    &.home {
+        height: 100vh;
+    }
+
+    &:has(#station-selector:popover-open) {
+        overflow: hidden;
+    }
 }
 
-.station {
+.hidden {
   display: none;
 }
 
-.station.is-active {
-  display: flex;
+img, video {
+  width: 100%;
+  height: auto;
+}
+
+button, a {
+  -webkit-appearance: none;
+  appearance: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+}
+
+p, h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .visually-hidden {
@@ -72,10 +115,6 @@ body {
   position: absolute;
   white-space: nowrap;
   width: 1px;
-}
-
-* {
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
