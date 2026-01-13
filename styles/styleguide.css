@@ -39,6 +39,7 @@
     /* Border radius */
 
     --border-radius: .7rem;
+    --border-radius-button: 1.4rem;
 
     /* width and gap per card */
     --hour-width: 10rem; /* base 160px */

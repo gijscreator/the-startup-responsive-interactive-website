@@ -22,6 +22,7 @@ body.home {
   margin: 0;
   padding: 0;
   list-style: none;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -58,8 +59,8 @@ a {
 
 header.header {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: .5rem;
   height: 7dvh;
 
@@ -75,25 +76,56 @@ header.header {
     background-color: var(--slam-primary);
   }
 
-  picture {
-    display: flex;
-    justify-content: center;
-  }
-
   img {
-    width: 50%;
+    display: flex;
+    align-items: center;
+    width: 100%;
     max-width: 400px;
     height: auto;
     max-height: 100px;
     object-fit: cover;
-    margin: 0 auto;
+
+  }
+
+  picture {
+    width: 40vw;
   }
 
   /* Section met date picker */
-
   section:nth-of-type(1) {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-end;
+    overflow-x: auto;
+    width: 60vw;
+
+    ul {
+      display: flex;
+      gap: 1rem;
+
+      li {
+
+      }
+
+      button {
+        width: 13vw;
+        height: 2rem;
+        background-color: var(--radiogids-primary);
+        border-radius: var(--border-radius-button);
+
+        &.today {
+          background-color: transparent;
+          border: 2px solid var(--radiogids-primary);
+
+        }
+      }
+    
+    }
+  }
+
+  section:nth-of-type(2) {
+    display: flex;
+    justify-content: flex-start;
     position: relative;
 
     ul {
