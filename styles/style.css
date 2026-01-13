@@ -652,10 +652,14 @@ main.home {
         margin: 1rem;
         text-align: center;
         background-color: var(--radiogids-dark-background);
-        width: 60%;
+        width: fit-content;
+        padding: .5rem;
         height: 20%; 
         border-radius: var(--border-radius);
         z-index: 1;
+        position: absolute;
+        top: 0;
+        right: 0;
 
         &::before {
           content: "";

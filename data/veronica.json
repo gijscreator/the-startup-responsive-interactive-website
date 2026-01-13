@@ -2,8 +2,8 @@
   {
     
     "day": "monday",
-    "from": "00:00:00",
-    "until": "04:00:00",
+    "from": "00:00",
+    "until": "04:00",
     "show_name": "Oh Wat Een Nacht",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/70h1m4slkpo0-radio-veronica-thumbnail.jpg",
     "dj_names": "Radio Veronica",
@@ -12,8 +12,8 @@
   {
     
     "day": "monday",
-    "from": "04:00:00",
-    "until": "06:00:00",
+    "from": "04:00",
+    "until": "06:00",
     "show_name": "The Warming Up",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/wwkx27hhlgw-lisanne-thumbnail.jpg",
     "dj_names": "Lisanne Bronkhorst",
@@ -22,8 +22,8 @@
   {
     
     "day": "monday",
-    "from": "06:00:00",
-    "until": "09:00:00",
+    "from": "06:00",
+    "until": "09:00",
     "show_name": "Ekdom in de Morgen",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4igum86oqbt4-gerard-ekdom-thumbnail.jpg",
     "dj_names": "Gerard Ekdom",
@@ -32,8 +32,8 @@
   {
     
     "day": "monday",
-    "from": "09:00:00",
-    "until": "12:00:00",
+    "from": "09:00",
+    "until": "12:00",
     "show_name": "Goud van Oud",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4nfdiqlfxa0g-marisa-thumbnail.jpg",
     "dj_names": "Marisa Heutink",
@@ -42,8 +42,8 @@
   {
     
     "day": "monday",
-    "from": "12:00:00",
-    "until": "14:00:00",
+    "from": "12:00",
+    "until": "14:00",
     "show_name": "Sander Hoogendoorn",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/2sppxkop52b6-sander-thumbnail.jpg",
     "dj_names": "Sander Hoogendoorn",
@@ -52,8 +52,8 @@
   {
     
     "day": "monday",
-    "from": "14:00:00",
-    "until": "16:00:00",
+    "from": "14:00",
+    "until": "16:00",
     "show_name": "De Bonanza",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/1swhck2qnppu-rob-thumbnail.jpg",
     "dj_names": "Rob Stenders",
@@ -62,8 +62,8 @@
   {
     
     "day": "monday",
-    "from": "16:00:00",
-    "until": "19:00:00",
+    "from": "16:00",
+    "until": "19:00",
     "show_name": "Wout & Frank",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/riqu29liwj-wout-en-frank-thumbnail.jpg",
     "dj_names": "Frank van 't Hof, Wouter van der Goes",
@@ -72,8 +72,8 @@
   {
     
     "day": "monday",
-    "from": "19:00:00",
-    "until": "21:00:00",
+    "from": "19:00",
+    "until": "21:00",
     "show_name": "Martijn Muijs",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/6b2u3ltw2pyo-martijn-thumbnail.jpg",
     "dj_names": "Martijn Muijs",
@@ -82,8 +82,8 @@
   {
     
     "day": "monday",
-    "from": "21:00:00",
-    "until": "23:59:00",
+    "from": "21:00",
+    "until": "23:59",
     "show_name": "Frank tot Laat",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/6l8fxvqu2cxa-frank-vd-lende-thumbnail.jpg",
     "dj_names": "Frank van der Lende",
@@ -92,8 +92,8 @@
   {
     
     "day": "tuesday",
-    "from": "00:00:00",
-    "until": "04:00:00",
+    "from": "00:00",
+    "until": "04:00",
     "show_name": "Oh Wat Een Nacht",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/70h1m4slkpo0-radio-veronica-thumbnail.jpg",
     "dj_names": "Radio Veronica",
@@ -102,8 +102,8 @@
   {
     
     "day": "tuesday",
-    "from": "04:00:00",
-    "until": "06:00:00",
+    "from": "04:00",
+    "until": "06:00",
     "show_name": "The Warming Up",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/wwkx27hhlgw-lisanne-thumbnail.jpg",
     "dj_names": "Lisanne Bronkhorst",
@@ -112,8 +112,8 @@
   {
     
     "day": "tuesday",
-    "from": "06:00:00",
-    "until": "09:00:00",
+    "from": "06:00",
+    "until": "09:00",
     "show_name": "Ekdom in de Morgen",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4igum86oqbt4-gerard-ekdom-thumbnail.jpg",
     "dj_names": "Gerard Ekdom",
@@ -122,8 +122,8 @@
   {
     
     "day": "tuesday",
-    "from": "09:00:00",
-    "until": "12:00:00",
+    "from": "09:00",
+    "until": "12:00",
     "show_name": "Goud van Oud",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4nfdiqlfxa0g-marisa-thumbnail.jpg",
     "dj_names": "Marisa Heutink",
@@ -132,8 +132,8 @@
   {
     
     "day": "tuesday",
-    "from": "12:00:00",
-    "until": "14:00:00",
+    "from": "12:00",
+    "until": "14:00",
     "show_name": "Sander Hoogendoorn",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/2sppxkop52b6-sander-thumbnail.jpg",
     "dj_names": "Sander Hoogendoorn",
@@ -142,8 +142,8 @@
   {
     
     "day": "tuesday",
-    "from": "14:00:00",
-    "until": "16:00:00",
+    "from": "14:00",
+    "until": "16:00",
     "show_name": "De Bonanza",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/1swhck2qnppu-rob-thumbnail.jpg",
     "dj_names": "Rob Stenders",
@@ -152,8 +152,8 @@
   {
     
     "day": "tuesday",
-    "from": "16:00:00",
-    "until": "19:00:00",
+    "from": "16:00",
+    "until": "19:00",
     "show_name": "Wout & Frank",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/riqu29liwj-wout-en-frank-thumbnail.jpg",
     "dj_names": "Frank van 't Hof, Wouter van der Goes",
@@ -162,8 +162,8 @@
   {
     
     "day": "tuesday",
-    "from": "19:00:00",
-    "until": "21:00:00",
+    "from": "19:00",
+    "until": "21:00",
     "show_name": "Martijn Muijs",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/6b2u3ltw2pyo-martijn-thumbnail.jpg",
     "dj_names": "Martijn Muijs",
@@ -172,8 +172,8 @@
   {
     
     "day": "tuesday",
-    "from": "21:00:00",
-    "until": "23:59:00",
+    "from": "21:00",
+    "until": "23:59",
     "show_name": "Frank tot Laat",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/6l8fxvqu2cxa-frank-vd-lende-thumbnail.jpg",
     "dj_names": "Frank van der Lende",
@@ -182,8 +182,8 @@
   {
     
     "day": "wednesday",
-    "from": "00:00:00",
-    "until": "04:00:00",
+    "from": "00:00",
+    "until": "04:00",
     "show_name": "Oh Wat Een Nacht",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/70h1m4slkpo0-radio-veronica-thumbnail.jpg",
     "dj_names": "Radio Veronica",
@@ -192,8 +192,8 @@
   {
     
     "day": "wednesday",
-    "from": "04:00:00",
-    "until": "06:00:00",
+    "from": "04:00",
+    "until": "06:00",
     "show_name": "The Warming Up",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/wwkx27hhlgw-lisanne-thumbnail.jpg",
     "dj_names": "Lisanne Bronkhorst",
@@ -202,8 +202,8 @@
   {
     
     "day": "wednesday",
-    "from": "06:00:00",
-    "until": "09:00:00",
+    "from": "06:00",
+    "until": "09:00",
     "show_name": "Ekdom in de Morgen",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4igum86oqbt4-gerard-ekdom-thumbnail.jpg",
     "dj_names": "Gerard Ekdom",
@@ -212,8 +212,8 @@
   {
     
     "day": "wednesday",
-    "from": "09:00:00",
-    "until": "12:00:00",
+    "from": "09:00",
+    "until": "12:00",
     "show_name": "Goud van Oud",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4nfdiqlfxa0g-marisa-thumbnail.jpg",
     "dj_names": "Marisa Heutink",
@@ -222,8 +222,8 @@
   {
     
     "day": "wednesday",
-    "from": "12:00:00",
-    "until": "14:00:00",
+    "from": "12:00",
+    "until": "14:00",
     "show_name": "Sander Hoogendoorn",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/2sppxkop52b6-sander-thumbnail.jpg",
     "dj_names": "Sander Hoogendoorn",
@@ -232,8 +232,8 @@
   {
     
     "day": "wednesday",
-    "from": "14:00:00",
-    "until": "16:00:00",
+    "from": "14:00",
+    "until": "16:00",
     "show_name": "De Bonanza",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/1swhck2qnppu-rob-thumbnail.jpg",
     "dj_names": "Rob Stenders",
@@ -242,8 +242,8 @@
   {
     
     "day": "wednesday",
-    "from": "16:00:00",
-    "until": "19:00:00",
+    "from": "16:00",
+    "until": "19:00",
     "show_name": "Wout & Frank",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/riqu29liwj-wout-en-frank-thumbnail.jpg",
     "dj_names": "Frank van 't Hof, Wouter van der Goes",
@@ -252,8 +252,8 @@
   {
     
     "day": "wednesday",
-    "from": "19:00:00",
-    "until": "21:00:00",
+    "from": "19:00",
+    "until": "21:00",
     "show_name": "Martijn Muijs",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/6b2u3ltw2pyo-martijn-thumbnail.jpg",
     "dj_names": "Martijn Muijs",
@@ -262,8 +262,8 @@
   {
     
     "day": "wednesday",
-    "from": "21:00:00",
-    "until": "23:59:00",
+    "from": "21:00",
+    "until": "23:59",
     "show_name": "Frank tot Laat",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/6l8fxvqu2cxa-frank-vd-lende-thumbnail.jpg",
     "dj_names": "Frank van der Lende",
@@ -272,8 +272,8 @@
   {
     
     "day": "thursday",
-    "from": "00:00:00",
-    "until": "04:00:00",
+    "from": "00:00",
+    "until": "04:00",
     "show_name": "Oh Wat Een Nacht",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/70h1m4slkpo0-radio-veronica-thumbnail.jpg",
     "dj_names": "Radio Veronica",
@@ -282,8 +282,8 @@
   {
     
     "day": "thursday",
-    "from": "04:00:00",
-    "until": "06:00:00",
+    "from": "04:00",
+    "until": "06:00",
     "show_name": "The Warming Up",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/wwkx27hhlgw-lisanne-thumbnail.jpg",
     "dj_names": "Lisanne Bronkhorst",
@@ -292,8 +292,8 @@
   {
     
     "day": "thursday",
-    "from": "06:00:00",
-    "until": "09:00:00",
+    "from": "06:00",
+    "until": "09:00",
     "show_name": "Ekdom in de Morgen",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4igum86oqbt4-gerard-ekdom-thumbnail.jpg",
     "dj_names": "Gerard Ekdom",
@@ -302,8 +302,8 @@
   {
     
     "day": "thursday",
-    "from": "09:00:00",
-    "until": "12:00:00",
+    "from": "09:00",
+    "until": "12:00",
     "show_name": "Goud van Oud",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4nfdiqlfxa0g-marisa-thumbnail.jpg",
     "dj_names": "Marisa Heutink",
@@ -312,8 +312,8 @@
   {
     
     "day": "thursday",
-    "from": "12:00:00",
-    "until": "14:00:00",
+    "from": "12:00",
+    "until": "14:00",
     "show_name": "Sander Hoogendoorn",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/2sppxkop52b6-sander-thumbnail.jpg",
     "dj_names": "Sander Hoogendoorn",
@@ -322,8 +322,8 @@
   {
     
     "day": "thursday",
-    "from": "14:00:00",
-    "until": "16:00:00",
+    "from": "14:00",
+    "until": "16:00",
     "show_name": "De Bonanza",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/1swhck2qnppu-rob-thumbnail.jpg",
     "dj_names": "Rob Stenders",
@@ -332,8 +332,8 @@
   {
     
     "day": "thursday",
-    "from": "16:00:00",
-    "until": "19:00:00",
+    "from": "16:00",
+    "until": "19:00",
     "show_name": "Wout & Frank",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/riqu29liwj-wout-en-frank-thumbnail.jpg",
     "dj_names": "Frank van 't Hof, Wouter van der Goes",
@@ -342,8 +342,8 @@
   {
     
     "day": "thursday",
-    "from": "19:00:00",
-    "until": "21:00:00",
+    "from": "19:00",
+    "until": "21:00",
     "show_name": "Martijn Muijs",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/6b2u3ltw2pyo-martijn-thumbnail.jpg",
     "dj_names": "Martijn Muijs",
@@ -352,8 +352,8 @@
   {
     
     "day": "thursday",
-    "from": "21:00:00",
-    "until": "23:59:00",
+    "from": "21:00",
+    "until": "23:59",
     "show_name": "Frank tot Laat",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/6l8fxvqu2cxa-frank-vd-lende-thumbnail.jpg",
     "dj_names": "Frank van der Lende",
@@ -362,8 +362,8 @@
   {
     
     "day": "friday",
-    "from": "00:00:00",
-    "until": "04:00:00",
+    "from": "00:00",
+    "until": "04:00",
     "show_name": "Oh Wat Een Nacht",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/70h1m4slkpo0-radio-veronica-thumbnail.jpg",
     "dj_names": "Radio Veronica",
@@ -372,8 +372,8 @@
   {
     
     "day": "friday",
-    "from": "04:00:00",
-    "until": "06:00:00",
+    "from": "04:00",
+    "until": "06:00",
     "show_name": "The Warming Up",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/wwkx27hhlgw-lisanne-thumbnail.jpg",
     "dj_names": "Lisanne Bronkhorst",
@@ -382,8 +382,8 @@
   {
     
     "day": "friday",
-    "from": "06:00:00",
-    "until": "09:00:00",
+    "from": "06:00",
+    "until": "09:00",
     "show_name": "Ekdom in de Morgen",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4igum86oqbt4-gerard-ekdom-thumbnail.jpg",
     "dj_names": "Gerard Ekdom",
@@ -392,8 +392,8 @@
   {
     
     "day": "friday",
-    "from": "09:00:00",
-    "until": "12:00:00",
+    "from": "09:00",
+    "until": "12:00",
     "show_name": "Goud van Oud",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/4nfdiqlfxa0g-marisa-thumbnail.jpg",
     "dj_names": "Marisa Heutink",
@@ -402,8 +402,8 @@
   {
     
     "day": "friday",
-    "from": "12:00:00",
-    "until": "14:00:00",
+    "from": "12:00",
+    "until": "14:00",
     "show_name": "Sander Hoogendoorn",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/2sppxkop52b6-sander-thumbnail.jpg",
     "dj_names": "Sander Hoogendoorn",
@@ -412,8 +412,8 @@
   {
     
     "day": "friday",
-    "from": "14:00:00",
-    "until": "16:00:00",
+    "from": "14:00",
+    "until": "16:00",
     "show_name": "Stenders & Ekdom",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/3bujz27rryob-stenders-ekdom-thumbnail.jpg",
     "dj_names": "Rob Stenders, Gerard Ekdom",
@@ -422,8 +422,8 @@
   {
     
     "day": "friday",
-    "from": "16:00:00",
-    "until": "19:00:00",
+    "from": "16:00",
+    "until": "19:00",
     "show_name": "Wout & Frank",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/riqu29liwj-wout-en-frank-thumbnail.jpg",
     "dj_names": "Frank van 't Hof, Wouter van der Goes",
@@ -432,8 +432,8 @@
   {
     
     "day": "friday",
-    "from": "19:00:00",
-    "until": "22:00:00",
+    "from": "19:00",
+    "until": "22:00",
     "show_name": "PUP 40",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/1swhck2qnppu-rob-thumbnail.jpg",
     "dj_names": "Rob Stenders",
@@ -442,8 +442,8 @@
   {
     
     "day": "friday",
-    "from": "22:00:00",
-    "until": "23:59:00",
+    "from": "22:00",
+    "until": "23:59",
     "show_name": "Jannes Drop",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/6ed7wbs3exgu-jannes-thumbnail.jpg",
     "dj_names": "Jannes Drop",
@@ -452,8 +452,8 @@
   {
     
     "day": "sunday",
-    "from": "00:00:00",
-    "until": "07:00:00",
+    "from": "00:00",
+    "until": "07:00",
     "show_name": "Oh Wat Een Nacht",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/70h1m4slkpo0-radio-veronica-thumbnail.jpg",
     "dj_names": "Radio Veronica",
@@ -462,8 +462,8 @@
   {
     
     "day": "sunday",
-    "from": "07:00:00",
-    "until": "10:00:00",
+    "from": "07:00",
+    "until": "10:00",
     "show_name": "Ferry Oomen",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/19qjlugntxf9-ferry-oomen-thumbnail.png",
     "dj_names": "Ferry Oomen",
@@ -472,8 +472,8 @@
   {
     
     "day": "sunday",
-    "from": "10:00:00",
-    "until": "13:00:00",
+    "from": "10:00",
+    "until": "13:00",
     "show_name": "Verschuurens Goud van Oud",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/71y83xxvvyls-maurice-thumbnail.jpg",
     "dj_names": "Maurice Verschuuren",
@@ -482,8 +482,8 @@
   {
     
     "day": "sunday",
-    "from": "13:00:00",
-    "until": "16:00:00",
+    "from": "13:00",
+    "until": "16:00",
     "show_name": "WeekendRick",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/47u7wamrxsz5-rick-thumbnail.jpg",
     "dj_names": "Rick van Velthuysen",
@@ -493,8 +493,8 @@
     
     
     "day": "sunday",
-    "from": "16:00:00",
-    "until": "19:00:00",
+    "from": "16:00",
+    "until": "19:00",
     "show_name": "Niek van der Bruggen",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/75fqwcaka50w-niek-thumbnail.jpg",
     "dj_names": "Niek van der Bruggen",
@@ -503,8 +503,8 @@
   {
     
     "day": "sunday",
-    "from": "19:00:00",
-    "until": "21:00:00",
+    "from": "19:00",
+    "until": "21:00",
     "show_name": "De Platenzaak",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/o9ujh5cwi5v-wouter-thumbnail.jpg",
     "dj_names": "Wouter van der Goes",
@@ -513,8 +513,8 @@
   {
     
     "day": "sunday",
-    "from": "21:00:00",
-    "until": "23:59:00",
+    "from": "21:00",
+    "until": "23:59",
     "show_name": "Thijs Meeuwsen",
     "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/3zk9mejhzi7m-thijs-thumbnail.jpg",
     "dj_names": "Thijs Meeuwsen",
