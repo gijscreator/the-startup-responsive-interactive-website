@@ -859,6 +859,19 @@ body.zenders {
   }
 }
 
+/* popover button styling */
+
+.select-station svg {
+    transition: transform 0.3s ease; 
+}
+
+/* hele mooie toepassing van :has */
+
+body:has(#station-selector:popover-open) .select-station svg {
+    transform: rotate(180deg);
+}
+
+
 /* popover styling */
 
 #station-selector {
@@ -874,6 +887,12 @@ body.zenders {
       height: auto;
     }
   }
+
+  svg {
+    transition: transform 0.3s ease;
+  }
+
+
   
   &:popover-open {
     
@@ -883,5 +902,6 @@ body.zenders {
     width: 80vw;
     height: 40dvh;
     animation: slide-up 0.3s ease-out;
+
   }
 }
