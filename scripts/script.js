@@ -159,13 +159,16 @@ function updateLiveTime() {
         const offset = 80;
         const scrollPosition = (timeDecimal * hourWidth) + offset;
 
-        // Only auto-scroll on the first load
         if (!mainContainer.dataset.hasScrolled) {
-            // Subtract half the window width to center the red line on screen
-            mainContainer.scrollLeft = scrollPosition - (window.innerWidth / 6.2);
-            mainContainer.dataset.hasScrolled = "true";
-            console.log(`Auto-scrolled to: ${scrollPosition}px`);
-        }
+          // Get the actual position of the time line element
+          const lineRect = timeLine.getBoundingClientRect();
+          const lineLeftRelativeToDocument = lineRect.left + mainContainer.scrollLeft;
+          
+          // Center it: line position minus half viewport width
+          mainContainer.scrollLeft = lineLeftRelativeToDocument - (window.innerWidth / 2);
+          mainContainer.dataset.hasScrolled = "true";
+          console.log(`Line position: ${lineLeftRelativeToDocument}px, Scrolled to: ${mainContainer.scrollLeft}px`);
+      }
     }
 }
 
