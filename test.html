@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radiogids</title>
+<style>
+:root {
+    --radiogids-light-background: #ffffff;
+    --radiogids-dark-background: #1e1e1e;
+    --radiogids-primary: #EF0105;
+    --text-light: #ffffff;
+    --text-dark: #1e1e1e;
+    --border-radius: 12px;
+
+    --hour-width: 160px;       /* width per hour */
+    --gap-width: 0px;          /* optional gap */
+    --offset-width: 2.8rem;    /* timeline left offset */
+
+    --time: 6.5;               /* current time in hours */
+    --position: calc(var(--offset-width) + var(--time) * (var(--hour-width) + var(--gap-width)));
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; list-style: none; }
+html, body {
+    height: 100dvh;
+    font-family: sans-serif;
+    background-color: var(--radiogids-light-background);
+}
+
+/* --- MAIN LAYOUT --- */
+main.home {
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 86dvh;
+    position: relative;
+}
+
+/* --- RED LINE --- */
+.test-line {
+    width: .3rem;
+    background-color: var(--radiogids-primary);
+    position: absolute;
+    top: 3rem;
+    bottom: 0;
+    left: var(--position);
+    z-index: 100;
+    pointer-events: none;
+}
+
+/* --- TIMELINE --- */
+section.sync-scroll {
+    display: flex;
+    background-color: var(--radiogids-dark-background);
+    color: var(--text-light);
+    width: max-content;
+    min-width: 100%;
+    height: 3rem;
+    align-items: center;
+    position: relative;
+}
+
+.nu-track {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    pointer-events: none;
+}
+
+.nu-marker {
+    position: absolute;
+    left: var(--position);
+    top: 0;
+    bottom: 0;
+    transform: translateX(50%); /* button sits to the right side of the red line */
+    display: flex;
+    align-items: flex-start;
+    z-index: 500;
+    pointer-events: none;
+}
+
+.nu-marker button.nu {
+    all: unset;
+    position: sticky;
+    top: 0.25rem; /* stick near the top, next to the time indicator */
+    left: 0;
+    transform: none;
+    background-color: var(--radiogids-primary);
+    color: var(--text-light);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+    cursor: pointer;
+    pointer-events: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.nu-track::after {
+    content: "";
+    flex-grow: 1;
+}
+
+/* --- TIMELINE HOURS --- */
+section.sync-scroll ul {
+    display: flex;
+    gap: 8.47rem;
+    margin-left: var(--offset-width);
+}
+
+section.sync-scroll ul li {
+    width: var(--hour-width);
+    flex-shrink: 0;
+}
+
+/* --- CONTENT CARDS --- */
+section.kaartje {
+    display: flex;
+    width: max-content;
+    padding: 20px;
+    gap: 10px;
+}
+
+article {
+    width: var(--hour-width);
+    height: 10.625rem;
+    background: #eee;
+    border-radius: var(--border-radius);
+    flex-shrink: 0;
+}
+</style>
+</head>
+<body class="home">
+
+<header style="height: 7dvh; display: flex; align-items: center; justify-content: center; background: #fff;">
+    <h1>Radiogids</h1>
+</header>
+
+<main class="home">
+    <div class="test-line"></div>
+
+    <section class="sync-scroll">
+        <h2 class="visually-hidden">Tijdlijn</h2>
+
+        <div class="nu-track">
+            <div class="nu-marker">
+                <button class="nu">Nu</button>
+            </div>
+        </div>
+
+        <svg width="11" height="12" style="position: absolute; left: var(--position); top: 0; transform: translateX(-50%);">
+            <path d="M5.19615 12L0 0L10.3923 0L5.19615 12Z" fill="#EF0105"/>
+        </svg>
+
+        <ul>
+            <li>00:00</li><li>01:00</li><li>02:00</li><li>03:00</li><li>04:00</li><li>05:00</li>
+            <li>06:00</li><li>07:00</li><li>08:00</li><li>09:00</li><li>10:00</li><li>11:00</li>
+            <li>12:00</li><li>13:00</li><li>14:00</li><li>15:00</li><li>16:00</li><li>17:00</li>
+            <li>18:00</li><li>19:00</li><li>20:00</li><li>21:00</li><li>22:00</li><li>23:00</li>
+        </ul>
+    </section>
+
+    <section class="sync-scroll kaartje">
+        <article style="background: #003399;"></article>
+        <article style="background: #003399;"></article>
+        <article style="background: #003399;"></article>
+        <article style="background: #003399;"></article>
+        <article style="background: #003399;"></article>
+    </section>
+</main>
+
+<script>
+function updateTime() {
+    const now = new Date();
+    const time = now.getHours() + now.getMinutes() / 60;
+    document.documentElement.style.setProperty('--time', time);
+}
+updateTime();
+setInterval(updateTime, 60000);
+
+window.onload = () => {
+    const main = document.querySelector('main.home');
+    const line = document.querySelector('.test-line');
+    const pos = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--position'));
+    main.scrollLeft = pos - window.innerWidth / 2;
+};
+</script>
+
+</body>
+</html>

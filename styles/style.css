@@ -267,6 +267,7 @@ main.home {
     height: 3rem;
     align-items: center;
     z-index: 200;
+    overflow-x: auto;
     position: relative;
 
     ul {
@@ -303,24 +304,19 @@ main.home {
       }
     }
 
-    p.nu {
+    /* .nu-marker {
+      --position: calc(
+        var(--offset-width) +
+        (var(--time) * (var(--hour-width-px) + var(--gap-width-px)))
+      );
 
---position: calc(
-    var(--offset-width) + 
-    (var(--time) * (var(--hour-width-px) + var(--gap-width-px)))
-  );
-
-  display: flex;
-  position: fixed;
-  /* Sticky to the left edge of the container */
-  left: 0;
-  /* Use margin to push it to the exact 'test-line' spot */
-  margin-left: var(--position);
-  /* Center the text over the line */
-  transform: translateX(-50%);
-  width: max-content;
-  z-index: 201;
-    }
+      position: sticky;
+      left: 0; 
+      margin-left: var(--position); 
+      width: 0; 
+      z-index: 300;
+      pointer-events: none;
+    } */
   }
 
   /* styling van alle programma kaartjes zonder de kleuren */
@@ -749,36 +745,6 @@ body.zenders {
   }
 }
 
-
-/* keyframes */
-
-@keyframes slide-up {
-  from { 
-    transform: translateY(100%); 
-  }
-
-  to { 
-    transform: translateY(0); 
-  }
-}
-
-@keyframes live {
-  0% {
-    scale: .8;
-    opacity: .5;
-  }
-
-  50% {
-    scale: 1;
-    opacity: 1;
-  }
-
-  100% {
-    scale: .8;
-    opacity: .5;
-  }
-}
-
 .play-button {
   --color: #181D27;
   width: 48px;
@@ -812,7 +778,35 @@ body.zenders {
   display: block;
 }
 
-/* Animation */
+/* keyframes */
+
+@keyframes slide-up {
+  from { 
+    transform: translateY(100%); 
+  }
+
+  to { 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes live {
+  0% {
+    scale: .8;
+    opacity: .5;
+  }
+
+  50% {
+    scale: 1;
+    opacity: 1;
+  }
+
+  100% {
+    scale: .8;
+    opacity: .5;
+  }
+}
+
 @keyframes keyframes-fill {
   0% {
     transform: rotate(-180deg) scale(0);
@@ -820,5 +814,27 @@ body.zenders {
   }
   50% {
     transform: rotate(-10deg) scale(1.2);
+  }
+}
+
+@keyframes nu-in-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes nu-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }

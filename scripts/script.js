@@ -172,11 +172,12 @@ function updateLiveTime() {
 // Initialize
 updateLiveTime();
 // Update every minute to keep the line moving
-setInterval(updateLiveTime, 60000);
+setInterval(updateLiveTime, 600);
 
-// --------------------------------------------------
-// AUDIO PLAYER
-// --------------------------------------------------
+
+
+
+// Audio player veronica 
 const playButton = document.querySelector('.play-button');
 const audioPlayer = new Audio('assets/liedje.mp3');
 if (playButton) {
