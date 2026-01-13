@@ -348,20 +348,6 @@ main.home {
         fill: var(--radiogids-light-background);
       }
     }
-
-    /* .nu-marker {
-      --position: calc(
-        var(--offset-width) +
-        (var(--time) * (var(--hour-width-px) + var(--gap-width-px)))
-      );
-
-      position: sticky;
-      left: 0; 
-      margin-left: var(--position); 
-      width: 0; 
-      z-index: 300;
-      pointer-events: none;
-    } */
   }
 
   /* styling van alle programma kaartjes zonder de kleuren */
