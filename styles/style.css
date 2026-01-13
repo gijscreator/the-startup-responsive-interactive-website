@@ -267,8 +267,6 @@ main.home {
     height: 3rem;
     align-items: center;
     z-index: 200;
-    overflow-x: auto;
-    position: relative;
 
     ul {
       display: flex;
