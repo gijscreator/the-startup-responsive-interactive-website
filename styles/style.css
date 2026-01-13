@@ -55,10 +55,16 @@ a {
 
 header.header {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   padding: .5rem;
   height: 7dvh;
+  
+  @media (min-height: 730px) {
+    height: fit-content;
+    flex-direction: column;
+    width: 100vw;
+  }
 
   &.veronica {
     background-color: var(--veronica-primary);
@@ -95,6 +101,11 @@ header.header {
     overflow-x: auto;
     width: 60vw;
 
+    @media (min-height: 730px) {
+      width: 100vw;
+    }
+    
+
     ul {
       display: flex;
       gap: 1rem;
@@ -105,11 +116,17 @@ header.header {
       }
 
       button {
+        display: block;
         width: 13vw;
         min-width: 6rem;
         height: 2rem;
         background-color: var(--radiogids-primary);
         border-radius: var(--border-radius-button);
+
+        @media (min-height: 730px) {
+          display: block;
+
+        }
 
         &.today {
           background-color: transparent;
@@ -590,6 +607,7 @@ main.home {
         max-width: 13rem;
         position: sticky;
         left: 0;
+        object-position: top; 
       }
 
       section {
