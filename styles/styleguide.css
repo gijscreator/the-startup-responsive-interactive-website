@@ -56,6 +56,14 @@ body {
     overscroll-behavior: none;
 }
 
+.station {
+  display: none;
+}
+
+.station.is-active {
+  display: flex;
+}
+
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);

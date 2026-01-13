@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
 	<!-- <base href="/the-startup-responsive-interactive-website/"> -->
 
 	<!-- Test live server versie  -->
-	<base href="/">
+	<base href="../">
     <title>Kies jouw favoriete zender</title>
     <link rel="stylesheet" href="styles/styleguide.css">
     <link rel="stylesheet" href="styles/style.css">
@@ -30,30 +30,6 @@
 			<!-- gebruiker wilt niks: -->
 			<img src="assets/logo-veronica.webp" alt="Logo van radiogids"/>
 		</picture>
-
-		<!-- date picker -->
-		<!-- <section>
-			<form action="submit">
-				< fix input type="date">
-			</form>
-			<ul>
-				<li>
-					<button class="textasbutton">Ma</button>
-				</li>
-				<li>
-					<button class="textasbutton">Di</button>
-				</li>
-				<li>
-					<button class="textasbutton">Wo</button>
-				</li>
-				<li>
-					<button class="textasbutton">Do</button>
-				</li>
-				<li>
-					<button class="textasbutton">Vr</button>
-				</li>
-			</ul>
-		</section> -->
 	</header>
 
     <aside>
@@ -139,12 +115,20 @@
     </aside>
 
     <main class="zenders">
-        <select id="station-selector">
-            <option value="all">All Stations</option>
-            <option value="1">Veronica</option>
-            <option value="2">Slam</option>
-            <option value="3">100NL</option>
-        </select>
+
+		<section>
+			<h2 class="visually-hidden">Radiozender</h2>
+			<button popovertarget="station-selector" class="select-station veronica">
+				<p>Veronica</p> 
+				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M5 7.5L10 12.5L15 7.5" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+
+			</button>
+		</section>
+        <section popover="station-selector" id="station-selector">
+			<a href=""></a>
+        </section>
 
         <section id="veronica-shows"></section>
         <section id="slam-shows"></section>

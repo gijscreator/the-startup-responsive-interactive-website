@@ -1,35 +1,35 @@
-// --------------------------------------------------
-// RADIO STATIONS EN CONTAINERS
-// --------------------------------------------------
-const RADIO_STATIONS = [
-  { id: 1, file: 'data/veronica.json', containerSelector: '#veronica-shows' },
-  { id: 2, file: 'data/slam.json', containerSelector: '#slam-shows' },
-  { id: 3, file: 'data/100nl.json', containerSelector: '#hondernl-shows' }
+//  -------------------------------------------------- Map alle radio stationnetjes van de json files --------------------------------------------------
+
+const Radiootjes = [
+  { id: 1, name: "veronica", file: 'data/veronica.json', containerSelector: '#veronica-shows' },
+  { id: 2, name: "slam", file: 'data/slam.json', containerSelector: '#slam-shows' },
+  { id: 3, name: "hondernl", file: 'data/100nl.json', containerSelector: '#hondernl-shows' }
 ];
 
-const DAYS_OF_WEEK = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
-const NUMBER_WORDS = ['zero','one','two','three','four','five','six','seven','eight','nine','ten'];
+const DagenVanDeWeek = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+const UrenVoorClasses = ['zero','one','two','three','four','five','six','seven','eight','nine','ten'];
 
-// --------------------------------------------------
-// FUNCTIE: Laad alleen de gekozen station
-// --------------------------------------------------
-function laadGekozenStation(stationId) {
-  RADIO_STATIONS.forEach(station => {
+//  -------------------------------------------------- Radiootjes inladen als het matched met het gekozen radiootje door de gebruiker  --------------------------------------------------
+
+function laadGekozenStation(zenderName) {
+  Radiootjes.forEach(station => {
     const container = document.querySelector(station.containerSelector);
     if (!container) return;
 
-    if (station.id == stationId) {
-      container.style.display = 'block';
-      fetchStationData(station).then(shows => renderShowsPerStation(shows, container));
+    if (station.name === zenderName) {
+      container.classList.add('is-active');
+
+      fetchStationData(station)
+        .then(shows => renderShowsPerStation(shows, container, station.name)); // Pass name here
+
     } else {
-      container.style.display = 'none';
+      container.classList.remove('is-active');
+      container.innerHTML = '';
     }
   });
 }
+//  -------------------------------------------------- Alle programmaatjes uit 1 radiootje halen en deze valideren   --------------------------------------------------
 
-// --------------------------------------------------
-// FUNCTIE: Haal data van een station
-// --------------------------------------------------
 function fetchStationData(station) {
   return fetch(station.file)
     .then(response => {
@@ -43,15 +43,13 @@ function fetchStationData(station) {
     });
 }
 
-// --------------------------------------------------
-// FUNCTIE: Render shows voor één container
-// --------------------------------------------------
-function renderShowsPerStation(shows, container) {
+//  -------------------------------------------------- Alles programmaatjes ophalen van vandaag   --------------------------------------------------
+
+function renderShowsPerStation(shows, container, stationName) {
   const vandaag = new Date();
-  const vandaagNaam = DAYS_OF_WEEK[vandaag.getDay()];
+  const vandaagNaam = DagenVanDeWeek[vandaag.getDay()];
   const huidigeMinuten = vandaag.getHours() * 60 + vandaag.getMinutes();
 
-  // Alleen oude show buttons verwijderen
   const oudeButtons = container.querySelectorAll('button[popovertarget]');
   oudeButtons.forEach(btn => btn.remove());
 
@@ -59,19 +57,20 @@ function renderShowsPerStation(shows, container) {
 
   shows.forEach(show => {
     if (show.day != vandaagNaam) return;
-
     const key = show.from + show.show_name;
     if (reedsToegevoegd[key]) return;
 
-    renderShow(show, container, huidigeMinuten);
+    // Pass stationName here
+    renderShow(show, container, huidigeMinuten, stationName);
     reedsToegevoegd[key] = true;
   });
 }
 
-// --------------------------------------------------
-// FUNCTIE: Render een enkele show
-// --------------------------------------------------
-function renderShow(show, container, huidigeMinuten) {
+//  Alle correcte programaatjes laten zien van vandaag inclusief het 
+// berekenen hoelang de show duurt en op basis hiervan classes toevoegen   
+// er wordt ook gekeken of de show nu is en dan geeft ie een class live mee zodat ik hem makkelijk kan stylen 
+
+function renderShow(show, container, huidigeMinuten, stationName) {
   const from = show.from;
   const until = show.until === '23:59' ? '24:00' : show.until;
   const showName = show.show_name || 'Radio Show';
@@ -86,16 +85,16 @@ function renderShow(show, container, huidigeMinuten) {
   const liveClass = isLive ? 'live' : '';
 
   const durationHours = Math.round((endMinutes - startMinutes)/60);
-  const hourWord = NUMBER_WORDS[durationHours] || 'long';
+  const hourWord = UrenVoorClasses[durationHours] || 'long';
   const durationClass = hourWord + (durationHours===1?'hour':'hours');
   const blockClass = durationHours>=2 ? 'block' : '';
 
-  const html = `
+const html = `
     <button popovertarget="more-info">
-      <article class="${blockClass} ${durationClass} ${liveClass}" style="--duration:${durationHours};">
+      <article class="${stationName} ${blockClass} ${durationClass} ${liveClass}" style="--duration:${durationHours};">
         <img src="${showThumbnail}" alt="${showName}" class="show-header">
         <section>
-          <h3 class="fly-in-text || title">${showName}</h3>
+          <h3 class="fly-in-text title">${showName}</h3>
           <p class="dj-names">${djNames}</p>
           <p class="time">${from} - ${show.until}</p>
         </section>
@@ -107,17 +106,30 @@ function renderShow(show, container, huidigeMinuten) {
   container.insertAdjacentHTML('beforeend', html);
 }
 
-// --------------------------------------------------
-// STATION SELECTOR EVENT
-// --------------------------------------------------
-const stationSelector = document.querySelector('#station-selector');
-if (stationSelector) {
-  stationSelector.addEventListener('change', e => {
-    const gekozenStation = parseInt(e.target.value, 10);
-    laadGekozenStation(gekozenStation);
-  });
 
-  // Initial load: toon eerste station automatisch
-  const eersteStation = parseInt(stationSelector.value, 10);
-  laadGekozenStation(eersteStation);
+
+// --------------------------------------------------
+// Popover links click event
+// --------------------------------------------------
+document.querySelectorAll('#station-selector a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const urlZender = link.href.split('?')[1];
+    laadGekozenStation(urlZender);
+  });
+});
+
+// --------------------------------------------------
+// Initial load based on URL or default
+// --------------------------------------------------
+const query = window.location.search.substring(1).toLowerCase();
+const initialZender = Radiootjes.find(s => s.name === query)?.name || "veronica";
+laadGekozenStation(initialZender);
+
+// --------------------------------------------------
+// Populate popover links dynamically
+// --------------------------------------------------
+const popover = document.querySelector("#station-selector");
+if(popover){
+  popover.innerHTML = Radiootjes.map(s => `<a href="pages/zenders.html?${s.name}">${s.name.charAt(0).toUpperCase() + s.name.slice(1)}</a>`).join('');
 }
