@@ -752,6 +752,7 @@ footer {
   position: sticky;
   bottom: 0;
   height: 7dvh;
+  z-index: 1000;
   
   &.veronica {
     background-color: var(--veronica-primary);
