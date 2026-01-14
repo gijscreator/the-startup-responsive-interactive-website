@@ -70,30 +70,31 @@ const TijdHulpmiddelen = {
 };
 
 const CalendarBouwer = {
-    // Maakt de download link voor Apple/Mobiel
     maakIcsLink: function(programma) {
         const tijden = TijdHulpmiddelen.berekenShowTijden(programma.day, programma.from, programma.until);
 
         const icsRegels = [
             "BEGIN:VCALENDAR",
             "VERSION:2.0",
-            "PRODID:-//Radiogids//Apple Calendar//NL",
+            "CALSCALE:GREGORIAN",
+            "METHOD:PUBLISH",
+            "PRODID:-//Radiogids//NL",
             "BEGIN:VEVENT",
+            "UID:" + Date.now() + "@radiogids.nl",
             "SUMMARY:" + programma.show_name,
             "DESCRIPTION:DJ: " + (programma.dj_names || 'Onbekend'),
             "DTSTART:" + tijden.start,
             "DTEND:" + tijden.eind,
-            "RRULE:FREQ=WEEKLY",
+            "RRULE:FREQ=WEEKLY;BYDAY=" + programma.day.substring(0, 2).toUpperCase(),
             "END:VEVENT",
             "END:VCALENDAR"
         ].join("\r\n");
 
-        // Base64 codering voor stabiliteit op Safari/iOS
-        const base64Inhoud = btoa(unescape(encodeURIComponent(icsRegels)));
-        return "data:text/calendar;base64," + base64Inhoud;
+        // Create a Blob for better compatibility
+        const blob = new Blob([icsRegels], { type: 'text/calendar;charset=utf-8' });
+        return URL.createObjectURL(blob);
     },
 
-    // Maakt een veilige bestandsnaam voor de download
     maakVeiligeNaam: function(naam) {
         return naam.replace(/[^a-z0-9]/gi, '_').toLowerCase() + ".ics";
     }
@@ -201,13 +202,25 @@ const PaginaBeheer = {
         const prog = data.find(function(p) { return String(p.id) === String(progId); });
 
         if (prog) {
-            document.getElementById('detail-name').textContent = prog.show_name;
-            document.getElementById('detail-img').src = prog.show_thumbnail;
-            document.getElementById('detail-djs').textContent = "Presentatie: " + (prog.dj_names || "Onbekend");
-            document.getElementById('detail-description').innerHTML = prog.body || "Geen beschrijving.";
+            // Check name
+            const nameEl = document.getElementById('detail-name');
+            if (nameEl) nameEl.textContent = prog.show_name;
+
+            // Check image (This was causing your crash!)
+            const imgEl = document.getElementById('detail-img');
+            if (imgEl) imgEl.src = prog.show_thumbnail;
+
+            // Check DJs
+            const djEl = document.getElementById('detail-djs');
+            if (djEl) djEl.textContent = (prog.dj_names || "Onbekend");
+
+            // Check Description
+            const descEl = document.getElementById('detail-description');
+            if (descEl) descEl.innerHTML = prog.body || "Geen beschrijving.";
+
             document.title = prog.show_name + " - Radiogids";
 
-            // KALENDER KNOP ACTIVEREN
+            // Check Calendar Button
             const calBtn = document.getElementById('apple-calendar-btn');
             if (calBtn) {
                 calBtn.href = CalendarBouwer.maakIcsLink(prog);

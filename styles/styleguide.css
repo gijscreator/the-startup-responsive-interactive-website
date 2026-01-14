@@ -134,50 +134,11 @@ h3, h4, h5, h6 {
     font-weight: 700;
 }
 
-p, a {
+p, a, button {
     font-size: 1rem;
     font-weight: 700;
 }
 
-/* veronica styling */
-
-a.veronica {
-    cursor: pointer;
-    border-radius: var(--border-radius);
-    background-color: var(--veronica-primary);
-    color: var(--tekst-licht);
-    display: block;
-    padding: 1rem;
-}
-
-/* veronica slam */
-
- a.slam {
-    cursor: pointer;
-    border-radius: var(--border-radius);
-    background-color: var(--slam-pink);
-    color: var(--tekst-licht);
-    display: block;
-    padding: 1rem;
-}
-
- a.honderdnl {
-    cursor: pointer;
-    border-radius: var(--border-radius);
-    background-color: var(--hondernl-orange);
-    color: var(--tekst-licht);
-    display: block;
-    padding: 1rem;
-}
-
-a.radiogids {
-    cursor: pointer;
-    border-radius: var(--border-radius);
-    background-color: var(----radiogids-primary);
-    color: var(--tekst-licht);
-    display: block;
-    padding: 1rem;
-}
 
 .fly-in-text {
   opacity: 0;
