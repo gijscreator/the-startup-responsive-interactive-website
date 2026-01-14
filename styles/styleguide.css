@@ -139,6 +139,14 @@ p, a, button {
     font-weight: 700;
 }
 
+button {
+  width: 7rem;
+  height: 2.5rem;
+  padding: var(--padding-regular);
+  border-radius: var(--border-radius-button);
+  border: none;
+}
+
 
 .fly-in-text {
   opacity: 0;
@@ -153,4 +161,13 @@ p, a, button {
   }
 }
 
-
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
