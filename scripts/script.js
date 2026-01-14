@@ -97,7 +97,7 @@ const UI = {
                     <section>
                         <h3 class="fly-in-text title">${prog.show_name}</h3>
                         <p class="time">${prog.from} - ${prog.until}</p>
-                        ${live ? '<p class="live-status">NU LIVE</p>' : ''}
+                        ${live ? '<p class="live-status">Live</p>' : ''}
                     </section>
                 </article>
             </a>`;
