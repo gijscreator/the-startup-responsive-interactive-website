@@ -1,279 +1,225 @@
-/**
- * RADIOGIDS MASTER SCRIPT
- */
-
-const RADIOGIDS_CONFIGURATIE = {
-    radioStations: [
-        { id: 1, machineNaam: "veronica", dataBestand: 'data/veronica.json', htmlContainer: '#veronica-shows' },
-        { id: 2, machineNaam: "slam", dataBestand: 'data/slam.json', htmlContainer: '#slam-shows' },
-        { id: 3, machineNaam: "hondernl", dataBestand: 'data/100nl.json', htmlContainer: '#hondernl-shows' }
+// config voor alle json files en dagen + uren
+const config = {
+    stations: [
+        { id: 1, slug: "veronica", file: 'data/veronica.json', container: '#veronica-shows' },
+        { id: 2, slug: "slam", file: 'data/slam.json', container: '#slam-shows' },
+        { id: 3, slug: "hondernl", file: 'data/100nl.json', container: '#hondernl-shows' }
     ],
-    dagenVanDeWeek: ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'],
-    getallenInWoorden: ['zero','one','two','three','four','five','six','seven','eight','nine','ten']
+    days: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
+    numWords: ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
 };
 
-const TijdHulpmiddelen = {
-    zetTijdOmNaarMinuten: function(tijdTekst) {
-        if (!tijdTekst) return 0;
-        const delen = tijdTekst.split(':');
-        return (parseInt(delen[0]) * 60) + parseInt(delen[1]);
+const now = new Date();
+const current_day_name = config.days[now.getDay()];
+const current_mins = (now.getHours() * 60) + now.getMinutes();
+
+// --- 2. LOGIC & DATA HELPERS ---
+const TijdHulp = {
+    toMins: (timeStr) => {
+        if (!timeStr) return 0;
+        const [hrs, mins] = timeStr.split(':').map(Number);
+        return (hrs * 60) + mins;
     },
 
-    berekenProgrammaDuurInUren: function(startTijd, eindTijd) {
-        // Gebruik TijdHulpmiddelen in plaats van 'this' voor maximale veiligheid
-        const start = TijdHulpmiddelen.zetTijdOmNaarMinuten(startTijd);
-        let eind = TijdHulpmiddelen.zetTijdOmNaarMinuten(eindTijd === '23:59' ? '24:00' : eindTijd);
-        if (eind <= start) eind += 1440;
-        return Math.round((eind - start) / 60);
+    getDuration: (start, end) => {
+        const s = TijdHulp.toMins(start);
+        let e = TijdHulp.toMins(end === '23:59' ? '24:00' : end);
+        if (e <= s) e += 1440;
+        return Math.round((e - s) / 60);
     },
 
-    // BELANGRIJK: Berekent de juiste start- en einddatum voor de kalender
-    berekenShowTijden: function(dagNaam, startTijd, eindTijd) {
-        const nu = new Date();
-        const doelDagIndex = RADIOGIDS_CONFIGURATIE.dagenVanDeWeek.indexOf(dagNaam.toLowerCase());
-        
-        const startUren = parseInt(startTijd.split(':')[0]);
-        const startMinuten = parseInt(startTijd.split(':')[1]);
-        const eindUren = parseInt(eindTijd.split(':')[0]);
-        const eindMinuten = parseInt(eindTijd.split(':')[1]);
-
-        let startDatum = new Date(nu);
-        let dagenVerschil = (doelDagIndex + 7 - nu.getDay()) % 7;
-        
-        // Als de show vandaag is maar de tijd is al geweest, verplaats naar volgende week
-        if (dagenVerschil === 0 && nu.getHours() >= startUren) {
-            dagenVerschil = 7;
-        }
-
-        startDatum.setDate(nu.getDate() + dagenVerschil);
-        startDatum.setHours(startUren, startMinuten, 0, 0);
-
-        // Einddatum altijd baseren op de startdatum om fouten te voorkomen
-        let eindDatum = new Date(startDatum);
-        eindDatum.setHours(eindUren, eindMinuten, 0, 0);
-
-        // Als de show na middernacht eindigt
-        if (eindDatum <= startDatum) {
-            eindDatum.setDate(eindDatum.getDate() + 1);
-        }
-
-        // Hulpfunctie voor Apple formaat
-        function naarIcsFormaat(datum) {
-            return datum.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-        }
-
-        return {
-            start: naarIcsFormaat(startDatum),
-            eind: naarIcsFormaat(eindDatum)
-        };
+    isLive: (prog) => {
+        if (prog.day.toLowerCase() !== current_day_name.toLowerCase()) return false;
+        const start = TijdHulp.toMins(prog.from);
+        const durationMins = TijdHulp.getDuration(prog.from, prog.until) * 60;
+        return current_mins >= start && current_mins < (start + durationMins);
     }
 };
 
-const CalendarBouwer = {
-    maakIcsLink: function(programma) {
-        const tijden = TijdHulpmiddelen.berekenShowTijden(programma.day, programma.from, programma.until);
+const CalendarHulp = {
+    generateIcs: (prog) => {
+        const startParts = prog.from.split(':').map(Number);
+        const endParts = prog.until.split(':').map(Number);
+        
+        let start = new Date(now);
+        const dayIdx = config.days.indexOf(prog.day.toLowerCase());
+        let diff = (dayIdx + 7 - now.getDay()) % 7;
+        
+        if (diff === 0 && now.getHours() >= startParts[0]) diff = 7;
+        
+        start.setDate(now.getDate() + diff);
+        start.setHours(startParts[0], startParts[1], 0, 0);
 
-        const icsRegels = [
-            "BEGIN:VCALENDAR",
-            "VERSION:2.0",
-            "CALSCALE:GREGORIAN",
-            "METHOD:PUBLISH",
-            "PRODID:-//Radiogids//NL",
+        let end = new Date(start);
+        end.setHours(endParts[0], endParts[1], 0, 0);
+        if (end <= start) end.setDate(end.getDate() + 1);
+
+        const fmt = (d) => d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+
+        const ics = [
+            "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Radiogids//NL",
             "BEGIN:VEVENT",
-            "UID:" + Date.now() + "@radiogids.nl",
-            "SUMMARY:" + programma.show_name,
-            "DESCRIPTION:DJ: " + (programma.dj_names || 'Onbekend'),
-            "DTSTART:" + tijden.start,
-            "DTEND:" + tijden.eind,
-            "RRULE:FREQ=WEEKLY;BYDAY=" + programma.day.substring(0, 2).toUpperCase(),
-            "END:VEVENT",
-            "END:VCALENDAR"
+            `SUMMARY:${prog.show_name}`,
+            `DESCRIPTION:DJ: ${prog.dj_names || 'Onbekend'}`,
+            `DTSTART:${fmt(start)}`,
+            `DTEND:${fmt(end)}`,
+            `RRULE:FREQ=WEEKLY;BYDAY=${prog.day.substring(0, 2).toUpperCase()}`,
+            "END:VEVENT", "END:VCALENDAR"
         ].join("\r\n");
 
-        // Create a Blob for better compatibility
-        const blob = new Blob([icsRegels], { type: 'text/calendar;charset=utf-8' });
-        return URL.createObjectURL(blob);
-    },
-
-    maakVeiligeNaam: function(naam) {
-        return naam.replace(/[^a-z0-9]/gi, '_').toLowerCase() + ".ics";
+        return URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
     }
 };
 
-const DataOphaler = {
-    haalProgrammaDataOp: async function(bestandsPad) {
+// --- 3. UI & RENDERING ---
+const UI = {
+    fetchData: async (path) => {
         try {
-            const response = await fetch(bestandsPad);
-            const data = await response.json();
-            return Array.isArray(data) ? data : (data.data || []);
-        } catch (fout) {
-            console.error("Data fetch error:", fout);
+            const r = await fetch(path);
+            if (!r.ok) return [];
+            const d = await r.json();
+            return Array.isArray(d) ? d : (d.data || []);
+        } catch (e) {
             return [];
         }
-    }
-};
+    },
 
-const HTMLBouwer = {
-    maakProgrammaKaartje: function(programma, huidigeMinuten, zenderNaam) {
-        const duurInUren = TijdHulpmiddelen.berekenProgrammaDuurInUren(programma.from, programma.until);
-        const startTijdMin = TijdHulpmiddelen.zetTijdOmNaarMinuten(programma.from);
-        const isNuBezig = huidigeMinuten >= startTijdMin && huidigeMinuten < (startTijdMin + (duurInUren * 60));
-        
-        const duurKlasse = (RADIOGIDS_CONFIGURATIE.getallenInWoorden[duurInUren] || 'long') + "hours";
-        const uniekeLink = "pages/details.html?id=" + programma.id + "-" + zenderNaam;
+    renderCard: (prog, stationSlug) => {
+        const duration = TijdHulp.getDuration(prog.from, prog.until);
+        const live = TijdHulp.isLive(prog);
+        const durClass = (config.numWords[duration] || 'long') + "hours";
+        const link = `pages/details.html?id=${prog.id}-${stationSlug}`;
 
-        return '<a href="' + uniekeLink + '" class="show-card-link">' +
-                '<article class="block ' + duurKlasse + ' ' + (isNuBezig ? 'live' : '') + '" style="--duration:' + duurInUren + ';">' +
-                    '<img src="' + programma.show_thumbnail + '" alt="' + programma.show_name + '" class="show-header normal-hidden">' +
-                    '<section>' +
-                        '<h3 class="fly-in-text title">' + programma.show_name + '</h3>' +
-                        '<p class="time">' + programma.from + ' - ' + programma.until + '</p>' +
-                        (isNuBezig ? '<p class="live-status">NU LIVE</p>' : '') +
-                    '</section>' +
-                '</article>' +
-            '</a>';
-    }
-};
+        return `
+            <a href="${link}" class="show-card-link">
+                <article class="block ${durClass} ${live ? 'live' : ''}" style="--duration:${duration};">
+                    <img src="${prog.show_thumbnail}" alt="${prog.show_name}" class="show-header normal-hidden">
+                    <section>
+                        <h3 class="fly-in-text title">${prog.show_name}</h3>
+                        <p class="time">${prog.from} - ${prog.until}</p>
+                        ${live ? '<p class="live-status">NU LIVE</p>' : ''}
+                    </section>
+                </article>
+            </a>`;
+    },
 
-const PaginaBeheer = {
-    initialiseerApp: async function() {
+    init: async () => {
         const path = window.location.pathname;
-        const nu = new Date();
-        const dag = RADIOGIDS_CONFIGURATIE.dagenVanDeWeek[nu.getDay()];
-        const minuten = (nu.getHours() * 60) + nu.getMinutes();
+        const params = new URLSearchParams(window.location.search);
+        
+        const stParam = params.get('station');
+        if (stParam) {
+            document.querySelectorAll('header, aside, main, button, footer')
+                .forEach(el => el.classList.add(stParam.toLowerCase()));
+        }
 
         if (path.includes('details.html')) {
-            await PaginaBeheer.laadDetailPagina();
-        } else if (path.includes('zenders.html')) {
-            await PaginaBeheer.laadZenderPagina(dag, minuten);
+            await UI.loadDetails(params.get('id'));
         } else {
-            await PaginaBeheer.laadHomePagina(dag, minuten);
+            await UI.loadGrids(stParam);
         }
-        
-        PaginaBeheer.activeerAlgemeneFuncties();
+
+        UI.initGlobalFeatures();
     },
 
-    laadHomePagina: async function(vandaag, nuMinuten) {
-        for (let i = 0; i < RADIOGIDS_CONFIGURATIE.radioStations.length; i++) {
-            const station = RADIOGIDS_CONFIGURATIE.radioStations[i];
-            const container = document.querySelector(station.htmlContainer);
+    loadGrids: async (activeStation) => {
+        for (const st of config.stations) {
+            const container = document.querySelector(st.container);
             if (!container) continue;
 
-            const data = await DataOphaler.haalProgrammaDataOp(station.dataBestand);
-            data.filter(function(p) { return p.day === vandaag; })
-                .sort(function(a, b) { return a.from.localeCompare(b.from); })
-                .forEach(function(p) { 
-                    container.insertAdjacentHTML('beforeend', HTMLBouwer.maakProgrammaKaartje(p, nuMinuten, station.machineNaam)); 
-                });
+            // 1. Branding logic
+            if (activeStation && st.slug !== activeStation) continue;
+            if (activeStation) container.classList.add('is-active');
+
+            // 2. Fetch data
+            const data = await UI.fetchData(st.file);
+            
+            // 3. Generate HTML for the cards
+            const cardsHtml = data
+                .filter(p => p.day.toLowerCase() === current_day_name)
+                .sort((a, b) => a.from.localeCompare(b.from))
+                .map(p => UI.renderCard(p, st.slug))
+                .join('');
+
+            // 4. CLEANUP: Only remove previous show links, keep the <figure>!
+            const oldCards = container.querySelectorAll('.show-card-link');
+            oldCards.forEach(card => card.remove());
+
+            // 5. INSERT: Add the new cards at the end of the container
+            container.insertAdjacentHTML('beforeend', cardsHtml);
         }
     },
 
-    laadZenderPagina: async function(vandaag, nuMinuten) {
-        const params = new URLSearchParams(window.location.search);
-        const stationNaam = params.get('station') || "veronica";
-        const station = RADIOGIDS_CONFIGURATIE.radioStations.find(function(s) { return s.machineNaam === stationNaam; });
-        const container = document.querySelector(station?.htmlContainer);
-        
-        if (container && station) {
-            container.classList.add('is-active');
-            const data = await DataOphaler.haalProgrammaDataOp(station.dataBestand);
-            container.innerHTML = ''; 
-            data.filter(function(p) { return p.day === vandaag; })
-                .sort(function(a, b) { return a.from.localeCompare(b.from); })
-                .forEach(function(p) { 
-                    container.insertAdjacentHTML('beforeend', HTMLBouwer.maakProgrammaKaartje(p, nuMinuten, station.machineNaam)); 
-                });
-        }
-    },
-
-    laadDetailPagina: async function() {
-        const params = new URLSearchParams(window.location.search);
-        const idParam = params.get('id');
+    loadDetails: async (idParam) => {
         if (!idParam) return;
+        const parts = idParam.split('-');
+        const stationSlug = parts.pop();
+        const progId = parts.join('-');
 
-        const delen = idParam.split('-');
-        const stationNaam = delen.pop();
-        const progId = delen.join('-');
-
-        const station = RADIOGIDS_CONFIGURATIE.radioStations.find(function(s) { return s.machineNaam === stationNaam; });
+        const station = config.stations.find(s => s.slug === stationSlug);
         if (!station) return;
 
-        const data = await DataOphaler.haalProgrammaDataOp(station.dataBestand);
-        const prog = data.find(function(p) { return String(p.id) === String(progId); });
+        const data = await UI.fetchData(station.file);
+        const prog = data.find(p => String(p.id) === String(progId));
 
         if (prog) {
-            // Check name
+            // Update Text (with safety checks)
             const nameEl = document.getElementById('detail-name');
-            if (nameEl) nameEl.textContent = prog.show_name;
-
-            // Check image (This was causing your crash!)
             const imgEl = document.getElementById('detail-img');
-            if (imgEl) imgEl.src = prog.show_thumbnail;
-
-            // Check DJs
             const djEl = document.getElementById('detail-djs');
-            if (djEl) djEl.textContent = (prog.dj_names || "Onbekend");
-
-            // Check Description
             const descEl = document.getElementById('detail-description');
-            if (descEl) descEl.innerHTML = prog.body || "Geen beschrijving.";
-
-            document.title = prog.show_name + " - Radiogids";
-
-            // Check Calendar Button
+            const liveInd = document.getElementById('am-i-live');
             const calBtn = document.getElementById('apple-calendar-btn');
+
+            if (nameEl) nameEl.textContent = prog.show_name;
+            if (imgEl) imgEl.src = prog.show_thumbnail;
+            if (djEl) djEl.textContent = prog.dj_names || "Onbekend";
+            if (descEl) descEl.innerHTML = prog.body || "Geen beschrijving.";
+            
+            document.title = `${prog.show_name} - Radiogids`;
+
+            // Live Check
+            if (liveInd) {
+                if (TijdHulp.isLive(prog)) {
+                    liveInd.classList.add('is-live');
+                } else {
+                    liveInd.classList.remove('is-live');
+                    liveInd.style.display = "none";
+                }
+            }
+
+            // Calendar
             if (calBtn) {
-                calBtn.href = CalendarBouwer.maakIcsLink(prog);
-                calBtn.setAttribute('download', CalendarBouwer.maakVeiligeNaam(prog.show_name));
+                calBtn.href = CalendarHulp.generateIcs(prog);
+                calBtn.download = `${prog.show_name.replace(/\W/g, '_')}.ics`;
             }
         }
     },
 
-    activeerAlgemeneFuncties: function() {
+    initGlobalFeatures: () => {
         const line = document.querySelector('.test-line');
         const main = document.querySelector('main.home');
-
         if (line && main) {
-            const update = function() {
-                const d = new Date();
-                main.style.setProperty('--time', d.getHours() + (d.getMinutes() / 60));
-
+            const scroll = () => {
+                main.style.setProperty('--time', (new Date().getHours() + new Date().getMinutes()/60));
                 if (!main.dataset.scrolled) {
                     main.scrollLeft = (line.getBoundingClientRect().left + main.scrollLeft) - (window.innerWidth / 2);
                     main.dataset.scrolled = "true";
                 }
             };
-            update();
-            setInterval(update, 60000);
+            scroll();
+            setInterval(scroll, 60000);
         }
 
         const btn = document.querySelector('.play-button');
-        const audio = new Audio('assets/liedje.mp3'); 
-
         if (btn) {
-            btn.addEventListener('click', function() {
-                if (audio.paused) {
-                    audio.play();
-                } else {
-                    audio.pause();
-                }
+            const audio = new Audio('assets/liedje.mp3');
+            btn.addEventListener('click', () => {
+                audio.paused ? audio.play() : audio.pause();
                 btn.classList.toggle('is-playing', !audio.paused);
             });
         }
     }
 };
 
-function applyStationParamAsClass() {
-    const params = new URLSearchParams(window.location.search);
-    const stationName = params.get('station');
-
-    if (stationName) {
-        const targetElements = document.querySelectorAll('header, aside, main, button, footer');
-        targetElements.forEach(function(element) {
-            element.classList.add(stationName.toLowerCase());
-        });
-    }
-}
-
-applyStationParamAsClass();
-document.addEventListener('DOMContentLoaded', PaginaBeheer.initialiseerApp);
+document.addEventListener('DOMContentLoaded', UI.init);
