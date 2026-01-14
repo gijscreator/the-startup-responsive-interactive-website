@@ -23,7 +23,7 @@ header.header {
     background-color: var(--veronica-primary);
   }
 
-  &.honderdnl {
+  &.hondernl {
     background-color: var(--honderdnl-primary);
   }
 
@@ -647,7 +647,18 @@ body.zenders {
 
   header {
     grid-column: 1 / span 2;
-    background-color: var(--veronica-primary);
+    
+      &.veronica {
+        background-color: var(--veronica-primary);
+      }
+
+      &.hondernl {
+        background-color: var(--honderdnl-primary);
+      }
+
+      &.slam {
+        background-color: var(--slam-primary);
+      }
 
     picture {
       display: flex;
@@ -672,7 +683,18 @@ body.zenders {
   aside {
     grid-column: 1;
     width: 20vw;
-    background-color: light-dark(var(--radiogids-dark-background), var(--veronica-primary));
+
+    &.veronica {
+      background-color: var(--veronica-primary);
+    }
+
+    &.hondernl {
+      background-color: var(--honderdnl-primary);
+    }
+
+    &.slam {
+      background-color: var(--slam-primary);
+    }
 
     ul {
       display: flex;
@@ -706,11 +728,21 @@ body.zenders {
     button.select-station {
       display: flex;
       flex-direction: row;
-      background-color: var(--veronica-primary);
       padding: 1rem;
       border-radius: var(--border-radius-button);
       border: none;
 
+      &.veronica {
+        background-color: var(--veronica-primary);
+      }
+
+      &.hondernl {
+        background-color: var(--honderdnl-primary);
+      }
+
+      &.slam {
+        background-color: var(--slam-primary);
+      }
     }
   }
 
@@ -760,6 +792,18 @@ body.zenders {
 
   footer {
     grid-column: 1 / span 2;
+
+    &.veronica {
+      background-color: var(--veronica-primary);
+    }
+
+    &.hondernl {
+      background-color: var(--honderdnl-primary);
+    }
+
+    &.slam {
+      background-color: var(--slam-primary);
+    }
   }
 }
 

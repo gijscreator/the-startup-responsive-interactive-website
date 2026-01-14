@@ -47,7 +47,7 @@ const HTMLBouwer = {
         const isNuBezig = huidigeMinuten >= startTijdMin && huidigeMinuten < (startTijdMin + (duurInUren * 60));
         
         const duurKlasse = `${RADIOGIDS_CONFIGURATIE.getallenInWoorden[duurInUren] || 'long'}hours`;
-        // Direct link as requested
+
         const uniekeLink = `pages/details.html?id=${programma.id}-${zenderNaam}`;
 
         return `
@@ -163,6 +163,24 @@ const PaginaBeheer = {
         }
     }
 };
+
+function applyStationParamAsClass() {
+    const currentPath = window.location.pathname;
+    const urlParameters = new URLSearchParams(window.location.search);
+    const stationName = urlParameters.get('station');
+
+    if (currentPath === '/pages/zenders.html' && stationName) {
+        const targetElements = document.querySelectorAll('header, aside, main, button, footer');
+
+        targetElements.forEach(element => {
+            element.classList.remove('veronica')
+            element.classList.add(stationName.toLowerCase());
+
+        });
+    }
+}
+
+applyStationParamAsClass();
 
 document.addEventListener('DOMContentLoaded', PaginaBeheer.initialiseerApp);
 
