@@ -164,6 +164,10 @@ const PaginaBeheer = {
     }
 };
 
+// function to check url, based on that apply class what radio station 
+// it is and the correct var is triggered in the css to style it to 
+// the radio branding
+
 function applyStationParamAsClass() {
     const currentPath = window.location.pathname;
     const urlParameters = new URLSearchParams(window.location.search);
