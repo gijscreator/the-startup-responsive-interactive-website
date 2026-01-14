@@ -838,13 +838,8 @@ body.zenders {
 
 body:has(#station-selector:popover-open) {
 
-  .select-station  {
-
-    border-radius: var(--border-radius-button) var(--border-radius-button) 0 0 ;
-
-    svg {
-      transform: rotate(180deg);
-    }
+  svg {
+    transform: rotate(180deg);
   }
 }
 
@@ -857,7 +852,6 @@ body:has(#station-selector:popover-open) {
   padding: 1rem;
   opacity: 0;
   transform: translateX(100%);
-  pointer-events: none;
   transition: all .3s linear allow-discrete;
   top: 15.5dvh;
   bottom: auto;
@@ -928,7 +922,6 @@ body:has(#station-selector:popover-open) {
     
     animation: slide-up 0.3s ease-out;
     opacity: 1;
-    pointer-events: none;
     transition: all .3s linear;
     transform: none;
     
@@ -937,6 +930,16 @@ body:has(#station-selector:popover-open) {
         opacity: 0;
         transform: translateX(-100%);
       }
+    }
+
+    &::backdrop {
+      background-color: var(--radiogids-dark-background);
+      opacity: .8;
+      height: 85dvh;
+      position: absolute;
+      top: 15dvh;
+
+
     }
   }
 }
