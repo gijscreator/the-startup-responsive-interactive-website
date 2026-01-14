@@ -53,7 +53,6 @@ const CalendarBouwer = {
         const start = TijdHulpmiddelen.formatteerDatumVoorApple(programma.day, programma.from);
         const eind = TijdHulpmiddelen.formatteerDatumVoorApple(programma.day, programma.until);
 
-        // De structuur van een iCalendar bestand
         const icsRegels = [
             "BEGIN:VCALENDAR",
             "VERSION:2.0",
@@ -63,12 +62,15 @@ const CalendarBouwer = {
             `DESCRIPTION:DJ: ${programma.dj_names || 'Onbekend'}`,
             `DTSTART:${start}`,
             `DTEND:${eind}`,
-            "RRULE:FREQ=WEEKLY", // Zorgt dat het elke week herhaalt!
+            "RRULE:FREQ=WEEKLY",
             "END:VEVENT",
             "END:VCALENDAR"
-        ];
+        ].join("\r\n"); // Use \r\n for better compatibility with Apple
 
-        return "data:text/calendar;charset=utf8," + encodeURIComponent(icsRegels.join("\n"));
+        // Convert the text to Base64 to trick Safari into treating it as a real file download
+        const base64Content = btoa(unescape(encodeURIComponent(icsRegels)));
+        
+        return "data:text/calendar;base64," + base64Content;
     }
 };
 
