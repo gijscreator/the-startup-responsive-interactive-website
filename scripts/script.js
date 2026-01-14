@@ -13,30 +13,25 @@ const RADIOGIDS_CONFIGURATIE = {
 };
 
 const TijdHulpmiddelen = {
-    // NIEUW/HERSTELD: Zet "HH:MM" om naar totaal aantal minuten
-    zetTijdOmNaarMinuten: function(tijdString) {
-        const delen = tijdString.split(':');
+    // Zet tijd (HH:MM) om naar minuten
+    zetTijdOmNaarMinuten: function(tijdTekst) {
+        if (!tijdTekst) return 0;
+        const delen = tijdTekst.split(':');
         return (parseInt(delen[0]) * 60) + parseInt(delen[1]);
     },
 
-    // NIEUW/HERSTELD: Berekent het verschil tussen twee tijden in uren
+    // Berekent duur van programma voor de CSS styling
     berekenProgrammaDuurInUren: function(startTijd, eindTijd) {
         const start = this.zetTijdOmNaarMinuten(startTijd);
-        let eind = this.zetTijdOmNaarMinuten(eindTijd);
-
-        // Als de show over middernacht heen gaat (bijv. 23:00 tot 01:00)
-        if (eind <= start) {
-            eind += (24 * 60);
-        }
-
-        return Math.ceil((eind - start) / 60);
+        let eind = this.zetTijdOmNaarMinuten(eindTijd === '23:59' ? '24:00' : eindTijd);
+        if (eind <= start) eind += 1440;
+        return Math.round((eind - start) / 60);
     },
 
-    // Bestaande functie voor de kalender (behouden)
+    // BELANGRIJK: Berekent de juiste start- en einddatum voor de kalender
     berekenShowTijden: function(dagNaam, startTijd, eindTijd) {
         const nu = new Date();
-        const dagen = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
-        const doelDagIndex = dagen.indexOf(dagNaam.toLowerCase());
+        const doelDagIndex = RADIOGIDS_CONFIGURATIE.dagenVanDeWeek.indexOf(dagNaam.toLowerCase());
         
         const startUren = parseInt(startTijd.split(':')[0]);
         const startMinuten = parseInt(startTijd.split(':')[1]);
@@ -46,6 +41,7 @@ const TijdHulpmiddelen = {
         let startDatum = new Date(nu);
         let dagenVerschil = (doelDagIndex + 7 - nu.getDay()) % 7;
         
+        // Als de show vandaag is maar de tijd is al geweest, verplaats naar volgende week
         if (dagenVerschil === 0 && nu.getHours() >= startUren) {
             dagenVerschil = 7;
         }
@@ -53,13 +49,16 @@ const TijdHulpmiddelen = {
         startDatum.setDate(nu.getDate() + dagenVerschil);
         startDatum.setHours(startUren, startMinuten, 0, 0);
 
+        // Einddatum altijd baseren op de startdatum om fouten te voorkomen
         let eindDatum = new Date(startDatum);
         eindDatum.setHours(eindUren, eindMinuten, 0, 0);
 
+        // Als de show na middernacht eindigt
         if (eindDatum <= startDatum) {
             eindDatum.setDate(eindDatum.getDate() + 1);
         }
 
+        // Hulpfunctie voor Apple formaat
         function naarIcsFormaat(datum) {
             return datum.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
         }
@@ -72,8 +71,8 @@ const TijdHulpmiddelen = {
 };
 
 const CalendarBouwer = {
+    // Maakt de download link voor Apple/Mobiel
     maakIcsLink: function(programma) {
-        // Gebruik de nieuwe verbeterde tijdberekening
         const tijden = TijdHulpmiddelen.berekenShowTijden(programma.day, programma.from, programma.until);
 
         const icsRegels = [
@@ -90,16 +89,17 @@ const CalendarBouwer = {
             "END:VCALENDAR"
         ].join("\r\n");
 
+        // Base64 codering voor stabiliteit op Safari/iOS
         const base64Inhoud = btoa(unescape(encodeURIComponent(icsRegels)));
         return "data:text/calendar;base64," + base64Inhoud;
     },
 
+    // Maakt een veilige bestandsnaam voor de download
     maakVeiligeNaam: function(naam) {
         return naam.replace(/[^a-z0-9]/gi, '_').toLowerCase() + ".ics";
     }
 };
 
-// Haalt de JSON bestanden op
 const DataOphaler = {
     haalProgrammaDataOp: async function(bestandsPad) {
         try {
@@ -107,13 +107,12 @@ const DataOphaler = {
             const data = await response.json();
             return Array.isArray(data) ? data : (data.data || []);
         } catch (fout) {
-            console.error("Fout bij ophalen data:", fout);
+            console.error("Data fetch error:", fout);
             return [];
         }
     }
 };
 
-// Maakt de HTML voor de overzichtspagina's
 const HTMLBouwer = {
     maakProgrammaKaartje: function(programma, huidigeMinuten, zenderNaam) {
         const duurInUren = TijdHulpmiddelen.berekenProgrammaDuurInUren(programma.from, programma.until);
@@ -136,7 +135,6 @@ const HTMLBouwer = {
     }
 };
 
-// Beheert wat er op welke pagina gebeurt
 const PaginaBeheer = {
     initialiseerApp: async function() {
         const path = window.location.pathname;
@@ -210,7 +208,7 @@ const PaginaBeheer = {
             document.getElementById('detail-description').innerHTML = prog.body || "Geen beschrijving.";
             document.title = prog.show_name + " - Radiogids";
 
-            // KALENDER KNOP LOGICA
+            // KALENDER KNOP ACTIVEREN
             const calBtn = document.getElementById('apple-calendar-btn');
             if (calBtn) {
                 calBtn.href = CalendarBouwer.maakIcsLink(prog);
@@ -220,7 +218,6 @@ const PaginaBeheer = {
     },
 
     activeerAlgemeneFuncties: function() {
-        // Logica voor de tijdlijn in de UI
         const line = document.querySelector('.test-line');
         const main = document.querySelector('main.home');
 
@@ -238,7 +235,6 @@ const PaginaBeheer = {
             setInterval(update, 60000);
         }
 
-        // Simpele Audio Player
         const btn = document.querySelector('.play-button');
         const audio = new Audio('assets/liedje.mp3'); 
 
@@ -255,19 +251,17 @@ const PaginaBeheer = {
     }
 };
 
-// Past styling aan op basis van de zender (branding)
 function applyStationParamAsClass() {
     const params = new URLSearchParams(window.location.search);
     const stationName = params.get('station');
 
     if (stationName) {
-        const elements = document.querySelectorAll('header, aside, main, button, footer');
-        elements.forEach(function(el) {
-            el.classList.add(stationName.toLowerCase());
+        const targetElements = document.querySelectorAll('header, aside, main, button, footer');
+        targetElements.forEach(function(element) {
+            element.classList.add(stationName.toLowerCase());
         });
     }
 }
 
-// Start het script
 applyStationParamAsClass();
 document.addEventListener('DOMContentLoaded', PaginaBeheer.initialiseerApp);
