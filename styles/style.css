@@ -161,6 +161,7 @@ main.home {
 
   /* Section met timeline  */
   section:nth-of-type(1).sync-scroll {
+
     display: flex;
     background-color: light-dark(var(--radiogids-dark-background), var(--radiogids-primary));
     color: var(--text-light);
@@ -846,108 +847,79 @@ body:has(#station-selector:popover-open) {
 /* popover styling */
 
 #station-selector {
-  background-color: light-dark(var(--radiogids-light-background),var(--radiogids-dark-background));
+  background-color: light-dark(var(--radiogids-light-background), var(--radiogids-dark-background));
   border: none;
-  border-radius:0px 0px var(--border-radius) var(--border-radius);
+  border-radius: 0px 0px var(--border-radius) var(--border-radius);
   padding: 1rem;
   opacity: 0;
-  transform: translateX(100%);
-  transition: all .3s linear allow-discrete;
-  top: 15.5dvh;
+  transform: translateX(100%);  
+  transition: opacity 0.3s linear, transform 0.3s linear, display 0.3s allow-discrete, overlay 0.3s allow-discrete;
+  top: 15dvh;
   bottom: auto;
   left: 20vw;
   width: 80vw;
-  height: 40dvh;
+  height: 45dvh;
 
   li {
-
     border-top: 2px solid black;
     padding: var(--padding-regular);
-
-    &:nth-of-type(1) {
-
     opacity: 0;
     transform: translateY(50px);
     animation: flowIn 0.3s ease-out forwards;
-    animation-delay: 0s;
 
+    &:nth-of-type(1) {
+      animation-delay: 0s;
     }
 
     &:nth-of-type(2) {
-
-    opacity: 0;
-    transform: translateY(50px);
-    animation: flowIn 0.3s ease-out forwards;
-    animation-delay: .1s;
-
+      animation-delay: 0.1s;
     }
 
     &:nth-of-type(3) {
-
-    opacity: 0;
-    transform: translateY(50px);
-    animation: flowIn 0.2s ease-out forwards;
-    animation-delay: .3s;
-
+      animation-delay: 0.3s;
     }
 
     picture {
-
       img {
         width: 30%;
         height: auto;
       }
     }
 
-    p:nth-of-type(1) {
-
-    }
-
     p:nth-of-type(2) {
       display: flex;
       border: 2px solid var(--veronica-primary);
       width: fit-content;
-      var(--padding-regular);
+      padding: var(--padding-regular);
       border-radius: var(--border-radius-button);
     }
 
     svg {
-      transition: all .3s linear;
+      transition: all 0.3s linear;
     }
   }
-  
- 
+
+  &::backdrop {
+    background-color: var(--radiogids-dark-background);
+    height: 85dvh;
+    position: absolute;
+    top: 15dvh;
+    opacity: 0;
+    transition: opacity .3s ease, display .3s allow-discrete, overlay .3s allow-discrete;
+  }
 
   &:popover-open {
-    
     animation: slide-up 0.3s ease-out;
     opacity: 1;
-    transition: all .3s linear;
     transform: none;
-    
-    @starting-style {
-      & {
-        opacity: 0;
-        transform: translateX(-100%);
-      }
-    }
 
     &::backdrop {
-      background-color: var(--radiogids-dark-background);
-      opacity: .8;
-      height: 85dvh;
-      position: absolute;
-      top: 15dvh;
+      opacity: 0.8;
 
-
+      @starting-style {
+        opacity: 0;
+        transform: translateX(100%);
+      }
     }
-  }
-}
-
-
-@keyframes flowIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
