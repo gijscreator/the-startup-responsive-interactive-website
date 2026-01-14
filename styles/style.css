@@ -967,3 +967,8 @@ body:has(#station-selector:popover-open) {
     }
   }
 }
+
+.detail-content {
+  background: #87cbff;
+  background: radial-gradient(circle,rgba(135, 203, 255, 1) 0%, rgba(0, 145, 255, 1) 39%, rgba(30, 30, 30, 1) 100%);
+}
