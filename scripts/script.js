@@ -173,7 +173,7 @@ function applyStationParamAsClass() {
     const urlParameters = new URLSearchParams(window.location.search);
     const stationName = urlParameters.get('station');
 
-    if (currentPath === '/pages/zenders.html' && stationName) {
+    if (currentPath === 'pages/zenders.html' && stationName) {
         const targetElements = document.querySelectorAll('header, aside, main, button, footer');
 
         targetElements.forEach(element => {
