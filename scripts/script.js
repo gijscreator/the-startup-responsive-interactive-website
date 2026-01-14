@@ -12,60 +12,57 @@ const RADIOGIDS_CONFIGURATIE = {
     getallenInWoorden: ['zero','one','two','three','four','five','six','seven','eight','nine','ten']
 };
 
-// Hulpmiddelen voor tijd en datums
 const TijdHulpmiddelen = {
-    // Zet een tijd (bijv "12:30") om naar minuten vanaf 00:00
-    zetTijdOmNaarMinuten: function(tijdTekst) {
-        if (!tijdTekst) return 0;
-        const delen = tijdTekst.split(':');
-        const uren = parseInt(delen[0]);
-        const minuten = parseInt(delen[1]) || 0;
-        return (uren * 60) + minuten;
-    },
+    // ... zetTijdOmNaarMinuten en berekenProgrammaDuurInUren blijven hetzelfde ...
 
-    // Berekent hoe lang een programma duurt in uren
-    berekenProgrammaDuurInUren: function(startTijd, eindTijd) {
-        const startMinuten = TijdHulpmiddelen.zetTijdOmNaarMinuten(startTijd);
-        let eindMinuten = TijdHulpmiddelen.zetTijdOmNaarMinuten(eindTijd === '23:59' ? '24:00' : eindTijd);
-        
-        if (eindMinuten <= startMinuten) {
-            eindMinuten = eindMinuten + 1440; // Voeg een dag toe als het na middernacht eindigt
-        }
-        return Math.round((eindMinuten - startMinuten) / 60);
-    },
-
-    // Maakt de datum tekst die Apple begrijpt (YYYYMMDDTHHMMSSZ)
-    formatteerDatumVoorApple: function(dagNaam, tijdTekst) {
+    // VERBETERDE FUNCTIE: Berekent nu beide datums tegelijk om fouten te voorkomen
+    berekenShowTijden: function(dagNaam, startTijd, eindTijd) {
         const nu = new Date();
-        const doelDagIndex = RADIOGIDS_CONFIGURATIE.dagenVanDeWeek.indexOf(dagNaam.toLowerCase());
-        const tijdDelen = tijdTekst.split(':');
-        const uur = parseInt(tijdDelen[0]);
-        const min = parseInt(tijdDelen[1]);
+        const dagen = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+        const doelDagIndex = dagen.indexOf(dagNaam.toLowerCase());
+        
+        const startUren = parseInt(startTijd.split(':')[0]);
+        const startMinuten = parseInt(startTijd.split(':')[1]);
+        const eindUren = parseInt(eindTijd.split(':')[0]);
+        const eindMinuten = parseInt(eindTijd.split(':')[1]);
 
-        let resultaatDatum = new Date(nu);
+        let startDatum = new Date(nu);
         let dagenVerschil = (doelDagIndex + 7 - nu.getDay()) % 7;
         
-        // Als de dag vandaag is maar de tijd is al voorbij, ga naar volgende week
-        if (dagenVerschil === 0 && nu.getHours() >= uur) {
+        // Correctie: Als het vandaag is maar de show is al begonnen/bezig, verplaats naar volgende week
+        if (dagenVerschil === 0 && nu.getHours() >= startUren) {
             dagenVerschil = 7;
         }
 
-        resultaatDatum.setDate(nu.getDate() + dagenVerschil);
-        resultaatDatum.setHours(uur, min, 0, 0);
+        startDatum.setDate(nu.getDate() + dagenVerschil);
+        startDatum.setHours(startUren, startMinuten, 0, 0);
 
-        // Zet om naar ISO formaat en haal streepjes en dubbele punten weg
-        return resultaatDatum.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+        // Maak de einddatum ALTIJD op basis van de startdatum
+        let eindDatum = new Date(startDatum);
+        eindDatum.setHours(eindUren, eindMinuten, 0, 0);
+
+        // Als de show na middernacht eindigt (bijv. 23:00 tot 01:00)
+        if (eindDatum <= startDatum) {
+            eindDatum.setDate(eindDatum.getDate() + 1);
+        }
+
+        // Helper om naar ICS formaat te gaan
+        function naarIcsFormaat(datum) {
+            return datum.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+        }
+
+        return {
+            start: naarIcsFormaat(startDatum),
+            eind: naarIcsFormaat(eindDatum)
+        };
     }
 };
 
-// Logica voor het maken van het kalenderbestand
 const CalendarBouwer = {
-    // Maakt de speciale "Data Link" voor de knop
     maakIcsLink: function(programma) {
-        const start = TijdHulpmiddelen.formatteerDatumVoorApple(programma.day, programma.from);
-        const eind = TijdHulpmiddelen.formatteerDatumVoorApple(programma.day, programma.until);
+        // Gebruik de nieuwe verbeterde tijdberekening
+        const tijden = TijdHulpmiddelen.berekenShowTijden(programma.day, programma.from, programma.until);
 
-        // De regels tekst die in een kalenderbestand horen
         const icsRegels = [
             "BEGIN:VCALENDAR",
             "VERSION:2.0",
@@ -73,19 +70,17 @@ const CalendarBouwer = {
             "BEGIN:VEVENT",
             "SUMMARY:" + programma.show_name,
             "DESCRIPTION:DJ: " + (programma.dj_names || 'Onbekend'),
-            "DTSTART:" + start,
-            "DTEND:" + eind,
-            "RRULE:FREQ=WEEKLY", // Zorgt dat het elke week herhaalt
+            "DTSTART:" + tijden.start,
+            "DTEND:" + tijden.eind,
+            "RRULE:FREQ=WEEKLY",
             "END:VEVENT",
             "END:VCALENDAR"
-        ].join("\r\n"); // Apple wil altijd \r\n aan het einde van een regel
+        ].join("\r\n");
 
-        // Zet de tekst om naar Base64 zodat Safari het als een echt bestand ziet
         const base64Inhoud = btoa(unescape(encodeURIComponent(icsRegels)));
         return "data:text/calendar;base64," + base64Inhoud;
     },
 
-    // Maakt een veilige bestandsnaam zonder rare tekens
     maakVeiligeNaam: function(naam) {
         return naam.replace(/[^a-z0-9]/gi, '_').toLowerCase() + ".ics";
     }
