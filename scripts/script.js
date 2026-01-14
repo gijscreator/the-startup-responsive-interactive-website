@@ -13,18 +13,18 @@ const RADIOGIDS_CONFIGURATIE = {
 };
 
 const TijdHulpmiddelen = {
-    // Zet "HH:MM" om naar totaal aantal minuten vanaf 00:00
+    // NIEUW/HERSTELD: Zet "HH:MM" om naar totaal aantal minuten
     zetTijdOmNaarMinuten: function(tijdString) {
         const delen = tijdString.split(':');
         return (parseInt(delen[0]) * 60) + parseInt(delen[1]);
     },
 
-    // Berekent het verschil tussen twee tijden in uren (bijv. "12:00" tot "14:00" = 2)
+    // NIEUW/HERSTELD: Berekent het verschil tussen twee tijden in uren
     berekenProgrammaDuurInUren: function(startTijd, eindTijd) {
         const start = this.zetTijdOmNaarMinuten(startTijd);
         let eind = this.zetTijdOmNaarMinuten(eindTijd);
 
-        // Als de eindtijd voor de starttijd ligt (bijv. 23:00 tot 01:00), tel 24 uur bij de eindtijd op
+        // Als de show over middernacht heen gaat (bijv. 23:00 tot 01:00)
         if (eind <= start) {
             eind += (24 * 60);
         }
@@ -32,7 +32,7 @@ const TijdHulpmiddelen = {
         return Math.ceil((eind - start) / 60);
     },
 
-    // Bestaande functie voor de kalender
+    // Bestaande functie voor de kalender (behouden)
     berekenShowTijden: function(dagNaam, startTijd, eindTijd) {
         const nu = new Date();
         const dagen = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
