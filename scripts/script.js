@@ -13,17 +13,16 @@ const RADIOGIDS_CONFIGURATIE = {
 };
 
 const TijdHulpmiddelen = {
-    // Zet tijd (HH:MM) om naar minuten
     zetTijdOmNaarMinuten: function(tijdTekst) {
         if (!tijdTekst) return 0;
         const delen = tijdTekst.split(':');
         return (parseInt(delen[0]) * 60) + parseInt(delen[1]);
     },
 
-    // Berekent duur van programma voor de CSS styling
     berekenProgrammaDuurInUren: function(startTijd, eindTijd) {
-        const start = this.zetTijdOmNaarMinuten(startTijd);
-        let eind = this.zetTijdOmNaarMinuten(eindTijd === '23:59' ? '24:00' : eindTijd);
+        // Gebruik TijdHulpmiddelen in plaats van 'this' voor maximale veiligheid
+        const start = TijdHulpmiddelen.zetTijdOmNaarMinuten(startTijd);
+        let eind = TijdHulpmiddelen.zetTijdOmNaarMinuten(eindTijd === '23:59' ? '24:00' : eindTijd);
         if (eind <= start) eind += 1440;
         return Math.round((eind - start) / 60);
     },
