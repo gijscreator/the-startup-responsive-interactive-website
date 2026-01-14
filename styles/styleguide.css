@@ -51,6 +51,8 @@
     --offset-width: 80px; 
     --hour-width-px: 160px;
 
+    /* padding */
+    --padding-regular: .5rem;
 }
 
 * {
@@ -189,3 +191,5 @@ a.radiogids {
     transform: translateY(0);
   }
 }
+
+

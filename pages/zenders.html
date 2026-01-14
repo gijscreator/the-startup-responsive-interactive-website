@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- production versie -->
-	<!-- <base href="/the-startup-responsive-interactive-website/"> -->
-	<base href="/">
+	<base href="/the-startup-responsive-interactive-website/">
+	<!-- <base href="/"> -->
     <title>Kies jouw favoriete zender</title>
     <link rel="stylesheet" href="styles/styleguide.css">
     <link rel="stylesheet" href="styles/style.css">
@@ -128,21 +128,24 @@
 		</section>
 
         <section popover="station-selector" id="station-selector">
+			<header>
+				<button popovertarget="station-selector">Sluiten</button>
+			</header>
 			<ul>
 				<li>
 					<a href="pages/zenders.html?station=veronica">
-					<picture>
-						<!-- gebruiker wilt light mode: -->
-						<source srcset="assets/logo-veronica.webp" media="(prefers-color-scheme: light)"/>
+						<picture>
+							<!-- gebruiker wilt light mode: -->
+							<source srcset="assets/logo-veronica.webp" media="(prefers-color-scheme: light)"/>
 
-						<!-- gebruiker wilt dark mode: -->
-						<source srcset="assets/logo-veronica.webp"  media="(prefers-color-scheme: dark)"/>
+							<!-- gebruiker wilt dark mode: -->
+							<source srcset="assets/logo-veronica.webp"  media="(prefers-color-scheme: dark)"/>
 
-						<!-- gebruiker wilt niks: -->
-						<img src="assets/logo-veronica.webpp" alt="Logo van radiogids"/>
-					</picture>
-					<p>Veronica maakt je dag iedere dag</p>
-					<p> Nederpop </p>
+							<!-- gebruiker wilt niks: -->
+							<img src="assets/logo-veronica.webpp" alt="Logo van radiogids"/>
+						</picture>
+						<p>Veronica maakt je dag iedere dag</p>
+						<p> Nederpop </p>
 					</a>
 				</li>
 				<li>

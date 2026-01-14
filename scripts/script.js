@@ -165,3 +165,5 @@ const PaginaBeheer = {
 };
 
 document.addEventListener('DOMContentLoaded', PaginaBeheer.initialiseerApp);
+
+
