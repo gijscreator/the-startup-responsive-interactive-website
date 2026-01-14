@@ -13,9 +13,26 @@ const RADIOGIDS_CONFIGURATIE = {
 };
 
 const TijdHulpmiddelen = {
-    // ... zetTijdOmNaarMinuten en berekenProgrammaDuurInUren blijven hetzelfde ...
+    // Zet "HH:MM" om naar totaal aantal minuten vanaf 00:00
+    zetTijdOmNaarMinuten: function(tijdString) {
+        const delen = tijdString.split(':');
+        return (parseInt(delen[0]) * 60) + parseInt(delen[1]);
+    },
 
-    // VERBETERDE FUNCTIE: Berekent nu beide datums tegelijk om fouten te voorkomen
+    // Berekent het verschil tussen twee tijden in uren (bijv. "12:00" tot "14:00" = 2)
+    berekenProgrammaDuurInUren: function(startTijd, eindTijd) {
+        const start = this.zetTijdOmNaarMinuten(startTijd);
+        let eind = this.zetTijdOmNaarMinuten(eindTijd);
+
+        // Als de eindtijd voor de starttijd ligt (bijv. 23:00 tot 01:00), tel 24 uur bij de eindtijd op
+        if (eind <= start) {
+            eind += (24 * 60);
+        }
+
+        return Math.ceil((eind - start) / 60);
+    },
+
+    // Bestaande functie voor de kalender
     berekenShowTijden: function(dagNaam, startTijd, eindTijd) {
         const nu = new Date();
         const dagen = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
@@ -29,7 +46,6 @@ const TijdHulpmiddelen = {
         let startDatum = new Date(nu);
         let dagenVerschil = (doelDagIndex + 7 - nu.getDay()) % 7;
         
-        // Correctie: Als het vandaag is maar de show is al begonnen/bezig, verplaats naar volgende week
         if (dagenVerschil === 0 && nu.getHours() >= startUren) {
             dagenVerschil = 7;
         }
@@ -37,16 +53,13 @@ const TijdHulpmiddelen = {
         startDatum.setDate(nu.getDate() + dagenVerschil);
         startDatum.setHours(startUren, startMinuten, 0, 0);
 
-        // Maak de einddatum ALTIJD op basis van de startdatum
         let eindDatum = new Date(startDatum);
         eindDatum.setHours(eindUren, eindMinuten, 0, 0);
 
-        // Als de show na middernacht eindigt (bijv. 23:00 tot 01:00)
         if (eindDatum <= startDatum) {
             eindDatum.setDate(eindDatum.getDate() + 1);
         }
 
-        // Helper om naar ICS formaat te gaan
         function naarIcsFormaat(datum) {
             return datum.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
         }
