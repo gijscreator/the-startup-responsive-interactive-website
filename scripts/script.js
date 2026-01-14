@@ -1,5 +1,5 @@
 /**
- * RADIOGIDS MASTER SCRIPT - OPTIMIZED
+ * RADIOGIDS MASTER SCRIPT - WITH AUTO-CALENDAR
  */
 
 const RADIOGIDS_CONFIGURATIE = {
@@ -24,6 +24,51 @@ const TijdHulpmiddelen = {
         let eindMinuten = TijdHulpmiddelen.zetTijdOmNaarMinuten(eindTijd === '23:59' ? '24:00' : eindTijd);
         if (eindMinuten <= startMinuten) eindMinuten += 1440;
         return Math.round((eindMinuten - startMinuten) / 60);
+    },
+
+    // NEW: Creates the specific date format Apple needs (YYYYMMDDTHHMMSSZ)
+    formatteerDatumVoorApple: (dagNaam, tijdTekst) => {
+        const nu = new Date();
+        const doelDagIndex = RADIOGIDS_CONFIGURATIE.dagenVanDeWeek.indexOf(dagNaam.toLowerCase());
+        const [uur, min] = tijdTekst.split(':');
+
+        let resultaatDatum = new Date(nu);
+        let dagenVerschil = (doelDagIndex + 7 - nu.getDay()) % 7;
+        
+        // Als de dag vandaag is maar de tijd is al geweest, ga naar volgende week
+        if (dagenVerschil === 0 && nu.getHours() >= uur) {
+            dagenVerschil = 7;
+        }
+
+        resultaatDatum.setDate(nu.getDate() + dagenVerschil);
+        resultaatDatum.setHours(uur, min, 0, 0);
+
+        // Geeft terug: 20260120T150000Z
+        return resultaatDatum.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+    }
+};
+
+const CalendarBouwer = {
+    maakIcsLink: (programma) => {
+        const start = TijdHulpmiddelen.formatteerDatumVoorApple(programma.day, programma.from);
+        const eind = TijdHulpmiddelen.formatteerDatumVoorApple(programma.day, programma.until);
+
+        // De structuur van een iCalendar bestand
+        const icsRegels = [
+            "BEGIN:VCALENDAR",
+            "VERSION:2.0",
+            "PRODID:-//Radiogids//Apple Calendar//NL",
+            "BEGIN:VEVENT",
+            `SUMMARY:${programma.show_name}`,
+            `DESCRIPTION:DJ: ${programma.dj_names || 'Onbekend'}`,
+            `DTSTART:${start}`,
+            `DTEND:${eind}`,
+            "RRULE:FREQ=WEEKLY", // Zorgt dat het elke week herhaalt!
+            "END:VEVENT",
+            "END:VCALENDAR"
+        ];
+
+        return "data:text/calendar;charset=utf8," + encodeURIComponent(icsRegels.join("\n"));
     }
 };
 
@@ -45,9 +90,7 @@ const HTMLBouwer = {
         const duurInUren = TijdHulpmiddelen.berekenProgrammaDuurInUren(programma.from, programma.until);
         const startTijdMin = TijdHulpmiddelen.zetTijdOmNaarMinuten(programma.from);
         const isNuBezig = huidigeMinuten >= startTijdMin && huidigeMinuten < (startTijdMin + (duurInUren * 60));
-        
         const duurKlasse = `${RADIOGIDS_CONFIGURATIE.getallenInWoorden[duurInUren] || 'long'}hours`;
-
         const uniekeLink = `pages/details.html?id=${programma.id}-${zenderNaam}`;
 
         return `
@@ -129,11 +172,17 @@ const PaginaBeheer = {
             document.getElementById('detail-djs').textContent = `Presentatie: ${prog.dj_names || "Onbekend"}`;
             document.getElementById('detail-description').innerHTML = prog.body || "Geen beschrijving.";
             document.title = `${prog.show_name} - Radiogids`;
+
+            // AUTOMATIC CALENDAR BUTTON LOGIC
+            const calBtn = document.getElementById('apple-calendar-btn');
+            if (calBtn) {
+                calBtn.href = CalendarBouwer.maakIcsLink(prog);
+                calBtn.setAttribute('download', `${prog.show_name}.ics`);
+            }
         }
     },
 
     activeerAlgemeneFuncties: () => {
-        // Tijdlijn update
         const line = document.querySelector('.test-line');
         const main = document.querySelector('main.home');
 
@@ -151,7 +200,6 @@ const PaginaBeheer = {
             setInterval(update, 60000);
         }
 
-        // Audio Player
         const btn = document.querySelector('.play-button');
         const audio = new Audio('assets/liedje.mp3'); 
 
@@ -164,28 +212,17 @@ const PaginaBeheer = {
     }
 };
 
-// function to check url, based on that apply class what radio station 
-// it is and the correct var is triggered in the css to style it to 
-// the radio branding
-
 function applyStationParamAsClass() {
-    const currentPath = window.location.pathname;
     const urlParameters = new URLSearchParams(window.location.search);
     const stationName = urlParameters.get('station');
 
-    if (currentPath === 'pages/zenders.html' && stationName) {
+    if (stationName) {
         const targetElements = document.querySelectorAll('header, aside, main, button, footer');
-
         targetElements.forEach(element => {
-            element.classList.remove('veronica')
             element.classList.add(stationName.toLowerCase());
-
         });
     }
 }
 
 applyStationParamAsClass();
-
 document.addEventListener('DOMContentLoaded', PaginaBeheer.initialiseerApp);
-
-
