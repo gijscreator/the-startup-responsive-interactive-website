@@ -60,6 +60,7 @@
 
     /* padding */
     --padding-regular: .5rem;
+
 }
 
 * {
@@ -256,5 +257,25 @@ button {
   to {
     transform: translateY(0px);
     opacity: 1;
+  }
+}
+
+@keyframes move-out {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes move-in {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0%);
   }
 }

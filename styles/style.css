@@ -7,7 +7,34 @@ Five hours = 800px / 50rem
 Six hours = 960px / 60rem
 Seven hours = 1120px / 70rem
 */
+@view-transition {
+  navigation: auto;
+}
 
+/* 1. Define the sliding keyframes */
+@keyframes slide-to-left {
+  to { transform: translateX(-100%); }
+}
+
+@keyframes slide-from-right {
+  from { transform: translateX(100%); }
+}
+
+/* 2. Apply them to the page snapshots */
+::view-transition-old(root) {
+  animation: 0.5s ease-in-out both slide-to-left;
+}
+
+::view-transition-new(root) {
+  animation: 0.5s ease-in-out both slide-from-right;
+}
+
+/* 3. Optional: Prevent the default cross-fade blend mode for a cleaner slide */
+::view-transition-old(root),
+::view-transition-new(root) {
+  mix-blend-mode: normal;
+  height: 100%;
+}
 /* Header styling */
 
 header.header {
