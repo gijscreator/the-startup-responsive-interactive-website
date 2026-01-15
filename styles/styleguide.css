@@ -41,13 +41,13 @@
     --border-radius: .7rem;
     --border-radius-button: 1.4rem;
 
-    /* width and gap per card */
+    /* width, height and gap per card */
 
     --hour-width: 10rem; /* base 160px */
     --gap-width-px: 16px;  /* gap tussen de kaartjes */
 
-    --hour-height: 5rem; /* base 160px */
-    --gap-height-px: 16px;  /* gap tussen de kaartjes */
+    --hour-height: 5.3rem; /* base 160px */
+    --gap-height-px: 14px;  /* gap tussen de kaartjes */
 
     /* timeline position */
 
