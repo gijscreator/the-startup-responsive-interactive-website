@@ -41,10 +41,10 @@ Seven hours = 1120px / 70rem
 
   animation: 
     one var(--speed) both 0s,
-    two var(--speed) both 0.05,
-    three var(--speed) both 0.10s,
-    four var(--speed) both .0.15,
-    five var(--speed) both .0.2s;
+    two var(--speed) both 0.1s,
+    three var(--speed) both 0.2s,
+    four var(--speed) both .0.3s,
+    five var(--speed) both .0.4s;
   
   animation-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
   z-index: 2;
