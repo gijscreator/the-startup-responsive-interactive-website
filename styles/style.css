@@ -529,6 +529,7 @@ body.zenders {
 	display: grid;
 	grid-template-columns: 20vw 80vw;
 	justify-content: center;
+	height: fit-content;
 
 	div.time-indicator-vertical {
 		
@@ -587,8 +588,16 @@ body.zenders {
   	}
   
 	article.buttons {
-		margin: 1rem 0rem 1rem 20vw;
+		width: 80vw;
+		padding: 1rem;
+		margin-left: 20vw;
 		pointer-events: auto;
+		background-color: var(--radiogids-dark-background);
+		z-index: 1000;
+		position: sticky;
+		border: 2px white solid;
+		border-top: none;
+		top: 0;
 		
 		&.button {
 			display: flex;
@@ -662,6 +671,7 @@ body.zenders {
 	main {
 		grid-column: 2;
 		width: 80vw;
+		min-height: 100dvh;
 		
 		.veronica {
 			background-color: var(--veronica-primary);
@@ -988,9 +998,7 @@ main:has(#station-selector:popover-open) #station-selector * {
   
   &::backdrop {
     background-color: var(--radiogids-dark-background);
-    height: 85dvh;
-    position: absolute;
-    top: 15dvh;
+    height: 100dvh;
     opacity: 0;
     transition: opacity .3s ease, display .3s allow-discrete, overlay .3s allow-discrete;
   }
@@ -1079,7 +1087,7 @@ footer {
   align-items: center;
   width: 100vw;
   position: sticky;
-  bottom: 0;
+  bottom: 0dvh;
   z-index: 1000;
   background-color: var(--radiogids-dark-background);
   

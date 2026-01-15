@@ -1,214 +1,251 @@
 /**
- * RADIOGIDS - FULL OPTIMIZED SCRIPT
+ * RADIOGIDS - READABLE & OPTIMIZED SCRIPT
  */
 
 // 1. CONFIGURATION
-const config = {
+const appConfiguration = {
     stations: [
-        { id: 1, slug: "veronica", file: 'data/veronica.json', container: '#veronica-shows' },
-        { id: 2, slug: "slam", file: 'data/slam.json', container: '#slam-shows' },
-        { id: 3, slug: "hondernl", file: 'data/100nl.json', container: '#hondernl-shows' }
+        { id: 1, slug: "veronica", dataFile: 'data/veronica.json', containerSelector: '#veronica-shows' },
+        { id: 2, slug: "slam", dataFile: 'data/slam.json', containerSelector: '#slam-shows' },
+        { id: 3, slug: "hondernl", dataFile: 'data/100nl.json', containerSelector: '#hondernl-shows' }
     ],
-    days: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
-    numWords: ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
+    daysOfWeek: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
+    durationWords: ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
 };
 
-const now = new Date();
-const current_day_name = config.days[now.getDay()];
-const current_mins = (now.getHours() * 60) + now.getMinutes();
+const currentTime = new Date();
+const currentDayName = appConfiguration.daysOfWeek[currentTime.getDay()];
+const currentMinutesFromMidnight = (currentTime.getHours() * 60) + currentTime.getMinutes();
 
 // 2. HELPERS
-const TijdHulp = {
-    toMins: (timeStr) => {
-        if (!timeStr) return 0;
-        const [hrs, mins] = timeStr.split(':').map(Number);
-        return (hrs * 60) + mins;
+const TimeCalculations = {
+    convertTimeToMinutes: (timeString) => {
+        if (!timeString) return 0;
+        const [hours, minutes] = timeString.split(':').map(Number);
+        return (hours * 60) + minutes;
     },
 
-    getDuration: (start, end) => {
-        const s = TijdHulp.toMins(start);
-        let e = TijdHulp.toMins(end === '23:59' ? '24:00' : end);
-        if (e <= s) e += 1440;
-        return Math.round((e - s) / 60);
+    calculateHourDuration: (startTime, endTime) => {
+        const startTotalMinutes = TimeCalculations.convertTimeToMinutes(startTime);
+        let endTotalMinutes = TimeCalculations.convertTimeToMinutes(endTime === '23:59' ? '24:00' : endTime);
+        
+        // Handle shows crossing midnight
+        if (endTotalMinutes <= startTotalMinutes) endTotalMinutes += 1440; 
+        
+        return Math.round((endTotalMinutes - startTotalMinutes) / 60);
     },
 
-    isLive: (prog) => {
-        if (prog.day.toLowerCase() !== current_day_name.toLowerCase()) return false;
-        const start = TijdHulp.toMins(prog.from);
-        const durationMins = TijdHulp.getDuration(prog.from, prog.until) * 60;
-        return current_mins >= start && current_mins < (start + durationMins);
+    checkIfProgramIsLive: (program) => {
+        if (program.day.toLowerCase() !== currentDayName.toLowerCase()) return false;
+        
+        const startMinutes = TimeCalculations.convertTimeToMinutes(program.from);
+        const durationInMinutes = TimeCalculations.calculateHourDuration(program.from, program.until) * 60;
+        
+        return currentMinutesFromMidnight >= startMinutes && 
+               currentMinutesFromMidnight < (startMinutes + durationInMinutes);
     }
 };
 
-const CalendarHulp = {
-    generateIcs: (prog) => {
-        const startParts = prog.from.split(':').map(Number);
-        const endParts = prog.until.split(':').map(Number);
-        let start = new Date(now);
-        const dayIdx = config.days.indexOf(prog.day.toLowerCase());
-        let diff = (dayIdx + 7 - now.getDay()) % 7;
-        if (diff === 0 && now.getHours() >= startParts[0]) diff = 7;
-        start.setDate(now.getDate() + diff);
-        start.setHours(startParts[0], startParts[1], 0, 0);
-        let end = new Date(start);
-        end.setHours(endParts[0], endParts[1], 0, 0);
-        if (end <= start) end.setDate(end.getDate() + 1);
-        const fmt = (d) => d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-        const ics = [
+const CalendarGenerator = {
+    createIcsDownloadLink: (program) => {
+        const startTimeParts = program.from.split(':').map(Number);
+        const endTimeParts = program.until.split(':').map(Number);
+        
+        let eventDate = new Date(currentTime);
+        const programDayIndex = appConfiguration.daysOfWeek.indexOf(program.day.toLowerCase());
+        let daysUntilNextOccurrence = (programDayIndex + 7 - currentTime.getDay()) % 7;
+        
+        if (daysUntilNextOccurrence === 0 && currentTime.getHours() >= startTimeParts[0]) {
+            daysUntilNextOccurrence = 7;
+        }
+        
+        eventDate.setDate(currentTime.getDate() + daysUntilNextOccurrence);
+        eventDate.setHours(startTimeParts[0], startTimeParts[1], 0, 0);
+        
+        let endDate = new Date(eventDate);
+        endDate.setHours(endTimeParts[0], endTimeParts[1], 0, 0);
+        if (endDate <= eventDate) endDate.setDate(endDate.getDate() + 1);
+
+        const formatIcsDate = (dateObj) => dateObj.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+        
+        const icsContent = [
             "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Radiogids//NL",
-            "BEGIN:VEVENT", `SUMMARY:${prog.show_name}`,
-            `DESCRIPTION:DJ: ${prog.dj_names || 'Onbekend'}`,
-            `DTSTART:${fmt(start)}`, `DTEND:${fmt(end)}`,
-            `RRULE:FREQ=WEEKLY;BYDAY=${prog.day.substring(0, 2).toUpperCase()}`,
+            "BEGIN:VEVENT", `SUMMARY:${program.show_name}`,
+            `DESCRIPTION:DJ: ${program.dj_names || 'Onbekend'}`,
+            `DTSTART:${formatIcsDate(eventDate)}`, `DTEND:${formatIcsDate(endDate)}`,
+            `RRULE:FREQ=WEEKLY;BYDAY=${program.day.substring(0, 2).toUpperCase()}`,
             "END:VEVENT", "END:VCALENDAR"
         ].join("\r\n");
-        return URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
+
+        return URL.createObjectURL(new Blob([icsContent], { type: 'text/calendar' }));
     }
 };
 
 // 3. UI LOGIC
-const UI = {
-    fetchData: async (path) => {
+const UserInterface = {
+    fetchStationData: async (filePath) => {
         try {
-            const r = await fetch(path);
-            const d = await r.json();
-            return Array.isArray(d) ? d : (d.data || []);
-        } catch (e) { return []; }
+            const response = await fetch(filePath);
+            const jsonData = await response.json();
+            return Array.isArray(jsonData) ? jsonData : (jsonData.data || []);
+        } catch (error) { 
+            console.error("Data fetch failed", error);
+            return []; 
+        }
     },
 
-    renderCard: (prog, stationSlug) => {
-        const duration = TijdHulp.getDuration(prog.from, prog.until);
-        const live = TijdHulp.isLive(prog);
-        const durClass = (config.numWords[duration] || 'long') + "hours";
-        const link = `pages/details.html?id=${prog.id}-${stationSlug}`;
+    generateProgramCardHtml: (program, stationSlug) => {
+        const hourDuration = TimeCalculations.calculateHourDuration(program.from, program.until);
+        const isLiveNow = TimeCalculations.checkIfProgramIsLive(program);
+        const durationClassName = (appConfiguration.durationWords[hourDuration] || 'long') + "hours";
+        const detailPageUrl = `pages/details.html?id=${program.id}-${stationSlug}`;
+        
         return `
-            <a href="${link}" class="show-card-link">
-                <article class="block ${durClass} ${live ? 'live' : ''}" style="--duration:${duration};">
-                    <img src="${prog.show_thumbnail}" alt="${prog.show_name}" class="show-header normal-hidden">
+            <a href="${detailPageUrl}" class="show-card-link">
+                <article class="block ${durationClassName} ${isLiveNow ? 'live' : ''}" style="--duration:${hourDuration};">
+                    <img src="${program.show_thumbnail}" alt="${program.show_name}" class="show-header normal-hidden">
                     <section>
-                        <h3 class="fly-in-text title">${prog.show_name}</h3>
-                        <p class="time">${prog.from} - ${prog.until}</p>
-                        ${live ? '<p class="live-status">Live</p>' : ''}
+                        <h3 class="fly-in-text title">${program.show_name}</h3>
+                        <p class="time">${program.from} - ${program.until}</p>
+                        ${isLiveNow ? '<p class="live-status">Live</p>' : ''}
                     </section>
                 </article>
             </a>`;
     },
 
-    init: async () => {
-        const params = new URLSearchParams(window.location.search);
-        const stParam = params.get('station');
-        const path = window.location.pathname;
+    initializeApplication: async () => {
+        const urlParameters = new URLSearchParams(window.location.search);
+        const activeStationSlug = urlParameters.get('station');
+        const currentPath = window.location.pathname;
 
-        if (stParam) {
+        if (activeStationSlug) {
+            document.body.className = '';
+            document.body.classList.add(activeStationSlug.toLowerCase(), 'zenders'); 
+            
             document.querySelectorAll('header, aside, main, button')
-                .forEach(el => el.classList.add(stParam.toLowerCase()));
+                .forEach(element => element.classList.add(activeStationSlug.toLowerCase()));
         }
 
-        if (path.includes('details.html')) {
-            await UI.loadDetails(params.get('id'));
+        if (currentPath.includes('details.html')) {
+            await UserInterface.loadProgramDetails(urlParameters.get('id'));
         } else {
-            // Wait for all grids to be injected before proceeding to scroll
-            await UI.loadGrids(stParam);
+            await UserInterface.loadStationGrids(activeStationSlug);
         }
 
-        UI.initGlobalFeatures();
+        UserInterface.setupInteractiveFeatures();
     },
 
-    loadGrids: async (activeStation) => {
-        // Map all station loads to an array of promises for parallel fetching
-        const loadPromises = config.stations.map(async (st) => {
-            const container = document.querySelector(st.container);
-            if (!container) return;
-            if (activeStation && st.slug !== activeStation) return;
-            if (activeStation) container.classList.add('is-active');
+    loadStationGrids: async (filteredStationSlug) => {
+        const stationLoadTasks = appConfiguration.stations.map(async (station) => {
+            const gridContainer = document.querySelector(station.containerSelector);
+            if (!gridContainer) return;
+            
+            if (filteredStationSlug && station.slug !== filteredStationSlug) return;
+            if (filteredStationSlug) gridContainer.classList.add('is-active');
 
-            const data = await UI.fetchData(st.file);
-            const cardsHtml = data
-                .filter(p => p.day.toLowerCase() === current_day_name)
+            const programList = await UserInterface.fetchStationData(station.dataFile);
+            const gridHtml = programList
+                .filter(prog => prog.day.toLowerCase() === currentDayName)
                 .sort((a, b) => a.from.localeCompare(b.from))
-                .map(p => UI.renderCard(p, st.slug))
+                .map(prog => UserInterface.generateProgramCardHtml(prog, station.slug))
                 .join('');
 
-            container.querySelectorAll('.show-card-link').forEach(c => c.remove());
-            container.insertAdjacentHTML('beforeend', cardsHtml);
+            // Clean existing and inject new
+            gridContainer.querySelectorAll('.show-card-link').forEach(card => card.remove());
+            gridContainer.insertAdjacentHTML('beforeend', gridHtml);
         });
 
-        await Promise.all(loadPromises);
+        await Promise.all(stationLoadTasks);
     },
 
-    loadDetails: async (idParam) => {
-        if (!idParam) return;
-        const parts = idParam.split('-');
-        const stationSlug = parts.pop();
-        const progId = parts.join('-');
-        const station = config.stations.find(s => s.slug === stationSlug);
-        if (!station) return;
-
-        const data = await UI.fetchData(station.file);
-        const prog = data.find(p => String(p.id) === String(progId));
-        if (!prog) return;
-
-        const el = (id) => document.getElementById(id);
-        if (el('detail-name')) el('detail-name').textContent = prog.show_name;
-        if (el('detail-img')) el('detail-img').src = prog.show_thumbnail;
-        if (el('detail-djs')) el('detail-djs').textContent = prog.dj_names || "Onbekend";
-        if (el('detail-description')) el('detail-description').innerHTML = prog.body || "Geen beschrijving.";
+    loadProgramDetails: async (uniqueId) => {
+        if (!uniqueId) return;
         
-        document.title = `${prog.show_name} - Radiogids`;
+        const idSegments = uniqueId.split('-');
+        const stationSlug = idSegments.pop();
+        const programId = idSegments.join('-');
+        
+        const stationMatch = appConfiguration.stations.find(s => s.slug === stationSlug);
+        if (!stationMatch) return;
 
-        const liveInd = el('am-i-live');
-        if (liveInd) {
-            TijdHulp.isLive(prog) ? liveInd.classList.add('is-live') : (liveInd.style.display = "none");
+        const programData = await UserInterface.fetchStationData(stationMatch.dataFile);
+        const selectedProgram = programData.find(p => String(p.id) === String(programId));
+        if (!selectedProgram) return;
+
+        const setElementContent = (id, content) => {
+            const element = document.getElementById(id);
+            if (element) element.textContent = content;
+        };
+
+        setElementContent('detail-name', selectedProgram.show_name);
+        setElementContent('detail-djs', selectedProgram.dj_names || "Onbekend");
+        
+        const thumbnailImg = document.getElementById('detail-img');
+        if (thumbnailImg) thumbnailImg.src = selectedProgram.show_thumbnail;
+
+        const descriptionContainer = document.getElementById('detail-description');
+        if (descriptionContainer) descriptionContainer.innerHTML = selectedProgram.body || "Geen beschrijving.";
+        
+        document.title = `${selectedProgram.show_name} - Radiogids`;
+
+        const liveIndicator = document.getElementById('am-i-live');
+        if (liveIndicator) {
+            TimeCalculations.checkIfProgramIsLive(selectedProgram) 
+                ? liveIndicator.classList.add('is-live') 
+                : (liveIndicator.style.display = "none");
         }
 
-        const calBtn = el('apple-calendar-btn');
-        if (calBtn) {
-            calBtn.href = CalendarHulp.generateIcs(prog);
-            calBtn.download = `${prog.show_name.replace(/\W/g, '_')}.ics`;
+        const calendarButton = document.getElementById('apple-calendar-btn');
+        if (calendarButton) {
+            calendarButton.href = CalendarGenerator.createIcsDownloadLink(selectedProgram);
+            calendarButton.download = `${selectedProgram.show_name.replace(/\W/g, '_')}.ics`;
         }
     },
 
-    initGlobalFeatures: () => {
-        const line = document.querySelector('.time-indicator, .time-indicator-vertical');
-        const main = document.querySelector('main');
+    setupInteractiveFeatures: () => {
+        const timeMarker = document.querySelector('.time-indicator, .time-indicator-vertical');
+        const mainContentArea = document.querySelector('main');
 
-        if (line && main) {
-            const scroll = () => {
+        if (timeMarker && mainContentArea) {
+            const updateTimeAndScroll = () => {
                 const now = new Date();
-                const timeValue = now.getHours() + (now.getMinutes() / 60);
-                main.style.setProperty('--time', timeValue);
+                const timeInDecimalHours = now.getHours() + (now.getMinutes() / 60);
+                mainContentArea.style.setProperty('--time', timeInDecimalHours);
 
-                if (!main.dataset.scrolled) {
-                    const lineRect = line.getBoundingClientRect();
+                if (!mainContentArea.dataset.scrolled) {
+                    requestAnimationFrame(() => {
+                        const scrollToCurrentTime = () => {
+                            const markerPosition = timeMarker.getBoundingClientRect();
+                            
+                            if (timeMarker.classList.contains('time-indicator-vertical')) {
+                                const targetY = (window.pageYOffset + markerPosition.top) - (window.innerHeight / 2);
+                                window.scrollTo({ top: targetY, behavior: 'auto' }); 
+                            } else {
+                                const targetX = (mainContentArea.scrollLeft + markerPosition.left) - (window.innerWidth / 2);
+                                mainContentArea.scrollTo({ left: targetX, behavior: 'auto' });
+                            }
+                            mainContentArea.dataset.scrolled = "true";
+                        };
 
-                    if (line.classList.contains('time-indicator-vertical')) {
-                        // VERTICAL: Find vertical offset relative to document
-                        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-                        const targetTop = (lineRect.top + scrollY) - (window.innerHeight / 2);
-                        window.scrollTo({ top: targetTop, behavior: 'smooth' });
-                    } else {
-                        // HORIZONTAL: Centering within the main container
-                        const targetLeft = (lineRect.left + main.scrollLeft) - (window.innerWidth / 2);
-                        main.scrollTo({ left: targetLeft, behavior: 'smooth' });
-                    }
-                    main.dataset.scrolled = "true";
+                        // Use a small delay to ensure layout is ready
+                        setTimeout(scrollToCurrentTime, 50);
+                    });
                 }
             };
 
-            // Execute immediately (since loadGrids is awaited)
-            scroll();
-            setInterval(scroll, 60000);
+            updateTimeAndScroll();
+            setInterval(updateTimeAndScroll, 60000);
         }
 
-        const btn = document.querySelector('.play-button');
-        if (btn) {
-            const audio = new Audio('assets/liedje.mp3');
-            btn.addEventListener('click', () => {
-                audio.paused ? audio.play() : audio.pause();
-                btn.classList.toggle('is-playing', !audio.paused);
+        const audioPlayButton = document.querySelector('.play-button');
+        if (audioPlayButton) {
+            const radioAudio = new Audio('assets/liedje.mp3');
+            audioPlayButton.addEventListener('click', () => {
+                radioAudio.paused ? radioAudio.play() : radioAudio.pause();
+                audioPlayButton.classList.toggle('is-playing', !radioAudio.paused);
             });
         }
     }
 };
 
-document.addEventListener('DOMContentLoaded', UI.init);
+UserInterface.initializeApplication();
