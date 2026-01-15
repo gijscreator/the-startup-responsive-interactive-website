@@ -1085,9 +1085,6 @@ header.details {
         animation: live 2s ease infinite;
       }
     }
-    article:nth-of-type(1) {
-      
-    }
   }
 }
 
