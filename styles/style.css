@@ -8,36 +8,53 @@ Six hours = 960px / 60rem
 Seven hours = 1120px / 70rem
 */
 /* Enable transitions for cross-page navigation */
+/* Enable cross-document transitions */
 @view-transition {
   navigation: auto;
 }
 
-/* Reset default cross-fade behavior */
-::view-transition-old(root),
+/* Register properties so they can be animated */
+@property --column-one { inherits: true; initial-value: 0; syntax: '<number>'; }
+@property --column-two { inherits: true; initial-value: 0; syntax: '<number>'; }
+@property --column-three { inherits: true; initial-value: 0; syntax: '<number>'; }
+@property --column-four { inherits: true; initial-value: 0; syntax: '<number>'; }
+@property --column-five { inherits: true; initial-value: 0; syntax: '<number>'; }
+
+/* Keyframes to move the blocks from top (100) to bottom (0) */
+@keyframes column-drop { from { --column-one: 100; --column-two: 100; --column-three: 100; --column-four: 100; --column-five: 100; } }
+/* Since they share the same 'from', we can use individual ones for staggered timing */
+@keyframes one { from { --column-one: 100; } }
+@keyframes two { from { --column-two: 100; } }
+@keyframes three { from { --column-three: 100; } }
+@keyframes four { from { --column-four: 100; } }
+@keyframes five { from { --column-five: 100; } }
+
 ::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
+  /* This creates the 5 vertical block shapes */
+  clip-path: polygon(
+    0 100%, 0 calc(var(--column-one) * 1%), 20% calc(var(--column-one) * 1%), 20% 100%,
+    20% 100%, 20% calc(var(--column-two) * 1%), 40% calc(var(--column-two) * 1%), 40% 100%,
+    40% 100%, 40% calc(var(--column-three) * 1%), 60% calc(var(--column-three) * 1%), 60% 100%,
+    60% 100%, 60% calc(var(--column-four) * 1%), 80% calc(var(--column-four) * 1%), 80% 100%,
+    80% 100%, 80% calc(var(--column-five) * 1%), 100% calc(var(--column-five) * 1%), 100% 100%
+  );
+  
+  --speed: 0.6s;
+  /* Stagger the animations using different delays */
+  animation: 
+    one var(--speed) both 0s,
+    two var(--speed) both 0.1s,
+    three var(--speed) both 0.2s,
+    four var(--speed) both 0.3s,
+    five var(--speed) both 0.4s;
+  
+  animation-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  z-index: 2;
 }
 
-/* The 'Block Wipe' animation */
-@keyframes block-reveal {
-  from {
-    clip-path: inset(0 0 0 100%); /* Start hidden on the right */
-  }
-  to {
-    clip-path: inset(0 0 0 0);    /* Reveal to the left */
-  }
-}
-
-/* Apply the animation to the incoming page */
-::view-transition-new(root) {
-  animation: 0.6s cubic-bezier(0.8, 0, 0.2, 1) block-reveal;
-  z-index: 1;
-}
-
-/* Keep the old page underneath */
 ::view-transition-old(root) {
-  z-index: 0;
+  animation: none;
+  z-index: 1;
 }
 
 /* Header styling */
