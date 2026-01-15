@@ -152,6 +152,22 @@ button {
   padding: var(--padding-regular);
   border-radius: var(--border-radius-button);
   border: none;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(.95);
+  }
+
+  &:focus {
+
+  }
 }
 
 
@@ -162,9 +178,13 @@ button {
 }
 
 @keyframes flowIn {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
   to {
+    transform: translateX(0px);
     opacity: 1;
-    transform: translateY(0px);
   }
 }
 
@@ -176,5 +196,15 @@ button {
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes button-hover {
+  from {
+    transform: scale(.9);
+  }
+
+  to {
+    transform: scale(1.1);
   }
 }

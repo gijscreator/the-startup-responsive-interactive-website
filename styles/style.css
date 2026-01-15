@@ -952,7 +952,7 @@ body.zenders {
 body:has(#station-selector:popover-open) {
   
   svg {
-    transform: rotate(180deg);
+    transform: rotate(90deg);
   }
 }
 
@@ -960,7 +960,6 @@ body:has(#station-selector:popover-open) {
 
 #station-selector {
   background-color: light-dark(var(--radiogids-light-background), var(--radiogids-dark-background));
-  border: none;
   border-radius: 0px 0px var(--border-radius) var(--border-radius);
   padding: 1rem;
   opacity: 0;
@@ -970,14 +969,38 @@ body:has(#station-selector:popover-open) {
   bottom: auto;
   left: 20vw;
   width: 80vw;
-  height: 55dvh;
+  height: fit-content;
+  border: 1px solid light-dark(var(--radiogids-dark-background), var(--radiogids-light-background));
+
+  header {
+	display: flex;
+	justify-content: flex-end;
+
+	button {
+		background-color: transparent;
+		display: flex;
+
+		svg {
+			path {
+				fill: light-dark(var(--text-dark), var(--text-light));
+			} 
+		}
+	}
+  }
   
   li {
-    border-top: 2px solid black;
+    border-top: 2px solid light-dark(var(--radiogids-dark-background), var(--radiogids-light-background));
     padding: var(--padding-regular);
     opacity: 0;
-    transform: translateY(50px);
     animation: flowIn 0.3s ease-out forwards;
+	transition: translate 0.2s linear;
+
+	/* hover werkt niet met transform als je de transform in een animatie al hebt op hetzelfde element
+	/* Bron: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-fill-mode */
+
+	&:hover {
+		translate: 1rem 0;
+	}
     
     &:nth-of-type(1) {
       animation-delay: 0s;
