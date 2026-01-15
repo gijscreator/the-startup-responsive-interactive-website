@@ -169,7 +169,7 @@ const UI = {
     },
 
     initGlobalFeatures: () => {
-        const line = document.querySelector('.test-line, .test-line-vertical');
+        const line = document.querySelector('.time-indicator, .time-indicator-vertical');
         const main = document.querySelector('main');
 
         if (line && main) {
@@ -181,7 +181,7 @@ const UI = {
                 if (!main.dataset.scrolled) {
                     const lineRect = line.getBoundingClientRect();
 
-                    if (line.classList.contains('test-line-vertical')) {
+                    if (line.classList.contains('time-indicator-vertical')) {
                         // VERTICAL: Find vertical offset relative to document
                         const scrollY = window.pageYOffset || document.documentElement.scrollTop;
                         const targetTop = (lineRect.top + scrollY) - (window.innerHeight / 2);

@@ -138,7 +138,7 @@ main.home {
 	
 	/* HELP!!! EEN DIVJE */
 	
-	div.test-line {
+	div.time-indicator {
 		
 		--position: calc(var(--offset-width) + (var(--time) * (var(--hour-width-px) + var(--gap-width-px))));
 		--card-height: 9rem;
@@ -572,7 +572,7 @@ body.zenders {
 	grid-template-columns: 20vw 80vw;
 	justify-content: center;
 
-	div.test-line-vertical {
+	div.time-indicator-vertical {
 		
 		--position: calc(var(--offset-height) + (var(--time) * (var(--hour-height-px) + var(--gap-height-px))));
 		
@@ -1194,9 +1194,6 @@ header.details {
     }
   }
 }
-
-
-
 
 footer {
   display: flex;
