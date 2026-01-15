@@ -8,7 +8,7 @@ Six hours = 960px / 60rem
 Seven hours = 1120px / 70rem
 */
 
-@view-transition {
+/* @view-transition {
   navigation: auto;
 }
 
@@ -40,7 +40,7 @@ Seven hours = 1120px / 70rem
   to {
     opacity: 0;
   }
-}
+} */
 
 
 /* Header styling */
@@ -226,7 +226,7 @@ main.home {
 		gap: var(--gap-width-px);
 		width: max-content;
 		
-		figure {
+		article:has(h2) {
 			width: 20vw;
 			max-width: 80px;
 			height: 9rem;
@@ -272,7 +272,7 @@ main.home {
 			}
 		}
 		
-		article:not(.block) {
+		article:not(.block, .logo) {
 			flex-shrink: 0;
 			color: var(--text-light);
 			border-radius: var(--border-radius);
@@ -518,48 +518,6 @@ main.home {
 			.block-hidden {
 				display: none;
 			}
-			
-			figure {
-				grid-column: 2;
-				grid-row: 1;
-				display: flex;
-				align-items: center;
-				gap: 0.5rem;
-				margin: 0;
-				padding: var(--padding-regular) 1rem;
-				position: static;
-				height: 60px;
-				width: auto;
-				border-radius: 0;
-				
-				&:nth-of-type(1) {
-					align-self: start;
-					padding: 0 1rem;
-				}
-				
-				&:nth-of-type(2) {
-					align-self: end;
-					padding: 0 1rem;
-				}
-				
-				& img {
-					width: 50px;
-					height: 50px;
-					border-radius: 50%;
-					object-fit: cover;
-				}
-				
-				& figcaption p {
-					padding: 0;
-					margin: 0;
-					grid-column: auto;
-					grid-row: auto;
-				
-					&:nth-of-type(1)::before {
-						content: "";
-					}
-				}
-			}
 		}
 	}
 }
@@ -630,6 +588,7 @@ body.zenders {
   
 	article.buttons {
 		margin: 1rem 0rem 1rem 20vw;
+		pointer-events: auto;
 		
 		&.button {
 			display: flex;
@@ -873,48 +832,6 @@ body.zenders {
 						.block-hidden {
 							display: none;
 						}
-			
-						figure {
-							grid-column: 2;
-							grid-row: 1;
-							display: flex;
-							align-items: center;
-							gap: 0.5rem;
-							margin: 0;
-							padding: var(--padding-regular) 1rem;
-							position: static;
-							height: 60px;
-							width: auto;
-							border-radius: 0;
-							
-							&:nth-of-type(1) {
-								align-self: start;
-								padding: 0 1rem;
-							}
-							
-							&:nth-of-type(2) {
-								align-self: end;
-								padding: 0 1rem;
-							}
-							
-							& img {
-								width: 50px;
-								height: 50px;
-								border-radius: 50%;
-								object-fit: cover;
-							}
-							
-							& figcaption p {
-								padding: 0;
-								margin: 0;
-								grid-column: auto;
-								grid-row: auto;
-							
-								&:nth-of-type(1)::before {
-									content: "";
-								}
-							}
-						}
 					}
 				}
 			}
@@ -973,7 +890,7 @@ body.zenders {
 /* hele mooie toepassing van :has */
 /* Als de popover open is alles eronder pointer events none zodat je er niet achter kan klikken */
 
-main:has(#station-selector:popover-open) {
+body:has(#station-selector:popover-open) {
 	pointer-events: none;
 
 	svg {
@@ -986,6 +903,8 @@ main:has(#station-selector:popover-open) {
 main:has(#station-selector:popover-open) #station-selector * {
 	pointer-events: auto;
 }
+
+
 
 
 /* popover styling */
@@ -1003,6 +922,7 @@ main:has(#station-selector:popover-open) #station-selector * {
   width: 80vw;
   height: fit-content;
   border: 1px solid light-dark(var(--radiogids-dark-background), var(--radiogids-light-background));
+  z-index: 100;
 
   header {
 	display: flex;
@@ -1152,56 +1072,14 @@ header.details {
   }
 }
 
-.detail-container { 
-  
-  section:nth-of-type(1) {
-    
-    article:nth-of-type(1) {
-      display: flex;
-      justify-content: center;
-      background: #87cbff;
-      background: radial-gradient(circle,rgba(135, 203, 255, 1) 0%, rgba(0, 145, 255, 1) 39%, rgba(30, 30, 30, 1) 100%);
-      
-      img {
-        width: 100%;
-      }
-    }
-  }
-  
-  section:nth-of-type(2) {
-    padding: 1rem;
-    
-    p {
-      display: none;
-      
-      &.is-live {
-        display: flex;
-      }
-      
-      &::before {
-        content: "";
-        margin-right: .4rem;
-        display: block;
-        background-color: var(--radiogids-primary);
-        width: 1rem;
-        height: 1rem;
-        border-radius: 100%;
-        animation: live 2s ease infinite;
-      }
-    }
-    article:nth-of-type(1) {
-      
-    }
-  }
-}
 
 footer {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   width: 100vw;
-  position: fixed;
+  position: sticky;
   bottom: 0;
-  height: 10dvh;
   z-index: 1000;
   background-color: var(--radiogids-dark-background);
   
