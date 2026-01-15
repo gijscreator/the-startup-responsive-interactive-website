@@ -7,34 +7,39 @@ Five hours = 800px / 50rem
 Six hours = 960px / 60rem
 Seven hours = 1120px / 70rem
 */
+/* Enable transitions for cross-page navigation */
 @view-transition {
   navigation: auto;
 }
 
-/* 1. Define the sliding keyframes */
-@keyframes slide-to-left {
-  to { transform: translateX(-100%); }
-}
-
-@keyframes slide-from-right {
-  from { transform: translateX(100%); }
-}
-
-/* 2. Apply them to the page snapshots */
-::view-transition-old(root) {
-  animation: 0.5s ease-in-out both slide-to-left;
-}
-
-::view-transition-new(root) {
-  animation: 0.5s ease-in-out both slide-from-right;
-}
-
-/* 3. Optional: Prevent the default cross-fade blend mode for a cleaner slide */
+/* Reset default cross-fade behavior */
 ::view-transition-old(root),
 ::view-transition-new(root) {
+  animation: none;
   mix-blend-mode: normal;
-  height: 100%;
 }
+
+/* The 'Block Wipe' animation */
+@keyframes block-reveal {
+  from {
+    clip-path: inset(0 0 0 100%); /* Start hidden on the right */
+  }
+  to {
+    clip-path: inset(0 0 0 0);    /* Reveal to the left */
+  }
+}
+
+/* Apply the animation to the incoming page */
+::view-transition-new(root) {
+  animation: 0.6s cubic-bezier(0.8, 0, 0.2, 1) block-reveal;
+  z-index: 1;
+}
+
+/* Keep the old page underneath */
+::view-transition-old(root) {
+  z-index: 0;
+}
+
 /* Header styling */
 
 header.header {
