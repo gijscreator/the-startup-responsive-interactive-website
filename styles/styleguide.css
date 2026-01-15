@@ -46,7 +46,7 @@
     --hour-width: 10rem; /* base 160px */
     --gap-width-px: 16px;  /* gap tussen de kaartjes */
 
-    --hour-height: 5.3rem; /* base 160px */
+    --hour-height: 5.258rem; /* base 160px */
     --gap-height-px: 14px;  /* gap tussen de kaartjes */
 
     /* timeline position */
@@ -55,8 +55,8 @@
     --offset-width: 80px; 
     --hour-width-px: 160px;
 
-    --hour-height-px: 40px;
-    --offset-height: 20px; 
+    --hour-height-px: 5.28rem;
+    --offset-height: 19dvh; 
 
     /* padding */
     --padding-regular: .5rem;
@@ -177,6 +177,45 @@ button {
   animation: flowIn 0.3s ease-out forwards;
 }
 
+.show-card-link {
+  
+  display: inline-block; 
+  animation: appear linear both;
+  
+  animation-timeline: view(inline); 
+  animation-range: entry 0% entry 50%;
+  
+}
+
+/* keyframes */
+
+@keyframes slide-up {
+  from { 
+    transform: translateX(60%); 
+  }
+  
+  to { 
+    transform: translateX(0); 
+  }
+}
+
+@keyframes live {
+  0% {
+    scale: .8;
+    opacity: .5;
+  }
+  
+  50% {
+    scale: 1;
+    opacity: 1;
+  }
+  
+  100% {
+    scale: .8;
+    opacity: .5;
+  }
+}
+
 @keyframes flowIn {
   from {
     transform: translateX(50px);
@@ -206,5 +245,16 @@ button {
 
   to {
     transform: scale(1.1);
+  }
+}
+
+@keyframes Kaartjesrender {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
   }
 }

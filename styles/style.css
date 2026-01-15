@@ -539,20 +539,30 @@ body.zenders {
 	div.test-line-vertical {
 		
 		--position: calc(var(--offset-height) + (var(--time) * (var(--hour-height-px) + var(--gap-height-px))));
-		--card-height: 9rem;
-		--total-margin: 1.5rem;
 		
 		display: flex;
-		height: .3rem;
-		width:72vw;
-		background-color: var(--radiogids-light-background);
-		
+		height: .2rem;
+		width:86.5vw;
+		background-color: var(--veronica-secondary);
+
 		position: absolute; 
-		left: 24vw; 
+		left: 9.5vw; 
 		top: var(--position);
-		z-index: 100;
-		
 		pointer-events: none;
+
+		/* klein dotje voor de timeline */
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: -3px;
+			left: -3px;
+			width: 10px;
+			height: 10px;
+			background: var(--veronica-secondary);
+			border-radius: 50%;
+			animation: live 2s ease infinite;
+		}
 	}
 	
   	header.zenders {
@@ -673,7 +683,12 @@ body.zenders {
 		
 			a {
 				width: 90%;
+				overflow: visible;
 				max-width: 80vw;
+				animation: Kaartjesrender linear both;
+				animation-timeline: view(); 
+				animation-range: entry 0% entry 100%;
+
 			
 				article {
 				
@@ -908,35 +923,6 @@ body.zenders {
   	display: block;
 }
 
-/* keyframes */
-
-@keyframes slide-up {
-  from { 
-    transform: translateX(60%); 
-  }
-  
-  to { 
-    transform: translateX(0); 
-  }
-}
-
-@keyframes live {
-  0% {
-    scale: .8;
-    opacity: .5;
-  }
-  
-  50% {
-    scale: 1;
-    opacity: 1;
-  }
-  
-  100% {
-    scale: .8;
-    opacity: .5;
-  }
-}
-
 /* popover button styling */
 
 .select-station {
@@ -948,13 +934,22 @@ body.zenders {
 }
 
 /* hele mooie toepassing van :has */
+/* Als de popover open is alles eronder pointer events none zodat je er niet achter kan klikken */
 
-body:has(#station-selector:popover-open) {
-  
-  svg {
-    transform: rotate(90deg);
-  }
+main:has(#station-selector:popover-open) {
+	pointer-events: none;
+
+	svg {
+		transform: rotate(90deg);
+	}
 }
+
+/* de popover pointer events auto */
+
+main:has(#station-selector:popover-open) #station-selector * {
+	pointer-events: auto;
+}
+
 
 /* popover styling */
 
@@ -1075,10 +1070,35 @@ header.details {
     width: 100vw;
     
     button {
-      display: flex;
-      align-items: center;
-      background-color: transparent;
-      
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		background-color: transparent;
+		width: 45vw;
+		padding: 0;
+		overflow: hidden;
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			bottom: 0;
+			left: 0;
+			background-color: currentColor;
+			transform: scale(0);
+			transform-origin: left;
+			transition: transform 0.3s ease-out;
+		}
+
+		&:hover {
+			transform: scale(1);
+
+			&::after {
+				transform: scale(1);
+			}
+      	}
     }
     
     a {
@@ -1158,12 +1178,3 @@ footer {
 }
 
 
-.show-card-link {
-  
-  display: inline-block; 
-  animation: appear linear both;
-  
-  animation-timeline: view(inline); 
-  animation-range: entry 0% entry 50%;
-  
-}
