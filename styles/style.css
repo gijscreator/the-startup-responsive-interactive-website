@@ -104,7 +104,7 @@ main.home {
 	
 	div.test-line {
 		
-		--position: calc(var(--offset-width) + (var(--time) * (var(--hour-width-px) + var(--gap-width-px))));
+		--position: calc(var(--offset) + (var(--time) * (var(--hour-width-px) + var(--gap-px))));
 		--card-height: 9rem;
 		--total-margin: 1.5rem;
 		
@@ -240,7 +240,7 @@ main.home {
 			flex-shrink: 0;
 			color: var(--text-light);
 			border-radius: var(--border-radius);
-			width: var(--hour-width);
+			width: var(--hour-duration);
 			height: 10.625rem;
 		
 			img {
@@ -642,33 +642,206 @@ body.zenders {
 		.veronica {
 			background-color: var(--veronica-primary);
 		}
+
+		section:nth-of-type(3) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: var(--gap-height-px);
 		
-		a {
-			width: 100%;
-			max-width: 80vw;
 		
-			article {
+			a {
+				width: 90%;
+				max-width: 80vw;
 			
-				display: flex;
-				width: 100%;
-			
-				img {
-					width: 20%;
-				}
-			
-				section {
-					width: 80vw;
-			
-					h3 {
-						text-align: left;
-						width: fit-content;
+				article {
+				
+					img {
+						width: 20%;
+						
 					}
+				
+					section {
+						display: grid;
+						width: 80vw;
+				
+						h3 {
+							text-align: left;
+							width: fit-content;
+						}
+				
+						p {
+							max-width: 80vw;
+							width: fit-content;
+							text-wrap: auto;
+							text-align: left;
+						}
+					}
+
+					&.block {
+						display: grid;
+						height: calc(
+						(var(--duration) * var(--hour-height)) + 
+						((var(--duration) - 1) * var(--gap-height-px))
+						);
+
+						background-color: var(--veronica-primary);
+						
+						grid-template-columns: 1fr 1fr;
+						grid-template-rows: 1fr auto auto;
+						grid-template-areas:
+						"poster details"
+						"time   button"
+						"title  title";
+						gap: 0;
+						border-radius: var(--border-radius);
+						position: relative;
+						
+
+						img {
+							grid-area: poster;
+							width: 100%;
+							height: 100%;
+							max-height: 6rem;
+							object-fit: cover;
+							border-radius: 0 0 var(--border-radius) 0;
+							max-width: 13rem;
+							position: sticky;
+							z-index: 10;
+							left: 0;
+							object-position: top; 
+							
+							@media (min-height: 730px) {
+							max-height: 7rem;
+							}
+						}
 			
-					p {
-						max-width: 80vw;
-						width: fit-content;
-						text-wrap: auto;
-						text-align: left;
+						section {
+							display: contents;
+						}
+			
+						h3.fly-in-text {
+							grid-area: title;
+							width: max-content;
+							padding: 0.2rem 1rem;
+							padding-top: 0;
+							margin: 0;
+							text-align: left;
+							position: sticky;
+							left: 0;
+						}
+			
+						p:nth-of-type(2) {
+							display: none
+						}
+			
+						&.live p:nth-of-type(2) {
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							margin: 1rem;
+							text-align: center;
+							background-color: var(--radiogids-dark-background);
+							width: fit-content;
+							var(--padding-regular);
+							height: 20%; 
+							border-radius: var(--border-radius);
+							z-index: 1;
+							position: absolute;
+							top: 0;
+							right: 0;
+							
+							&::before {
+								content: "";
+								margin-right: .4rem;
+								display: block;
+								background-color: var(--radiogids-primary);
+								width: 1rem;
+								height: 1rem;
+								border-radius: 100%;
+								animation: live 2s ease infinite;
+							}
+						}
+			
+						p.time {
+							grid-column: 1;
+							grid-row: 2;
+							margin: 0;
+							width: max-content;
+							padding: 0.2rem 1rem;
+							font-weight: 700;
+							padding-bottom: 0;
+							display: flex;
+							align-items: center;
+							position: sticky;
+							z-index: 10;
+							left: 0;
+							
+							&::before {
+								content: url("data:image/svg+xml;utf8,<svg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(%23clip0_53_2962)'><path d='M9.5 4.74992V9.49992L12.6667 11.0833M17.4167 9.49992C17.4167 13.8722 13.8723 17.4166 9.5 17.4166C5.12775 17.4166 1.58334 13.8722 1.58334 9.49992C1.58334 5.12766 5.12775 1.58325 9.5 1.58325C13.8723 1.58325 17.4167 5.12766 17.4167 9.49992Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g><defs><clipPath id='clip0_53_2962'><rect width='19' height='19' rx='9.5' fill='white'/></clipPath></defs></svg>");
+							}
+						}
+			
+						.more {
+							position: absolute;
+							bottom: 2vh;
+							right: 2vh;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							background-color: var(--radiogids-light-background);
+							color: var(--text-dark);
+							border: var(--veronica-secondary) 2px solid;
+							width: 3rem;
+							height: 3rem;
+							border-radius: 100%;
+						}
+			
+						.block-hidden {
+							display: none;
+						}
+			
+						figure {
+							grid-column: 2;
+							grid-row: 1;
+							display: flex;
+							align-items: center;
+							gap: 0.5rem;
+							margin: 0;
+							padding: var(--padding-regular) 1rem;
+							position: static;
+							height: 60px;
+							width: auto;
+							border-radius: 0;
+							
+							&:nth-of-type(1) {
+								align-self: start;
+								padding: 0 1rem;
+							}
+							
+							&:nth-of-type(2) {
+								align-self: end;
+								padding: 0 1rem;
+							}
+							
+							& img {
+								width: 50px;
+								height: 50px;
+								border-radius: 50%;
+								object-fit: cover;
+							}
+							
+							& figcaption p {
+								padding: 0;
+								margin: 0;
+								grid-column: auto;
+								grid-row: auto;
+							
+								&:nth-of-type(1)::before {
+									content: "";
+								}
+							}
+						}
 					}
 				}
 			}
