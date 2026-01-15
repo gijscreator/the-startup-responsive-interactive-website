@@ -116,6 +116,7 @@ header.header {
 			
 				&.today {
 					background-color: transparent;
+					color: var(--text-dark);
 					border: 2px solid var(--radiogids-primary);
 			
 				}
@@ -683,7 +684,8 @@ body.zenders {
 			display: flex;
 			flex-direction: row;
 			width: 8rem;
-		
+			color: var(--text-light);
+
 			&.veronica {
 				background-color: var(--veronica-primary);
 			}
@@ -723,10 +725,10 @@ body.zenders {
 				animation: Kaartjesrender linear both;
 				animation-timeline: view(); 
 				animation-range: entry 0% entry 100%;
-
+				color: white;
 			
 				article {
-				
+					
 					img {
 						width: 20%;
 						
@@ -1204,11 +1206,14 @@ footer {
   bottom: 0;
   height: 10dvh;
   z-index: 1000;
+  background-color: var(--radiogids-dark-background);
+  
   
   a {
     display: flex;
     flex-direction: column;
     align-items: center;
+	color: var(--text-light);
   }
 }
 
