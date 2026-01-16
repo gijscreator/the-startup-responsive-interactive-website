@@ -2,6 +2,8 @@
  * RADIOGIDS - READABLE & OPTIMIZED SCRIPT
  */
 
+
+
 // 1. CONFIGURATION
 const appConfiguration = {
     stations: [
@@ -118,18 +120,48 @@ const UserInterface = {
         const activeStationSlug = urlParameters.get('station');
         const currentPath = window.location.pathname;
 
+        const stationLogos = {
+            veronica: 'assets/logo-veronica.webp',
+            hondernl: 'assets/logo-100nl.webp',
+            slam: 'assets/logo-slam.webp'
+        };
+
         if (activeStationSlug) {
+            const slug = activeStationSlug.toLowerCase();
+
             document.body.className = '';
-            document.body.classList.add(activeStationSlug.toLowerCase(), 'zenders'); 
-            
+            document.body.classList.add(slug, 'zenders');
+
             document.querySelectorAll('header, aside, main, button')
-                .forEach(element => element.classList.add(activeStationSlug.toLowerCase()));
+                .forEach(element => element.classList.add(slug));
+
+            // 👇 DYNAMISCHE IMAGE
+            const dynamicImg = document.getElementById('dynamic-img');
+            if (dynamicImg && stationLogos[slug]) {
+                dynamicImg.src = stationLogos[slug];
+                dynamicImg.alt = `Logo ${slug}`;
+            }
         }
+
 
         if (currentPath.includes('details.html')) {
             await UserInterface.loadProgramDetails(urlParameters.get('id'));
         } else {
             await UserInterface.loadStationGrids(activeStationSlug);
+        }
+
+        if (activeStationSlug) {
+            const slug = activeStationSlug.toLowerCase();
+            
+            // Your existing code
+            document.body.className = '';
+            document.body.classList.add(slug, 'zenders');
+
+            // Update the main img src to match the slug
+            const img = document.getElementById('dynamic-img');
+            if (img) {
+                img.src = `assets/logo-${slug}.webp`;
+            }
         }
 
         UserInterface.setupInteractiveFeatures();

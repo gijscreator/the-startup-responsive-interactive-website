@@ -212,7 +212,7 @@ main.home {
 				align-items: center;
 				justify-content: center;
 				background-color: var(--radiogids-light-background);
-				border: 2px var(--veronica-secondary) solid;
+				/* border: 2px var(--veronica-secondary) solid; */
 				color: var(--text-dark);
 				cursor: pointer;
 			}
@@ -535,15 +535,15 @@ body.zenders {
 		z-index: 100;
 
 		&.veronica {
-		background-color: var(--veronica-primary);
+			background-color: var(--veronica-primary);
 		}
     
 		&.hondernl {
-		background-color: var(--honderdnl-primary);
+			background-color: var(--honderdnl-primary);
 		}
     
 		&.slam {
-		background-color: var(--slam-primary);
+			background-color: var(--slam-primary);
 		}
     
 		picture {
@@ -559,17 +559,16 @@ body.zenders {
   	}
   
 	article.buttons {
-		width: 80vw;
+		display: flex;
+		width: 100vw;
 		padding: 1rem;
-		margin-left: 20vw;
 		pointer-events: auto;
 		background-color: var(--radiogids-dark-background);
 		z-index: 1000;
+		justify-content: flex-end;
 		position: sticky;
-		border: 2px white solid;
-		border-top: none;
+		border-bottom: 2px white solid;
 		top: 9dvh;
-		border-radius: 0 0 var(--border-radius) var(--border-radius);
 		
 		&.button {
 			display: flex;
@@ -896,17 +895,19 @@ main:has(#station-selector:popover-open) #station-selector * {
 
 #station-selector {
   background-color: light-dark(var(--radiogids-light-background), var(--radiogids-dark-background));
-  border-radius: 0px 0px var(--border-radius) var(--border-radius);
+  border-radius: 0px 0px 0px var(--border-radius);
   padding: 1rem;
   opacity: 0;
   transform: translateX(100%);  
   transition: opacity 0.3s linear, transform 0.3s linear, display 0.3s allow-discrete, overlay 0.3s allow-discrete;
-  top: 15dvh;
+  top: 9dvh;
   bottom: auto;
   left: 20vw;
   width: 80vw;
   height: fit-content;
-  border: 1px solid light-dark(var(--radiogids-dark-background), var(--radiogids-light-background));
+  border: 1px solid white;
+  border-top: none;
+  border-right: none;
   z-index: 100;
 
   header {
@@ -1114,7 +1115,25 @@ footer {
     flex-direction: column;
     align-items: center;
 	color: var(--text-light);
+
+	&.active.first {
+		
+		svg {
+
+			path {
+				fill: var(--radiogids-primary);
+			}
+		}
+	}
+
+	&.active.second {
+
+		svg {
+
+			path {
+				stroke: var(--radiogids-primary);
+			}
+		}
+	}
   }
 }
-
-
