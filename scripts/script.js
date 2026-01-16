@@ -159,48 +159,57 @@ const UserInterface = {
     },
 
     loadProgramDetails: async (uniqueId) => {
-        if (!uniqueId) return;
-        
-        const idSegments = uniqueId.split('-');
-        const stationSlug = idSegments.pop();
-        const programId = idSegments.join('-');
-        
-        const stationMatch = appConfiguration.stations.find(s => s.slug === stationSlug);
-        if (!stationMatch) return;
+    if (!uniqueId) return;
+    
+    const idSegments = uniqueId.split('-');
+    const stationSlug = idSegments.pop();
+    const programId = idSegments.join('-');
+    
+    const stationMatch = appConfiguration.stations.find(s => s.slug === stationSlug);
+    if (!stationMatch) return;
 
-        const programData = await UserInterface.fetchStationData(stationMatch.dataFile);
-        const selectedProgram = programData.find(p => String(p.id) === String(programId));
-        if (!selectedProgram) return;
+    const programData = await UserInterface.fetchStationData(stationMatch.dataFile);
+    const selectedProgram = programData.find(p => String(p.id) === String(programId));
+    
+    if (!selectedProgram) return;
 
-        const setElementContent = (id, content) => {
-            const element = document.getElementById(id);
-            if (element) element.textContent = content;
-        };
+    // --- Each update is now independent ---
 
-        setElementContent('detail-name', selectedProgram.show_name);
-        setElementContent('detail-djs', selectedProgram.dj_names || "Onbekend");
-        
-        const thumbnailImg = document.getElementById('detail-img');
-        if (thumbnailImg) thumbnailImg.src = selectedProgram.show_thumbnail;
+    // 1. Title
+    const titleEl = document.getElementById('detail-name');
+    if (titleEl) titleEl.textContent = selectedProgram.show_name || "";
 
-        const descriptionContainer = document.getElementById('detail-description');
-        if (descriptionContainer) descriptionContainer.innerHTML = selectedProgram.body || "Geen beschrijving.";
-        
-        document.title = `${selectedProgram.show_name} - Radiogids`;
+    // 2. DJs
+    const djEl = document.getElementById('detail-djs');
+    if (djEl) djEl.textContent = selectedProgram.dj_names || "Onbekend";
 
-        const liveIndicator = document.getElementById('am-i-live');
-        if (liveIndicator) {
-            TimeCalculations.checkIfProgramIsLive(selectedProgram) 
-                ? liveIndicator.classList.add('is-live') 
-                : (liveIndicator.style.display = "none");
-        }
+    // 3. Image (Fails gracefully if element is missing)
+    const thumbnailImg = document.getElementById('detail-img');
+    if (thumbnailImg) {
+        thumbnailImg.src = selectedProgram.show_thumbnail || 'assets/default.webp';
+    }
 
-        const calendarButton = document.getElementById('apple-calendar-btn');
-        if (calendarButton) {
-            calendarButton.href = CalendarGenerator.createIcsDownloadLink(selectedProgram);
-            calendarButton.download = `${selectedProgram.show_name.replace(/\W/g, '_')}.ics`;
-        }
-    },
+    // 4. Description (Check for both .body and .description)
+    const descriptionContainer = document.getElementById('detail-description');
+    if (descriptionContainer) {
+        descriptionContainer.innerHTML = selectedProgram.body || selectedProgram.description || "Geen beschrijving.";
+    }
+
+    // 5. Live Badge
+    const liveIndicator = document.getElementById('am-i-live');
+    if (liveIndicator) {
+        const isLive = TimeCalculations.checkIfProgramIsLive(selectedProgram);
+        liveIndicator.style.display = isLive ? "block" : "none";
+    }
+
+    // 6. Calendar
+    const calendarButton = document.getElementById('apple-calendar-btn');
+    if (calendarButton) {
+        calendarButton.href = CalendarGenerator.createIcsDownloadLink(selectedProgram);
+    }
+
+    document.title = `${selectedProgram.show_name || 'Radio'} - Radiogids`;
+},
 
     setupInteractiveFeatures: () => {
         const timeMarker = document.querySelector('.time-indicator, .time-indicator-vertical');

@@ -15,14 +15,14 @@
     <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon.webp">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.webp">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.webp">
-	<link rel="prefetch" href="data/veronica.json" as="fetch">
-	<link rel="prefetch" href="data/slam.json" as="fetch">
-	<link rel="prefetch" href="data/100nl.json" as="fetch">
+	<link rel="preload" href="data/veronica.json" as="fetch">
+	<link rel="preload" href="data/slam.json" as="fetch">
+	<link rel="preload" href="data/100nl.json" as="fetch">
     <meta name="pwa-capable" content="yes">
 	<meta name="view-transition" content="same-origin">
 
 	<!-- production versie -->
-	<!-- <base href="/the-startup-responsive-interactive-website/"> -->
+	<base href="/the-startup-responsive-interactive-website/">
 
     <title>Radiogids</title>
 	<link rel="stylesheet" href="styles/styleguide.css">
@@ -38,17 +38,18 @@
 		<!-- Nieuwe techniek die ik nog niet kende src="https://stackoverflow.com/questions/74638826/alternate-images-based-on-users-color-preference-without-using-javascript"-->
 		<picture>
 			<!-- gebruiker wilt light mode: -->
-			<source srcset="assets/logo-radiogids.webp" media="(prefers-color-scheme: light)"/>
+			<source srcset="assets/logo-radiogids.webp" media="(prefers-color-scheme: light)">
 
 			<!-- gebruiker wilt dark mode: -->
-			<source srcset="assets/radiogids-darkmode.webp"  media="(prefers-color-scheme: dark)"/>
+			<source srcset="assets/radiogids-darkmode.webp"  media="(prefers-color-scheme: dark)">
 
 			<!-- gebruiker wilt niks: -->
-			<img src="assets/logo-radiogids.webp" alt="Logo van radiogids"/>
+			<img src="assets/logo-radiogids.webp" alt="Logo van radiogids">
 		</picture>
 
 		<!-- Section met date picker knoppen -->
 		<section>
+			<h2 class="visually-hidden">wanneer ga jij luisteren</h2>
 			<ul>
 				<li>
 					<button class="today">

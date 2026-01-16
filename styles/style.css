@@ -528,8 +528,12 @@ body.zenders {
 	}
 	
   	header.zenders {
+		height: 9dvh;
     	grid-column: 1 / span 2;
-    
+		position: sticky;
+		top:0;
+		z-index: 100;
+
 		&.veronica {
 		background-color: var(--veronica-primary);
 		}
@@ -564,7 +568,8 @@ body.zenders {
 		position: sticky;
 		border: 2px white solid;
 		border-top: none;
-		top: 0;
+		top: 9dvh;
+		border-radius: 0 0 var(--border-radius) var(--border-radius);
 		
 		&.button {
 			display: flex;
@@ -868,7 +873,7 @@ body.zenders {
 /* Als de popover open is alles eronder pointer events none zodat je er niet achter kan klikken */
 
 body:has(#station-selector:popover-open) {
-	
+
 	pointer-events: none;
 
 	.select-station 
