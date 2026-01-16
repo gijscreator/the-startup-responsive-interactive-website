@@ -16,6 +16,7 @@
     --honderdnl-secondary: #1e1e1e;
 
     /* radio Slam! */
+
     --slam-primary: #FF006B;
     --slam-secondary: #0AAAE1;
 
@@ -27,7 +28,7 @@
     --text-dark: #1E1E1E;
     --text-light: #ffffff;
 
-    /* Font sizes */
+    /* --------------- Font sizes --------------- */
 
     /* headings */
 
@@ -40,12 +41,13 @@
     --medium-paragraph: clamp(1.1rem, 1.1rem, 3rem);
     --small-paragraph: clamp(1rem, 1rem, 2rem);
 
+
     /* Border radius */
 
     --border-radius: .7rem;
     --border-radius-button: 1.4rem;
 
-    /* width, height and gap per card */
+    /* --------------- width, height and gap per card --------------- */
 
     --hour-width: 10rem; /* base 160px */
     --gap-width-px: 16px;  /* gap tussen de kaartjes */

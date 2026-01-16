@@ -12,7 +12,7 @@ Seven hours = 1120px / 70rem
 
 /* Header styling */
 
-header.header {
+header.home {
   
 	display: flex;
 	justify-content: flex-start;
@@ -868,11 +868,14 @@ body.zenders {
 /* Als de popover open is alles eronder pointer events none zodat je er niet achter kan klikken */
 
 body:has(#station-selector:popover-open) {
+	
 	pointer-events: none;
 
-	svg {
-		transform: rotate(90deg);
-	}
+	.select-station 
+
+		svg {
+			transform: rotate(90deg);
+		}
 }
 
 /* de popover pointer events auto */
