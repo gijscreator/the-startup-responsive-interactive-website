@@ -645,7 +645,7 @@ body.zenders {
 		width: 80vw;
 		min-height: 100dvh;
 		
-		.veronica {
+		.veronica:not(.notme) {
 			background-color: var(--veronica-primary);
 		}
 
