@@ -67,6 +67,23 @@
     /* padding */
     --padding-regular: .5rem;
 
+    /* --------------- block card dimensions --------------- */
+
+    --block-img-max-height: 6rem;
+    --block-img-max-height-tall: 7rem;
+    --block-img-max-width: 13rem;
+    --block-more-size: 3rem;
+    --block-poster-height: 100%;
+
+    /* --------------- layout dimensions --------------- */
+
+    --sidebar-width: 20vw;
+    --main-width: 80vw;
+    --main-min-height: 100dvh;
+    --grid-img-width: 20%;
+    --article-width: 90%;
+    --article-max-width: 80vw;
+
 }
 
 /* ==========================================================
