@@ -230,6 +230,71 @@ button {
   
 }
 
+/* raDIO STATION */
+
+#veronica-shows {
+  
+  figure {
+    background-color: var(--veronica-primary);
+  
+  
+    img {
+      background-color: var(--veronica-primary);
+    }
+  }
+  
+  article {
+    background-color: var(--veronica-primary);
+  
+  
+    img {
+      background-color: var(--veronica-primary);
+    }
+  }
+}
+
+#hondernl-shows {
+      
+  figure {
+    background-color: light-dark(var(--honderdnl-secondary), var(--honderdnl-primary));
+
+  
+    img {
+      background-color: light-dark(var(--honderdnl-secondary), var(--honderdnl-primary));
+    }
+  }
+  
+  article {
+    background-color: var(--honderdnl-primary);
+
+    img {
+      background-color: light-dark(var(--honderdnl-secondary), var(--honderdnl-primary));
+    }
+  }
+}
+
+
+/* Section met radio slam!  */
+#slam-shows {
+  
+  figure {
+  background-color: var(--slam-primary);
+  
+    img {
+      background-color: var(--slam-primary);
+    }
+  }
+
+  /* article met alle programma's radio slam!  */
+  article {
+    background-color: var(--slam-primary);
+  
+    img {
+      background-color: var(--slam-primary);
+    }
+  }
+}
+
 /* ==========================================================
 6. Keyframe animations
 ========================================================== */
