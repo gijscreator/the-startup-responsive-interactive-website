@@ -110,6 +110,11 @@ const UserInterface = {
                         <h3 class="fly-in-text title">${program.show_name}</h3>
                         <p class="time">${program.from} - ${program.until}</p>
                         ${isLiveNow ? '<p class="live-status">Live</p>' : ''}
+                        <p class="link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </p>
                     </section>
                 </article>
             </a>`;
@@ -126,22 +131,22 @@ const UserInterface = {
             slam: 'assets/logo-slam.webp'
         };
 
-        if (activeStationSlug) {
-            const slug = activeStationSlug.toLowerCase();
+    if (activeStationSlug) {
+        const slug = activeStationSlug.toLowerCase();
 
-            document.body.className = '';
-            document.body.classList.add(slug, 'zenders');
+        document.body.className = '';
+        document.body.classList.add(slug, 'zenders');
 
-            document.querySelectorAll('header, aside, main, button')
-                .forEach(element => element.classList.add(slug));
+        document.querySelectorAll('header, aside, main, button')
+            .forEach(element => element.classList.add(slug));
 
-            // 👇 DYNAMISCHE IMAGE
-            const dynamicImg = document.getElementById('dynamic-img');
-            if (dynamicImg && stationLogos[slug]) {
-                dynamicImg.src = stationLogos[slug];
-                dynamicImg.alt = `Logo ${slug}`;
-            }
+        // 👇 DYNAMISCHE IMAGE
+        const dynamicImg = document.getElementById('dynamic-img');
+        if (dynamicImg && stationLogos[slug]) {
+            dynamicImg.src = stationLogos[slug];
+            dynamicImg.alt = `Logo ${slug}`;
         }
+    }
 
 
         if (currentPath.includes('details.html')) {

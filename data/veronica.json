@@ -451,7 +451,7 @@
   },
   {
     "id": "show46",
-    "day": "sunday",
+    "day": "saturday",
     "from": "00:00",
     "until": "07:00",
     "show_name": "Oh Wat Een Nacht",
@@ -461,7 +461,7 @@
   },
   {
     "id": "show47",
-    "day": "sunday",
+    "day": "saturday",
     "from": "07:00",
     "until": "10:00",
     "show_name": "Ferry Oomen",
@@ -471,7 +471,7 @@
   },
   {
     "id": "show48",
-    "day": "sunday",
+    "day": "saturday",
     "from": "10:00",
     "until": "13:00",
     "show_name": "Verschuurens Goud van Oud",
@@ -481,7 +481,7 @@
   },
   {
     "id": "show49",
-    "day": "sunday",
+    "day": "saturday",
     "from": "13:00",
     "until": "16:00",
     "show_name": "WeekendRick",
@@ -491,7 +491,7 @@
   },
   {
     "id": "show50",
-    "day": "sunday",
+    "day": "saturday",
     "from": "16:00",
     "until": "19:00",
     "show_name": "Niek van der Bruggen",
@@ -501,7 +501,7 @@
   },
   {
     "id": "show51",
-    "day": "sunday",
+    "day": "saturday",
     "from": "19:00",
     "until": "21:00",
     "show_name": "De Platenzaak",
@@ -511,6 +511,76 @@
   },
   {
     "id": "show52",
+    "day": "saturday",
+    "from": "21:00",
+    "until": "23:59",
+    "show_name": "Thijs Meeuwsen",
+    "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/3zk9mejhzi7m-thijs-thumbnail.jpg",
+    "dj_names": "Thijs Meeuwsen",
+    "dj_images": ""
+  },
+  {
+    "id": "show53",
+    "day": "sunday",
+    "from": "00:00",
+    "until": "07:00",
+    "show_name": "Oh Wat Een Nacht",
+    "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/70h1m4slkpo0-radio-veronica-thumbnail.jpg",
+    "dj_names": "Radio Veronica",
+    "dj_images": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/hukdvibnwkw-veronica-program-headers-default.png"
+  },
+  {
+    "id": "show54",
+    "day": "sunday",
+    "from": "07:00",
+    "until": "10:00",
+    "show_name": "Ferry Oomen",
+    "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/19qjlugntxf9-ferry-oomen-thumbnail.png",
+    "dj_names": "Ferry Oomen",
+    "dj_images": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/19qjlugntxf9-ferry-oomen-thumbnail.png"
+  },
+  {
+    "id": "show55",
+    "day": "sunday",
+    "from": "10:00",
+    "until": "13:00",
+    "show_name": "Verschuurens Goud van Oud",
+    "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/71y83xxvvyls-maurice-thumbnail.jpg",
+    "dj_names": "Maurice Verschuuren",
+    "dj_images": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/71y83xxvvyls-maurice-thumbnail.jpg"
+  },
+  {
+    "id": "show56",
+    "day": "sunday",
+    "from": "13:00",
+    "until": "16:00",
+    "show_name": "WeekendRick",
+    "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/47u7wamrxsz5-rick-thumbnail.jpg",
+    "dj_names": "Rick van Velthuysen",
+    "dj_images": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/47u7wamrxsz5-rick-thumbnail.jpg"
+  },
+  {
+    "id": "show57",
+    "day": "sunday",
+    "from": "16:00",
+    "until": "19:00",
+    "show_name": "Niek van der Bruggen",
+    "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/75fqwcaka50w-niek-thumbnail.jpg",
+    "dj_names": "Niek van der Bruggen",
+    "dj_images": "https://cmde4gpbhib.b-cdn.net/w_96,h_96,q_75/75fqwcaka50w-niek-thumbnail.jpg"
+  },
+  {
+    "id": "show58",
+    "day": "sunday",
+    "from": "19:00",
+    "until": "21:00",
+    "show_name": "De Platenzaak",
+    "show_thumbnail": "https://cmde4gpbhib.b-cdn.net/w_320,h_320,q_85/o9ujh5cwi5v-wouter-thumbnail.jpg",
+    "dj_names": "Wouter van der Goes",
+    "dj_images": ""
+  },
+  {
+    "id": "show59",
     "day": "sunday",
     "from": "21:00",
     "until": "23:59",

@@ -8,7 +8,111 @@ Six hours = 960px / 60rem
 Seven hours = 1120px / 70rem
 */
 
+/* Styling kaartje langer dan 1 uur */
 
+main {
+
+	/* styling van alle programma kaartjes zonder de kleuren */
+	
+	section.kaartje {
+		display: flex;
+		gap: var(--gap-width-px);
+		width: max-content;
+		
+		article:has(h2) {
+			width: 20vw;
+			max-width: 80px;
+			height: 9rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			border-radius: 0rem var(--border-radius) var(--border-radius) 0rem;
+		
+			@media (min-height: 730px) {
+				height: 10.625rem;
+			}
+		
+			button {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: var(--radiogids-light-background);
+				/* border: 2px var(--veronica-secondary) solid; */
+				color: var(--text-dark);
+				cursor: pointer;
+			}
+		
+			img {
+				width: 100%;
+			}
+		}
+		
+		a:has(article) {
+			cursor: pointer;
+			background: none;
+			border: none;
+			color: var(--text-light);
+			border-radius: var(--border-radius);
+			
+			@media (min-height: 730px) {
+				height: 10.625rem;
+			}
+		
+		
+			&:focus-visible {
+				border: var(--radiogids-primary) 5px solid;
+			}
+		}
+		
+		article:not(.block, .logo) {
+			flex-shrink: 0;
+			color: var(--text-light);
+			border-radius: var(--border-radius);
+			width: var(--hour-duration);
+			height: 10.625rem;
+		
+			img {
+				border-radius: var(--border-radius)  var(--border-radius) 0rem 0rem;
+				object-fit: cover;
+				width: 100%;
+				height: 9dvh;
+				
+				@media (min-height: 730px) {
+				width: 100vw;
+				}
+			}
+		
+			section {
+				var(--padding-regular);
+			}
+		
+			p {
+				display: flex;
+				align-items: center;
+				gap: .5rem;
+				
+				&:nth-of-type(1) {
+				
+					margin-top: .5rem;
+					margin-bottom: .3rem;
+					
+					&::before {
+						content: url("data:image/svg+xml;utf8,<svg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(%23clip0_53_2961)'><path d='M13.4583 16.625V15.0417C13.4583 14.2018 13.1247 13.3964 12.5308 12.8025C11.937 12.2086 11.1315 11.875 10.2917 11.875H3.95833C3.11848 11.875 2.31302 12.2086 1.71916 12.8025C1.12529 13.3964 0.791664 14.2018 0.791664 15.0417V16.625M18.2083 16.625V15.0417C18.2078 14.34 17.9743 13.6584 17.5444 13.1039C17.1145 12.5494 16.5127 12.1533 15.8333 11.9779M12.6667 2.47792C13.3478 2.65232 13.9516 3.04847 14.3827 3.60391C14.8139 4.15935 15.0479 4.84249 15.0479 5.54563C15.0479 6.24876 14.8139 6.9319 14.3827 7.48734C13.9516 8.04278 13.3478 8.43893 12.6667 8.61333M10.2917 5.54167C10.2917 7.29057 8.8739 8.70833 7.125 8.70833C5.3761 8.70833 3.95833 7.29057 3.95833 5.54167C3.95833 3.79276 5.3761 2.375 7.125 2.375C8.8739 2.375 10.2917 3.79276 10.2917 5.54167Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g><defs><clipPath id='clip0_53_2961'><rect width='19' height='19' rx='9.5' fill='white'/></clipPath></defs></svg>");
+					}
+				}
+			
+				&:nth-of-type(2)::before {
+					content: url("data:image/svg+xml;utf8,<svg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(%23clip0_53_2962)'><path d='M9.5 4.74992V9.49992L12.6667 11.0833M17.4167 9.49992C17.4167 13.8722 13.8723 17.4166 9.5 17.4166C5.12775 17.4166 1.58334 13.8722 1.58334 9.49992C1.58334 5.12766 5.12775 1.58325 9.5 1.58325C13.8723 1.58325 17.4167 5.12766 17.4167 9.49992Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g><defs><clipPath id='clip0_53_2962'><rect width='19' height='19' rx='9.5' fill='white'/></clipPath></defs></svg>");
+				}
+			}
+		
+			.normal-hidden {
+				display: none;
+			}
+		}
+	}
+}
 
 /* Header styling */
 
@@ -186,107 +290,6 @@ main.home {
 		}
 	}
 	
-	/* styling van alle programma kaartjes zonder de kleuren */
-	
-	section.kaartje {
-		display: flex;
-		gap: var(--gap-width-px);
-		width: max-content;
-		
-		article:has(h2) {
-			width: 20vw;
-			max-width: 80px;
-			height: 9rem;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			border-radius: 0rem var(--border-radius) var(--border-radius) 0rem;
-		
-			@media (min-height: 730px) {
-				height: 10.625rem;
-			}
-		
-			button {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				background-color: var(--radiogids-light-background);
-				/* border: 2px var(--veronica-secondary) solid; */
-				color: var(--text-dark);
-				cursor: pointer;
-			}
-		
-			img {
-				width: 100%;
-			}
-		}
-		
-		a:has(article) {
-			cursor: pointer;
-			background: none;
-			border: none;
-			color: var(--text-light);
-			border-radius: var(--border-radius);
-			
-			@media (min-height: 730px) {
-				height: 10.625rem;
-			}
-		
-		
-			&:focus-visible {
-				border: var(--radiogids-primary) 5px solid;
-			}
-		}
-		
-		article:not(.block, .logo) {
-			flex-shrink: 0;
-			color: var(--text-light);
-			border-radius: var(--border-radius);
-			width: var(--hour-duration);
-			height: 10.625rem;
-		
-			img {
-				border-radius: var(--border-radius)  var(--border-radius) 0rem 0rem;
-				object-fit: cover;
-				width: 100%;
-				height: 9dvh;
-				
-				@media (min-height: 730px) {
-				width: 100vw;
-				}
-			}
-		
-			section {
-				var(--padding-regular);
-			}
-		
-			p {
-				display: flex;
-				align-items: center;
-				gap: .5rem;
-				
-				&:nth-of-type(1) {
-				
-					margin-top: .5rem;
-					margin-bottom: .3rem;
-					
-					&::before {
-						content: url("data:image/svg+xml;utf8,<svg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(%23clip0_53_2961)'><path d='M13.4583 16.625V15.0417C13.4583 14.2018 13.1247 13.3964 12.5308 12.8025C11.937 12.2086 11.1315 11.875 10.2917 11.875H3.95833C3.11848 11.875 2.31302 12.2086 1.71916 12.8025C1.12529 13.3964 0.791664 14.2018 0.791664 15.0417V16.625M18.2083 16.625V15.0417C18.2078 14.34 17.9743 13.6584 17.5444 13.1039C17.1145 12.5494 16.5127 12.1533 15.8333 11.9779M12.6667 2.47792C13.3478 2.65232 13.9516 3.04847 14.3827 3.60391C14.8139 4.15935 15.0479 4.84249 15.0479 5.54563C15.0479 6.24876 14.8139 6.9319 14.3827 7.48734C13.9516 8.04278 13.3478 8.43893 12.6667 8.61333M10.2917 5.54167C10.2917 7.29057 8.8739 8.70833 7.125 8.70833C5.3761 8.70833 3.95833 7.29057 3.95833 5.54167C3.95833 3.79276 5.3761 2.375 7.125 2.375C8.8739 2.375 10.2917 3.79276 10.2917 5.54167Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g><defs><clipPath id='clip0_53_2961'><rect width='19' height='19' rx='9.5' fill='white'/></clipPath></defs></svg>");
-					}
-				}
-			
-				&:nth-of-type(2)::before {
-					content: url("data:image/svg+xml;utf8,<svg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(%23clip0_53_2962)'><path d='M9.5 4.74992V9.49992L12.6667 11.0833M17.4167 9.49992C17.4167 13.8722 13.8723 17.4166 9.5 17.4166C5.12775 17.4166 1.58334 13.8722 1.58334 9.49992C1.58334 5.12766 5.12775 1.58325 9.5 1.58325C13.8723 1.58325 17.4167 5.12766 17.4167 9.49992Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g><defs><clipPath id='clip0_53_2962'><rect width='19' height='19' rx='9.5' fill='white'/></clipPath></defs></svg>");
-				}
-			}
-		
-			.normal-hidden {
-				display: none;
-			}
-		}
-	}
-	
 	
 	/* Alle kleuren van veronica  */
 	
@@ -358,135 +361,7 @@ main.home {
 	
 	/* styling voor de zenders die 2 uur duren */
 	
-	section {
-		position: relative;
-		
-		article.block {
-			width: calc(
-			(var(--duration) * var(--hour-width)) + 
-			((var(--duration) - 1) * var(--gap-width-px))
-			);
-			
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: 1fr auto auto;
-			grid-template-areas:
-			"poster details"
-			"time   button"
-			"title  title";
-			gap: 0;
-			border-radius: var(--border-radius);
-			height: 9rem;
-			position: relative;
-			
-			@media (min-height: 730px) {
-				height: 10.625rem;
-			}
-		
-			img {
-				grid-area: poster;
-				width: 100%;
-				height: 100%;
-				max-height: 6rem;
-				object-fit: cover;
-				border-radius: 0 0 var(--border-radius) 0;
-				max-width: 13rem;
-				position: sticky;
-				z-index: 10;
-				left: 0;
-				object-position: top; 
-				
-				@media (min-height: 730px) {
-				max-height: 7rem;
-				}
-			}
-			
-			section {
-				display: contents;
-			}
-			
-			h3.fly-in-text {
-				grid-area: title;
-				width: max-content;
-				padding: 0.2rem 1rem;
-				padding-top: 0;
-				margin: 0;
-				text-align: left;
-				position: sticky;
-				left: 0;
-			}
-			
-			p:nth-of-type(2) {
-				display: none
-			}
-			
-			&.live p:nth-of-type(2) {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				margin: 1rem;
-				text-align: center;
-				background-color: var(--radiogids-dark-background);
-				width: fit-content;
-				var(--padding-regular);
-				height: 20%; 
-				border-radius: var(--border-radius);
-				z-index: 1;
-				position: absolute;
-				top: 0;
-				right: 0;
-				
-				&::before {
-					content: "";
-					margin-right: .4rem;
-					display: block;
-					background-color: var(--radiogids-primary);
-					width: 1rem;
-					height: 1rem;
-					border-radius: 100%;
-					animation: live 2s ease infinite;
-				}
-			}
-			
-			p.time {
-				grid-column: 1;
-				grid-row: 2;
-				margin: 0;
-				width: max-content;
-				padding: 0.2rem 1rem;
-				font-weight: 700;
-				padding-bottom: 0;
-				display: flex;
-				align-items: center;
-				position: sticky;
-				z-index: 10;
-				left: 0;
-				
-				&::before {
-					content: url("data:image/svg+xml;utf8,<svg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(%23clip0_53_2962)'><path d='M9.5 4.74992V9.49992L12.6667 11.0833M17.4167 9.49992C17.4167 13.8722 13.8723 17.4166 9.5 17.4166C5.12775 17.4166 1.58334 13.8722 1.58334 9.49992C1.58334 5.12766 5.12775 1.58325 9.5 1.58325C13.8723 1.58325 17.4167 5.12766 17.4167 9.49992Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g><defs><clipPath id='clip0_53_2962'><rect width='19' height='19' rx='9.5' fill='white'/></clipPath></defs></svg>");
-				}
-			}
-			
-			.more {
-				position: absolute;
-				bottom: 2vh;
-				right: 2vh;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				background-color: var(--radiogids-light-background);
-				color: var(--text-dark);
-				border: var(--veronica-secondary) 2px solid;
-				width: 3rem;
-				height: 3rem;
-				border-radius: 100%;
-			}
-			
-			.block-hidden {
-				display: none;
-			}
-		}
-	}
+
 }
 
 /* Radiogids "zenders" styling */
@@ -743,9 +618,10 @@ body.zenders {
 							position: sticky;
 							left: 0;
 						}
-			
+
 						p:nth-of-type(2) {
-							display: none
+							grid-area: button;
+							display: flex;
 						}
 			
 						&.live p:nth-of-type(2) {
@@ -756,13 +632,11 @@ body.zenders {
 							text-align: center;
 							background-color: var(--radiogids-dark-background);
 							width: fit-content;
-							var(--padding-regular);
-							height: 20%; 
+							height: 100%; 
+							padding: var(--padding-regular);
+							
 							border-radius: var(--border-radius);
 							z-index: 1;
-							position: absolute;
-							top: 0;
-							right: 0;
 							
 							&::before {
 								content: "";
@@ -1137,3 +1011,4 @@ footer {
 	}
   }
 }
+
