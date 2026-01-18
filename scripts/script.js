@@ -9,7 +9,7 @@ const appConfiguration = {
     stations: [
         { id: 1, slug: "veronica", dataFile: 'data/veronica.json', containerSelector: '#veronica-shows' },
         { id: 2, slug: "slam", dataFile: 'data/slam.json', containerSelector: '#slam-shows' },
-        { id: 3, slug: "hondernl", dataFile: 'data/100nl.json', containerSelector: '#hondernl-shows' }
+        { id: 3, slug: "honderdnl", dataFile: 'data/100nl.json', containerSelector: '#honderdnl-shows' }
     ],
     daysOfWeek: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
     durationWords: ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
@@ -127,7 +127,7 @@ const UserInterface = {
 
         const stationLogos = {
             veronica: 'assets/logo-veronica.webp',
-            hondernl: 'assets/logo-100nl.webp',
+            honderdnl: 'assets/logo-100nl.webp',
             slam: 'assets/logo-slam.webp'
         };
 
