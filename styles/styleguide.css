@@ -108,7 +108,7 @@
 2. Kleuren per station
 ========================================================== */
 
-button, article, a, header, .listener {
+button, article, a, header:not(.details), .listener {
   &.veronica {
     background-color: var(--veronica-primary);
   }

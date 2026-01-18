@@ -1015,21 +1015,33 @@ header.details {
       padding: .5rem;
       border: none;
       border-radius: var(--border-radius-button);
-
-	  &.veronica {
-		background-color: var(--veronica-secondary);
-	  }
-
-	  &.slam {
-		background-color: var(--slam-secondary);
-	  }
-
-	  &.honderdnl {
-		background-color: var(--honderdnl-primary);
-	  }
       
     }
   }
+}
+
+header.details.veronica {
+
+	a {
+		background-color: var(--veronica-secondary);
+	}
+}
+
+header.details.slam {
+
+	a {
+
+		background-color: var(--slam-secondary);
+
+	}
+}
+
+header.details.honderdnl {
+	
+	a {
+
+		background-color: var(--honderdnl-primary);
+	}
 }
 
 .detail-container { 
