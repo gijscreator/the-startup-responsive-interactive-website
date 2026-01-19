@@ -244,7 +244,7 @@ button {
   }
 
   .block {
-    
+
     p.link {
       background-color: var(--veronica-secondary);
     }
@@ -255,43 +255,34 @@ button {
 
 #honderdnl-shows {
       
-  figure {
-    background-color: light-dark(var(--honderdnl-secondary), var(--honderdnl-primary));
+	figure, img, article {
+		background-color: light-dark(var(--honderdnl-secondary), var(--honderdnl-primary));
+	}
 
-  
-    img {
-      background-color: light-dark(var(--honderdnl-secondary), var(--honderdnl-primary));
-    }
-  }
-  
-  article {
-    background-color: var(--honderdnl-primary);
+  	.block {
 
-    img {
-      background-color: light-dark(var(--honderdnl-secondary), var(--honderdnl-primary));
-    }
-  }
+		p.link {
+		
+			background-color: var(--honderdnl-secondary);
+		}
+	}
 }
 
 /* Section met radio slam!  */
 #slam-shows {
   
-  figure {
-  background-color: var(--slam-primary);
-  
-    img {
-      background-color: var(--slam-primary);
-    }
-  }
+ 	figure, article, img {
 
-  /* article met alle programma's radio slam!  */
-  article {
-    background-color: var(--slam-primary);
-  
-    img {
-      background-color: var(--slam-primary);
-    }
-  }
+  		background-color: var(--slam-primary);
+	}
+	
+	.block {
+
+		p.link {
+	
+			background-color: var(--slam-secondary);
+		}
+	}
 }
 
 /* ==========================================================
@@ -344,16 +335,6 @@ button {
   to {
     opacity: 1;
     transform: scale(1);
-  }
-}
-
-@keyframes button-hover {
-  from {
-    transform: scale(.9);
-  }
-
-  to {
-    transform: scale(1.1);
   }
 }
 
