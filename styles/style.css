@@ -437,22 +437,8 @@ main.home {
 	section:nth-of-type(2) {
 		margin-top: .5rem;
 		
-		figure {
+		figure, img, article {
 			background-color: var(--veronica-primary);
-		
-		
-			img {
-				background-color: var(--veronica-primary);
-			}
-		}
-		
-		article {
-			background-color: var(--veronica-primary);
-		
-		
-			img {
-				background-color: var(--veronica-primary);
-			}
 		}
 	}
 	
@@ -461,20 +447,8 @@ main.home {
 	section:nth-of-type(3) {
 		margin: .5rem 0;
 		
-		figure {
+		figure, img, article {
 			background-color: light-dark(var(--honderdnl-secondary), var(--honderdnl-primary));
-		
-			img {
-				background-color: light-dark(var(--honderdnl-secondary), var(--honderdnl-primary));
-			}
-		}
-		
-			article {
-			background-color: var(--honderdnl-primary);
-		
-			img {
-				background-color: light-dark(var(--honderdnl-secondary), var(--honderdnl-primary));
-			}
 		}
 	}
 	
@@ -482,21 +456,9 @@ main.home {
 	section:nth-of-type(4) {
 		margin: .5 0rem;
 		
-		figure {
+		figure, article, img {
+
 		background-color: var(--slam-primary);
-		
-			img {
-				background-color: var(--slam-primary);
-			}
-		}
-	
-		/* article met alle programma's radio slam!  */
-		article {
-			background-color: var(--slam-primary);
-		
-			img {
-				background-color: var(--slam-primary);
-			}
 		}
 	}
 	
