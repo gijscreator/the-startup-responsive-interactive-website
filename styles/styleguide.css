@@ -234,25 +234,19 @@ button {
   
 }
 
-/* /* Section met radio veronica  */ */
+/* Section met radio veronica  */
 
 #veronica-shows {
   
-  figure {
+  figure, img, article {
+
     background-color: var(--veronica-primary);
-  
-  
-    img {
-      background-color: var(--veronica-primary);
-    }
   }
-  
-  article {
-    background-color: var(--veronica-primary);
-  
-  
-    img {
-      background-color: var(--veronica-primary);
+
+  .block {
+    
+    p.link {
+      background-color: var(--veronica-secondary);
     }
   }
 }
