@@ -248,10 +248,14 @@ header.home {
 	justify-content: flex-start;
 	align-items: flex-start;
 	height: fit-content;
-	max-height: 12dvh;
 	flex-direction: column;
 	width: 100vw;
-  
+
+	@media (min-width: 790px) {
+		flex-direction: row;
+		align-items: center;
+	}
+
 	img {
 		display: flex;
 		align-items: center;
@@ -274,10 +278,14 @@ header.home {
 	section:nth-of-type(1) {
 		display: flex;
 		align-items: center;
-		justify-content: flex-end;
+		justify-content: flex-start;
 		overflow-x: auto;
 		width: 100vw;
 		padding: .5rem 0rem;
+
+		@media (min-width: 790px) {
+			justify-content: center;
+		}
 		
 		&::-webkit-scrollbar {
 			display: none;
@@ -300,9 +308,9 @@ header.home {
 				
 				}
 			
-				&.today {
+				&.date-today {
 					background-color: transparent;
-					color: var(--text-dark);
+					color: light-dark(var(--text-dark), var(--text-light));
 					border: 2px solid var(--radiogids-primary);
 			
 				}
