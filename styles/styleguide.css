@@ -275,7 +275,7 @@ button {
 
   		background-color: var(--slam-primary);
 	}
-	
+
 	.block {
 
 		p.link {
@@ -302,17 +302,14 @@ button {
 @keyframes live {
   0% {
     scale: .8;
-    opacity: .5;
   }
   
   50% {
     scale: 1;
-    opacity: 1;
   }
   
   100% {
     scale: .8;
-    opacity: .5;
   }
 }
 

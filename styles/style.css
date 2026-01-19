@@ -121,17 +121,17 @@ article.onehour {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin: 1rem;
 		text-align: center;
-		background-color: var(--radiogids-dark-background);
+		background-color: white;
+		color: var(--text-dark);
 		width: fit-content;
-		var(--padding-regular);
+		padding: var(--padding-regular);
 		height: 20%; 
 		border-radius: var(--border-radius);
 		z-index: 1;
 		position: absolute;
-		top: 0;
-		right: 0;
+		top: 10px;
+		right: 10px;
 		
 		&::before {
 			content: "";
@@ -141,7 +141,7 @@ article.onehour {
 			width: 1rem;
 			height: 1rem;
 			border-radius: 100%;
-			animation: live 2s ease infinite;
+			animation: live 1s ease infinite;
 		}
 	}
 
@@ -171,7 +171,7 @@ article.onehour {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		right: 10px;
+		right: 20px;
 		bottom: 10px;
 		width: 50px;
 		height: 50px;
@@ -187,7 +187,7 @@ article.onehour {
 	}
 
 	.wrapper {
-		width: 4.5rem;
+		width: 5.5rem;
 		position: fixed;
 		right: 0;
 		height: 100%;
