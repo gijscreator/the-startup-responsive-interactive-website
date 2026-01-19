@@ -1,264 +1,261 @@
 <!DOCTYPE html>
 <html lang="nl" id="home">
 <head>
-	<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Radiogids">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://gijscreator.github.io/the-startup-responsive-interactive-website/">
-    <link rel="manifest" href="manifest.webmanifest">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="shortcut icon" href="assets/favicon.webp" type="image/x-icon">
-    <link rel="icon" href="assets/favicon.webp" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/favicon.webp">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon.webp">
-    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon.webp">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.webp">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.webp">
-	<link rel="preload" href="data/veronica.json" as="fetch" type="application/json">
-	<link rel="preload" href="data/slam.json" as="fetch" type="application/json">
-	<link rel="preload" href="data/100nl.json" as="fetch" type="application/json">
-    <meta name="pwa-capable" content="yes">
-	<meta name="view-transition" content="same-origin">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Radiogids">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://gijscreator.github.io/the-startup-responsive-interactive-website/">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="assets/favicon.webp" type="image/x-icon">
+<link rel="icon" href="assets/favicon.webp" type="image/x-icon">
+<link rel="apple-touch-icon" href="/favicon.webp">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon.webp">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon.webp">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.webp">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.webp">
+<meta name="pwa-capable" content="yes">
+<meta name="view-transition" content="same-origin">
 
-	<!-- production versie -->
-	<base href="/the-startup-responsive-interactive-website/">
+<!-- production versie -->
+<!-- <base href="/the-startup-responsive-interactive-website/"> -->
 
-    <title>Radiogids</title>
-	<link rel="stylesheet" href="styles/styleguide.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/script.js" defer></script>
+<title>Radiogids</title>
+<link rel="stylesheet" href="styles/styleguide.css">
+<link rel="stylesheet" href="styles/style.css">
+<script src="scripts/script.js" defer></script>
 </head>
 <body>
 
-	<!-- Header -->
-	<header class="home">
-		<h1 class="visually-hidden">Radiohuis</h1>
+<!-- Header -->
+<header class="home">
+	<h1 class="visually-hidden">Radiohuis</h1>
 
-		<!-- Nieuwe techniek die ik nog niet kende src="https://stackoverflow.com/questions/74638826/alternate-images-based-on-users-color-preference-without-using-javascript"-->
+	<!-- Nieuwe techniek die ik nog niet kende src="https://stackoverflow.com/questions/74638826/alternate-images-based-on-users-color-preference-without-using-javascript"-->
 
-		<picture>
-			<!-- gebruiker wilt light mode: -->
-			<source srcset="assets/logo-radiogids.webp" media="(prefers-color-scheme: light)">
+	<picture>
+		<!-- gebruiker wilt light mode: -->
+		<source srcset="assets/logo-radiogids.webp" media="(prefers-color-scheme: light)">
 
-			<!-- gebruiker wilt dark mode: -->
-			<source srcset="assets/radiogids-darkmode.webp"  media="(prefers-color-scheme: dark)">
+		<!-- gebruiker wilt dark mode: -->
+		<source srcset="assets/radiogids-darkmode.webp"  media="(prefers-color-scheme: dark)">
 
-			<!-- gebruiker wilt niks: -->
-			<img src="assets/logo-radiogids.webp" alt="Logo van radiogids">
-		</picture>
+		<!-- gebruiker wilt niks: -->
+		<img src="assets/logo-radiogids.webp" alt="Logo van radiogids">
+	</picture>
 
-		<!-- Section met date picker knoppen -->
-		<section>
-			<h2 class="visually-hidden">wanneer ga jij luisteren</h2>
-			<ul>
-				<li>
-					<button class="today">
-						Vandaag V3
-					</button>
-				</li>
-				<li>
-					<button>
-						Morgen	
-					</button>
-				</li>
-				<li>
-					<button>
-						15 jan
-					</button>
-				</li>
-				<li>
-					<button>
-						16 jan
-					</button>
-				</li>
-			</ul>
-		</section>
-	
-	</header>
-
-	<!-- Main section -->
-	<main class="home">
-		<!-- Volledig scrollbare sectie -->
-		<div class="time-indicator"></div>
-
-		<!-- Timeline -->
-		<section class="sync-scroll">
-			<h2 class="visually-hidden">Tijdlijn voor de radioshows</h2>
-
-			<!-- timeline triangles -->
-			<svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M5.19615 12L0 0L10.3923 0L5.19615 12Z" fill="#EF0105"/>
-			</svg>
-			<svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M5.19617 0L10.3923 12H1.4782e-05L5.19617 0Z" fill="#EF0105"/>
-			</svg>
-			<ul>
-				<li>
-					<time datetime="00:00">00:00</time>
-				</li>
-				<li>
-					<time datetime="01:00">01:00</time>
-				</li>
-				<li>
-					<time datetime="02:00">02:00</time>
-				</li>
-				<li>
-					<time datetime="03:00">03:00</time>
-				</li>
-				<li>
-					<time datetime="04:00">04:00</time>
-				</li>
-				<li>
-					<time datetime="05:00">05:00</time>
-				</li>
-				<li>
-					<time datetime="06:00">06:00</time>
-				</li>
-				<li>
-					<time datetime="07:00">07:00</time>
-				</li>
-				<li>
-					<time datetime="08:00">08:00</time>
-				</li>
-				<li>
-					<time datetime="09:00">09:00</time>
-				</li>
-				<li>
-					<time datetime="10:00">10:00</time>
-				</li>
-				<li>
-					<time datetime="11:00">11:00</time>
-				</li>
-				<li>
-					<time datetime="12:00">12:00</time>
-				</li>
-				<li>
-					<time datetime="13:00">13:00</time>
-				</li>
-				<li>
-					<time datetime="14:00">14:00</time>
-				</li>
-				<li>
-					<time datetime="15:00">15:00</time>
-				</li>
-				<li>
-					<time datetime="16:00">16:00</time>
-				</li>
-				<li>
-					<time datetime="17:00">17:00</time>
-				</li>
-				<li>
-					<time datetime="18:00">18:00</time>
-				</li>
-				<li>
-					<time datetime="19:00">19:00</time>
-				</li>
-				<li>
-					<time datetime="20:00">20:00</time>
-				</li>
-				<li>
-					<time datetime="21:00">21:00</time>
-				</li>
-				<li>
-					<time datetime="22:00">22:00</time>
-				</li>
-				<li>
-					<time datetime="23:00">23:00</time>
-				</li>
-				<li>
-					<time datetime="23:59">23:59</time>
-				</li>
-			</ul>
-		</section>
-
-		<!-- Radio veronica -->
-		<section class="sync-scroll card" id="veronica-shows">
-			<article class="logo">
-				<h2 class="visually-hidden">Veronica</h2>
-				<img src="assets/logo-veronica.webp" width="180" height="100" alt="Logo veronica">
-				<button class="play-button" aria-label="Play radio Veronica">
-					<svg class="icon play" width="24" height="24" viewBox="0 0 24 24">
-						<path d="M5 3L19 12L5 21V3Z" />
-					</svg>
-
-					<svg class="icon pause" width="24" height="24" viewBox="0 0 24 24">
-						<path d="M6 4H10V20H6V4ZM14 4H18V20H14V4Z" />
-					</svg>
+	<!-- Section met date picker knoppen -->
+	<section>
+		<h2 class="visually-hidden">wanneer ga jij luisteren</h2>
+		<ul>
+			<li>
+				<button class="today">
+					Vandaag V3
 				</button>
-			</article>
-		</section>
+			</li>
+			<li>
+				<button>
+					Morgen	
+				</button>
+			</li>
+			<li>
+				<button>
+					15 jan
+				</button>
+			</li>
+			<li>
+				<button>
+					16 jan
+				</button>
+			</li>
+		</ul>
+	</section>
 
-		<!-- Radio 100nl -->
-		<section class="sync-scroll card" id="honderdnl-shows">
-			<article class="logo">
-				<h2 class="visually-hidden">100%NL</h2>
-				<img src="assets/logo-100nl.webp" width="180" height="100" alt="Logo 100%NL">
-			</article>
+</header>
 
-		</section>
+<!-- Main section -->
+<main class="home">
+	<!-- Volledig scrollbare sectie -->
+	<div class="time-indicator"></div>
 
-		<!-- Radio Slam! -->
-		<section class="sync-scroll card" id="slam-shows">
-			<article class="logo">
-				<h2 class="visually-hidden">Slam!</h2>
-				<img src="assets/logo-slam.webp" width="180" height="100" alt="Logo Slam!">
-			</article>
+	<!-- Timeline -->
+	<section class="sync-scroll">
+		<h2 class="visually-hidden">Tijdlijn voor de radioshows</h2>
 
-		</section>
+		<!-- timeline triangles -->
+		<svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M5.19615 12L0 0L10.3923 0L5.19615 12Z" fill="#EF0105"/>
+		</svg>
+		<svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M5.19617 0L10.3923 12H1.4782e-05L5.19617 0Z" fill="#EF0105"/>
+		</svg>
+		<ul>
+			<li>
+				<time datetime="00:00">00:00</time>
+			</li>
+			<li>
+				<time datetime="01:00">01:00</time>
+			</li>
+			<li>
+				<time datetime="02:00">02:00</time>
+			</li>
+			<li>
+				<time datetime="03:00">03:00</time>
+			</li>
+			<li>
+				<time datetime="04:00">04:00</time>
+			</li>
+			<li>
+				<time datetime="05:00">05:00</time>
+			</li>
+			<li>
+				<time datetime="06:00">06:00</time>
+			</li>
+			<li>
+				<time datetime="07:00">07:00</time>
+			</li>
+			<li>
+				<time datetime="08:00">08:00</time>
+			</li>
+			<li>
+				<time datetime="09:00">09:00</time>
+			</li>
+			<li>
+				<time datetime="10:00">10:00</time>
+			</li>
+			<li>
+				<time datetime="11:00">11:00</time>
+			</li>
+			<li>
+				<time datetime="12:00">12:00</time>
+			</li>
+			<li>
+				<time datetime="13:00">13:00</time>
+			</li>
+			<li>
+				<time datetime="14:00">14:00</time>
+			</li>
+			<li>
+				<time datetime="15:00">15:00</time>
+			</li>
+			<li>
+				<time datetime="16:00">16:00</time>
+			</li>
+			<li>
+				<time datetime="17:00">17:00</time>
+			</li>
+			<li>
+				<time datetime="18:00">18:00</time>
+			</li>
+			<li>
+				<time datetime="19:00">19:00</time>
+			</li>
+			<li>
+				<time datetime="20:00">20:00</time>
+			</li>
+			<li>
+				<time datetime="21:00">21:00</time>
+			</li>
+			<li>
+				<time datetime="22:00">22:00</time>
+			</li>
+			<li>
+				<time datetime="23:00">23:00</time>
+			</li>
+			<li>
+				<time datetime="23:59">23:59</time>
+			</li>
+		</ul>
+	</section>
 
-	</main>
+	<!-- Radio veronica -->
+	<section class="sync-scroll card" id="veronica-shows">
+		<article class="logo">
+			<h2 class="visually-hidden">Veronica</h2>
+			<img src="assets/logo-veronica.webp" width="180" height="100" alt="Logo veronica">
+			<button class="play-button" aria-label="Play radio Veronica">
+				<svg class="icon play" width="24" height="24" viewBox="0 0 24 24">
+					<path d="M5 3L19 12L5 21V3Z" />
+				</svg>
 
-	<!-- Sticky footer -->
-	<footer>
+				<svg class="icon pause" width="24" height="24" viewBox="0 0 24 24">
+					<path d="M6 4H10V20H6V4ZM14 4H18V20H14V4Z" />
+				</svg>
+			</button>
+		</article>
+	</section>
 
-		<!-- Linkje 1 vandaag -->
-		<a href="index.html" class="active first">
-			<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M8.92499 20.3999C8.92499 19.6957 9.49583 19.1249 10.2 19.1249H10.217C10.9212 19.1249 11.492 19.6957 11.492 20.3999V20.4169C11.492 21.1211 10.9212 21.6919 10.217 21.6919H10.2C9.49583 21.6919 8.92499 21.1211 8.92499 20.4169V20.3999Z" fill="white"/>
-				<path d="M10.2 22.5249C9.49583 22.5249 8.92499 23.0957 8.92499 23.7999V23.8169C8.92499 24.5211 9.49583 25.0919 10.2 25.0919H10.217C10.9212 25.0919 11.492 24.5211 11.492 23.8169V23.7999C11.492 23.0957 10.9212 22.5249 10.217 22.5249H10.2Z" fill="white"/>
-				<path d="M12.325 20.3999C12.325 19.6957 12.8958 19.1249 13.6 19.1249H13.617C14.3212 19.1249 14.892 19.6957 14.892 20.3999V20.4169C14.892 21.1211 14.3212 21.6919 13.617 21.6919H13.6C12.8958 21.6919 12.325 21.1211 12.325 20.4169V20.3999Z" fill="white"/>
-				<path d="M13.6 22.5249C12.8958 22.5249 12.325 23.0957 12.325 23.7999V23.8169C12.325 24.5211 12.8958 25.0919 13.6 25.0919H13.617C14.3212 25.0919 14.892 24.5211 14.892 23.8169V23.7999C14.892 23.0957 14.3212 22.5249 13.617 22.5249H13.6Z" fill="white"/>
-				<path d="M15.725 16.9999C15.725 16.2957 16.2958 15.7249 17 15.7249H17.017C17.7212 15.7249 18.292 16.2957 18.292 16.9999V17.0169C18.292 17.7211 17.7212 18.2919 17.017 18.2919H17C16.2958 18.2919 15.725 17.7211 15.725 17.0169V16.9999Z" fill="white"/>
-				<path d="M17 19.1249C16.2958 19.1249 15.725 19.6957 15.725 20.3999V20.4169C15.725 21.1211 16.2958 21.6919 17 21.6919H17.017C17.7212 21.6919 18.292 21.1211 18.292 20.4169V20.3999C18.292 19.6957 17.7212 19.1249 17.017 19.1249H17Z" fill="white"/>
-				<path d="M15.725 23.7999C15.725 23.0957 16.2958 22.5249 17 22.5249H17.017C17.7212 22.5249 18.292 23.0957 18.292 23.7999V23.8169C18.292 24.5211 17.7212 25.0919 17.017 25.0919H17C16.2958 25.0919 15.725 24.5211 15.725 23.8169V23.7999Z" fill="white"/>
-				<path d="M20.4 15.7249C19.6958 15.7249 19.125 16.2957 19.125 16.9999V17.0169C19.125 17.7211 19.6958 18.2919 20.4 18.2919H20.417C21.1212 18.2919 21.692 17.7211 21.692 17.0169V16.9999C21.692 16.2957 21.1212 15.7249 20.417 15.7249H20.4Z" fill="white"/>
-				<path d="M19.125 20.3999C19.125 19.6957 19.6958 19.1249 20.4 19.1249H20.417C21.1212 19.1249 21.692 19.6957 21.692 20.3999V20.4169C21.692 21.1211 21.1212 21.6919 20.417 21.6919H20.4C19.6958 21.6919 19.125 21.1211 19.125 20.4169V20.3999Z" fill="white"/>
-				<path d="M20.4 22.5249C19.6958 22.5249 19.125 23.0957 19.125 23.7999V23.8169C19.125 24.5211 19.6958 25.0919 20.4 25.0919H20.417C21.1212 25.0919 21.692 24.5211 21.692 23.8169V23.7999C21.692 23.0957 21.1212 22.5249 20.417 22.5249H20.4Z" fill="white"/>
-				<path d="M22.525 16.9999C22.525 16.2957 23.0958 15.7249 23.8 15.7249H23.817C24.5212 15.7249 25.092 16.2957 25.092 16.9999V17.0169C25.092 17.7211 24.5212 18.2919 23.817 18.2919H23.8C23.0958 18.2919 22.525 17.7211 22.525 17.0169V16.9999Z" fill="white"/>
-				<path d="M23.8 19.1249C23.0958 19.1249 22.525 19.6957 22.525 20.3999V20.4169C22.525 21.1211 23.0958 21.6919 23.8 21.6919H23.817C24.5212 21.6919 25.092 21.1211 25.092 20.4169V20.3999C25.092 19.6957 24.5212 19.1249 23.817 19.1249H23.8Z" fill="white"/>
-				<path fill-rule="evenodd" clip-rule="evenodd" d="M9.77499 3.3999C10.4792 3.3999 11.05 3.97074 11.05 4.6749V6.7999H22.95V4.6749C22.95 3.97074 23.5208 3.3999 24.225 3.3999C24.9292 3.3999 25.5 3.97074 25.5 4.6749V6.7999H25.925C28.5069 6.7999 30.6 8.89297 30.6 11.4749V25.9249C30.6 28.5068 28.5069 30.5999 25.925 30.5999H8.07499C5.49306 30.5999 3.39999 28.5068 3.39999 25.9249V11.4749C3.39999 8.89297 5.49306 6.7999 8.07499 6.7999H8.49999V4.6749C8.49999 3.97074 9.07083 3.3999 9.77499 3.3999ZM8.07499 12.7499C6.90139 12.7499 5.94999 13.7013 5.94999 14.8749V25.9249C5.94999 27.0985 6.90139 28.0499 8.07499 28.0499H25.925C27.0986 28.0499 28.05 27.0985 28.05 25.9249V14.8749C28.05 13.7013 27.0986 12.7499 25.925 12.7499H8.07499Z" fill="white"/>
-			</svg>
-			RadioGids
-		</a>
+	<!-- Radio 100nl -->
+	<section class="sync-scroll card" id="honderdnl-shows">
+		<article class="logo">
+			<h2 class="visually-hidden">100%NL</h2>
+			<img src="assets/logo-100nl.webp" width="180" height="100" alt="Logo 100%NL">
+		</article>
 
-		<!-- Linkje 2 per zender -->
-		<a href="pages/zenders.html?station=veronica">
-			<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M21.6533 10.3466C22.3971 11.0896 22.9872 11.9719 23.3898 12.9431C23.7924 13.9142 23.9996 14.9553 23.9996 16.0066C23.9996 17.0579 23.7924 18.0989 23.3898 19.0701C22.9872 20.0413 22.3971 20.9236 21.6533 21.6666M10.3467 21.6532C9.60286 20.9103 9.01278 20.028 8.61019 19.0568C8.20759 18.0856 8.00037 17.0446 8.00037 15.9932C8.00037 14.9419 8.20759 13.9009 8.61019 12.9297C9.01278 11.9585 9.60286 11.0762 10.3467 10.3332M25.4267 6.57324C27.9263 9.07361 29.3305 12.4644 29.3305 15.9999C29.3305 19.5354 27.9263 22.9262 25.4267 25.4266M6.57333 25.4266C4.07372 22.9262 2.66951 19.5354 2.66951 15.9999C2.66951 12.4644 4.07372 9.07361 6.57333 6.57324M18.6667 15.9999C18.6667 17.4727 17.4728 18.6666 16 18.6666C14.5272 18.6666 13.3333 17.4727 13.3333 15.9999C13.3333 14.5271 14.5272 13.3332 16 13.3332C17.4728 13.3332 18.6667 14.5271 18.6667 15.9999Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-			</svg>
-			Zenders
-		</a>
+	</section>
 
-		<!-- Linkje 3 per dj -->
-		<a href="pages/djs.html">
-			<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M8.92499 20.3999C8.92499 19.6957 9.49583 19.1249 10.2 19.1249H10.217C10.9212 19.1249 11.492 19.6957 11.492 20.3999V20.4169C11.492 21.1211 10.9212 21.6919 10.217 21.6919H10.2C9.49583 21.6919 8.92499 21.1211 8.92499 20.4169V20.3999Z" fill="white"/>
-				<path d="M10.2 22.5249C9.49583 22.5249 8.92499 23.0957 8.92499 23.7999V23.8169C8.92499 24.5211 9.49583 25.0919 10.2 25.0919H10.217C10.9212 25.0919 11.492 24.5211 11.492 23.8169V23.7999C11.492 23.0957 10.9212 22.5249 10.217 22.5249H10.2Z" fill="white"/>
-				<path d="M12.325 20.3999C12.325 19.6957 12.8958 19.1249 13.6 19.1249H13.617C14.3212 19.1249 14.892 19.6957 14.892 20.3999V20.4169C14.892 21.1211 14.3212 21.6919 13.617 21.6919H13.6C12.8958 21.6919 12.325 21.1211 12.325 20.4169V20.3999Z" fill="white"/>
-				<path d="M13.6 22.5249C12.8958 22.5249 12.325 23.0957 12.325 23.7999V23.8169C12.325 24.5211 12.8958 25.0919 13.6 25.0919H13.617C14.3212 25.0919 14.892 24.5211 14.892 23.8169V23.7999C14.892 23.0957 14.3212 22.5249 13.617 22.5249H13.6Z" fill="white"/>
-				<path d="M15.725 16.9999C15.725 16.2957 16.2958 15.7249 17 15.7249H17.017C17.7212 15.7249 18.292 16.2957 18.292 16.9999V17.0169C18.292 17.7211 17.7212 18.2919 17.017 18.2919H17C16.2958 18.2919 15.725 17.7211 15.725 17.0169V16.9999Z" fill="white"/>
-				<path d="M17 19.1249C16.2958 19.1249 15.725 19.6957 15.725 20.3999V20.4169C15.725 21.1211 16.2958 21.6919 17 21.6919H17.017C17.7212 21.6919 18.292 21.1211 18.292 20.4169V20.3999C18.292 19.6957 17.7212 19.1249 17.017 19.1249H17Z" fill="white"/>
-				<path d="M15.725 23.7999C15.725 23.0957 16.2958 22.5249 17 22.5249H17.017C17.7212 22.5249 18.292 23.0957 18.292 23.7999V23.8169C18.292 24.5211 17.7212 25.0919 17.017 25.0919H17C16.2958 25.0919 15.725 24.5211 15.725 23.8169V23.7999Z" fill="white"/>
-				<path d="M20.4 15.7249C19.6958 15.7249 19.125 16.2957 19.125 16.9999V17.0169C19.125 17.7211 19.6958 18.2919 20.4 18.2919H20.417C21.1212 18.2919 21.692 17.7211 21.692 17.0169V16.9999C21.692 16.2957 21.1212 15.7249 20.417 15.7249H20.4Z" fill="white"/>
-				<path d="M19.125 20.3999C19.125 19.6957 19.6958 19.1249 20.4 19.1249H20.417C21.1212 19.1249 21.692 19.6957 21.692 20.3999V20.4169C21.692 21.1211 21.1212 21.6919 20.417 21.6919H20.4C19.6958 21.6919 19.125 21.1211 19.125 20.4169V20.3999Z" fill="white"/>
-				<path d="M20.4 22.5249C19.6958 22.5249 19.125 23.0957 19.125 23.7999V23.8169C19.125 24.5211 19.6958 25.0919 20.4 25.0919H20.417C21.1212 25.0919 21.692 24.5211 21.692 23.8169V23.7999C21.692 23.0957 21.1212 22.5249 20.417 22.5249H20.4Z" fill="white"/>
-				<path d="M22.525 16.9999C22.525 16.2957 23.0958 15.7249 23.8 15.7249H23.817C24.5212 15.7249 25.092 16.2957 25.092 16.9999V17.0169C25.092 17.7211 24.5212 18.2919 23.817 18.2919H23.8C23.0958 18.2919 22.525 17.7211 22.525 17.0169V16.9999Z" fill="white"/>
-				<path d="M23.8 19.1249C23.0958 19.1249 22.525 19.6957 22.525 20.3999V20.4169C22.525 21.1211 23.0958 21.6919 23.8 21.6919H23.817C24.5212 21.6919 25.092 21.1211 25.092 20.4169V20.3999C25.092 19.6957 24.5212 19.1249 23.817 19.1249H23.8Z" fill="white"/>
-				<path fill-rule="evenodd" clip-rule="evenodd" d="M9.77499 3.3999C10.4792 3.3999 11.05 3.97074 11.05 4.6749V6.7999H22.95V4.6749C22.95 3.97074 23.5208 3.3999 24.225 3.3999C24.9292 3.3999 25.5 3.97074 25.5 4.6749V6.7999H25.925C28.5069 6.7999 30.6 8.89297 30.6 11.4749V25.9249C30.6 28.5068 28.5069 30.5999 25.925 30.5999H8.07499C5.49306 30.5999 3.39999 28.5068 3.39999 25.9249V11.4749C3.39999 8.89297 5.49306 6.7999 8.07499 6.7999H8.49999V4.6749C8.49999 3.97074 9.07083 3.3999 9.77499 3.3999ZM8.07499 12.7499C6.90139 12.7499 5.94999 13.7013 5.94999 14.8749V25.9249C5.94999 27.0985 6.90139 28.0499 8.07499 28.0499H25.925C27.0986 28.0499 28.05 27.0985 28.05 25.9249V14.8749C28.05 13.7013 27.0986 12.7499 25.925 12.7499H8.07499Z" fill="white"/>
-			</svg>
-			Mijn Dj's v7
-		</a>
-	</footer>
+	<!-- Radio Slam! -->
+	<section class="sync-scroll card" id="slam-shows">
+		<article class="logo">
+			<h2 class="visually-hidden">Slam!</h2>
+			<img src="assets/logo-slam.webp" width="180" height="100" alt="Logo Slam!">
+		</article>
+
+	</section>
+
+</main>
+
+<!-- Sticky footer -->
+<footer>
+
+	<!-- Linkje 1 vandaag -->
+	<a href="index.html" class="active first">
+		<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M8.92499 20.3999C8.92499 19.6957 9.49583 19.1249 10.2 19.1249H10.217C10.9212 19.1249 11.492 19.6957 11.492 20.3999V20.4169C11.492 21.1211 10.9212 21.6919 10.217 21.6919H10.2C9.49583 21.6919 8.92499 21.1211 8.92499 20.4169V20.3999Z" fill="white"/>
+			<path d="M10.2 22.5249C9.49583 22.5249 8.92499 23.0957 8.92499 23.7999V23.8169C8.92499 24.5211 9.49583 25.0919 10.2 25.0919H10.217C10.9212 25.0919 11.492 24.5211 11.492 23.8169V23.7999C11.492 23.0957 10.9212 22.5249 10.217 22.5249H10.2Z" fill="white"/>
+			<path d="M12.325 20.3999C12.325 19.6957 12.8958 19.1249 13.6 19.1249H13.617C14.3212 19.1249 14.892 19.6957 14.892 20.3999V20.4169C14.892 21.1211 14.3212 21.6919 13.617 21.6919H13.6C12.8958 21.6919 12.325 21.1211 12.325 20.4169V20.3999Z" fill="white"/>
+			<path d="M13.6 22.5249C12.8958 22.5249 12.325 23.0957 12.325 23.7999V23.8169C12.325 24.5211 12.8958 25.0919 13.6 25.0919H13.617C14.3212 25.0919 14.892 24.5211 14.892 23.8169V23.7999C14.892 23.0957 14.3212 22.5249 13.617 22.5249H13.6Z" fill="white"/>
+			<path d="M15.725 16.9999C15.725 16.2957 16.2958 15.7249 17 15.7249H17.017C17.7212 15.7249 18.292 16.2957 18.292 16.9999V17.0169C18.292 17.7211 17.7212 18.2919 17.017 18.2919H17C16.2958 18.2919 15.725 17.7211 15.725 17.0169V16.9999Z" fill="white"/>
+			<path d="M17 19.1249C16.2958 19.1249 15.725 19.6957 15.725 20.3999V20.4169C15.725 21.1211 16.2958 21.6919 17 21.6919H17.017C17.7212 21.6919 18.292 21.1211 18.292 20.4169V20.3999C18.292 19.6957 17.7212 19.1249 17.017 19.1249H17Z" fill="white"/>
+			<path d="M15.725 23.7999C15.725 23.0957 16.2958 22.5249 17 22.5249H17.017C17.7212 22.5249 18.292 23.0957 18.292 23.7999V23.8169C18.292 24.5211 17.7212 25.0919 17.017 25.0919H17C16.2958 25.0919 15.725 24.5211 15.725 23.8169V23.7999Z" fill="white"/>
+			<path d="M20.4 15.7249C19.6958 15.7249 19.125 16.2957 19.125 16.9999V17.0169C19.125 17.7211 19.6958 18.2919 20.4 18.2919H20.417C21.1212 18.2919 21.692 17.7211 21.692 17.0169V16.9999C21.692 16.2957 21.1212 15.7249 20.417 15.7249H20.4Z" fill="white"/>
+			<path d="M19.125 20.3999C19.125 19.6957 19.6958 19.1249 20.4 19.1249H20.417C21.1212 19.1249 21.692 19.6957 21.692 20.3999V20.4169C21.692 21.1211 21.1212 21.6919 20.417 21.6919H20.4C19.6958 21.6919 19.125 21.1211 19.125 20.4169V20.3999Z" fill="white"/>
+			<path d="M20.4 22.5249C19.6958 22.5249 19.125 23.0957 19.125 23.7999V23.8169C19.125 24.5211 19.6958 25.0919 20.4 25.0919H20.417C21.1212 25.0919 21.692 24.5211 21.692 23.8169V23.7999C21.692 23.0957 21.1212 22.5249 20.417 22.5249H20.4Z" fill="white"/>
+			<path d="M22.525 16.9999C22.525 16.2957 23.0958 15.7249 23.8 15.7249H23.817C24.5212 15.7249 25.092 16.2957 25.092 16.9999V17.0169C25.092 17.7211 24.5212 18.2919 23.817 18.2919H23.8C23.0958 18.2919 22.525 17.7211 22.525 17.0169V16.9999Z" fill="white"/>
+			<path d="M23.8 19.1249C23.0958 19.1249 22.525 19.6957 22.525 20.3999V20.4169C22.525 21.1211 23.0958 21.6919 23.8 21.6919H23.817C24.5212 21.6919 25.092 21.1211 25.092 20.4169V20.3999C25.092 19.6957 24.5212 19.1249 23.817 19.1249H23.8Z" fill="white"/>
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M9.77499 3.3999C10.4792 3.3999 11.05 3.97074 11.05 4.6749V6.7999H22.95V4.6749C22.95 3.97074 23.5208 3.3999 24.225 3.3999C24.9292 3.3999 25.5 3.97074 25.5 4.6749V6.7999H25.925C28.5069 6.7999 30.6 8.89297 30.6 11.4749V25.9249C30.6 28.5068 28.5069 30.5999 25.925 30.5999H8.07499C5.49306 30.5999 3.39999 28.5068 3.39999 25.9249V11.4749C3.39999 8.89297 5.49306 6.7999 8.07499 6.7999H8.49999V4.6749C8.49999 3.97074 9.07083 3.3999 9.77499 3.3999ZM8.07499 12.7499C6.90139 12.7499 5.94999 13.7013 5.94999 14.8749V25.9249C5.94999 27.0985 6.90139 28.0499 8.07499 28.0499H25.925C27.0986 28.0499 28.05 27.0985 28.05 25.9249V14.8749C28.05 13.7013 27.0986 12.7499 25.925 12.7499H8.07499Z" fill="white"/>
+		</svg>
+		RadioGids
+	</a>
+
+	<!-- Linkje 2 per zender -->
+	<a href="pages/zenders.html?station=veronica">
+		<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M21.6533 10.3466C22.3971 11.0896 22.9872 11.9719 23.3898 12.9431C23.7924 13.9142 23.9996 14.9553 23.9996 16.0066C23.9996 17.0579 23.7924 18.0989 23.3898 19.0701C22.9872 20.0413 22.3971 20.9236 21.6533 21.6666M10.3467 21.6532C9.60286 20.9103 9.01278 20.028 8.61019 19.0568C8.20759 18.0856 8.00037 17.0446 8.00037 15.9932C8.00037 14.9419 8.20759 13.9009 8.61019 12.9297C9.01278 11.9585 9.60286 11.0762 10.3467 10.3332M25.4267 6.57324C27.9263 9.07361 29.3305 12.4644 29.3305 15.9999C29.3305 19.5354 27.9263 22.9262 25.4267 25.4266M6.57333 25.4266C4.07372 22.9262 2.66951 19.5354 2.66951 15.9999C2.66951 12.4644 4.07372 9.07361 6.57333 6.57324M18.6667 15.9999C18.6667 17.4727 17.4728 18.6666 16 18.6666C14.5272 18.6666 13.3333 17.4727 13.3333 15.9999C13.3333 14.5271 14.5272 13.3332 16 13.3332C17.4728 13.3332 18.6667 14.5271 18.6667 15.9999Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+		</svg>
+		Zenders
+	</a>
+
+	<!-- Linkje 3 per dj -->
+	<a href="pages/djs.html">
+		<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M8.92499 20.3999C8.92499 19.6957 9.49583 19.1249 10.2 19.1249H10.217C10.9212 19.1249 11.492 19.6957 11.492 20.3999V20.4169C11.492 21.1211 10.9212 21.6919 10.217 21.6919H10.2C9.49583 21.6919 8.92499 21.1211 8.92499 20.4169V20.3999Z" fill="white"/>
+			<path d="M10.2 22.5249C9.49583 22.5249 8.92499 23.0957 8.92499 23.7999V23.8169C8.92499 24.5211 9.49583 25.0919 10.2 25.0919H10.217C10.9212 25.0919 11.492 24.5211 11.492 23.8169V23.7999C11.492 23.0957 10.9212 22.5249 10.217 22.5249H10.2Z" fill="white"/>
+			<path d="M12.325 20.3999C12.325 19.6957 12.8958 19.1249 13.6 19.1249H13.617C14.3212 19.1249 14.892 19.6957 14.892 20.3999V20.4169C14.892 21.1211 14.3212 21.6919 13.617 21.6919H13.6C12.8958 21.6919 12.325 21.1211 12.325 20.4169V20.3999Z" fill="white"/>
+			<path d="M13.6 22.5249C12.8958 22.5249 12.325 23.0957 12.325 23.7999V23.8169C12.325 24.5211 12.8958 25.0919 13.6 25.0919H13.617C14.3212 25.0919 14.892 24.5211 14.892 23.8169V23.7999C14.892 23.0957 14.3212 22.5249 13.617 22.5249H13.6Z" fill="white"/>
+			<path d="M15.725 16.9999C15.725 16.2957 16.2958 15.7249 17 15.7249H17.017C17.7212 15.7249 18.292 16.2957 18.292 16.9999V17.0169C18.292 17.7211 17.7212 18.2919 17.017 18.2919H17C16.2958 18.2919 15.725 17.7211 15.725 17.0169V16.9999Z" fill="white"/>
+			<path d="M17 19.1249C16.2958 19.1249 15.725 19.6957 15.725 20.3999V20.4169C15.725 21.1211 16.2958 21.6919 17 21.6919H17.017C17.7212 21.6919 18.292 21.1211 18.292 20.4169V20.3999C18.292 19.6957 17.7212 19.1249 17.017 19.1249H17Z" fill="white"/>
+			<path d="M15.725 23.7999C15.725 23.0957 16.2958 22.5249 17 22.5249H17.017C17.7212 22.5249 18.292 23.0957 18.292 23.7999V23.8169C18.292 24.5211 17.7212 25.0919 17.017 25.0919H17C16.2958 25.0919 15.725 24.5211 15.725 23.8169V23.7999Z" fill="white"/>
+			<path d="M20.4 15.7249C19.6958 15.7249 19.125 16.2957 19.125 16.9999V17.0169C19.125 17.7211 19.6958 18.2919 20.4 18.2919H20.417C21.1212 18.2919 21.692 17.7211 21.692 17.0169V16.9999C21.692 16.2957 21.1212 15.7249 20.417 15.7249H20.4Z" fill="white"/>
+			<path d="M19.125 20.3999C19.125 19.6957 19.6958 19.1249 20.4 19.1249H20.417C21.1212 19.1249 21.692 19.6957 21.692 20.3999V20.4169C21.692 21.1211 21.1212 21.6919 20.417 21.6919H20.4C19.6958 21.6919 19.125 21.1211 19.125 20.4169V20.3999Z" fill="white"/>
+			<path d="M20.4 22.5249C19.6958 22.5249 19.125 23.0957 19.125 23.7999V23.8169C19.125 24.5211 19.6958 25.0919 20.4 25.0919H20.417C21.1212 25.0919 21.692 24.5211 21.692 23.8169V23.7999C21.692 23.0957 21.1212 22.5249 20.417 22.5249H20.4Z" fill="white"/>
+			<path d="M22.525 16.9999C22.525 16.2957 23.0958 15.7249 23.8 15.7249H23.817C24.5212 15.7249 25.092 16.2957 25.092 16.9999V17.0169C25.092 17.7211 24.5212 18.2919 23.817 18.2919H23.8C23.0958 18.2919 22.525 17.7211 22.525 17.0169V16.9999Z" fill="white"/>
+			<path d="M23.8 19.1249C23.0958 19.1249 22.525 19.6957 22.525 20.3999V20.4169C22.525 21.1211 23.0958 21.6919 23.8 21.6919H23.817C24.5212 21.6919 25.092 21.1211 25.092 20.4169V20.3999C25.092 19.6957 24.5212 19.1249 23.817 19.1249H23.8Z" fill="white"/>
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M9.77499 3.3999C10.4792 3.3999 11.05 3.97074 11.05 4.6749V6.7999H22.95V4.6749C22.95 3.97074 23.5208 3.3999 24.225 3.3999C24.9292 3.3999 25.5 3.97074 25.5 4.6749V6.7999H25.925C28.5069 6.7999 30.6 8.89297 30.6 11.4749V25.9249C30.6 28.5068 28.5069 30.5999 25.925 30.5999H8.07499C5.49306 30.5999 3.39999 28.5068 3.39999 25.9249V11.4749C3.39999 8.89297 5.49306 6.7999 8.07499 6.7999H8.49999V4.6749C8.49999 3.97074 9.07083 3.3999 9.77499 3.3999ZM8.07499 12.7499C6.90139 12.7499 5.94999 13.7013 5.94999 14.8749V25.9249C5.94999 27.0985 6.90139 28.0499 8.07499 28.0499H25.925C27.0986 28.0499 28.05 27.0985 28.05 25.9249V14.8749C28.05 13.7013 27.0986 12.7499 25.925 12.7499H8.07499Z" fill="white"/>
+		</svg>
+		Mijn Dj's v7
+	</a>
+</footer>
 </body>
 </html>

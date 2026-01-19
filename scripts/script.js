@@ -112,7 +112,7 @@ const UserInterface = {
         return `
             <a href="${detailPageUrl}" class="show-card-link">
                 <article class="${articleClasses}" style="--duration:${hourDuration};">
-                    <img src="${program.show_thumbnail}" alt="${program.show_name}" class="show-header normal-hidden">
+                    <img src="${program.show_thumbnail}" alt="${program.show_name}" loading="lazy" class="show-header normal-hidden">
                     <section>
                         <h3 class="fly-in-text title">${program.show_name}</h3>
                         <p class="time">${program.from} - ${program.until}</p>
@@ -294,7 +294,7 @@ const UserInterface = {
 
         const audioPlayButton = document.querySelector('.play-button');
         if (audioPlayButton) {
-            const radioAudio = new Audio('assets/liedje.mp3');
+            const radioAudio = new Audio('assets/song.mp3');
             audioPlayButton.addEventListener('click', () => {
                 radioAudio.paused ? radioAudio.play() : radioAudio.pause();
                 audioPlayButton.classList.toggle('is-playing', !radioAudio.paused);
