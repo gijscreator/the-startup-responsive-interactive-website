@@ -12,9 +12,9 @@ Seven hours = 1120px / 70rem
 1. General styling for .block station card (all pages)
 ========================================================== */
 
-/* 1 uur of minder dan 1 uur duration styling */
+/* ------------------------ 1 uur of minder dan 1 uur duration styling ------------------------ */
 
-article.onehour {
+.onehour {
 
   	flex-shrink: 0;
 	color: var(--text-light);
@@ -61,7 +61,7 @@ article.onehour {
 	}
 }
 
-/* Meer dan 1 uur duration styling */
+/* ------------------------ Meer dan 1 uur duration styling ------------------------ */
 
 .block {
 
@@ -197,7 +197,40 @@ article.onehour {
 	}
 }
 
+/* ------------------------ Play button styling ------------------------ */
 
+.play-button {
+	--color: #181D27;
+	width: 48px;
+	height: 48px;
+	border: none;
+	background: none;
+	cursor: pointer;
+	position: relative;
+	display: grid;
+	place-items: center;
+
+	& svg {
+		position: absolute;
+		fill: none;
+		stroke: var(--color);
+		stroke-width: 2;
+		animation: keyframes-fill .5s;
+	}
+
+	& .pause {
+		display: none;	
+	}
+
+	/* When playing */
+	& .is-playing .play {
+		display: none;
+	}
+
+	& .is-playing .pause {
+		display: block;
+	}
+}
 
 .block-hidden {
   display: none;
@@ -207,7 +240,7 @@ article.onehour {
 2. Radiogids home page styles
 ========================================================== */
 
-/* Header styling */
+/* ------------------------ Header styling ------------------------ */
 
 header.home {
   
@@ -467,7 +500,7 @@ main.home {
 	}
 }
 
-/* Radiogids "zenders" styling */
+/* ------------------------ Radiogids "zenders" styling ------------------------ */
 
 body.zenders {
   
@@ -648,7 +681,7 @@ body.zenders {
 	}
 }
 
-/* popover button styling */
+/* ------------------------ popover button styling ------------------------ */
 
 .select-station {
   transition: all 0.3s ease; 
@@ -681,7 +714,7 @@ main:has(#station-selector:popover-open) #station-selector * {
 
 
 
-/* popover styling */
+/* ------------------------ popover styling ------------------------ */
 
 #station-selector {
   background-color: light-dark(var(--radiogids-light-background), var(--radiogids-dark-background));
@@ -785,7 +818,7 @@ main:has(#station-selector:popover-open) #station-selector * {
   }
 }
 
-/* detail pagina styling */
+/* ------------------------ detail headder styling ------------------------ */
 
 header.details {
   display: flex;
@@ -845,12 +878,16 @@ header.details {
   }
 }
 
+/* ------------------------ detail header styling veronica ------------------------ */
+
 header.details.veronica {
 
 	a {
 		background-color: var(--veronica-secondary);
 	}
 }
+
+/* ------------------------ detail header styling slam ------------------------ */
 
 header.details.slam {
 
@@ -861,6 +898,8 @@ header.details.slam {
 	}
 }
 
+/* ------------------------ detail header styling honderdnl ------------------------ */
+
 header.details.honderdnl {
 	
 	a {
@@ -868,6 +907,8 @@ header.details.honderdnl {
 		background-color: var(--honderdnl-primary);
 	}
 }
+
+/* ------------------------ detail page styling  ------------------------ */
 
 .detail-container { 
   min-height: 100dvh;
@@ -925,6 +966,8 @@ header.details.honderdnl {
   }
 }
 
+/* ------------------------ detail page styling veronica  ------------------------ */
+
 .detail-container.veronica {
 
 	section:nth-of-type(1):not(.listener) {
@@ -947,6 +990,8 @@ header.details.honderdnl {
 		}
 	}
 }
+
+/* ------------------------ detail page styling slam  ------------------------ */
 
 .detail-container.slam {
 
@@ -971,6 +1016,8 @@ header.details.honderdnl {
 	}
 }
 
+/* ------------------------ detail page styling honderdnl  ------------------------ */
+
 .detail-container.honderdnl {
 
 	section:nth-of-type(1):not(.listener) {
@@ -994,42 +1041,41 @@ header.details.honderdnl {
 	}
 }
 
-footer {
+/* ------------------------ listener styling  ------------------------ */
 
-	.listener {
+.listener {
 
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	border-radius: var(--border-radius);
+	width: 90vw;
+	position: fixed;
+	bottom: 5vh;
+
+	img {
+		width: 20vw;
+		height: auto;
+	}
+
+	h3 {
+		margin-bottom: .3rem;
+	}
+
+	button {
 		display: flex;
-		align-items: center;
-		justify-content: space-around;
-		border-radius: var(--border-radius);
-		width: 90vw;
-		position: fixed;
-		bottom: 5vh;
+		flex-direction: column;
+		width: 12vw;
+		height: 12vw;
+		border-radius: 100%;
 
-		img {
-			width: 20vw;
-			height: auto;
-		}
-
-		h3 {
-			margin-bottom: .3rem;
-		}
-
-		button {
-			display: flex;
-			flex-direction: column;
-			width: 12vw;
-			height: 12vw;
-			border-radius: 100%;
-
-			svg {
-				width: 40%;
-				height: 40%;
-			}
+		svg {
+			width: 40%;
+			height: 40%;
 		}
 	}
 
-	.listener.veronica {
+	&.veronica {
 
 		background: linear-gradient(rgb(34, 20, 191), rgba(0, 145, 255, 1));
 
@@ -1038,7 +1084,7 @@ footer {
 		}
 	}
 
-	.listener.slam {
+	&.slam {
 		
 		background: var(--slam-secondary);
 
@@ -1047,7 +1093,7 @@ footer {
 		}
 	}
 
-	.listener.honderdnl {
+	&.honderdnl {
 		
 		background: var(--honderdnl-primary);
 
@@ -1058,9 +1104,7 @@ footer {
 
 }
 
-
-
-
+/* ------------------------ footer styling  ------------------------ */
 
 footer {
   display: flex;
@@ -1100,38 +1144,4 @@ footer {
 		}
 	}
   }
-}
-
-
-.play-button {
-	--color: #181D27;
-	width: 48px;
-	height: 48px;
-	border: none;
-	background: none;
-	cursor: pointer;
-	position: relative;
-	display: grid;
-	place-items: center;
-
-	& svg {
-		position: absolute;
-		fill: none;
-		stroke: var(--color);
-		stroke-width: 2;
-		animation: keyframes-fill .5s;
-	}
-
-	& .pause {
-		display: none;	
-	}
-
-	/* When playing */
-	& .is-playing .play {
-		display: none;
-	}
-
-	& .is-playing .pause {
-		display: block;
-	}
 }
