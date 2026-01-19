@@ -50,10 +50,10 @@
     /* --------------- width, height and gap per card --------------- */
 
     --hour-width: 10rem; /* base 160px */
-    --gap-width-px: 16px;  /* gap tussen de kaartjes */
+    --gap-width-px: 16px;  /* gap tussen de cards */
 
     --hour-height: 5.258rem; /* base 160px */
-    --gap-height-px: 14px;  /* gap tussen de kaartjes */
+    --gap-height-px: 14px;  /* gap tussen de cards */
 
     /* timeline position */
 
@@ -66,23 +66,6 @@
 
     /* padding */
     --padding-regular: .5rem;
-
-    /* --------------- block card dimensions --------------- */
-
-    --block-img-max-height: 6rem;
-    --block-img-max-height-tall: 7rem;
-    --block-img-max-width: 13rem;
-    --block-more-size: 3rem;
-    --block-poster-height: 100%;
-
-    /* --------------- layout dimensions --------------- */
-
-    --sidebar-width: 20vw;
-    --main-width: 80vw;
-    --main-min-height: 100dvh;
-    --grid-img-width: 20%;
-    --article-width: 90%;
-    --article-max-width: 80vw;
 
 }
 
@@ -251,7 +234,7 @@ button {
   
 }
 
-/* raDIO STATION */
+/* /* Section met radio veronica  */ */
 
 #veronica-shows {
   
@@ -274,6 +257,8 @@ button {
   }
 }
 
+/* Section met radio honderdnl!  */
+
 #honderdnl-shows {
       
   figure {
@@ -293,7 +278,6 @@ button {
     }
   }
 }
-
 
 /* Section met radio slam!  */
 #slam-shows {
@@ -379,7 +363,7 @@ button {
   }
 }
 
-@keyframes Kaartjesrender {
+@keyframes cardsrender {
   from {
     transform: translateY(50px);
     opacity: 0;
@@ -429,4 +413,27 @@ button {
     opacity: 0;
   }
 }
+
+
+
+
+
+/* ff testen */
+
+
+
+main.zenders {
+
+  .block {
+    height: calc(
+    (var(--duration) * var(--hour-height)) + 
+    ((var(--duration) - 1) * var(--gap-height-px))
+    );
+  }
+}
+
+
+
+		
+
 

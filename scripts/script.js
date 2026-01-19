@@ -99,17 +99,24 @@ const UserInterface = {
     generateProgramCardHtml: (program, stationSlug) => {
         const hourDuration = TimeCalculations.calculateHourDuration(program.from, program.until);
         const isLiveNow = TimeCalculations.checkIfProgramIsLive(program);
-        const durationClassName = (appConfiguration.durationWords[hourDuration] || 'long') + "hours";
+        
+        // 1. Only add 'block' if duration > 1 hour
+        // 2. Removed the durationWords class logic entirely
+        const articleClasses = [
+            hourDuration > 1 ? 'block' : '', 
+            isLiveNow ? 'live' : ''
+        ].filter(Boolean).join(' ');
+
         const detailPageUrl = `pages/details.html?id=${program.id}-${stationSlug}`;
         
         return `
             <a href="${detailPageUrl}" class="show-card-link">
-                <article class="block ${durationClassName} ${isLiveNow ? 'live' : ''}" style="--duration:${hourDuration};">
+                <article class="${articleClasses}" style="--duration:${hourDuration};">
                     <img src="${program.show_thumbnail}" alt="${program.show_name}" class="show-header normal-hidden">
                     <section>
                         <h3 class="fly-in-text title">${program.show_name}</h3>
                         <p class="time">${program.from} - ${program.until}</p>
-                        ${isLiveNow ? '<p class="live-status">Live</p>' : ''}
+                        ${isLiveNow ? '<p class="live">Live</p>' : ''}
                         <p class="link">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 15L12.5 10L7.5 5" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
@@ -195,13 +202,25 @@ const UserInterface = {
         await Promise.all(stationLoadTasks);
     },
 
-    loadProgramDetails: async (uniqueId) => {
+   loadProgramDetails: async (uniqueId) => {
     if (!uniqueId) return;
     
+    // 1. Haal de zender-slug uit de ID (bijv. "show63-slam" -> "slam")
     const idSegments = uniqueId.split('-');
-    const stationSlug = idSegments.pop();
+    const stationSlug = idSegments.pop().toLowerCase(); // "slam"
     const programId = idSegments.join('-');
     
+    // 2. VOEG DE CLASS TOE AAN DE ELEMENTEN
+    // We selecteren de header, main en footer en voegen de slug toe als class
+    const elementsToTheme = document.querySelectorAll('header, main, footer, .listener');
+    elementsToTheme.forEach(el => {
+        el.classList.add(stationSlug);
+    });
+
+    // Optioneel: voeg het ook toe aan de body voor globale styling
+    document.body.classList.add(`detail-page-${stationSlug}`);
+
+    // 3. De rest van je bestaande logica om data op te halen
     const stationMatch = appConfiguration.stations.find(s => s.slug === stationSlug);
     if (!stationMatch) return;
 
@@ -210,39 +229,27 @@ const UserInterface = {
     
     if (!selectedProgram) return;
 
-    // --- Each update is now independent ---
-
-    // 1. Title
+    // --- Update de UI elementen ---
     const titleEl = document.getElementById('detail-name');
     if (titleEl) titleEl.textContent = selectedProgram.show_name || "";
 
-    // 2. DJs
     const djEl = document.getElementById('detail-djs');
     if (djEl) djEl.textContent = selectedProgram.dj_names || "Onbekend";
 
-    // 3. Image (Fails gracefully if element is missing)
-    const thumbnailImg = document.getElementById('detail-img');
+    const thumbnailImg = document.getElementById('detail-img'); // Zorg dat dit ID in je HTML staat bij de IMG
     if (thumbnailImg) {
         thumbnailImg.src = selectedProgram.show_thumbnail || 'assets/default.webp';
     }
 
-    // 4. Description (Check for both .body and .description)
     const descriptionContainer = document.getElementById('detail-description');
     if (descriptionContainer) {
         descriptionContainer.innerHTML = selectedProgram.body || selectedProgram.description || "Geen beschrijving.";
     }
 
-    // 5. Live Badge
-    const liveIndicator = document.getElementById('am-i-live');
-    if (liveIndicator) {
-        const isLive = TimeCalculations.checkIfProgramIsLive(selectedProgram);
-        liveIndicator.style.display = isLive ? "block" : "none";
-    }
-
-    // 6. Calendar
-    const calendarButton = document.getElementById('apple-calendar-btn');
-    if (calendarButton) {
-        calendarButton.href = CalendarGenerator.createIcsDownloadLink(selectedProgram);
+    // Update ook de WhatsApp link of andere station-specifieke knoppen
+    const whatsappLink = document.querySelector('header.details nav a');
+    if (whatsappLink) {
+        whatsappLink.className = stationSlug; // Overschrijft 'slam' met de actuele slug
     }
 
     document.title = `${selectedProgram.show_name || 'Radio'} - Radiogids`;
