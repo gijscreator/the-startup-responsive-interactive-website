@@ -12,22 +12,22 @@
     color-scheme: light dark;
 
     /* radio Veronica */
-    --veronica-primary: #0091FF;
+    --veronica-primary: #2275D9;
     --veronica-secondary: #FF006B;
 
     /* radio 100%NL */
 
-    --honderdnl-primary: #E17000;
+    --honderdnl-primary: #BF5908;
     --honderdnl-secondary: #1e1e1e;
 
     /* radio Slam! */
 
-    --slam-primary: #FF006B;
+    --slam-primary: #e50069;
     --slam-secondary: #0AAAE1;
 
     /* General app styling */
 
-    --radiogids-primary: #EF0105;
+    --radiogids-primary: #EE0005;
     --radiogids-light-background: #ffffff;
     --radiogids-dark-background: #1e1e1e;
     --text-dark: #1E1E1E;
