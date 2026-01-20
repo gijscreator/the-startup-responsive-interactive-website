@@ -267,6 +267,7 @@ header.home {
 		max-height: 100px;
 		object-fit: cover;
 		padding: var(--padding-regular);
+		display: none;
 		
 	}
   
@@ -310,7 +311,7 @@ header.home {
 				
 				}
 			
-				&.date-today {
+				&.date.active {
 					background-color: transparent;
 					color: light-dark(var(--text-dark), var(--text-light));
 					border: 2px solid var(--radiogids-primary);
@@ -567,19 +568,34 @@ body.zenders {
   	header.zenders {
 		height: 9dvh;
     	grid-column: 1 / span 2;
+		display: flex;
 		align-items: center;
+		justify-content: center;
 		position: sticky;
 		top:0;
 		z-index: 100;
-    
-		picture {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		
-			img {
-				width: 30%;
-				padding: var(--padding-regular);
+
+		img {
+			width: 30%;
+			padding: var(--padding-regular);
+			display: none;
+		}
+
+		&.veronica {
+			img.veronica {
+				display: block;
+			}
+		}
+
+		&.slam {
+			img.slam {
+				display: block;
+			}
+		}
+
+		&.honderdnl {
+			img.honderdnl {
+				display: block;
 			}
 		}
   	}
