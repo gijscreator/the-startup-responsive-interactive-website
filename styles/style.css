@@ -253,7 +253,7 @@ header.home {
 	flex-direction: column;
 	width: 100vw;
 
-	@media (min-width: 790px) {
+	@media (min-width: 1080px) {
 		flex-direction: row;
 		align-items: center;
 	}
@@ -267,7 +267,6 @@ header.home {
 		max-height: 100px;
 		object-fit: cover;
 		padding: var(--padding-regular);
-		display: none;
 		
 	}
   
@@ -286,7 +285,7 @@ header.home {
 		width: 100vw;
 		padding: .5rem 0rem;
 
-		@media (min-width: 790px) {
+		@media (min-width: 1080px) {
 			justify-content: center;
 		}
 		
@@ -533,8 +532,14 @@ body.zenders {
   
 	display: grid;
 	grid-template-columns: 20vw 80vw;
+	grid-template-rows: auto auto 1fr;
 	justify-content: center;
 	height: fit-content;
+
+	@media (min-width: 1080px) {
+
+		grid-template-columns: 40vw 10vw 50vw;
+	}
 
 	div.time-indicator-vertical {
 		
@@ -549,6 +554,11 @@ body.zenders {
 		left: 9.5vw; 
 		top: var(--position);
 		pointer-events: none;
+
+		@media (min-width: 1080px) {
+			width: 60vw;
+			left: 44.9vw; 
+		}
 
 		/* klein dotje voor de timeline */
 
@@ -567,7 +577,9 @@ body.zenders {
 	
   	header.zenders {
 		height: 9dvh;
+		width: 100vw;
     	grid-column: 1 / span 2;
+		grid-row: 1;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -575,8 +587,14 @@ body.zenders {
 		top:0;
 		z-index: 100;
 
+		@media (min-width: 1080px) {
+
+			grid-column: 1;
+		}
+
 		img {
-			width: 30%;
+			height: 8dvh;
+			width: auto;
 			padding: var(--padding-regular);
 			display: none;
 		}
@@ -608,18 +626,30 @@ body.zenders {
 		background-color: var(--radiogids-dark-background);
 		z-index: 1000;
 		justify-content: flex-end;
+		grid-row: 2;
 		position: sticky;
 		border-bottom: 2px white solid;
 		top: 9dvh;
+
+		@media (min-width: 1080px) {
+			grid-column: 1;
+			width: 100vw;
+		}
 		
 		&.button {
 			display: flex;
 		}
 	}
   
-	aside {
+	aside:nth-of-type(1) {
 		grid-column: 1;
 		width: 20vw;
+
+		@media (min-width: 1080px) {
+			grid-row: 3;
+			grid-column: 2;
+			width: 10vw;
+		}
 		
 		ul {
 			display: flex;
@@ -658,6 +688,16 @@ body.zenders {
 			}
 		}
 	}
+
+	aside:nth-of-type(2) {
+		 grid-column: 1;
+		 width: 40vw;
+		 display: none;
+
+		 @media (min-width: 1080px) {
+			display: grid;
+		 }
+	}
 	
 	article {
 		
@@ -673,6 +713,11 @@ body.zenders {
 		grid-column: 2;
 		width: 80vw;
 		min-height: 100dvh;
+
+		@media (min-width: 1080px) {
+			grid-column: 3;
+			width: 50vw;
+		}
 		
 		.veronica:not(.notme) {
 			background-color: var(--veronica-primary);
@@ -966,6 +1011,7 @@ header.details.honderdnl {
 	  display: grid;
   	  grid-template-columns: 60vw 40vw;
   }
+
 
   /* image container */
 
