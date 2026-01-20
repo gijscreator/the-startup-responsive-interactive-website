@@ -16,7 +16,7 @@ const appConfiguration = {
 const currentTime = new Date();
 let activeSelectedDay = appConfiguration.daysOfWeek[currentTime.getDay()];
 
-// 3. SMOOTH SCROLL STATE (Global variables for the LERP math)
+// 3. SMOOTH SCROLL STATE
 let targetX = 0; 
 let currentX = 0; 
 const lerpFactor = 0.05; 
@@ -119,6 +119,8 @@ const UserInterface = {
             if (activeStationSlug) {
                 const slug = activeStationSlug.toLowerCase();
                 document.body.classList.add(slug, 'zenders');
+                document.querySelectorAll('header, aside, main, button').forEach(el => el.classList.add(slug));
+                
                 const img = document.getElementById('dynamic-img');
                 if (img) img.src = `assets/logo-${slug}.webp`;
             }
@@ -164,6 +166,40 @@ const UserInterface = {
         });
     },
 
+    loadProgramDetails: async (uniqueId) => {
+        if (!uniqueId) return;
+        
+        const idSegments = uniqueId.split('-');
+        const stationSlug = idSegments.pop().toLowerCase(); // e.g. "veronica"
+        const programId = idSegments.join('-');
+        
+        // --- FIX: Apply station classes for the detail page theme ---
+        const elementsToTheme = document.querySelectorAll('header, main, footer, .listener, .detail-container');
+        elementsToTheme.forEach(el => el.classList.add(stationSlug));
+        document.body.classList.add(`detail-page-${stationSlug}`);
+
+        const stationMatch = appConfiguration.stations.find(s => s.slug === stationSlug);
+        if (!stationMatch) return;
+
+        const programData = await UserInterface.fetchStationData(stationMatch.dataFile);
+        const selectedProgram = programData.find(p => String(p.id) === String(programId));
+        if (!selectedProgram) return;
+
+        // Populate detail elements
+        if ($('#detail-name')) $('#detail-name').textContent = selectedProgram.show_name;
+        if ($('#detail-djs')) $('#detail-djs').textContent = selectedProgram.dj_names || "Onbekend";
+        if ($('#detail-img')) $('#detail-img').src = selectedProgram.show_thumbnail || 'assets/default.webp';
+        if ($('#detail-description')) $('#detail-description').innerHTML = selectedProgram.body || selectedProgram.description || "Geen beschrijving.";
+
+        const calendarBtn = document.getElementById('apple-calendar-btn');
+        if (calendarBtn) {
+            const icsUrl = CalendarGenerator.createIcsDownloadLink(selectedProgram);
+            calendarBtn.href = icsUrl;
+            calendarBtn.download = `${selectedProgram.show_name.replace(/\s+/g, '_')}.ics`;
+        }
+        document.title = `${selectedProgram.show_name} - Radiogids`;
+    },
+
     setupInteractiveFeatures: () => {
         const timeMarker = document.querySelector('.time-indicator, .time-indicator-vertical');
         const mainContentArea = document.querySelector('main');
@@ -177,17 +213,16 @@ const UserInterface = {
             updateTime();
             setInterval(updateTime, 60000);
 
-            // AUTO-SCROLL LOGIC
             requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
                     const isVertical = timeMarker.classList.contains('time-indicator-vertical');
                     timeMarker.scrollIntoView({
-                        behavior: 'auto', // Instantly jump so we can sync math
+                        behavior: 'auto', 
                         block: isVertical ? 'center' : 'nearest',
                         inline: isVertical ? 'nearest' : 'center'
                     });
                     
-                    // IMPORTANT: Sync LERP math with the new auto-scrolled position
+                    // Sync LERP math with auto-scroll position
                     targetX = mainContentArea.scrollLeft;
                     currentX = mainContentArea.scrollLeft;
                 });
@@ -196,19 +231,15 @@ const UserInterface = {
     }
 };
 
-// 7. SMOOTH LERP SCROLLING FUNCTION
+// 7. SMOOTH LERP SCROLLING
 function initSmoothScroll() {
     const scrollContainer = document.querySelector('.grab-scroll');
     if (!scrollContainer) return;
 
     window.addEventListener('wheel', (event) => {
-        // Only run on non-touch devices and if we are over the container
         if (!isTouchDevice && scrollContainer.contains(event.target)) {
             event.preventDefault();
-            
-            // Adjust speed here (0.8)
             targetX += event.deltaY * 0.8; 
-            
             const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
             targetX = Math.max(0, Math.min(targetX, maxScroll));
         }
@@ -216,15 +247,11 @@ function initSmoothScroll() {
 
     function animationLoop() {
         if (!isTouchDevice) {
-            // LERP formula
             currentX += (targetX - currentX) * lerpFactor;
-            
-            // Apply only if the difference is worth the effort (performance)
             if (Math.abs(targetX - currentX) > 0.05) {
                 scrollContainer.scrollLeft = currentX;
             }
         } else {
-            // On mobile, keep target/current synced with finger swipes
             targetX = scrollContainer.scrollLeft;
             currentX = scrollContainer.scrollLeft;
         }
@@ -233,6 +260,6 @@ function initSmoothScroll() {
     animationLoop();
 }
 
-// 8. START APPLICATION
+// 8. START
 UserInterface.initializeApplication();
 initSmoothScroll();
