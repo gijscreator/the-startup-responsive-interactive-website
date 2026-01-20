@@ -190,7 +190,7 @@ Seven hours = 1120px / 70rem
 
 	.wrapper {
 		width: 5.5rem;
-		position: fixed;
+		position: absolute;
 		right: 0;
 		height: 100%;
 		backdrop-filter: blur(10px);
