@@ -249,3 +249,36 @@ const UserInterface = {
 };
 
 UserInterface.initializeApplication();
+
+const slider = document.querySelector('.grab-scroll');
+
+let isDragging = false;
+let startX = 0;
+let scrollStart = 0;
+
+slider.addEventListener('pointerdown', (e) => {
+  isDragging = true;
+  slider.classList.add('dragging');
+
+  slider.setPointerCapture(e.pointerId);
+
+  startX = e.clientX;
+  scrollStart = slider.scrollLeft;
+});
+
+slider.addEventListener('pointermove', (e) => {
+  if (!isDragging) return;
+
+  e.preventDefault();
+  const dx = e.clientX - startX;
+  slider.scrollLeft = scrollStart - dx;
+});
+
+const stopDragging = () => {
+  isDragging = false;
+  slider.classList.remove('dragging');
+};
+
+slider.addEventListener('pointerup', stopDragging);
+slider.addEventListener('pointercancel', stopDragging);
+slider.addEventListener('pointerleave', stopDragging);

@@ -100,7 +100,7 @@ Seven hours = 1120px / 70rem
     
     @media (min-height: 730px) {
     
-    max-height: 7rem;
+    	max-height: 7rem;
 
     }
   }
@@ -329,7 +329,8 @@ main.home {
 	flex-direction: column;
 	overflow-x: auto;
 	overflow-y: hidden;
-	height: 86dvh;
+	/* height: 86dvh; */
+	margin-bottom: 5dvh;
 	position: relative;
 	
 	/* HELP!!! EEN DIVJE */
@@ -371,7 +372,11 @@ main.home {
 
      	 @media (min-height: 730px) {
 			height: 10.625rem;
-		}	
+		}
+
+		@media (min-width: 730px) {
+			height: 13rem;
+  		}	
   	}
 	
 	/* Section met timeline  */
@@ -450,6 +455,10 @@ main.home {
 			@media (min-height: 730px) {
 				height: 10.625rem;
 			}
+
+			@media (min-width: 730px) {
+				height: 13rem;
+  			}	
 		
 			button {
 				display: flex;
@@ -1160,6 +1169,10 @@ footer {
   bottom: 0dvh;
   z-index: 1000;
   background-color: var(--radiogids-dark-background);
+
+  @media (min-width: 730px) {
+	display: none;
+  }
   
   
   a {

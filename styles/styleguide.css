@@ -113,6 +113,7 @@ button, article, a, header:not(.details), .listener {
 /* css reset */ 
 
 * {
+
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -120,9 +121,10 @@ button, article, a, header:not(.details), .listener {
   scroll-behavior: smooth;
   font-family: "roboto", sans-serif;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  @media (min-width: 700px) {
+      *::-webkit-scrollbar
+         display: block;
+      }
 }
 
 html, body {
@@ -404,8 +406,18 @@ main.zenders {
 
 
 
+.grab-scroll {
+  overflow-x: auto;
+  cursor: grab;
+  user-select: none;
+}
 
+.grab-scroll.dragging {
+  cursor: grabbing;
+}
 
-		
+.grab-scroll.dragging * {
+  pointer-events: none;
+}
 
 
