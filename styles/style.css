@@ -128,7 +128,7 @@ Seven hours = 1120px / 70rem
 		color: var(--text-dark);
 		width: fit-content;
 		padding: var(--padding-regular);
-		height: 20%; 
+		height: 2rem; 
 		border-radius: var(--border-radius);
 		z-index: 1;
 		position: absolute;
