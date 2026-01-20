@@ -118,7 +118,7 @@ button, article, a, header:not(.details), .listener {
   margin: 0;
   padding: 0;
   list-style: none;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   font-family: "roboto", sans-serif;
 
   @media (min-width: 700px) {
@@ -403,21 +403,3 @@ main.zenders {
     );
   }
 }
-
-
-
-.grab-scroll {
-  overflow-x: auto;
-  cursor: grab;
-  user-select: none;
-}
-
-.grab-scroll.dragging {
-  cursor: grabbing;
-}
-
-.grab-scroll.dragging * {
-  pointer-events: none;
-}
-
-

@@ -262,7 +262,7 @@ header.home {
 		display: flex;
 		align-items: center;
 		width: 100%;
-		max-width: 400px;
+		max-width: 300px;
 		height: auto;
 		max-height: 100px;
 		object-fit: cover;
@@ -391,6 +391,9 @@ main.home {
 		var(--text-light) 1px, 
 		transparent 1px
 		);
+
+		scroll-snap-type: x mandatory;
+ 		 -webkit-overflow-scrolling: touch;
 		background-size: 10.97rem 35%;
 		background-repeat: repeat-x;
 		background-position: 5.4rem bottom;

@@ -248,37 +248,47 @@ const UserInterface = {
     }
 };
 
+
+
 UserInterface.initializeApplication();
 
-const slider = document.querySelector('.grab-scroll');
+// horizontaal scrollen 
 
-let isDragging = false;
-let startX = 0;
-let scrollStart = 0;
 
-slider.addEventListener('pointerdown', (e) => {
-  isDragging = true;
-  slider.classList.add('dragging');
+// bronnen:
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame
+// https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event
 
-  slider.setPointerCapture(e.pointerId);
+const scrollContainer = document.querySelector('.grab-scroll');
 
-  startX = e.clientX;
-  scrollStart = slider.scrollLeft;
-});
+let targetX = 0; // waar je heen wilt 
+let currentX = 0; //waar je bent
+const lerpFactor = 0.05; // hoe smooth de animatie is
 
-slider.addEventListener('pointermove', (e) => {
-  if (!isDragging) return;
+// 1. Capture the wheel event to set the TARGET
+window.addEventListener('wheel', (event) => {
+    if (scrollContainer.contains(event.target)) {
+        event.preventDefault();
+        // Update the target based on the wheel movement
+        targetX += event.deltaY; 
+        
+        // Keep target within the bounds of the container
+        const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+        targetX = Math.max(0, Math.min(targetX, maxScroll));
+    }
+}, { passive: false });
 
-  e.preventDefault();
-  const dx = e.clientX - startX;
-  slider.scrollLeft = scrollStart - dx;
-});
+// 2. Create an animation loop to move toward the target
+function update() {
+    // This formula is the secret: 
+    // Current moves a percentage of the distance to Target every frame
+    currentX += (targetX - currentX) * lerpFactor;
 
-const stopDragging = () => {
-  isDragging = false;
-  slider.classList.remove('dragging');
-};
+    // Apply the position
+    scrollContainer.scrollLeft = currentX;
 
-slider.addEventListener('pointerup', stopDragging);
-slider.addEventListener('pointercancel', stopDragging);
-slider.addEventListener('pointerleave', stopDragging);
+    requestAnimationFrame(update);
+}
+
+// Start the loop
+update();
