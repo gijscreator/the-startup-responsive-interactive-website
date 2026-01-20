@@ -70,7 +70,7 @@ const UserInterface = {
             const jsonData = await response.json();
             return Array.isArray(jsonData) ? jsonData : (jsonData.data || []);
         } catch (error) { 
-            console.error("Data fetch failed", error);
+
             return []; 
         }
     },
