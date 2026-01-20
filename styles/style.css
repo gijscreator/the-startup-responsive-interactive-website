@@ -90,7 +90,7 @@ Seven hours = 1120px / 70rem
     height: 100%;
     max-height: 6rem;
     object-fit: cover;
-    border-radius: 0 0 var(--border-radius) 0;
+    border-radius: var(--border-radius) 0 var(--border-radius) 0;
     max-width: 13rem;
     position: sticky;
     z-index: 10;
@@ -105,16 +105,16 @@ Seven hours = 1120px / 70rem
     }
   }
 
-  h3.fly-in-text {
+  	h3.fly-in-text {
 
-	grid-area: title;
-	width: max-content;
-	padding: 0.2rem 1rem;
-	padding-top: 0;
-	margin: 0;
-	text-align: left;
-	position: sticky;
-	left: 0;
+		grid-area: title;
+		width: max-content;
+		padding: 0.2rem 1rem;
+		padding-top: 0;
+		margin: 0;
+		text-align: left;
+		position: sticky;
+		left: 0;
 
 	}
 
