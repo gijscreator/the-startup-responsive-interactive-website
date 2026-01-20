@@ -226,6 +226,8 @@ button {
   
   display: inline-block; 
   animation: appear linear both;
+
+  height: fit-content;
   
   animation-timeline: view(inline); 
   animation-range: entry 0% entry 50%;
