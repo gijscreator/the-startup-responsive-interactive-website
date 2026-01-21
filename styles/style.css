@@ -739,7 +739,7 @@ main.home {
 		position: relative;
 	
 		.time-indicator {
-		
+
 			--position: calc(var(--offset-width) + (var(--time) * (var(--hour-width-px) + var(--gap-width-px))));
 			--card-height: 9rem;
 			--total-margin: 1.5rem;
@@ -754,7 +754,7 @@ main.home {
 			left: var(--position);
 			z-index: 100;
 			
-			pointer-events: none;
+			pointer-events: auto;
 			height: calc((3 * var(--card-height)) + var(--total-margin));
 			
 			@media (min-height: 730px) {
@@ -773,6 +773,7 @@ main.home {
 				background-color: var(--radiogids-light-background);
 				position: absolute;
 				top: -2.6rem;
+				transition: transform .3s linear;
 				clip-path: polygon(49% 15%, 100% 16%, 100% 35%, 100% 53%, 74% 70%, 50% 86%, 24% 71%, 0 57%, 0% 35%, 0 15%);
 
 			}
@@ -781,17 +782,17 @@ main.home {
 
 	.time-indicator.is-sticky-right::before {
 		position: fixed;
+		top: 15dvh;
 		right: 0;
-		top: 20px;
-		width: 400px;
-		height: 400px;
+		transform: rotate(90deg);
+
 	}
 
 	.time-indicator.is-sticky-left::before {
 		position: fixed;
+		top: 15dvh;
 		left: 0;
-		top: 20px;
-		height: 400px;
+		transform: rotate(-90deg);
 	}
 
 
