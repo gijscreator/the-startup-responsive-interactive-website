@@ -1,17 +1,23 @@
-/* important information 
-One hour = 160px; / 10rem
-Two hours = 320px / 20rem
-Three hours = 480px / 30rem
-Four hours = 640px / 40rem
-Five hours = 800px / 50rem
-Six hours = 960px / 60rem
-Seven hours = 1120px / 70rem
-*/
-
-
 /* ==========================================================
 1. CSS Reset, Global Defaults & Custom Properties
 ========================================================== */
+
+* {
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  scroll-behavior: auto;
+  font-family: "roboto", sans-serif;
+
+  @media (min-width: 700px) {
+      ::-webkit-scrollbar
+         display: block;
+      }
+}
+
+/* font */
 
 @font-face {
   font-family: "roboto";
@@ -19,7 +25,7 @@ Seven hours = 1120px / 70rem
   font-display: swap;
 }
 
-:root {
+body {
 
     color-scheme: light dark;
 
@@ -86,64 +92,6 @@ Seven hours = 1120px / 70rem
 
 }
 
-/* ==========================================================
-2. View transition
-========================================================== */
-
-@view-transition {
-  navigation: auto;
-}
-
-::view-transition-new(root) {
-  animation:
-    page-enter 280ms cubic-bezier(0.2, 0, 0, 1) both;
-}
-
-::view-transition-old(root) {
-  animation:
-    page-exit 200ms cubic-bezier(0.4, 0, 1, 1) both;
-}
-
-/* ==========================================================
-2. Kleuren per station
-========================================================== */
-
-button, article, a, header:not(.details), .listener {
-  &.veronica {
-    background-color: var(--veronica-primary);
-  }
-
-  &.slam {
-    background-color: var(--slam-primary);
-  }
-
-  &.honderdnl {
-    background-color: var(--honderdnl-primary);
-  }
-}
-
-/* css reset */ 
-
-* {
-
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  scroll-behavior: auto;
-  font-family: "roboto", sans-serif;
-
-  @media (min-width: 700px) {
-      *::-webkit-scrollbar
-         display: block;
-      }
-}
-
-html, body {
-  background-color: light-dark(var(--radiogids-light-background), var(--radiogids-dark-background));
-  height: 100dvh;
-}
-
 body {
   
   overscroll-behavior: none;
@@ -156,6 +104,13 @@ body {
       overflow: hidden;
   }
 }
+
+html, body {
+  background-color: light-dark(var(--radiogids-light-background), var(--radiogids-dark-background));
+  height: 100dvh;
+}
+
+
 
 .hidden {
   display: none;
@@ -229,7 +184,6 @@ button {
   }
 }
 
-
 .fly-in-text {
   opacity: 0;
   transform: translateY(50px);
@@ -246,6 +200,44 @@ button {
   animation-timeline: view(inline); 
   animation-range: entry 0% entry 30%;
   
+}
+
+
+
+/* ==========================================================
+2. View transition
+========================================================== */
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-new(root) {
+  animation:
+    page-enter 280ms cubic-bezier(0.2, 0, 0, 1) both;
+}
+
+::view-transition-old(root) {
+  animation:
+    page-exit 200ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+/* ==========================================================
+2. Kleuren per station
+========================================================== */
+
+button, article, a, header:not(.details), .listener {
+  &.veronica {
+    background-color: var(--veronica-primary);
+  }
+
+  &.slam {
+    background-color: var(--slam-primary);
+  }
+
+  &.honderdnl {
+    background-color: var(--honderdnl-primary);
+  }
 }
 
 /* Section met radio veronica  */
