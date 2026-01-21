@@ -51,8 +51,10 @@ body {
     --radiogids-primary: #EE0005;
     --radiogids-light-background: #ffffff;
     --radiogids-dark-background: #1e1e1e;
+	--radiogids-light-dark-background: light-dark(var(--radiogids-light-background), var(--radiogids-dark-background));
     --text-dark: #1E1E1E;
     --text-light: #ffffff;
+	--radiogids-light-dark-text: light-dark(var(--text-dark), var(--text-light));
 
     /* --------------- Font sizes --------------- */
 
@@ -113,7 +115,7 @@ body.home {
 }
 
 html, body {
-  background-color: light-dark(var(--radiogids-light-background), var(--radiogids-dark-background));
+  background-color:	var(--radiogids-light-dark-background);
   height: 100dvh;
 }
 
@@ -718,7 +720,7 @@ header.home {
 			
 				&.date.active {
 					background-color: transparent;
-					color: light-dark(var(--text-dark), var(--text-light));
+					color: var(--radiogids-light-dark-text);
 					border: 2px solid var(--radiogids-primary);
 			
 				}
@@ -860,7 +862,7 @@ main.home {
 			width: .7rem;
 		
 			path {
-				fill: light-dark(var(--radiogids-light-background), var(--radiogids-dark-background));
+				fill: var(--radiogids-light-dark-background);
 			}
 		}
 		
@@ -874,7 +876,7 @@ main.home {
 			width: .7rem;
 			
 			path {
-				fill: light-dark(var(--radiogids-light-background), var(--radiogids-dark-background));
+				fill: var(--radiogids-light-dark-background);
 			}
 		}
 	}
