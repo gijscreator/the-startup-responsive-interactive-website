@@ -5,9 +5,9 @@
     "from": "00:00",
     "until": "06:00",
     "show_name": "SLAM! Non-Stop",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "dj_names": "Treintje oosterhuis",
-    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "body": "Slam! Non-Stop is de leukste ochtendradio die er bestaat! Van claude tot nederpop, alles hoor jij hier!"
   },
   {
@@ -16,7 +16,7 @@
     "from": "06:00",
     "until": "07:00",
     "show_name": "Marijn Oosterveen",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1qmzr25uu10i-marijn-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/1qmzr25uu10i-marijn-1207x765.png",
     "dj_names": "Marijn Oosterveen",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/1qmzr25uu10i-marijn-1207x765.png"
   },
@@ -26,7 +26,7 @@
     "from": "07:00",
     "until": "10:00",
     "show_name": "Early Birds",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/6d1km5vavo9x-anoul-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/6d1km5vavo9x-anoul-1207x765.png",
     "dj_names": "Anoûl Hendriks",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6d1km5vavo9x-anoul-1207x765.png"
   },
@@ -36,7 +36,7 @@
     "from": "10:00",
     "until": "12:00",
     "show_name": "Patrick Wolda",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4rb700jez5wk-patrick-1920x1080.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/4rb700jez5wk-patrick-1920x1080.png",
     "dj_names": "Patrick Wolda",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/7km2c20i1hur-patrick-1207x765.png"
   },
@@ -46,7 +46,7 @@
     "from": "12:00",
     "until": "14:00",
     "show_name": "Housuh in de Pauzuh",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1pthejd9aieq-slam-banner-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/1pthejd9aieq-slam-banner-1207x765.png",
     "dj_names": "Raoul Schram",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/4n359no7lns4-raoul-1207x765.png"
   },
@@ -56,7 +56,7 @@
     "from": "14:00",
     "until": "16:00",
     "show_name": "Thomas van Empelen",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4vmy0hf6bi5h-thomas-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/4vmy0hf6bi5h-thomas-1207x765.png",
     "dj_names": "Raoul Schram",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/4n359no7lns4-raoul-1207x765.png"
   },
@@ -66,7 +66,7 @@
     "from": "16:00",
     "until": "20:00",
     "show_name": "SLAM! Middagshow",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/5swrc7x511pf-middagshow-1920x1080.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/5swrc7x511pf-middagshow-1920x1080.png",
     "dj_names": "Jarno van der Wielen",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6r4aq5ovk2fa-jarno-1207x765.png"
   },
@@ -76,7 +76,7 @@
     "from": "20:00",
     "until": "23:59",
     "show_name": "SLAM! Non-Stop",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "dj_names": "",
     "dj_images": ""
   },
@@ -86,7 +86,7 @@
     "from": "00:00",
     "until": "06:00",
     "show_name": "SLAM! Non-Stop",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "dj_names": "",
     "dj_images": ""
   },
@@ -96,7 +96,7 @@
     "from": "06:00",
     "until": "07:00",
     "show_name": "Marijn Oosterveen",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1qmzr25uu10i-marijn-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/1qmzr25uu10i-marijn-1207x765.png",
     "dj_names": "Marijn Oosterveen",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/1qmzr25uu10i-marijn-1207x765.png"
   },
@@ -106,7 +106,7 @@
     "from": "07:00",
     "until": "10:00",
     "show_name": "Early Birds",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/6d1km5vavo9x-anoul-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/6d1km5vavo9x-anoul-1207x765.png",
     "dj_names": "Anoûl Hendriks",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6d1km5vavo9x-anoul-1207x765.png"
   },
@@ -116,7 +116,7 @@
     "from": "10:00",
     "until": "12:00",
     "show_name": "Patrick Wolda",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4rb700jez5wk-patrick-1920x1080.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/4rb700jez5wk-patrick-1920x1080.png",
     "dj_names": "Patrick Wolda",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/7km2c20i1hur-patrick-1207x765.png"
   },
@@ -126,7 +126,7 @@
     "from": "12:00",
     "until": "14:00",
     "show_name": "Housuh in de Pauzuh",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1pthejd9aieq-slam-banner-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/1pthejd9aieq-slam-banner-1207x765.png",
     "dj_names": "Raoul Schram",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/4n359no7lns4-raoul-1207x765.png"
   },
@@ -136,7 +136,7 @@
     "from": "14:00",
     "until": "16:00",
     "show_name": "Thomas van Empelen",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4vmy0hf6bi5h-thomas-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/4vmy0hf6bi5h-thomas-1207x765.png",
     "dj_names": "Raoul Schram",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/4n359no7lns4-raoul-1207x765.png"
   },
@@ -146,7 +146,7 @@
     "from": "16:00",
     "until": "20:00",
     "show_name": "SLAM! Middagshow",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/5swrc7x511pf-middagshow-1920x1080.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/5swrc7x511pf-middagshow-1920x1080.png",
     "dj_names": "Jarno van der Wielen",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6r4aq5ovk2fa-jarno-1207x765.png"
   },
@@ -156,7 +156,7 @@
     "from": "20:00",
     "until": "23:59",
     "show_name": "SLAM! Non-Stop",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "dj_names": "",
     "dj_images": ""
   },
@@ -166,7 +166,7 @@
     "from": "00:00",
     "until": "06:00",
     "show_name": "SLAM! Non-Stop",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "dj_names": "",
     "dj_images": ""
   },
@@ -176,7 +176,7 @@
     "from": "06:00",
     "until": "07:00",
     "show_name": "Marijn Oosterveen",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1qmzr25uu10i-marijn-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/1qmzr25uu10i-marijn-1207x765.png",
     "dj_names": "Marijn Oosterveen",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/1qmzr25uu10i-marijn-1207x765.png"
   },
@@ -186,7 +186,7 @@
     "from": "07:00",
     "until": "10:00",
     "show_name": "Early Birds",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/6d1km5vavo9x-anoul-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/6d1km5vavo9x-anoul-1207x765.png",
     "dj_names": "Anoûl Hendriks",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6d1km5vavo9x-anoul-1207x765.png"
   },
@@ -196,7 +196,7 @@
     "from": "10:00",
     "until": "12:00",
     "show_name": "Patrick Wolda",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4rb700jez5wk-patrick-1920x1080.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/4rb700jez5wk-patrick-1920x1080.png",
     "dj_names": "Patrick Wolda",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/7km2c20i1hur-patrick-1207x765.png"
   },
@@ -206,7 +206,7 @@
     "from": "12:00",
     "until": "14:00",
     "show_name": "Housuh in de Pauzuh",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1pthejd9aieq-slam-banner-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/1pthejd9aieq-slam-banner-1207x765.png",
     "dj_names": "Raoul Schram",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/4n359no7lns4-raoul-1207x765.png"
   },
@@ -216,7 +216,7 @@
     "from": "14:00",
     "until": "16:00",
     "show_name": "Thomas van Empelen",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4vmy0hf6bi5h-thomas-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/4vmy0hf6bi5h-thomas-1207x765.png",
     "dj_names": "Raoul Schram",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/4n359no7lns4-raoul-1207x765.png"
   },
@@ -226,7 +226,7 @@
     "from": "16:00",
     "until": "20:00",
     "show_name": "SLAM! Middagshow",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/5swrc7x511pf-middagshow-1920x1080.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/5swrc7x511pf-middagshow-1920x1080.png",
     "dj_names": "Jarno van der Wielen",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6r4aq5ovk2fa-jarno-1207x765.png"
   },
@@ -236,7 +236,7 @@
     "from": "20:00",
     "until": "23:59",
     "show_name": "SLAM! Non-Stop",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "dj_names": "",
     "dj_images": ""
   },
@@ -246,7 +246,7 @@
     "from": "00:00",
     "until": "06:00",
     "show_name": "SLAM! Non-Stop",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "dj_names": "",
     "dj_images": ""
   },
@@ -256,7 +256,7 @@
     "from": "06:00",
     "until": "07:00",
     "show_name": "Marijn Oosterveen",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1qmzr25uu10i-marijn-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/1qmzr25uu10i-marijn-1207x765.png",
     "dj_names": "Marijn Oosterveen",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/1qmzr25uu10i-marijn-1207x765.png"
   },
@@ -266,7 +266,7 @@
     "from": "07:00",
     "until": "10:00",
     "show_name": "Early Birds",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/6d1km5vavo9x-anoul-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/6d1km5vavo9x-anoul-1207x765.png",
     "dj_names": "Anoûl Hendriks",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6d1km5vavo9x-anoul-1207x765.png"
   },
@@ -276,7 +276,7 @@
     "from": "10:00",
     "until": "12:00",
     "show_name": "Patrick Wolda",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4rb700jez5wk-patrick-1920x1080.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/4rb700jez5wk-patrick-1920x1080.png",
     "dj_names": "Patrick Wolda",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/7km2c20i1hur-patrick-1207x765.png"
   },
@@ -286,7 +286,7 @@
     "from": "12:00",
     "until": "14:00",
     "show_name": "Housuh in de Pauzuh",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1pthejd9aieq-slam-banner-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/1pthejd9aieq-slam-banner-1207x765.png",
     "dj_names": "Raoul Schram",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/4n359no7lns4-raoul-1207x765.png"
   },
@@ -296,7 +296,7 @@
     "from": "14:00",
     "until": "16:00",
     "show_name": "Thomas van Empelen",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4vmy0hf6bi5h-thomas-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/4vmy0hf6bi5h-thomas-1207x765.png",
     "dj_names": "Raoul Schram",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/4n359no7lns4-raoul-1207x765.png"
   },
@@ -306,7 +306,7 @@
     "from": "16:00",
     "until": "20:00",
     "show_name": "SLAM! Middagshow",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/5swrc7x511pf-middagshow-1920x1080.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/5swrc7x511pf-middagshow-1920x1080.png",
     "dj_names": "Jarno van der Wielen",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6r4aq5ovk2fa-jarno-1207x765.png"
   },
@@ -316,7 +316,7 @@
     "from": "20:00",
     "until": "23:59",
     "show_name": "SLAM! Non-Stop",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "dj_names": "",
     "dj_images": ""
   },
@@ -326,7 +326,7 @@
     "from": "00:00",
     "until": "06:00",
     "show_name": "SLAM! Non-Stop",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "dj_names": "",
     "dj_images": ""
   },
@@ -336,7 +336,7 @@
     "from": "06:00",
     "until": "10:00",
     "show_name": "SLAM! MixMarathon",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/2xhq6chv4ieg-scaleslam.jpg",
     "dj_names": "Raoul Schram",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/4n359no7lns4-raoul-1207x765.png"
   },
@@ -346,7 +346,7 @@
     "from": "10:00",
     "until": "14:00",
     "show_name": "SLAM! MixMarathon",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/2xhq6chv4ieg-scaleslam.jpg",
     "dj_names": "Jarno van der Wielen",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6r4aq5ovk2fa-jarno-1207x765.png"
   },
@@ -356,7 +356,7 @@
     "from": "14:00",
     "until": "18:00",
     "show_name": "SLAM! MixMarathon",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/2xhq6chv4ieg-scaleslam.jpg",
     "dj_names": "Hielke Boersma",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/x6gga1ozezk-hielke-1207x765.png"
   },
@@ -366,7 +366,7 @@
     "from": "18:00",
     "until": "19:00",
     "show_name": "SLAM! MixMarathon",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/2xhq6chv4ieg-scaleslam.jpg",
     "dj_names": "Oliver Heldens",
     "dj_images": ""
   },
@@ -376,7 +376,7 @@
     "from": "19:00",
     "until": "20:00",
     "show_name": "SLAM! MixMarathon",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/2xhq6chv4ieg-scaleslam.jpg",
     "dj_names": "Nicky Romero",
     "dj_images": ""
   },
@@ -386,7 +386,7 @@
     "from": "20:00",
     "until": "21:00",
     "show_name": "SLAM! MixMarathon",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/2xhq6chv4ieg-scaleslam.jpg",
     "dj_names": "R3HAB",
     "dj_images": ""
   },
@@ -396,7 +396,7 @@
     "from": "21:00",
     "until": "22:00",
     "show_name": "SLAM! MixMarathon",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/2xhq6chv4ieg-scaleslam.jpg",
     "dj_names": "Alok",
     "dj_images": ""
   },
@@ -406,7 +406,7 @@
     "from": "22:00",
     "until": "23:00",
     "show_name": "SLAM! MixMarathon",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/2xhq6chv4ieg-scaleslam.jpg",
     "dj_names": "",
     "dj_images": ""
   },
@@ -416,7 +416,7 @@
     "from": "23:00",
     "until": "23:59",
     "show_name": "SLAM! MixMarathon",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/2xhq6chv4ieg-scaleslam.jpg",
     "dj_names": "",
     "dj_images": ""
   },
@@ -426,7 +426,7 @@
     "from": "00:00",
     "until": "01:00",
     "show_name": "SLAM! MixMarathon",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/2xhq6chv4ieg-scaleslam.jpg",
     "dj_names": "Mau P",
     "dj_images": ""
   },
@@ -436,7 +436,7 @@
     "from": "01:00",
     "until": "02:00",
     "show_name": "SLAM! MixMarathon",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/2xhq6chv4ieg-scaleslam.jpg",
     "dj_names": "Mike Williams",
     "dj_images": ""
   },
@@ -446,7 +446,7 @@
     "from": "02:00",
     "until": "03:00",
     "show_name": "SLAM! MixMarathon",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/2xhq6chv4ieg-scaleslam.jpg",
     "dj_names": "Dimitri Vegas and Like Mike",
     "dj_images": ""
   },
@@ -456,7 +456,7 @@
     "from": "03:00",
     "until": "04:00",
     "show_name": "SLAM! MixMarathon",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/2xhq6chv4ieg-scaleslam.jpg",
     "dj_names": "Solardo",
     "dj_images": ""
   },
@@ -466,7 +466,7 @@
     "from": "04:00",
     "until": "05:00",
     "show_name": "SLAM! MixMarathon",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/2xhq6chv4ieg-scaleslam.jpg",
     "dj_names": "Vintage Culture",
     "dj_images": ""
   },
@@ -476,7 +476,7 @@
     "from": "05:00",
     "until": "06:00",
     "show_name": "SLAM! MixMarathon",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/2xhq6chv4ieg-scaleslam.jpg",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/2xhq6chv4ieg-scaleslam.jpg",
     "dj_names": "Claptone",
     "dj_images": ""
   },
@@ -486,7 +486,7 @@
     "from": "06:00",
     "until": "12:00",
     "show_name": "SLAM! Non-Stop",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "dj_names": "",
     "dj_images": ""
   },
@@ -496,7 +496,7 @@
     "from": "12:00",
     "until": "14:00",
     "show_name": "Housuh in de Pauzuh",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1pthejd9aieq-slam-banner-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/1pthejd9aieq-slam-banner-1207x765.png",
     "dj_names": "Hielke Boersma",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/x6gga1ozezk-hielke-1207x765.png"
   },
@@ -506,7 +506,7 @@
     "from": "14:00",
     "until": "17:00",
     "show_name": "SLAM!40",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "dj_names": "Anoûl Hendriks",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/6d1km5vavo9x-anoul-1207x765.png"
   },
@@ -516,7 +516,7 @@
     "from": "17:00",
     "until": "20:00",
     "show_name": "SLAM! WKNDMX",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/4wbce2wk9m4f-1563267989e9753129cf2891fcbeab795554d7d7b2.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/4wbce2wk9m4f-1563267989e9753129cf2891fcbeab795554d7d7b2.png",
     "dj_names": "Hielke Boersma",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/x6gga1ozezk-hielke-1207x765.png"
   },
@@ -526,7 +526,7 @@
     "from": "20:00",
     "until": "23:59",
     "show_name": "The Boom Room",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/xo3nvhcwxpc-gijs-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/xo3nvhcwxpc-gijs-1207x765.png",
     "dj_names": "Gijs Alkemade",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/xo3nvhcwxpc-gijs-1207x765.png"
   },
@@ -536,7 +536,7 @@
     "from": "00:00",
     "until": "01:00",
     "show_name": "Joris Voorn",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "dj_names": "Joris Voorn",
     "dj_images": ""
   },
@@ -546,7 +546,7 @@
     "from": "01:00",
     "until": "02:00",
     "show_name": "Eelke Kleijn",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "dj_names": "Eelke Kleijn",
     "dj_images": ""
   },
@@ -556,7 +556,7 @@
     "from": "02:00",
     "until": "03:00",
     "show_name": "Secret Cinema",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "dj_names": "Secret Cinema",
     "dj_images": ""
   },
@@ -566,7 +566,7 @@
     "from": "03:00",
     "until": "04:00",
     "show_name": "Jochem Hamerling",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "dj_names": "Jochem Hamerling",
     "dj_images": ""
   },
@@ -576,7 +576,7 @@
     "from": "04:00",
     "until": "05:00",
     "show_name": "Franky Rizardo",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "dj_names": "Franky Rizardo",
     "dj_images": ""
   },
@@ -586,7 +586,7 @@
     "from": "05:00",
     "until": "06:00",
     "show_name": "Olivier Weiter",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "dj_names": "Olivier Weiter",
     "dj_images": ""
   },
@@ -596,7 +596,7 @@
     "from": "06:00",
     "until": "12:00",
     "show_name": "SLAM! Non-Stop",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "dj_names": "",
     "dj_images": ""
   },
@@ -606,7 +606,7 @@
     "from": "12:00",
     "until": "14:00",
     "show_name": "Housuh in de Pauzuh",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1pthejd9aieq-slam-banner-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/1pthejd9aieq-slam-banner-1207x765.png",
     "dj_names": "Hielke Boersma",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/x6gga1ozezk-hielke-1207x765.png"
   },
@@ -616,7 +616,7 @@
     "from": "14:00",
     "until": "16:00",
     "show_name": "Hielke Boersma",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/x6gga1ozezk-hielke-1207x765.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/x6gga1ozezk-hielke-1207x765.png",
     "dj_names": "Hielke Boersma",
     "dj_images": "https://2ptqdc73ga5k.b-cdn.net/w_96,h_96,q_75/x6gga1ozezk-hielke-1207x765.png"
   },
@@ -626,7 +626,7 @@
     "from": "16:00",
     "until": "20:00",
     "show_name": "Danny Blom",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/1nthikxvjcfm-slam-banner-1920x1080.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/1nthikxvjcfm-slam-banner-1920x1080.png",
     "dj_names": "",
     "dj_images": ""
   },
@@ -636,7 +636,7 @@
     "from": "20:00",
     "until": "23:59",
     "show_name": "SLAM! Non-Stop",
-    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_85/44u2e6owci2l-slam-default-header-mobile.png",
+    "show_thumbnail": "https://2ptqdc73ga5k.b-cdn.net/w_320,h_320,q_65/44u2e6owci2l-slam-default-header-mobile.png",
     "dj_names": "",
     "dj_images": ""
   }
