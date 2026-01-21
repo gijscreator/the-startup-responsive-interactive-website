@@ -776,7 +776,7 @@ main.home {
 				height: 3.4rem;
 				background-color: var(--radiogids-light-background);
 				position: absolute;
-				top: -2.6rem;
+				top: -3.2rem;
 				right: -.88rem;
 				transition: transform .3s linear;
 				clip-path: polygon(49% 15%, 100% 16%, 100% 35%, 100% 53%, 74% 70%, 50% 86%, 24% 71%, 0 57%, 0% 35%, 0 15%);
@@ -787,7 +787,7 @@ main.home {
 
 	.time-indicator.is-sticky-right::before {
 		position: fixed;
-		top: calc(2.5rem + 10dvh);
+		top: calc(1.5rem + 10dvh);
 		right: 0;
 		transform: rotate(90deg);
 
@@ -795,7 +795,7 @@ main.home {
 
 	.time-indicator.is-sticky-left::before {
 		position: fixed;
-		top: 15dvh;
+		top: calc(1.5rem + 10dvh);
 		left: 0;
 		transform: rotate(-90deg);
 	}
@@ -837,7 +837,7 @@ main.home {
 		background-repeat: repeat-x;
 		background-position: 5.4rem bottom;
 		position: relative;
-		height: 4rem;
+		height: 3rem;
 		align-items: center;
 		z-index: 00;
 		
