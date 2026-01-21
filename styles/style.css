@@ -8,6 +8,417 @@ Six hours = 960px / 60rem
 Seven hours = 1120px / 70rem
 */
 
+
+/* ==========================================================
+1. CSS Reset, Global Defaults & Custom Properties
+========================================================== */
+
+@font-face {
+  font-family: "roboto";
+  src: url("../fonts/roboto.woff2");
+  font-display: swap;
+}
+
+:root {
+
+    color-scheme: light dark;
+
+    /* radio Veronica */
+    --veronica-primary: #2275D9;
+    --veronica-secondary: #FF006B;
+
+    /* radio 100%NL */
+
+    --honderdnl-primary: #BF5908;
+    --honderdnl-secondary: #1e1e1e;
+
+    /* radio Slam! */
+
+    --slam-primary: #e50069;
+    --slam-secondary: #0AAAE1;
+
+    /* General app styling */
+
+    --radiogids-primary: #EE0005;
+    --radiogids-light-background: #ffffff;
+    --radiogids-dark-background: #1e1e1e;
+    --text-dark: #1E1E1E;
+    --text-light: #ffffff;
+
+    /* --------------- Font sizes --------------- */
+
+    /* headings */
+
+    --large-heading: clamp(2rem, 2rem, 5rem);
+    --medium-heading: clamp(1.5rem, 1.5rem, 5rem);
+    --small-heading: clamp(1.3rem, 1.3rem, 5rem);
+
+    /* paragraph */
+    --large-paragraph: clamp(1.2rem, 1.2rem, 5rem);
+    --medium-paragraph: clamp(1.1rem, 1.1rem, 3rem);
+    --small-paragraph: clamp(1rem, 1rem, 2rem);
+
+
+    /* Border radius */
+
+    --border-radius: .7rem;
+    --border-radius-button: 1.4rem;
+
+    /* --------------- width, height and gap per card --------------- */
+
+    --hour-width: 10rem; /* base 160px */
+    --gap-width-px: 16px;  /* gap tussen de cards */
+
+    --hour-height: 5.258rem; /* base 160px */
+    --gap-height-px: 14px;  /* gap tussen de cards */
+
+    /* timeline position */
+
+    --time: 0; 
+    --offset-width: 80px; 
+    --hour-width-px: 160px;
+
+    --hour-height-px: 5.28rem;
+    --offset-height: 8.1rem; 
+
+    /* padding */
+    --padding-regular: .5rem;
+
+}
+
+/* ==========================================================
+2. View transition
+========================================================== */
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-new(root) {
+  animation:
+    page-enter 280ms cubic-bezier(0.2, 0, 0, 1) both;
+}
+
+::view-transition-old(root) {
+  animation:
+    page-exit 200ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+/* ==========================================================
+2. Kleuren per station
+========================================================== */
+
+button, article, a, header:not(.details), .listener {
+  &.veronica {
+    background-color: var(--veronica-primary);
+  }
+
+  &.slam {
+    background-color: var(--slam-primary);
+  }
+
+  &.honderdnl {
+    background-color: var(--honderdnl-primary);
+  }
+}
+
+/* css reset */ 
+
+* {
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  scroll-behavior: auto;
+  font-family: "roboto", sans-serif;
+
+  @media (min-width: 700px) {
+      *::-webkit-scrollbar
+         display: block;
+      }
+}
+
+html, body {
+  background-color: light-dark(var(--radiogids-light-background), var(--radiogids-dark-background));
+  height: 100dvh;
+}
+
+body {
+  
+  overscroll-behavior: none;
+
+  &.home {
+      height: 100vh;
+  }
+
+  &:has(#station-selector:popover-open) {
+      overflow: hidden;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+img, video {
+  width: 100%;
+  height: auto;
+}
+
+button, a {
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  color: var(--text-light);
+}
+
+p, h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+h1 {
+    font-size: var(--large-heading);
+    font-weight: 700;
+}
+
+h2, h3, h4, h5, h6 {
+    font-size: var(--small-heading);
+    font-weight: 700;
+}
+
+p, a, button {
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+button {
+  width: 7rem;
+  height: 2.5rem;
+  padding: var(--padding-regular);
+  border-radius: var(--border-radius-button);
+  border: none;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(.95);
+  }
+
+  &:focus {
+
+  }
+}
+
+
+.fly-in-text {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: flowIn 0.3s ease-out forwards;
+}
+
+.show-card-link {
+  
+  display: inline-block; 
+  animation: appear linear both;
+
+  height: fit-content;
+  
+  animation-timeline: view(inline); 
+  animation-range: entry 0% entry 30%;
+  
+}
+
+/* Section met radio veronica  */
+
+#veronica-shows {
+  
+  figure, img, article {
+
+    background-color: var(--veronica-primary);
+  }
+
+  .block {
+
+    p.link {
+      background-color: var(--veronica-secondary);
+    }
+  }
+}
+
+/* Section met radio honderdnl!  */
+
+#honderdnl-shows {
+      
+	figure, img, article {
+		background-color: light-dark(var(--honderdnl-secondary), var(--honderdnl-primary));
+	}
+
+  	.block {
+
+		p.link {
+		
+			background-color: var(--honderdnl-secondary);
+		}
+	}
+}
+
+/* Section met radio slam!  */
+#slam-shows {
+  
+ 	figure, article, img {
+
+  		background-color: var(--slam-primary);
+	}
+
+	.block {
+
+		p.link {
+	
+			background-color: var(--slam-secondary);
+		}
+	}
+}
+
+/* ==========================================================
+6. Keyframe animations
+========================================================== */
+
+@keyframes slide-up {
+  from { 
+    transform: translateX(60%); 
+  }
+  
+  to { 
+    transform: translateX(0); 
+  }
+}
+
+@keyframes live {
+  0% {
+    scale: .8;
+  }
+  
+  50% {
+    scale: 1;
+  }
+  
+  100% {
+    scale: .8;
+  }
+}
+
+@keyframes flowIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes cardsrender {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes move-out {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes move-in {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes page-exit {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+
+
+
+
+/* ff testen */
+
+main.zenders {
+
+  .block {
+    height: calc(
+    (var(--duration) * var(--hour-height)) + 
+    ((var(--duration) - 1) * var(--gap-height-px))
+    );
+  }
+}
+
+
+
+
 /* ==========================================================
 1. General styling for .block station card (all pages)
 ========================================================== */
