@@ -773,6 +773,7 @@ main.home {
 				background-color: var(--radiogids-light-background);
 				position: absolute;
 				top: -2.6rem;
+				right: -.88rem;
 				transition: transform .3s linear;
 				clip-path: polygon(49% 15%, 100% 16%, 100% 35%, 100% 53%, 74% 70%, 50% 86%, 24% 71%, 0 57%, 0% 35%, 0 15%);
 
@@ -782,7 +783,7 @@ main.home {
 
 	.time-indicator.is-sticky-right::before {
 		position: fixed;
-		top: 15dvh;
+		top: calc(2.5rem + 10dvh);
 		right: 0;
 		transform: rotate(90deg);
 
