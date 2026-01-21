@@ -18,6 +18,10 @@
   }
 }
 
+:root {
+    color-scheme: light dark;
+}
+
 /* font */
 
 @font-face {
@@ -27,8 +31,6 @@
 }
 
 body {
-
-    color-scheme: light dark;
 
     /* radio Veronica */
     --veronica-primary: #2275D9;
