@@ -12,9 +12,10 @@
   font-family: "roboto", sans-serif;
 
   @media (min-width: 700px) {
-      ::-webkit-scrollbar
+      &::-webkit-scrollbar {
          display: block;
       }
+  }
 }
 
 /* font */
@@ -110,8 +111,6 @@ html, body {
   height: 100dvh;
 }
 
-
-
 .hidden {
   display: none;
 }
@@ -180,7 +179,7 @@ button {
   }
 
   &:focus {
-
+    outline: none;
   }
 }
 
@@ -784,12 +783,15 @@ main.home {
 		position: fixed;
 		right: 0;
 		top: 20px;
+		width: 400px;
+		height: 400px;
 	}
 
 	.time-indicator.is-sticky-left::before {
 		position: fixed;
 		left: 0;
 		top: 20px;
+		height: 400px;
 	}
 
 
@@ -1247,11 +1249,9 @@ body:has(#station-selector:popover-open) {
 
 	pointer-events: none;
 
-	.select-station 
-
-		svg {
-			transform: rotate(90deg);
-		}
+	.select-station svg {
+		transform: rotate(90deg);
+	}
 }
 
 /* de popover pointer events auto */
@@ -1572,7 +1572,7 @@ header.details.honderdnl {
     
     	article:nth-of-type(1) {
 
-			background: var(--slam-primary)
+			background: var(--slam-primary);
     	}
   	}
 
@@ -1597,7 +1597,7 @@ header.details.honderdnl {
     
     	article:nth-of-type(1) {
 
-			background: var(--honderdnl-primary)
+			background: var(--honderdnl-primary);
     	}
   	}
 

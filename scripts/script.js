@@ -19,7 +19,7 @@ let activeSelectedDay = appConfiguration.daysOfWeek[currentTime.getDay()];
 // 3. SMOOTH SCROLL STATE
 let targetX = 0; 
 let currentX = 0; 
-const lerpFactor = 0.08; // Slightly faster for responsiveness
+const lerpFactor = 0.08; 
 const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
 // 4. HELPERS / CALCULATIONS
@@ -263,26 +263,32 @@ const UserInterface = {
 
     initStickyObserver: () => {
         const indicator = $('.time-indicator');
-        if (!indicator) return;
+        const scrollContainer = $('.grab-scroll');
+        if (!indicator || !scrollContainer) return;
 
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                const isSticky = entry.intersectionRatio < 1;
-                // Detect side based on position relative to the root (viewport)
-                const isLeft = entry.boundingClientRect.left < 0;
-                const isRight = entry.boundingClientRect.right > (entry.rootBounds?.right || window.innerWidth);
+        const handleStickyClasses = () => {
+            const containerRect = scrollContainer.getBoundingClientRect();
+            const indicatorRect = indicator.getBoundingClientRect();
 
-                indicator.classList.toggle('is-sticky', isSticky);
-                indicator.classList.toggle('is-sticky-left', isSticky && isLeft);
-                indicator.classList.toggle('is-sticky-right', isSticky && isRight);
-            },
-            { 
-                threshold: [1],
-                // -1px on all sides to detect when it touches any edge
-                rootMargin: '-1px -1px -1px -1px' 
-            }
-        );
-        observer.observe(indicator);
+            // Check if the indicator is hitting the container boundaries
+            // We use a 2px buffer to handle Safari's sub-pixel rounding
+            const isAtLeft = indicatorRect.left <= containerRect.left + 2;
+            const isAtRight = indicatorRect.right >= containerRect.right - 2;
+
+            // In horizontal grid, indicator is "sticky" if it's hitting either edge
+            const isSticky = isAtLeft || isAtRight;
+
+            indicator.classList.toggle('is-sticky', isSticky);
+            indicator.classList.toggle('is-sticky-left', isAtLeft);
+            indicator.classList.toggle('is-sticky-right', isAtRight);
+        };
+
+        // Bind to scroll for real-time updates
+        scrollContainer.addEventListener('scroll', handleStickyClasses, { passive: true });
+        // Handle window resizing
+        window.addEventListener('resize', handleStickyClasses);
+        // Initial run
+        handleStickyClasses();
     }
 };
 
