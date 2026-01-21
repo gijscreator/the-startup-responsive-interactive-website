@@ -231,32 +231,53 @@ const UserInterface = {
     }
 };
 
-// 7. SMOOTH LERP SCROLLING
 function initSmoothScroll() {
     const scrollContainer = document.querySelector('.grab-scroll');
     if (!scrollContainer) return;
 
-    window.addEventListener('wheel', (event) => {
-        if (!isTouchDevice && scrollContainer.contains(event.target)) {
-            event.preventDefault();
-            targetX += event.deltaY * 0.8; 
-            const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-            targetX = Math.max(0, Math.min(targetX, maxScroll));
-        }
+    // Detect if the user is actively scrolling with a trackpad or mouse
+    scrollContainer.addEventListener('wheel', (event) => {
+        // 1. If it's a touch device, let the browser handle it natively
+        if (isTouchDevice) return;
+
+        // 2. Calculate the movement
+        // We use deltaY for vertical mice and deltaX for trackpad horizontal swipes
+        const isTrackpad = Math.abs(event.deltaX) > 0;
+        const moveDelta = isTrackpad ? event.deltaX : event.deltaY;
+
+        // 3. Prevent default vertical page scroll
+        event.preventDefault();
+
+        // 4. Update the target position
+        targetX += moveDelta * 0.8; 
+
+        // 5. Constrain targetX within bounds
+        const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+        targetX = Math.max(0, Math.min(targetX, maxScroll));
     }, { passive: false });
 
-    function animationLoop() {
-        if (!isTouchDevice) {
-            currentX += (targetX - currentX) * lerpFactor;
-            if (Math.abs(targetX - currentX) > 0.05) {
-                scrollContainer.scrollLeft = currentX;
-            }
-        } else {
+    // Handle manual scroll (grabbing or native touch) to sync targetX
+    // This prevents the "snap back" bug when switching between wheel and touch
+    scrollContainer.addEventListener('scroll', () => {
+        if (Math.abs(scrollContainer.scrollLeft - currentX) > 10) {
             targetX = scrollContainer.scrollLeft;
             currentX = scrollContainer.scrollLeft;
         }
+    }, { passive: true });
+
+    function animationLoop() {
+        if (!isTouchDevice) {
+            // LERP calculation
+            currentX += (targetX - currentX) * lerpFactor;
+            
+            // Apply scroll - use a small threshold to stop the loop when close enough
+            if (Math.abs(targetX - currentX) > 0.05) {
+                scrollContainer.scrollLeft = currentX;
+            }
+        }
         requestAnimationFrame(animationLoop);
     }
+    
     animationLoop();
 }
 
