@@ -233,7 +233,7 @@ button {
   height: fit-content;
   
   animation-timeline: view(inline); 
-  animation-range: entry 0% entry 50%;
+  animation-range: entry 0% entry 30%;
   
 }
 
