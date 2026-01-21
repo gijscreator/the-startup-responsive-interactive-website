@@ -19,7 +19,7 @@ let activeSelectedDay = appConfiguration.daysOfWeek[currentTime.getDay()];
 // 3. SMOOTH SCROLL STATE
 let targetX = 0; 
 let currentX = 0; 
-const lerpFactor = 0.05; 
+const lerpFactor = 0.08; // Slightly faster for responsiveness
 const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
 // 4. HELPERS / CALCULATIONS
@@ -34,7 +34,7 @@ const TimeCalculations = {
         const startTotalMinutes = TimeCalculations.convertTimeToMinutes(startTime);
         let endTotalMinutes = TimeCalculations.convertTimeToMinutes(endTime === '23:59' ? '24:00' : endTime);
         if (endTotalMinutes <= startTotalMinutes) endTotalMinutes += 1440; 
-        return Math.round((endTotalMinutes - startTotalMinutes) / 60);
+        return (endTotalMinutes - startTotalMinutes) / 60; 
     },
 
     checkIfProgramIsLive: (program) => {
@@ -57,12 +57,10 @@ const CalendarGenerator = {
         const [startH, startM] = program.from.split(':').map(Number);
         const [endH, endM] = program.until.split(':').map(Number);
 
-        // 1. Bereken de eerstvolgende datum voor dit programma
         const programDayIndex = appConfiguration.daysOfWeek.indexOf(program.day.toLowerCase());
         const currentDayIndex = now.getDay();
         let daysUntilNext = (programDayIndex + 7 - currentDayIndex) % 7;
 
-        // Als het vandaag is maar de tijd is al voorbij, verschuif naar volgende week
         if (daysUntilNext === 0 && (now.getHours() > startH || (now.getHours() === startH && now.getMinutes() >= startM))) {
             daysUntilNext = 7;
         }
@@ -73,13 +71,10 @@ const CalendarGenerator = {
 
         const endDate = new Date(startDate);
         endDate.setHours(endH, endM, 0, 0);
-        // Als het programma na middernacht eindigt
         if (endDate <= startDate) endDate.setDate(endDate.getDate() + 1);
 
-        // 2. Helper functie voor ICS datum formaat (YYYYMMDDTHHMMSSZ)
         const formatICS = (date) => date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
 
-        // 3. Bouw de ICS inhoud
         const icsContent = [
             "BEGIN:VCALENDAR",
             "VERSION:2.0",
@@ -115,7 +110,7 @@ const UserInterface = {
         const isLiveNow = TimeCalculations.checkIfProgramIsLive(program);
         
         const articleClasses = [
-            hourDuration > 1 ? 'block' : 'onehour', 
+            hourDuration > 1.1 ? 'block' : 'onehour', 
             isLiveNow ? 'live' : ''
         ].filter(Boolean).join(' ');
 
@@ -155,7 +150,7 @@ const UserInterface = {
             if (activeStationSlug) {
                 const slug = activeStationSlug.toLowerCase();
                 document.body.classList.add(slug, 'zenders');
-                document.querySelectorAll('header, aside, main, button').forEach(el => el.classList.add(slug));
+                $$('header, aside, main, button').forEach(el => el.classList.add(slug));
                 
                 const img = document.getElementById('dynamic-img');
                 if (img) img.src = `assets/logo-${slug}.webp`;
@@ -164,6 +159,7 @@ const UserInterface = {
             UserInterface.setupDaySelector(activeStationSlug);
         }
         UserInterface.setupInteractiveFeatures();
+        UserInterface.initStickyObserver();
     },
 
     loadStationGrids: async (filteredStationSlug) => {
@@ -178,7 +174,8 @@ const UserInterface = {
                 .map(prog => UserInterface.generateProgramCardHtml(prog, station.slug))
                 .join('');
 
-            gridContainer.querySelectorAll('.show-card-link').forEach(card => card.remove());
+            const oldCards = gridContainer.querySelectorAll('.show-card-link');
+            oldCards.forEach(card => card.remove());
             gridContainer.insertAdjacentHTML('beforeend', gridHtml);
         });
         await Promise.all(stationLoadTasks);
@@ -190,7 +187,8 @@ const UserInterface = {
             const targetDate = new Date();
             targetDate.setDate(currentTime.getDate() + index);
             const dayName = appConfiguration.daysOfWeek[targetDate.getDay()];
-            if (index > 1) btn.textContent = appConfiguration.shortDateFormatter.format(targetDate);
+            
+            if (index > 1 && btn) btn.textContent = appConfiguration.shortDateFormatter.format(targetDate);
 
             btn.classList.toggle('active', dayName === activeSelectedDay);
             btn.onclick = () => {
@@ -206,11 +204,10 @@ const UserInterface = {
         if (!uniqueId) return;
         
         const idSegments = uniqueId.split('-');
-        const stationSlug = idSegments.pop().toLowerCase(); // e.g. "veronica"
+        const stationSlug = idSegments.pop().toLowerCase();
         const programId = idSegments.join('-');
         
-        // --- FIX: Apply station classes for the detail page theme ---
-        const elementsToTheme = document.querySelectorAll('header, main, footer, .listener, .detail-container');
+        const elementsToTheme = $$('header, main, footer, .listener, .detail-container');
         elementsToTheme.forEach(el => el.classList.add(stationSlug));
         document.body.classList.add(`detail-page-${stationSlug}`);
 
@@ -221,7 +218,6 @@ const UserInterface = {
         const selectedProgram = programData.find(p => String(p.id) === String(programId));
         if (!selectedProgram) return;
 
-        // Populate detail elements
         if ($('#detail-name')) $('#detail-name').textContent = selectedProgram.show_name;
         if ($('#detail-djs')) $('#detail-djs').textContent = selectedProgram.dj_names || "Onbekend";
         if ($('#detail-img')) $('#detail-img').src = selectedProgram.show_thumbnail || 'assets/default.webp';
@@ -237,8 +233,8 @@ const UserInterface = {
     },
 
     setupInteractiveFeatures: () => {
-        const timeMarker = document.querySelector('.time-indicator, .time-indicator-vertical');
-        const mainContentArea = document.querySelector('main');
+        const timeMarker = $('.time-indicator, .time-indicator-vertical');
+        const mainContentArea = $('main');
 
         if (timeMarker && mainContentArea) {
             const updateTime = () => {
@@ -249,51 +245,62 @@ const UserInterface = {
             updateTime();
             setInterval(updateTime, 60000);
 
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    const isVertical = timeMarker.classList.contains('time-indicator-vertical');
-                    timeMarker.scrollIntoView({
-                        behavior: 'auto', 
-                        block: isVertical ? 'center' : 'nearest',
-                        inline: isVertical ? 'nearest' : 'center'
-                    });
-                    
-                    // Sync LERP math with auto-scroll position
+            setTimeout(() => {
+                const isVertical = timeMarker.classList.contains('time-indicator-vertical');
+                timeMarker.scrollIntoView({
+                    behavior: 'smooth', 
+                    block: isVertical ? 'center' : 'nearest',
+                    inline: isVertical ? 'nearest' : 'center'
+                });
+                
+                setTimeout(() => {
                     targetX = mainContentArea.scrollLeft;
                     currentX = mainContentArea.scrollLeft;
-                });
-            });
+                }, 500);
+            }, 300);
         }
+    },
+
+    initStickyObserver: () => {
+        const indicator = $('.time-indicator');
+        if (!indicator) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                const isSticky = entry.intersectionRatio < 1;
+                // Detect side based on position relative to the root (viewport)
+                const isLeft = entry.boundingClientRect.left < 0;
+                const isRight = entry.boundingClientRect.right > (entry.rootBounds?.right || window.innerWidth);
+
+                indicator.classList.toggle('is-sticky', isSticky);
+                indicator.classList.toggle('is-sticky-left', isSticky && isLeft);
+                indicator.classList.toggle('is-sticky-right', isSticky && isRight);
+            },
+            { 
+                threshold: [1],
+                // -1px on all sides to detect when it touches any edge
+                rootMargin: '-1px -1px -1px -1px' 
+            }
+        );
+        observer.observe(indicator);
     }
 };
 
+// 7. SMOOTH SCROLL ENGINE
 function initSmoothScroll() {
     const scrollContainer = document.querySelector('.grab-scroll');
     if (!scrollContainer) return;
 
-    // Detect if the user is actively scrolling with a trackpad or mouse
     scrollContainer.addEventListener('wheel', (event) => {
-        // 1. If it's a touch device, let the browser handle it natively
         if (isTouchDevice) return;
-
-        // 2. Calculate the movement
-        // We use deltaY for vertical mice and deltaX for trackpad horizontal swipes
         const isTrackpad = Math.abs(event.deltaX) > 0;
         const moveDelta = isTrackpad ? event.deltaX : event.deltaY;
-
-        // 3. Prevent default vertical page scroll
         event.preventDefault();
-
-        // 4. Update the target position
         targetX += moveDelta * 0.8; 
-
-        // 5. Constrain targetX within bounds
         const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
         targetX = Math.max(0, Math.min(targetX, maxScroll));
     }, { passive: false });
 
-    // Handle manual scroll (grabbing or native touch) to sync targetX
-    // This prevents the "snap back" bug when switching between wheel and touch
     scrollContainer.addEventListener('scroll', () => {
         if (Math.abs(scrollContainer.scrollLeft - currentX) > 10) {
             targetX = scrollContainer.scrollLeft;
@@ -303,20 +310,18 @@ function initSmoothScroll() {
 
     function animationLoop() {
         if (!isTouchDevice) {
-            // LERP calculation
             currentX += (targetX - currentX) * lerpFactor;
-            
-            // Apply scroll - use a small threshold to stop the loop when close enough
-            if (Math.abs(targetX - currentX) > 0.05) {
+            if (Math.abs(targetX - currentX) > 0.1) {
                 scrollContainer.scrollLeft = currentX;
             }
         }
         requestAnimationFrame(animationLoop);
     }
-    
     animationLoop();
 }
 
 // 8. START
-UserInterface.initializeApplication();
-initSmoothScroll();
+document.addEventListener('DOMContentLoaded', () => {
+    UserInterface.initializeApplication();
+    initSmoothScroll();
+});

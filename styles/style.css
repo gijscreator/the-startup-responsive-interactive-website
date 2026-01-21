@@ -735,33 +735,63 @@ main.home {
 	position: relative;
 	
 	/* HELP!!! EEN DIVJE */
+	.timeline {
+
+		position: relative;
 	
-	div.time-indicator {
+		.time-indicator {
 		
-		--position: calc(var(--offset-width) + (var(--time) * (var(--hour-width-px) + var(--gap-width-px))));
-		--card-height: 9rem;
-		--total-margin: 1.5rem;
-		
-		display: flex;
-		width: .3rem;
-		background-color: var(--radiogids-light-background);
-		
-		position: absolute; 
-		top: 3rem; 
-		bottom: 0;
-		left: var(--position);
-		z-index: 100;
-		
-		pointer-events: none;
-		height: calc((3 * var(--card-height)) + var(--total-margin));
-		
-		@media (min-height: 730px) {
-		
-			--card-height: 10.625rem;
+			--position: calc(var(--offset-width) + (var(--time) * (var(--hour-width-px) + var(--gap-width-px))));
+			--card-height: 9rem;
+			--total-margin: 1.5rem;
+
+			width: .3rem;
+			background-color: var(--radiogids-light-background);
+			
+			position: absolute;
+			
+			top: 3rem; 
+			bottom: 0;
+			left: var(--position);
+			z-index: 100;
+			
+			pointer-events: none;
 			height: calc((3 * var(--card-height)) + var(--total-margin));
 			
+			@media (min-height: 730px) {
+			
+				--card-height: 10.625rem;
+				height: calc((3 * var(--card-height)) + var(--total-margin));
+			}
+
+			&::before {
+				content:"Nu";
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 2rem;
+				height: 3.4rem;
+				background-color: var(--radiogids-light-background);
+				position: absolute;
+				top: -2.6rem;
+				clip-path: polygon(49% 15%, 100% 16%, 100% 35%, 100% 53%, 74% 70%, 50% 86%, 24% 71%, 0 57%, 0% 35%, 0 15%);
+
+			}
 		}
 	}
+
+	.time-indicator.is-sticky-right::before {
+		position: fixed;
+		right: 0;
+		top: 20px;
+	}
+
+	.time-indicator.is-sticky-left::before {
+		position: fixed;
+		left: 0;
+		top: 20px;
+	}
+
 
 	/* pagina specifieke styling voor alle radio cards */
 	.block {
@@ -799,9 +829,9 @@ main.home {
 		background-repeat: repeat-x;
 		background-position: 5.4rem bottom;
 		position: relative;
-		height: 3rem;
+		height: 4rem;
 		align-items: center;
-		z-index: 200;
+		z-index: 00;
 		
 		ul {
 			display: flex;
@@ -817,9 +847,10 @@ main.home {
 			left: 50vw;
 			flex-shrink: 0;
 			align-self: flex-start;
+			width: .7rem;
 		
 			path {
-				fill: var(--radiogids-light-background);
+				fill: light-dark(var(--radiogids-light-background), var(--radiogids-dark-background));
 			}
 		}
 		
@@ -830,9 +861,10 @@ main.home {
 			left: 50vw;
 			flex-shrink: 0;
 			align-self: flex-end;
+			width: .7rem;
 			
 			path {
-				fill: var(--radiogids-light-background);
+				fill: light-dark(var(--radiogids-light-background), var(--radiogids-dark-background));
 			}
 		}
 	}
