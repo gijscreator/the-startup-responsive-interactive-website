@@ -106,6 +106,10 @@ body {
   }
 }
 
+body.home {
+	max-height: 100vh;
+}
+
 html, body {
   background-color: light-dark(var(--radiogids-light-background), var(--radiogids-dark-background));
   height: 100dvh;
