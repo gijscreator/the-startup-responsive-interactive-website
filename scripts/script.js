@@ -53,13 +53,49 @@ const TimeCalculations = {
 // 5. CALENDAR GENERATOR
 const CalendarGenerator = {
     createIcsDownloadLink: (program) => {
+        const now = new Date();
+        const [startH, startM] = program.from.split(':').map(Number);
+        const [endH, endM] = program.until.split(':').map(Number);
+
+        // 1. Bereken de eerstvolgende datum voor dit programma
+        const programDayIndex = appConfiguration.daysOfWeek.indexOf(program.day.toLowerCase());
+        const currentDayIndex = now.getDay();
+        let daysUntilNext = (programDayIndex + 7 - currentDayIndex) % 7;
+
+        // Als het vandaag is maar de tijd is al voorbij, verschuif naar volgende week
+        if (daysUntilNext === 0 && (now.getHours() > startH || (now.getHours() === startH && now.getMinutes() >= startM))) {
+            daysUntilNext = 7;
+        }
+
+        const startDate = new Date(now);
+        startDate.setDate(now.getDate() + daysUntilNext);
+        startDate.setHours(startH, startM, 0, 0);
+
+        const endDate = new Date(startDate);
+        endDate.setHours(endH, endM, 0, 0);
+        // Als het programma na middernacht eindigt
+        if (endDate <= startDate) endDate.setDate(endDate.getDate() + 1);
+
+        // 2. Helper functie voor ICS datum formaat (YYYYMMDDTHHMMSSZ)
+        const formatICS = (date) => date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+
+        // 3. Bouw de ICS inhoud
         const icsContent = [
-            "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Radiogids//NL",
-            "BEGIN:VEVENT", `SUMMARY:${program.show_name}`,
+            "BEGIN:VCALENDAR",
+            "VERSION:2.0",
+            "PRODID:-//Radiogids//NL",
+            "BEGIN:VEVENT",
+            `UID:${Date.now()}@radiogids.nl`,
+            `DTSTAMP:${formatICS(new Date())}`,
+            `DTSTART:${formatICS(startDate)}`,
+            `DTEND:${formatICS(endDate)}`,
+            `SUMMARY:${program.show_name}`,
             `DESCRIPTION:DJ: ${program.dj_names || 'Onbekend'}`,
             `RRULE:FREQ=WEEKLY;BYDAY=${program.day.substring(0, 2).toUpperCase()}`,
-            "END:VEVENT", "END:VCALENDAR"
+            "END:VEVENT",
+            "END:VCALENDAR"
         ].join("\r\n");
+
         return URL.createObjectURL(new Blob([icsContent], { type: 'text/calendar' }));
     }
 };
