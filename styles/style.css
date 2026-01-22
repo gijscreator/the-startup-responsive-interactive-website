@@ -516,6 +516,12 @@ button, article, a, header:not(.details), .listener {
 	}
 }
 
+.playbutton.home {
+	svg {
+		stroke: black;
+	}
+	
+}
 /* ==========================================================
 2. Radiogids home page styles
 ========================================================== */
@@ -1359,12 +1365,13 @@ header.details {
   position: absolute;
   width: 100vw;
   top: 0;
+  padding: 1rem;
   z-index: 100;
 
   @media (min-width: 530px) {
 	display: flex;
 	position: static;
-	padding: 1rem;
+	
   }
   
   nav {
