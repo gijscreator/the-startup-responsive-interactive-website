@@ -2,6 +2,10 @@
 1. CSS Reset, Global Defaults & Custom Properties
 ========================================================== */
 
+:root {
+    color-scheme: light dark;
+}
+
 * {
 
   box-sizing: border-box;
@@ -11,6 +15,10 @@
   scroll-behavior: auto;
   font-family: "roboto", sans-serif;
 
+     &::-webkit-scrollbar {
+        display: none;
+    }
+
   @media (min-width: 700px) {
       &::-webkit-scrollbar {
          display: block;
@@ -18,8 +26,58 @@
   }
 }
 
-:root {
-    color-scheme: light dark;
+img, video {
+  width: 100%;
+  height: auto;
+}
+
+button, a {
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  color: var(--text-light);
+}
+
+p, h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+h1 {
+    font-size: var(--large-heading);
+    font-weight: 700;
+}
+
+h2, h3, h4, h5, h6 {
+    font-size: var(--small-heading);
+    font-weight: 700;
+}
+
+p, a, button {
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+button {
+  width: 7rem;
+  height: 2.5rem;
+  padding: var(--padding-regular);
+  border-radius: var(--border-radius-button);
+  border: none;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(.95);
+  }
 }
 
 /* font */
@@ -30,7 +88,11 @@
   font-display: swap;
 }
 
+
 body {
+
+	/* ------------------------- all vars needed ------------------------- */
+
 
     /* radio Veronica */
     --veronica-primary: #2275D9;
@@ -95,52 +157,21 @@ body {
     /* padding */
     --padding-regular: .5rem;
 
+	/* body styling */
+
+	background-color:	var(--radiogids-light-dark-background);
+	overscroll-behavior: none;
+
+	&.home {
+		height: 100vh;
+	}
+
+	&:has(.station-selector:popover-open) {
+		overflow: hidden;
+	}
 }
 
-body {
-  
-  overscroll-behavior: none;
-
-  &.home {
-      height: 100vh;
-  }
-
-  &:has(#station-selector:popover-open) {
-      overflow: hidden;
-  }
-}
-
-body.home {
-	max-height: 100vh;
-}
-
-html, body {
-  background-color:	var(--radiogids-light-dark-background);
-  height: 100dvh;
-}
-
-.hidden {
-  display: none;
-}
-
-img, video {
-  width: 100%;
-  height: auto;
-}
-
-button, a {
-  -webkit-appearance: none;
-  appearance: none;
-  -webkit-tap-highlight-color: transparent;
-  text-decoration: none;
-  color: var(--text-light);
-}
-
-p, h3 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+/* to hide any heading from visual but not from screenreader */
 
 .visually-hidden {
   clip: rect(0 0 0 0);
@@ -152,50 +183,15 @@ p, h3 {
   width: 1px;
 }
 
-h1 {
-    font-size: var(--large-heading);
-    font-weight: 700;
-}
-
-h2, h3, h4, h5, h6 {
-    font-size: var(--small-heading);
-    font-weight: 700;
-}
-
-p, a, button {
-    font-size: 1rem;
-    font-weight: 900;
-}
-
-button {
-  width: 7rem;
-  height: 2.5rem;
-  padding: var(--padding-regular);
-  border-radius: var(--border-radius-button);
-  border: none;
-  overflow: hidden;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-
-  &:active {
-    transform: scale(.95);
-  }
-
-  &:focus {
-    outline: none;
-  }
-}
+/* general class for the text animation */
 
 .fly-in-text {
   opacity: 0;
   transform: translateY(50px);
   animation: flowIn 0.3s ease-out forwards;
 }
+
+/* general class for the card animation */
 
 .show-card-link {
   
@@ -208,8 +204,6 @@ button {
   animation-range: entry 0% entry 30%;
   
 }
-
-
 
 /* ==========================================================
 2. View transition
@@ -249,7 +243,7 @@ button, article, a, header:not(.details), .listener {
 
 /* Section met radio veronica  */
 
-#veronica-shows {
+.veronica-shows {
   
   figure, img, article {
 
@@ -266,7 +260,7 @@ button, article, a, header:not(.details), .listener {
 
 /* Section met radio honderdnl!  */
 
-#honderdnl-shows {
+.honderdnl-shows {
       
 	figure, img, article {
 		background-color: light-dark(var(--honderdnl-secondary), var(--honderdnl-primary));
@@ -282,7 +276,7 @@ button, article, a, header:not(.details), .listener {
 }
 
 /* Section met radio slam!  */
-#slam-shows {
+.slam-shows {
   
  	figure, article, img {
 
@@ -298,126 +292,9 @@ button, article, a, header:not(.details), .listener {
 	}
 }
 
-/* ==========================================================
-6. Keyframe animations
-========================================================== */
-
-@keyframes slide-up {
-  from { 
-    transform: translateX(60%); 
-  }
-  
-  to { 
-    transform: translateX(0); 
-  }
-}
-
-@keyframes live {
-  0% {
-    scale: .8;
-  }
-  
-  50% {
-    scale: 1;
-  }
-  
-  100% {
-    scale: .8;
-  }
-}
-
-@keyframes flowIn {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-
-@keyframes appear {
-  from {
-    transform: scale(.9);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
-@keyframes cardsrender {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-
-@keyframes move-out {
-  from {
-    transform: translateY(0%);
-  }
-
-  to {
-    transform: translateY(-100%);
-  }
-}
-
-@keyframes move-in {
-  from {
-    transform: translateY(100%);
-  }
-
-  to {
-    transform: translateY(0%);
-  }
-}
-
-@keyframes page-enter {
-  from {
-    opacity: 0;
-    transform: translateY(4px) scale(0.995);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes page-exit {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-
-
-
-
-/* ff testen */
-
-main.zenders {
-
-  .block {
-    height: calc(
-    (var(--duration) * var(--hour-height)) + 
-    ((var(--duration) - 1) * var(--gap-height-px))
-    );
-  }
-}
-
-
-
 
 /* ==========================================================
-1. General styling for .block station card (all pages)
+3. General styling for .block station card (all pages)
 ========================================================== */
 
 /* ------------------------ 1 uur of minder dan 1 uur duration styling ------------------------ */
@@ -470,7 +347,6 @@ main.zenders {
 }
 
 /* ------------------------ Meer dan 1 uur duration styling ------------------------ */
-
 
 .block {
 
@@ -642,10 +518,6 @@ main.zenders {
 	}
 }
 
-.block-hidden {
-  display: none;
-}
-
 /* ==========================================================
 2. Radiogids home page styles
 ========================================================== */
@@ -737,11 +609,9 @@ main.home {
 	flex-direction: column;
 	overflow-x: auto;
 	overflow-y: hidden;
-	/* height: 86dvh; */
 	margin-bottom: 5dvh;
 	position: relative;
 	
-	/* HELP!!! EEN DIVJE */
 	.timeline {
 
 		position: relative;
@@ -771,6 +641,21 @@ main.home {
 				height: calc((3 * var(--card-height)) + var(--total-margin));
 			}
 
+			&.is-sticky-right::before {
+				position: fixed;
+				top: calc(2rem + 10dvh);
+				right: 0;
+				transform: rotate(90deg);
+
+			}
+
+			&.is-sticky-left::before {
+				position: fixed;
+				top: calc(2rem + 10dvh);
+				left: 0;
+				transform: rotate(-90deg);
+			}
+
 			&::before {
 				content:"Nu";
 				display: flex;
@@ -779,6 +664,7 @@ main.home {
 				width: 2rem;
 				height: 3.4rem;
 				background-color: var(--radiogids-light-background);
+				color: var(--text-dark);
 				position: absolute;
 				top: -3.2rem;
 				right: -.88rem;
@@ -789,20 +675,7 @@ main.home {
 		}
 	}
 
-	.time-indicator.is-sticky-right::before {
-		position: fixed;
-		top: calc(1.5rem + 10dvh);
-		right: 0;
-		transform: rotate(90deg);
 
-	}
-
-	.time-indicator.is-sticky-left::before {
-		position: fixed;
-		top: calc(1.5rem + 10dvh);
-		left: 0;
-		transform: rotate(-90deg);
-	}
 
 
 	/* pagina specifieke styling voor alle radio cards */
@@ -1192,6 +1065,13 @@ body.zenders {
 			grid-column: 3;
 			width: 50vw;
 		}
+
+		.block {
+			height: calc(
+			(var(--duration) * var(--hour-height)) + 
+			((var(--duration) - 1) * var(--gap-height-px))
+			);
+		}
 		
 		.veronica:not(.notme) {
 			background-color: var(--veronica-primary);
@@ -1255,7 +1135,7 @@ body.zenders {
 /* hele mooie toepassing van :has */
 /* Als de popover open is alles eronder pointer events none zodat je er niet achter kan klikken */
 
-body:has(#station-selector:popover-open) {
+body:has(.station-selector:popover-open) {
 
 	pointer-events: none;
 
@@ -1266,16 +1146,13 @@ body:has(#station-selector:popover-open) {
 
 /* de popover pointer events auto */
 
-main:has(#station-selector:popover-open) #station-selector * {
+main:has(.station-selector:popover-open) .station-selector * {
 	pointer-events: auto;
 }
 
-
-
-
 /* ------------------------ popover styling ------------------------ */
 
-#station-selector {
+.station-selector {
   background-color: light-dark(var(--radiogids-light-background), var(--radiogids-dark-background));
   border-radius: 0px 0px 0px var(--border-radius);
   padding: 1rem;
@@ -1437,6 +1314,10 @@ header.details {
       padding: .5rem;
       border: none;
       border-radius: var(--border-radius-button);
+
+	  svg {
+		margin-right: 5px;
+	  }
       
     }
   }
@@ -1468,7 +1349,7 @@ header.details.honderdnl {
 	
 	a {
 
-		background-color: var(--honderdnl-primary);
+		background-color: #12a638;
 	}
 }
 
@@ -1737,5 +1618,85 @@ footer {
 			}
 		}
 	}
+  }
+}
+
+
+/* ==========================================================
+6. Keyframe animations
+========================================================== */
+
+@keyframes slide-up {
+  from { 
+    transform: translateX(60%); 
+  }
+  
+  to { 
+    transform: translateX(0); 
+  }
+}
+
+@keyframes live {
+  0% {
+    scale: .8;
+  }
+  
+  50% {
+    scale: 1;
+  }
+  
+  100% {
+    scale: .8;
+  }
+}
+
+@keyframes flowIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    transform: scale(.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes cardsrender {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes page-exit {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }

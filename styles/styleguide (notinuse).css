@@ -141,7 +141,7 @@ body {
       height: 100vh;
   }
 
-  &:has(#station-selector:popover-open) {
+  &:has(.station-selector:popover-open) {
       overflow: hidden;
   }
 }

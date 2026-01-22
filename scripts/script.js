@@ -1,33 +1,37 @@
-/**
- * RADIOGIDS - CORE APPLICATION
- * Preserves all original logic with enhanced descriptive naming.
- */
 
-// 1. SELECTOR HELPERS
+
+// 1. Selecteer de nodige elementen
+
 const getElement = (selector, context = document) => context.querySelector(selector);
 const getAllElements = (selector, context = document) => Array.from(context.querySelectorAll(selector));
 
-// 2. CONFIGURATION
-const APP_CONFIGURATION = {
+// 2. Configuratie voor de json files
+const appConfiguration = {
     stations: [
-        { id: 1, slug: "veronica", dataFile: 'data/veronica.json', containerSelector: '#veronica-shows' },
-        { id: 2, slug: "slam", dataFile: 'data/slam.json', containerSelector: '#slam-shows' },
-        { id: 3, slug: "honderdnl", dataFile: 'data/100nl.json', containerSelector: '#honderdnl-shows' }
+
+        { id: 1, slug: "veronica", dataFile: 'data/veronica.json', containerSelector: '.veronica-shows' },
+        { id: 2, slug: "slam", dataFile: 'data/slam.json', containerSelector: '.slam-shows' },
+        { id: 3, slug: "honderdnl", dataFile: 'data/100nl.json', containerSelector: '.honderdnl-shows' }
     ],
+
     daysOfWeek: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
     shortDateFormatter: new Intl.DateTimeFormat('nl-NL', { day: 'numeric', month: 'short' })
 };
 
-const SYSTEM_CURRENT_TIME = new Date();
-let activeSelectedDay = APP_CONFIGURATION.daysOfWeek[SYSTEM_CURRENT_TIME.getDay()];
+// bepaal de tijd van de gebruiker
 
-// 3. SMOOTH SCROLL STATE
+const SystemCurrentTime = new Date();
+let activeSelectedDay = appConfiguration.daysOfWeek[SystemCurrentTime.getDay()];
+
+// 3. Scrollen op desktop, mobiel en trackpad zo aangenaam mogelijk maken voor de gebruiker
+
 let smoothScrollTargetX = 0; 
 let smoothScrollCurrentX = 0; 
-const SCROLL_LERP_FACTOR = 0.08; 
-const IS_TOUCH_DEVICE = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+const SmoothScrollingFactor = 0.08; 
+const IsTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-// 4. TIME CALCULATIONS
+// 4. Bereken de tijd en check welk programma live is
+
 const TimeUtilities = {
     convertTimeToMinutes: (timeString) => {
         if (!timeString) return 0;
@@ -43,10 +47,10 @@ const TimeUtilities = {
     },
 
     checkIfProgramIsLive: (program) => {
-        const todayName = APP_CONFIGURATION.daysOfWeek[SYSTEM_CURRENT_TIME.getDay()];
+        const todayName = appConfiguration.daysOfWeek[SystemCurrentTime.getDay()];
         if (activeSelectedDay !== todayName) return false;
         
-        const currentMinutesFromMidnight = (SYSTEM_CURRENT_TIME.getHours() * 60) + SYSTEM_CURRENT_TIME.getMinutes();
+        const currentMinutesFromMidnight = (SystemCurrentTime.getHours() * 60) + SystemCurrentTime.getMinutes();
         const startMinutes = TimeUtilities.convertTimeToMinutes(program.from);
         const durationInMinutes = TimeUtilities.calculateHourDuration(program.from, program.until) * 60;
         
@@ -55,14 +59,16 @@ const TimeUtilities = {
     }
 };
 
-// 5. CALENDAR GENERATOR
+// 5. Apple ics kalender functie ( omdat het kan )
+
 const CalendarExportManager = {
+
     createIcsDownloadLink: (program) => {
         const now = new Date();
         const [startH, startM] = program.from.split(':').map(Number);
         const [endH, endM] = program.until.split(':').map(Number);
 
-        const programDayIndex = APP_CONFIGURATION.daysOfWeek.indexOf(program.day.toLowerCase());
+        const programDayIndex = appConfiguration.daysOfWeek.indexOf(program.day.toLowerCase());
         const currentDayIndex = now.getDay();
         let daysUntilNext = (programDayIndex + 7 - currentDayIndex) % 7;
 
@@ -80,6 +86,7 @@ const CalendarExportManager = {
 
         const formatToIcsString = (date) => date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
 
+        // wat er perse in een ics moet staan: https://stackoverflow.com/questions/19137089/create-ics-file-with-javascript-or-jquery
         const icsContent = [
             "BEGIN:VCALENDAR",
             "VERSION:2.0",
@@ -100,7 +107,8 @@ const CalendarExportManager = {
     }
 };
 
-// 6. UI LOGIC
+// 6. Alles inladen op de site
+
 const UserInterfaceController = {
     fetchStationData: async (filePath) => {
         try {
@@ -145,7 +153,7 @@ const UserInterfaceController = {
         const dayParam = urlParameters.get('day');
         const currentPath = window.location.pathname;
 
-        if (dayParam && APP_CONFIGURATION.daysOfWeek.includes(dayParam.toLowerCase())) {
+        if (dayParam && appConfiguration.daysOfWeek.includes(dayParam.toLowerCase())) {
             activeSelectedDay = dayParam.toLowerCase();
         }
 
@@ -168,7 +176,7 @@ const UserInterfaceController = {
     },
 
     loadStationGrids: async (filteredStationSlug) => {
-        const stationLoadTasks = APP_CONFIGURATION.stations.map(async (station) => {
+        const stationLoadTasks = appConfiguration.stations.map(async (station) => {
             const gridContainer = document.querySelector(station.containerSelector);
             if (!gridContainer || (filteredStationSlug && station.slug !== filteredStationSlug)) return;
 
@@ -190,10 +198,10 @@ const UserInterfaceController = {
         const dayButtons = getAllElements('header.home section ul li button');
         dayButtons.forEach((btn, index) => {
             const targetDate = new Date();
-            targetDate.setDate(SYSTEM_CURRENT_TIME.getDate() + index);
-            const dayName = APP_CONFIGURATION.daysOfWeek[targetDate.getDay()];
+            targetDate.setDate(SystemCurrentTime.getDate() + index);
+            const dayName = appConfiguration.daysOfWeek[targetDate.getDay()];
             
-            if (index > 1 && btn) btn.textContent = APP_CONFIGURATION.shortDateFormatter.format(targetDate);
+            if (index > 1 && btn) btn.textContent = appConfiguration.shortDateFormatter.format(targetDate);
 
             btn.classList.toggle('active', dayName === activeSelectedDay);
             btn.onclick = () => {
@@ -216,7 +224,7 @@ const UserInterfaceController = {
         elementsToTheme.forEach(el => el.classList.add(stationSlug));
         document.body.classList.add(`detail-page-${stationSlug}`);
 
-        const stationMatch = APP_CONFIGURATION.stations.find(s => s.slug === stationSlug);
+        const stationMatch = appConfiguration.stations.find(s => s.slug === stationSlug);
         if (!stationMatch) return;
 
         const programData = await UserInterfaceController.fetchStationData(stationMatch.dataFile);
@@ -260,7 +268,7 @@ const UserInterfaceController = {
                     
                     smoothScrollTargetX = Math.max(0, Math.min(newTargetX, scrollContainer.scrollWidth - containerWidth));
                     
-                    if (IS_TOUCH_DEVICE) {
+                    if (IsTouchDevice) {
                         scrollContainer.scrollTo({
                             left: smoothScrollTargetX,
                             behavior: 'smooth'
@@ -269,7 +277,6 @@ const UserInterfaceController = {
                 }
             });
 
-            // Logic preserved exactly: Initial scroll on load
             setTimeout(() => {
                 const isVertical = timeMarker.classList.contains('time-indicator-vertical');
                 timeMarker.scrollIntoView({
@@ -311,13 +318,13 @@ const UserInterfaceController = {
     }
 };
 
-// 7. SMOOTH SCROLL ENGINE
+// 7. Smooth scroll functie
 function initSmoothScroll() {
     const scrollContainer = document.querySelector('.grab-scroll');
     if (!scrollContainer) return;
 
     scrollContainer.addEventListener('wheel', (event) => {
-        if (IS_TOUCH_DEVICE) return;
+        if (IsTouchDevice) return;
         const isTrackpad = Math.abs(event.deltaX) > 0;
         const moveDelta = isTrackpad ? event.deltaX : event.deltaY;
         event.preventDefault();
@@ -334,8 +341,8 @@ function initSmoothScroll() {
     }, { passive: true });
 
     function animationLoop() {
-        if (!IS_TOUCH_DEVICE) {
-            smoothScrollCurrentX += (smoothScrollTargetX - smoothScrollCurrentX) * SCROLL_LERP_FACTOR;
+        if (!IsTouchDevice) {
+            smoothScrollCurrentX += (smoothScrollTargetX - smoothScrollCurrentX) * SmoothScrollingFactor;
             if (Math.abs(smoothScrollTargetX - smoothScrollCurrentX) > 0.1) {
                 scrollContainer.scrollLeft = smoothScrollCurrentX;
             }
@@ -345,8 +352,7 @@ function initSmoothScroll() {
     animationLoop();
 }
 
-// 8. START
-document.addEventListener('DOMContentLoaded', () => {
-    UserInterfaceController.initializeApplication();
-    initSmoothScroll();
-});
+// 8. init de app
+
+UserInterfaceController.initializeApplication();
+initSmoothScroll();
