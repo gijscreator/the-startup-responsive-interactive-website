@@ -39,25 +39,19 @@ button, a {
   color: var(--text-light);
 }
 
-p, h3 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 h1 {
     font-size: var(--large-heading);
-    font-weight: 700;
+    font-weight: 600;
 }
 
 h2, h3, h4, h5, h6 {
     font-size: var(--small-heading);
-    font-weight: 700;
+    font-weight: 600;
 }
 
 p, a, button {
     font-size: 1rem;
-    font-weight: 900;
+    font-weight: 600;
 }
 
 button {
@@ -491,9 +485,8 @@ button, article, a, header:not(.details), .listener {
 /* ------------------------ Play button styling ------------------------ */
 
 .playbutton {
-	--color: #181D27;
-	width: 48px;
-	height: 48px;
+	width: 50px;
+	height: 50px;
 	border: none;
 	background: none;
 	cursor: pointer;
@@ -504,7 +497,7 @@ button, article, a, header:not(.details), .listener {
 	& svg {
 		position: absolute;
 		fill: none;
-		stroke: var(--color);
+		stroke: white;
 		stroke-width: 2;
 		animation: keyframes-fill .5s;
 	}
@@ -557,7 +550,34 @@ header.home {
   
 	picture {
 		width: 40vw;
+
+		@media (min-width: 790px) {
+			width: 20vw;
+		}
 		
+	}
+
+	nav {
+		width: 20vw;
+		align-items: center;
+		gap: 2rem;
+		display: none;
+
+		@media (min-width: 790px) {
+			display: flex;
+		}
+
+
+		a {
+			text-decoration: underline white 2px;
+		
+			&.active {
+				border: 2px solid var(--radiogids-primary);
+				padding: .5rem 1rem;
+				border-radius: var(--border-radius-button);
+				text-decoration: none;
+			}
+		}
 	}
   
 	/* Section met date picker */
@@ -568,10 +588,11 @@ header.home {
 		justify-content: flex-start;
 		overflow-x: auto;
 		width: 100vw;
-		padding: .5rem 0rem;
+		padding-bottom: .5rem;
 
 		@media (min-width: 1080px) {
 			justify-content: center;
+			width: 70vw;
 		}
 		
 		&::-webkit-scrollbar {
@@ -583,17 +604,17 @@ header.home {
 			display: flex;
 			gap: 1rem;
 			overflow-x: auto;
+			
+			@media (min-width: 790px) {
+				padding: .5rem;
+			}
 		
 			button {
 			
 				display: block;
 				background-color: var(--radiogids-primary);
 				border-radius: var(--border-radius-button);
-				
-				@media (min-height: 730px) {
-					display: block;
-				
-				}
+
 			
 				&.date.active {
 					background-color: transparent;
@@ -648,17 +669,25 @@ main.home {
 
 			&.is-sticky-right::before {
 				position: fixed;
-				top: calc(2rem + 10dvh);
+				top: 7.8rem;
 				right: 0;
 				transform: rotate(90deg);
+
+				@media (min-width: 790px) {
+					top: 4.8rem
+				}
 
 			}
 
 			&.is-sticky-left::before {
 				position: fixed;
-				top: calc(2rem + 10dvh);
+				top: 7.8rem;
 				left: 0;
 				transform: rotate(-90deg);
+
+				@media (min-width: 790px) {
+					top: 4.8rem
+				}
 			}
 
 			&::before {
@@ -780,6 +809,8 @@ main.home {
 			position: sticky;
 			left: 0;
 			z-index: 2000;
+			border: 2px white solid;
+			border-left: none;
 		
 			@media (min-height: 730px) {
 				height: 10.625rem;
@@ -916,10 +947,38 @@ body.zenders {
 		@media (min-width: 1080px) {
 
 			grid-column: 1;
+			justify-content: flex-start;
+		}
+
+
+		nav {
+			width: 80vw;
+			align-items: center;
+			justify-content: flex-end;
+			gap: 2rem;
+			display: none;
+
+			@media (min-width: 790px) {
+				display: flex;
+			}
+
+
+			a {
+				text-decoration: underline white 2px;
+			
+				&.active {
+					border: 2px solid white;
+					padding: .5rem 1rem;
+					border-radius: var(--border-radius-button);
+					text-decoration: none;
+				}
+			}
 		}
 
 		img {
 			height: 8dvh;
+			min-height: 50px;
+			margin-left: 3rem;
 			width: auto;
 			padding: var(--padding-regular);
 			display: none;
@@ -1020,7 +1079,7 @@ body.zenders {
 	/* info about whats live now */
 
 	aside:nth-of-type(2) {
-		
+
 		 grid-column: 1;
 		 margin: auto auto;
 		 width: 26vw;
@@ -1217,8 +1276,13 @@ main:has(.station-selector:popover-open) .station-selector * {
     border-top: 2px solid light-dark(var(--radiogids-dark-background), var(--radiogids-light-background));
     padding: var(--padding-regular);
     opacity: 0;
-    animation: flowIn 0.3s ease-out forwards;
+    animation: flowIn 0.3s forwards;
 	transition: translate 0.2s linear;
+
+	@media (min-width: 790px) {
+		animation: none;
+		opacity: 1;
+	}
 
 	/* hover werkt niet met transform als je de transform in een animatie al hebt op hetzelfde element
 	/* Bron: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-fill-mode */
@@ -1241,8 +1305,9 @@ main:has(.station-selector:popover-open) .station-selector * {
     
     picture {
       img {
-        width: 30%;
+        width: 10vw;
         height: auto;
+		
       }
     }
     
@@ -1306,6 +1371,7 @@ header.details {
     display: flex;
     justify-content: space-between;
     width: 100vw;
+
     
     button {
 		display: flex;
