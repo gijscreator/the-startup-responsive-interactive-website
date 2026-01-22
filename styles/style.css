@@ -1357,7 +1357,6 @@ main:has(.station-selector:popover-open) .station-selector * {
 header.details {
   display: flex;
   position: absolute;
-  padding: 1rem;
   width: 100vw;
   top: 0;
   z-index: 100;
@@ -1365,6 +1364,7 @@ header.details {
   @media (min-width: 530px) {
 	display: flex;
 	position: static;
+	padding: 1rem;
   }
   
   nav {
@@ -1461,34 +1461,50 @@ header.details.honderdnl {
 
   @media (min-width: 580px) {
 	  display: grid;
-  	  grid-template-columns: 60vw 40vw;
+  	  grid-template-columns: 50vw 50vw;
+	  grid-template-rows: auto auto auto;
   }
 
 
   /* image container */
 
   section:nth-of-type(1):not(.listener) {	
-	
 
 	@media (min-width: 580px) {
-		width: 60vw;
+		grid-column: 1;
+		grid-row: 1;
+		width: 50vw;
 	}
     
     article:nth-of-type(1) {
       display: flex;
       justify-content: center;
+	
+	@media (min-width: 790px) {
+		margin-left: 1rem;
+		border-radius: var(--border-radius);
+	}
       
       img {
         width: 100%;
+
+		@media (min-width: 790px) {
+			width: 70%;
+		}
       }
     }
   }
   
   section:nth-of-type(2) {
-    padding: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+    padding: 0rem 1rem;
+	gap: 1rem;
 
 	@media (min-width: 580px) {
-		width: 40vw;
+		width: 50vw;
+		grid-row: 1;
+		grid-column: 2;
 	}
     
     p {
@@ -1509,20 +1525,15 @@ header.details.honderdnl {
         animation: live 2s ease infinite;
       }
     }
-  }
-
-  section:nth-of-type(3) {
-	display: flex;
-	justify-content: space-around;
-	padding: 1rem;
 
 	a {
-		display: inherit;
+		display: flex;
 		align-items: center;
 		justify-content: center;
 		gap: .5rem;
 		width: 44vw;
-		height: 3rem;
+		height: 5vh;
+		min-height: 3rem;
 		border-radius: var(--border-radius-button);
 
 	}
@@ -1541,7 +1552,7 @@ header.details.honderdnl {
     	}
   	}
 
-  	section:nth-of-type(3) {
+  	section:nth-of-type(2) {
 
 		a {
 			background-color: var(--veronica-primary);
@@ -1566,7 +1577,7 @@ header.details.honderdnl {
     	}
   	}
 
-  	section:nth-of-type(3) {
+  	section:nth-of-type(2) {
 
 		a {
 			background-color: var(--slam-primary);
@@ -1591,7 +1602,7 @@ header.details.honderdnl {
     	}
   	}
 
-  	section:nth-of-type(3) {
+  	section:nth-of-type(2) {
 
 		a {
 			background-color: var(--honderdnl-primary);
@@ -1616,6 +1627,11 @@ header.details.honderdnl {
 	position: fixed;
 	bottom: 3rem;
 	left: 5vw;
+
+	@media (min-width: 790px) {
+		display: none;
+		
+	}
 	
 
 	img {
