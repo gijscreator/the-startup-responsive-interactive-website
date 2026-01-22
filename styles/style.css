@@ -984,10 +984,13 @@ body.zenders {
 		img {
 			height: 8dvh;
 			min-height: 50px;
-			margin-left: 3rem;
 			width: auto;
 			padding: var(--padding-regular);
 			display: none;
+
+			@media (min-width: 790px) {
+				margin-left: 3rem;
+			}
 		}
 
 		&.veronica {
