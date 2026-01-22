@@ -675,7 +675,7 @@ main.home {
 
 			&.is-sticky-right::before {
 				position: fixed;
-				top: 7.8rem;
+				top: 6.7rem;
 				right: 0;
 				transform: rotate(90deg);
 
@@ -687,7 +687,7 @@ main.home {
 
 			&.is-sticky-left::before {
 				position: fixed;
-				top: 7.8rem;
+				top: 6.7rem;
 				left: 0;
 				transform: rotate(-90deg);
 
