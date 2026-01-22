@@ -385,8 +385,13 @@ button, article, a, header:not(.details), .listener {
     @media (min-height: 730px) {
     
     	max-height: 7rem;
-
     }
+
+	@media (min-width: 730px) {
+		min-height: 5rem;
+		min-width: 10rem;
+    }
+
   }
 
   	h3.fly-in-text {
@@ -859,7 +864,7 @@ body.zenders {
 
 	@media (min-width: 1080px) {
 
-		grid-template-columns: 40vw 10vw 50vw;
+		grid-template-columns: 30vw 10vw 60vw;
 	}
 
 	div.time-indicator-vertical {
@@ -878,7 +883,7 @@ body.zenders {
 
 		@media (min-width: 1080px) {
 			width: 50vw;
-			left: 44.89vw; 
+			left: 34.89vw; 
 		}
 
 		/* klein dotje voor de timeline */
@@ -1017,7 +1022,7 @@ body.zenders {
 	aside:nth-of-type(2) {
 		 grid-column: 1;
 		 margin: auto auto;
-		 width: 30vw;
+		 width: 26vw;
 		 height: 90%;
 		 border: 3px solid;
 		 border-color: light-dark(var(--radiogids-dark-background), var(--veronica-light-background));
@@ -1032,17 +1037,14 @@ body.zenders {
 		 section {
 			display: flex;
 			flex-direction: column;
-			margin-top: 1rem;
-		 }
-
-		 h3 {
-			text-align: left;
+			padding: 1rem;
 		 }
 
 		 img {
-			width: 80%;
+			width: 100%;
 			height: min-content;
 			border-radius: var(--border-radius);
+			margin: 1rem 0;
 		 }
 	}
 	
@@ -1063,7 +1065,7 @@ body.zenders {
 
 		@media (min-width: 1080px) {
 			grid-column: 3;
-			width: 50vw;
+			width: 60vw;
 		}
 
 		.block {
