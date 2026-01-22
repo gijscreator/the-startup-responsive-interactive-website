@@ -352,6 +352,25 @@ function initSmoothScroll() {
     animationLoop();
 }
 
+const audioButton = document.querySelector('.playbutton');
+const audioElement = document.querySelector('.Audioplayer');
+
+audioButton.addEventListener('click', toggleAudio);
+
+function toggleAudio() {
+    if (audioElement.paused) {
+        audioElement.play();
+
+        audioButton.textContent = "Pause"; 
+    } else {
+        audioElement.pause();
+
+        audioButton.textContent = "Play";
+    }
+}
+
+
+
 // 8. init de app
 
 UserInterfaceController.initializeApplication();

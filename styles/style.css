@@ -490,7 +490,7 @@ button, article, a, header:not(.details), .listener {
 
 /* ------------------------ Play button styling ------------------------ */
 
-.play-button {
+.playbutton {
 	--color: #181D27;
 	width: 48px;
 	height: 48px;
@@ -1020,15 +1020,17 @@ body.zenders {
 	/* info about whats live now */
 
 	aside:nth-of-type(2) {
+		
 		 grid-column: 1;
 		 margin: auto auto;
 		 width: 26vw;
-		 height: 90%;
+		 height: 95%;
 		 border: 3px solid;
 		 border-color: light-dark(var(--radiogids-dark-background), var(--veronica-light-background));
 		 border-radius: var(--border-radius);
 		 display: none;
 		 flex-direction: column;
+
 
 		 @media (min-width: 1080px) {
 			display: flex;
@@ -1038,6 +1040,26 @@ body.zenders {
 			display: flex;
 			flex-direction: column;
 			padding: 1rem;
+			position: sticky;
+		 	top: 20dvh;
+		 }
+
+		 article {
+			display: grid;
+			grid-template-areas:
+			"details1 button"
+			"details2 button";
+		 }
+
+		 h3 {
+			grid-area: details1;
+		 }
+
+		 button {
+			grid-area: button;
+			width: 4rem;
+			height: 4rem;	
+			border-radius: 100%;
 		 }
 
 		 img {
@@ -1171,6 +1193,10 @@ main:has(.station-selector:popover-open) .station-selector * {
   border-right: none;
   z-index: 100;
 
+  @media (min-width: 790px) {
+	width: 40vw;
+  }
+
   header {
 	display: flex;
 	justify-content: flex-end;
@@ -1244,6 +1270,11 @@ main:has(.station-selector:popover-open) .station-selector * {
     animation: slide-up 0.3s ease-out;
     opacity: 1;
     transform: none;
+
+	  @media (min-width: 790px) {
+		transform: translateX(100%);
+		animation: slide-in 0.3s ease-out;
+	}
     
     &::backdrop {
       opacity: 0.8;
